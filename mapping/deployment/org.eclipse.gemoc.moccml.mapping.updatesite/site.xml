@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2017 I3S laboratory and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        I3S laboratory - initial API and implementation
+ -->
+
+<site>
+   <description name="MoCCML_mapping update site" url="https://ci.inria.fr/gemoc/job/MoCCML-mapping/lastSuccessfulBuild/artifact/moccml/mapping/deployment/org.eclipse.gemoc.moccml.mapping.updatesite/target/repository/">
+      MoCCML_mapping (Event Constraint Language) is an extension of OCL with events and logical time constraints dedicated to the specification of behavioral invariants (e.g. MoC) on metamodels. It enables the generation of CCSL specification for a specific model.
+   </description>
+   <feature url="features/org.eclipse.gemoc.moccml.mapping.feature_1.0.0.qualifier.jar" id="org.eclipse.gemoc.moccml.mapping.feature" version="1.0.0.qualifier">
+      <category name="MoCCML_mapping full"/>
+   </feature>
+   <feature url="features/org.eclipse.gemoc.moccml.mapping.editor.feature_1.0.0.qualifier.jar" id="org.eclipse.gemoc.moccml.mapping.editor.feature" version="1.0.0.qualifier">
+      <category name="MoCCML_mapping editor only"/>
+   </feature>
+   <feature url="features/org.eclipse.gemoc.moccml.mapping.editor.feature_1.0.0.qualifier.jar" id="org.eclipse.gemoc.moccml.mapping.editor.feature" version="1.0.0.qualifier">
+      <category name="MoCCML_mapping full"/>
+   </feature>
+   <feature url="features/org.eclipse.gemoc.moccml.mapping.transfos.feature_1.0.0.qualifier.jar" id="org.eclipse.gemoc.moccml.mapping.transfos.feature" version="1.0.0.qualifier">
+      <category name="MoCCML_mapping full"/>
+   </feature>
+   <feature url="features/org.eclipse.gemoc.moccml.mapping.feedback.model.feature_1.0.0.qualifier.jar" id="org.eclipse.gemoc.moccml.mapping.feedback.model.feature" version="1.0.0.qualifier">
+      <category name="MoCCML_mapping full"/>
+   </feature>
+   <category-def name="MoCCML_mapping full" label="MoCCML_mapping full">
+      <description>
+         An extension of OCL with event and logical time constraints.
+It enables the specification of Model of Computation on any metamodel (UML or DSL)
+      </description>
+   </category-def>
+   <category-def name="MoCCML_mapping editor only" label="MoCCML_mapping editor only">
+      <description>
+         MoCCML_mapping metamodel and Xtext editor. No transformations...
+      </description>
+   </category-def>
+</site>

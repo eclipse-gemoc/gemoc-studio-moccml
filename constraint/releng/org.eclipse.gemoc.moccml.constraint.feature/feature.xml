@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2012-2017 GEMOC consortium.
+ 
+ http://www.gemoc.org
+   
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+   
+ $Id$
+-->
+<feature
+      id="org.eclipse.gemoc.moccml.constraint.feature"
+      label="GEMOC Moccml Constraint"
+      version="0.1.1.qualifier"
+      provider-name="%providerName"
+      image="gemocstudio32.png">
+
+   <description>
+      The MoCC Modeling Language allows to defines MoCC constraints using automaton. 
+It provides an extension
+to CCSL to define automaton. The feature includes metamodels
+and genmodel edits and editors.
+
+(Includes moccml.constraint.core, moccml.constraint.graphical.editors, moccml.constraint.text.editors, and moccml.constraint.ccsl.solver.extension.automata features)
+   </description>
+
+   <copyright url="http://www.eclipse.org/legal/epl-v10.html">
+      Copyright (c) 2012, 2017 I3S Laboratory and others
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+   </license>
+
+   <includes
+         id="org.eclipse.gemoc.moccml.constraint.core.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.gemoc.moccml.constraint.graphical.editors.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.gemoc.moccml.constraint.text.editors.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.gemoc.moccml.constraint.ccsl.solver.extension.automata.feature"
+         version="0.0.0"/>
+
+</feature>

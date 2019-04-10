@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ECL model
+Bundle-SymbolicName: org.eclipse.gemoc.moccml.mapping;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: bin/,
+ .
+Bundle-Vendor: %Aoste INRIA / I3S
+Bundle-Localization: plugin
+Export-Package: org.eclipse.gemoc.moccml.mapping.moccml_mapping,
+ org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl,
+ org.eclipse.gemoc.moccml.mapping.moccml_mapping.util,
+ org.eclipse.gemoc.moccml.mapping.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.xtext.base;bundle-version="1.3.0";visibility:=reexport,
+ org.eclipse.ocl.xtext.completeocl;bundle-version="1.3.0";visibility:=reexport,
+ org.eclipse.ocl.xtext.essentialocl;bundle-version="1.3.0";visibility:=reexport,
+ fr.inria.aoste.timesquare.ccslkernel.model;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport
+Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

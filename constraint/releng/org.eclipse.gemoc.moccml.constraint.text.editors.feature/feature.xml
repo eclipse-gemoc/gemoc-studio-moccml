@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2012-2017 GEMOC consortium.
+ 
+ http://www.gemoc.org
+   
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+   
+ $Id$
+-->
+<feature
+      id="org.eclipse.gemoc.moccml.constraint.text.editors.feature"
+      label="GEMOC Moccml Constraint Textual Editors"
+      version="0.1.1.qualifier"
+      provider-name="%providerName"
+      image="gemocstudio32.png">
+
+   <description>
+      The Moccml Constraint Textual Editors Feature provides a textual
+edition to express Moccml models (extension of CCSL to define automaton).
+   </description>
+
+   <copyright url="http://www.eclipse.org/legal/epl-v10.html">
+      Copyright (c) 2012, 2017 I3S Laboratory and others
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+   </license>
+
+   <plugin
+         id="org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

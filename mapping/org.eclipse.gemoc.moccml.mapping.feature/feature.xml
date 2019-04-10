@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2017 I3S laboratory and others.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+        I3S laboratory - initial API and implementation
+ -->
+<feature
+      id="org.eclipse.gemoc.moccml.mapping.feature"
+      label="Moccml Mapping SDK"
+      version="1.0.0.qualifier"
+      provider-name="Aoste INRIA / I3S">
+
+   <description url="http://www.example.com/description">
+      Editors and transformations for developping Moccml mappings using ECL
+(Ful SDK, includes moccml.mapping.editor.feature and moccml.mapping.transfos.feature)
+   </description>
+
+   <copyright url="http://www.eclipse.org/legal/epl-v10.html">
+      Copyright (c) 2012, 2017 I3S Laboratory and others
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+   </license>
+
+   <url>
+      <discovery label="Oxygen" url="http://download.eclipse.org/releases/photon/"/>
+      <discovery label="The Eclipse Project Updates" url="http://download.eclipse.org/eclipse/updates/4.6"/>
+      <discovery label="Acceleo" url="http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.2"/>
+      <discovery label="Xtext All In One - Releases" url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+      <discovery label="TimeSquare" url="http://www.i3s.unice.fr/~deantoni/photon/"/> <!--url="http://timesquare.inria.fr/update_site/photon"/>-->
+   </url>
+
+   <includes
+         id="org.eclipse.gemoc.moccml.mapping.editor.feature"
+         version="0"
+         name="ECL editor"
+         search-location="both"/>
+
+   <includes
+         id="org.eclipse.gemoc.moccml.mapping.transfos.feature"
+         version="0"
+         name="ECL transfos"
+         search-location="both"/>
+
+</feature>
