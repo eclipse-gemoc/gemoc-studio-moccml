@@ -26,18 +26,18 @@
 package	org.eclipse.gemoc.moccml.mapping.util;
 
 /**
- * An AbstractNullECLVisitor provides a default implementation for each
+ * An AbstractNullMoCCMLMappingVisitor provides a default implementation for each
  * visitXxx method that returns null.
  */
-public abstract class AbstractNullECLVisitor<R, C>
-	extends AbstractECLVisitor<R, C>
+public abstract class AbstractNullMoCCMLMappingVisitor<R, C>
+	extends AbstractMoCCMLMappingVisitor<R, C>
 {
 	/**
 	 * Initializes me with an initial value for my result.
 	 * 
 	 * @param context my initial result value
 	 */
-	protected AbstractNullECLVisitor(C context) {
+	protected AbstractNullMoCCMLMappingVisitor(C context) {
 	    super(context);
 	}	
 

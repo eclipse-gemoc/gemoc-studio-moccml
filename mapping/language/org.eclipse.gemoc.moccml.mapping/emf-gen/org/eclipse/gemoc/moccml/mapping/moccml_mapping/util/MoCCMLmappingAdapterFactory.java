@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping.util;
 
@@ -20,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.*;
 
 import org.eclipse.ocl.pivot.utilities.Nameable;
-import org.eclipse.ocl.pivot.utilities.Pivotable;
 
 import org.eclipse.ocl.xtext.basecs.ElementCS;
 import org.eclipse.ocl.xtext.basecs.ElementRefCS;
@@ -35,14 +36,12 @@ import org.eclipse.ocl.xtext.basecs.TypedElementCS;
 import org.eclipse.ocl.xtext.basecs.TypedRefCS;
 
 import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
-import org.eclipse.ocl.xtext.basecs.util.VisitableCS;
 
 import org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS;
 import org.eclipse.ocl.xtext.completeoclcs.DefCS;
 import org.eclipse.ocl.xtext.completeoclcs.DefPropertyCS;
 
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
-import org.eclipse.ocl.xtext.essentialoclcs.LiteralExpCS;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,18 +114,13 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseECLDocument(ECLDocument object) {
-			return createECLDocumentAdapter();
+		public Adapter caseMoCCMLMappingDocument(MoCCMLMappingDocument object) {
+			return createMoCCMLMappingDocumentAdapter();
 		}
 
 		@Override
-		public Adapter caseEventLiteralExp(EventLiteralExp object) {
-			return createEventLiteralExpAdapter();
-		}
-
-		@Override
-		public Adapter caseECLRelation(ECLRelation object) {
-			return createECLRelationAdapter();
+		public Adapter caseMoCCMLRelation(MoCCMLRelation object) {
+			return createMoCCMLRelationAdapter();
 		}
 
 		@Override
@@ -135,13 +129,13 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseECLExpression(ECLExpression object) {
-			return createECLExpressionAdapter();
+		public Adapter caseMoCCMLExpression(MoCCMLExpression object) {
+			return createMoCCMLExpressionAdapter();
 		}
 
 		@Override
-		public Adapter caseECLDefCS(ECLDefCS object) {
-			return createECLDefCSAdapter();
+		public Adapter caseMoCCMLMappingDefCS(MoCCMLMappingDefCS object) {
+			return createMoCCMLMappingDefCSAdapter();
 		}
 
 		@Override
@@ -155,28 +149,28 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseECLEventDefCS(ECLEventDefCS object) {
-			return createECLEventDefCSAdapter();
+		public Adapter caseMoCCMLMappingEventDefCS(MoCCMLMappingEventDefCS object) {
+			return createMoCCMLMappingEventDefCSAdapter();
 		}
 
 		@Override
-		public Adapter caseECLBlockDefCS(ECLBlockDefCS object) {
-			return createECLBlockDefCSAdapter();
+		public Adapter caseMoCCMLMappingBlockDefCS(MoCCMLMappingBlockDefCS object) {
+			return createMoCCMLMappingBlockDefCSAdapter();
 		}
 
 		@Override
-		public Adapter caseVisitableCS(VisitableCS object) {
-			return createVisitableCSAdapter();
+		public Adapter caseMoCCMLMappingTimeBase(MoCCMLMappingTimeBase object) {
+			return createMoCCMLMappingTimeBaseAdapter();
+		}
+
+		@Override
+		public Adapter caseMoCCMLMappingPriority(MoCCMLMappingPriority object) {
+			return createMoCCMLMappingPriorityAdapter();
 		}
 
 		@Override
 		public Adapter caseElementCS(ElementCS object) {
 			return createElementCSAdapter();
-		}
-
-		@Override
-		public Adapter casePivotable(Pivotable object) {
-			return createPivotableAdapter();
 		}
 
 		@Override
@@ -250,11 +244,6 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseLiteralExpCS(LiteralExpCS object) {
-			return createLiteralExpCSAdapter();
-		}
-
-		@Override
 		public Adapter caseImportCS(ImportCS object) {
 			return createImportCSAdapter();
 		}
@@ -321,44 +310,30 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument <em>ECL Document</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument <em>Mo CCML Mapping Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument
 	 * @generated
 	 */
-	public Adapter createECLDocumentAdapter() {
+	public Adapter createMoCCMLMappingDocumentAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp <em>Event Literal Exp</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation <em>Mo CCML Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation
 	 * @generated
 	 */
-	public Adapter createEventLiteralExpAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation <em>ECL Relation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation
-	 * @generated
-	 */
-	public Adapter createECLRelationAdapter() {
+	public Adapter createMoCCMLRelationAdapter() {
 		return null;
 	}
 
@@ -377,30 +352,30 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression <em>ECL Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression <em>Mo CCML Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression
 	 * @generated
 	 */
-	public Adapter createECLExpressionAdapter() {
+	public Adapter createMoCCMLExpressionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS <em>ECL Def CS</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS <em>Mo CCML Mapping Def CS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS
 	 * @generated
 	 */
-	public Adapter createECLDefCSAdapter() {
+	public Adapter createMoCCMLMappingDefCSAdapter() {
 		return null;
 	}
 
@@ -433,44 +408,58 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS <em>ECL Event Def CS</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS <em>Mo CCML Mapping Event Def CS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS
 	 * @generated
 	 */
-	public Adapter createECLEventDefCSAdapter() {
+	public Adapter createMoCCMLMappingEventDefCSAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS <em>ECL Block Def CS</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS <em>Mo CCML Mapping Block Def CS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS
 	 * @generated
 	 */
-	public Adapter createECLBlockDefCSAdapter() {
+	public Adapter createMoCCMLMappingBlockDefCSAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.basecs.util.VisitableCS <em>Visitable CS</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase <em>Mo CCML Mapping Time Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.ocl.xtext.basecs.util.VisitableCS
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase
 	 * @generated
 	 */
-	public Adapter createVisitableCSAdapter() {
+	public Adapter createMoCCMLMappingTimeBaseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority <em>Mo CCML Mapping Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority
+	 * @generated
+	 */
+	public Adapter createMoCCMLMappingPriorityAdapter() {
 		return null;
 	}
 
@@ -485,20 +474,6 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createElementCSAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.ocl.pivot.utilities.Pivotable <em>Pivotable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.ocl.pivot.utilities.Pivotable
-	 * @generated
-	 */
-	public Adapter createPivotableAdapter() {
 		return null;
 	}
 
@@ -695,20 +670,6 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCompleteOCLDocumentCSAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.ocl.xtext.essentialoclcs.LiteralExpCS <em>Literal Exp CS</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.ocl.xtext.essentialoclcs.LiteralExpCS
-	 * @generated
-	 */
-	public Adapter createLiteralExpCSAdapter() {
 		return null;
 	}
 

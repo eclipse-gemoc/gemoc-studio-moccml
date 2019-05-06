@@ -15,10 +15,9 @@ package org.eclipse.gemoc.moccml.mapping.xtext.ui.labeling;
 
 
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
 import org.eclipse.ocl.xtext.completeocl.ui.labeling.CompleteOCLLabelProvider;
 
 import com.google.inject.Inject;
@@ -38,11 +37,11 @@ public class EclLabelProvider extends CompleteOCLLabelProvider {
 
 	//Labels and icons can be computed like this:
 	
-	String text(ECLRelation r) {
+	String text(MoCCMLRelation r) {
 	  return r.getType().getName();
 	}
 	 
-    String image(ECLRelation r) {
+    String image(MoCCMLRelation r) {
       return "/org.eclipse.gemoc.moccml.mapping.xtext.ui/icons/relation_small.gif";
     }
     
@@ -54,19 +53,12 @@ public class EclLabelProvider extends CompleteOCLLabelProvider {
 	  return "/org.eclipse.gemoc.moccml.mapping.xtext.ui/icons/clock_small.gif";
 	}
 	
-	String text(EventLiteralExp e) {
-	  	  return e.getValue().toString();
-	}
-	
-	String image(EventLiteralExp e) {
-	  	  return "/org.eclipse.gemoc.moccml.mapping.xtext.ui/icons/clock_small.gif";
-	}
-	  	 
-	String text(ECLExpression e) {
+
+	String text(MoCCMLExpression e) {
 		  return e.getType().getName();
 		}
 		 
-    String image(ECLExpression e) {
+    String image(MoCCMLExpression e) {
       return "/org.eclipse.gemoc.moccml.mapping.xtext.ui/icons/equation_small.gif";
     }
 	

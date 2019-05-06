@@ -23,7 +23,7 @@
               extensions="ecl"
               icon="icons/ecl1.gif"
               id="org.eclipse.gemoc.moccml.mapping.xtext.Ecl"
-              name="Ecl Editor">
+              name="MoCCMLMapping Editor">
         </editor>
     </extension>
     <extension

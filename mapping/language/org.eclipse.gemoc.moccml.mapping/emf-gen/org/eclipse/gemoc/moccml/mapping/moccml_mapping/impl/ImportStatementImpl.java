@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl;
 
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
-import org.eclipse.gemoc.moccml.mapping.util.ECLVisitor;
+import org.eclipse.gemoc.moccml.mapping.util.MoCCMLMappingVisitor;
 import org.eclipse.ocl.xtext.basecs.impl.ImportCSImpl;
 import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
 
@@ -100,7 +102,7 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 	 * @generated
 	 */
 	public <R> R accept(final BaseCSVisitor<R> visitor) {
-		return (R) visitor.getAdapter(ECLVisitor.class).visitImportStatement(this);
+		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitImportStatement(this);
 	}
 
 	/**
@@ -171,7 +173,7 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (importURI: ");
 		result.append(importURI);
 		result.append(')');

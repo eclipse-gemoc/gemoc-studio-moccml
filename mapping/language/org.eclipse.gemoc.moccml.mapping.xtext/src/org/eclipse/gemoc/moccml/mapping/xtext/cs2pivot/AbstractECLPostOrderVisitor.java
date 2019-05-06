@@ -19,24 +19,25 @@ package org.eclipse.gemoc.moccml.mapping.xtext.cs2pivot;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.Case;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement;
-import org.eclipse.gemoc.moccml.mapping.util.ECLVisitor;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
+import org.eclipse.gemoc.moccml.mapping.util.MoCCMLMappingVisitor;
 import org.eclipse.ocl.xtext.base.cs2as.CS2ASConversion;
 import org.eclipse.ocl.xtext.base.cs2as.Continuation;
 import org.eclipse.ocl.xtext.completeocl.cs2as.CompleteOCLCSPostOrderVisitor;
 import org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS;
 
 public class AbstractECLPostOrderVisitor
-	extends CompleteOCLCSPostOrderVisitor implements ECLVisitor<Continuation<?>>
+	extends CompleteOCLCSPostOrderVisitor implements MoCCMLMappingVisitor<Continuation<?>>
 {	
 	//
 	//	This file is maintained by copying from AbstractExtendingCompleteOCLCSVisitor and changing R to Continuation<?>.
@@ -49,20 +50,16 @@ public class AbstractECLPostOrderVisitor
 		return visitTypedRefCS(object);
 	}
 
-	public Continuation<?> visitECLDocument(ECLDocument object) {
+	public Continuation<?> visitMoCCMLMappingDocument(MoCCMLMappingDocument object) {
 		return visitCompleteOCLDocumentCS((CompleteOCLDocumentCS)object);
 	}
 
-	public Continuation<?> visitEventLiteralExp(EventLiteralExp eventLiteralExp)
-	{
-		return visitLiteralExpCS(eventLiteralExp);
-	}
 
 	public Continuation<?> visitEventKind(EventKind eventKind) {
 		return null;
 	}
 
-	public Continuation<?> visitECLRelation(ECLRelation relation)
+	public Continuation<?> visitMoCCMLMappingRelation(MoCCMLRelation relation)
 	{
 		return visitExpCS(relation);
 	}
@@ -73,12 +70,12 @@ public class AbstractECLPostOrderVisitor
 		return null;
 	}
 
-	public Continuation<?> visitECLExpression(ECLExpression eclExpression) {
+	public Continuation<?> visitMoCCMLMappingExpression(MoCCMLExpression eclExpression) {
 		return visitExpCS(eclExpression);
 	}
 
-	public Continuation<?> visitECLDefCS(
-			ECLDefCS eclDefCS) {
+	public Continuation<?> visitMoCCMLMappingDefCS(
+			MoCCMLMappingDefCS eclDefCS) {
 		return visitDefCS(eclDefCS);
 	}
 
@@ -101,13 +98,37 @@ public class AbstractECLPostOrderVisitor
 	}
 
 	@Override
-	public Continuation<?> visitECLBlockDefCS(ECLBlockDefCS eclBlockDefCS) {
+	public Continuation<?> visitMoCCMLMappingBlockDefCS(MoCCMLMappingBlockDefCS eclBlockDefCS) {
 		return visitDefCS(eclBlockDefCS);
 	}
 
 	@Override
-	public Continuation<?> visitECLEventDefCS(ECLEventDefCS eclEventDefCS) {
+	public Continuation<?> visitMoCCMLMappingEventDefCS(MoCCMLMappingEventDefCS eclEventDefCS) {
 		return visitDefCS(eclEventDefCS);
+	}
+
+	@Override
+	public Continuation<?> visitMoCCMLRelation(MoCCMLRelation relation) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Continuation<?> visitMoCCMLExpression(MoCCMLExpression eclExpression) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Continuation<?> visitMoCCMLMappingPriority(MoCCMLMappingPriority moccMLMappingPriority) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Continuation<?> visitMoCCMLMappingTimeBase(MoCCMLMappingTimeBase moCCMLMappingTimeBase) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

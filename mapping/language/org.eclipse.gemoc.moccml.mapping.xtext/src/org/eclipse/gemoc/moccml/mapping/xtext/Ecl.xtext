@@ -11,14 +11,15 @@ import "platform:/resource/org.eclipse.ocl.xtext.completeocl/model/CompleteOCLCS
 //import "http://www.eclipse.org/ocl/2015/CompleteOCLCS" as completeOCL //*"http://www.eclipse.org/ocl/3.1.0/CompleteOCLCST"*/
 //
 import "platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation" as CCSL
+import "platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//BasicType" as CCSLBasicTypes
 //import "http://fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation" as CCSL
 import "platform:/resource/org.eclipse.gemoc.moccml.mapping/model/moccml_mapping.ecore"
 //import  "http://org.eclipse.gemoc.moccml.mapping"  
  
 //import "http://fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation"  as CCSL
  
-ECLDocument returns ECLDocument:
- 	{ECLDocument}
+MoCCMLMappingDocument returns MoCCMLMappingDocument:
+ 	{MoCCMLMappingDocument}
 	ownedImports+=ImportCS* 
 	imports += Import*
 	(ownedPackages+=PackageDeclarationCS | ownedContexts+=ContextDeclCS)*;
@@ -28,13 +29,19 @@ Import returns ImportStatement:
  
  
 //override essential OCL rule 
+@Override 
 TypeExpCS returns baseCST::TypedRefCS:
-	(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS| EventType	| BlockType) ownedMultiplicity=MultiplicityCS?;
+	(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS| EventType	| BlockType | Timebase) ownedMultiplicity=MultiplicityCS?;
  
 EventType returns EventType:
 	{EventType}
 	'Event' 
 	('('referedElement=EventKind')')?;
+
+Timebase returns MoCCMLMappingTimeBase:
+	{MoCCMLMappingTimeBase}
+	'TimeBase' 
+	('['timeBase= [CCSLBasicTypes::DenseClockType|ID] ']')?;
 
 BlockType returns BlockType:
 	{BlockType}
@@ -63,18 +70,25 @@ enum EventKind:
 
 
 //NEON FROM ESSENTIAL
+@Override 
 ExpCS returns essentialOCLCST::ExpCS:
 //	({InfixExpCS} ownedSource=PrefixedExpCS name=BinaryOperatorName ownedArgument=ExpCS)
 //| 	PrefixedExpCS
 // the above takes exponential or worse time for backtracking, below is fast
 	(PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)?)
 | 	PrefixedLetExpCS
-|ECLRelation | 	ECLExpression ;
+|MoCCMLRelation | 	MoCCMLExpression | MoCCMLMappingPriority;
+
+MoCCMLMappingPriority returns MoCCMLMappingPriority:
+	{MoCCMLMappingPriority}
+	'Prior' ':' higher=ExpCS  'prevails' 'on' lower=ExpCS
+;
 
 
 
 
 //neon from compleocl
+@Override 
 ClassifierContextDeclCS returns completeOCL::ClassifierContextDeclCS:
 	'context' (ownedSignature=TemplateSignatureCS)? (selfName=UnrestrictedName)?
 	ownedPathName=PathNameCS	
@@ -84,22 +98,23 @@ ClassifierContextDeclCS returns completeOCL::ClassifierContextDeclCS:
 	
 
 //completeOCL override
+@Override 
 DefCS returns completeOCL::DefCS:
-	DefOperationCS|DefPropertyCS|ECLEventDefCS | ECLBlockDefCS;
+	DefOperationCS|DefPropertyCS|MoCCMLMappingEventDefCS | MoCCMLMappingBlockDefCS;
 
 enum Visibility:
 	public= 'public' |
 	private='private'
 	;
 
-ECLBlockDefCS returns ECLBlockDefCS:
+MoCCMLMappingBlockDefCS returns MoCCMLMappingBlockDefCS:
 	 (visibility=Visibility )? 'blockDef' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS
 		'=' ownedSpecification=SpecificationCS
 		("enter" "when" enterWhen=ExpCS)?
 		("leave" "when" leaveWhen=ExpCS)?
 		;
 
-ECLEventDefCS returns ECLEventDefCS: 
+MoCCMLMappingEventDefCS returns MoCCMLMappingEventDefCS: 
 	(visibility=Visibility )? 'def' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS
 		'=' ownedSpecification=SpecificationCS
 		( ('['dsaResultName=UnrestrictedName']')? 
@@ -121,15 +136,15 @@ enum FeedBackKind:
 	forbid='forbid' 
 ;
 
-ECLExpression returns ECLExpression:
-	{ECLExpression}
+MoCCMLExpression returns MoCCMLExpression:
+	{MoCCMLExpression}
 	  //we need to add a keyWord to make the EclScopeProvider working :-/
 	("Expression")? type=[CCSL::ExpressionDeclaration | ID] '(' parameters+=ExpCS  ( ',' parameters+=ExpCS )* ')' 
 ;
 
 
-ECLRelation returns ECLRelation: 
-	{ECLRelation}
+MoCCMLRelation returns MoCCMLRelation: 
+	{MoCCMLRelation}
   //we need to add a keyWord to make the EclScopeProvider working :-/
   ("Relation")? type=[CCSL::RelationDeclaration | ID] '(' parameters+=ExpCS  ( ',' parameters+=ExpCS )* ')' 
 ;

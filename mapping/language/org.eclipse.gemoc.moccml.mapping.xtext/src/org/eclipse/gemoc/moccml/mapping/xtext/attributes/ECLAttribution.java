@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument;
 import org.eclipse.ocl.pivot.internal.scoping.EnvironmentView;
 import org.eclipse.ocl.pivot.internal.scoping.ScopeView;
 import org.eclipse.ocl.pivot.internal.utilities.EnvironmentFactoryInternal;
@@ -33,6 +33,7 @@ import org.eclipse.ocl.pivot.utilities.MetamodelManager;
 import org.eclipse.ocl.xtext.completeocl.attributes.CompleteOCLDocumentCSAttribution;
 
 import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.NamedElement;
+import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.Type;
 import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.ExpressionDeclaration;
 import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.RelationDeclaration;
 
@@ -48,7 +49,7 @@ public class ECLAttribution extends CompleteOCLDocumentCSAttribution
 	public  ScopeView computeLookup(EObject target, EnvironmentView environmentView, ScopeView scopeView) {
 		super.computeLookup(target, environmentView, scopeView);
 		CompleteOCLDocumentCSAttribution.INSTANCE.computeLookup(target, environmentView, scopeView);
-		ECLDocument targetElement = (ECLDocument)target;
+		MoCCMLMappingDocument targetElement = (MoCCMLMappingDocument)target;
 		
 		EnvironmentFactoryInternal environmentFactory = environmentView.getEnvironmentFactory();
 		MetamodelManager metaModelManager = environmentFactory.getMetamodelManager();
@@ -94,6 +95,11 @@ public class ECLAttribution extends CompleteOCLDocumentCSAttribution
 				}
 				if (((fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.Library)resSet.getResources().get(0).getContents().get(0)).getExpressionLibraries().size()>0){
 					for (ExpressionDeclaration ed: ((fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.Library)resSet.getResources().get(0).getContents().get(0)).getExpressionLibraries().get(0).getExpressionDeclarations()){
+						ListOfImportedDeclaration.add(ed);
+					}
+				}
+				if (((fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.Library)resSet.getResources().get(0).getContents().get(0)).getPredefinedTypes().size()>0){
+					for (Type ed: ((fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.Library)resSet.getResources().get(0).getContents().get(0)).getPredefinedTypes()){
 						ListOfImportedDeclaration.add(ed);
 					}
 				}

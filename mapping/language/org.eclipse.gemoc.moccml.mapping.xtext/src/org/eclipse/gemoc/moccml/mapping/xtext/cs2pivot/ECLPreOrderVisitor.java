@@ -19,9 +19,10 @@ package org.eclipse.gemoc.moccml.mapping.xtext.cs2pivot;
 import java.util.ArrayList;
 
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.AnyType;
 import org.eclipse.ocl.pivot.Comment;
@@ -63,13 +64,7 @@ public class ECLPreOrderVisitor
 		@Override
 		public BasicContinuation<?> execute() {
 			csElement.setName("Event");
-//			AnyType type=null;
-//			for (Type t : context.getEnvironmentFactory().getMetamodelManager().getGlobalTypes()){
-//					if (t.getName().compareTo("Event") == 0){
-//						type = (AnyType) t;
-//					}
-//			}
-//			if(type==null){
+
 				@NonNull
 				AnyType anyType = context.getEnvironmentFactory().getStandardLibrary().getOclAnyType();//new PivotFactoryImpl().createAnyType();
 				@NonNull
@@ -77,42 +72,69 @@ public class ECLPreOrderVisitor
 				c.setBody("OCL_Any is extended here as event !");
 				anyType.getAnnotatingComments().add(c);				
 				csElement.setPivot(anyType);
-//				@NonNull
-//				AnyType eventType = PivotUtil.createAnyType("Event");
-////				eventType.getSuperClasses().addAll(anyType.getSuperClasses());
-////				eventType.getSuperClasses().add(anyType);
-//				CompleteInheritance ci = context.getMetamodelManager().getInheritance(anyType);
-//				ci.getFragments().
-//				eventType.setOwningPackage(anyType.getOwningPackage());
-//				eventType.setOwnedSignature(anyType.getOwnedSignature());
-//				eventType.setUnspecializedElement(anyType.getUnspecializedElement());
-//				eventType.setIsAbstract(anyType.isIsAbstract());
-//				eventType.setIsActive(anyType.isIsActive());
-//				eventType.getOwnedBehaviors().addAll(anyType.getOwnedBehaviors());
-//				eventType.getOwnedOperations().addAll(anyType.getOwnedOperations());
-//				eventType.getExtenders().addAll(anyType.getExtenders());
-//				csElement.setPivot(eventType);
-
-
-				//				//eventType.setBehavioralClass(context.getEnvironmentFactory().getStandardLibrary().getOclAnyType());
-////				ArrayList<Type> types = new ArrayList<Type>();
-////				types.add(eventType);
-//				context.getEnvironmentFactory().getStandardLibrary().getOclAnyType().getOwningPackage().getOwnedClasses().add(eventType);
-			//	context.getEnvironmentFactory().getMetamodelManager().addGlobalTypes(types);
-				
-				
-				
-			//	AnyType eventType = context.getEnvironmentFactory().getStandardLibrary().getOclAnyType();//new PivotFactoryImpl().createAnyType();
-				//eventType.setName("Event");
-//				csElement.setPivot(eventType);
-//				context.installPivotReference(csElement, eventType, BaseCSPackage.Literals.TYPED_ELEMENT_CS__OWNED_TYPE);//PIVOTABLE_ELEMENT_CS__PIVOT);
-//			}else{
-//				context.installPivotReference(csElement, type, BaseCSPackage.Literals.TYPED_ELEMENT_CS__OWNED_TYPE);//PIVOTABLE_ELEMENT_CS__PIVOT);
-//			}
 			
 			return null;
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public Continuation<?> visitMoCCMLMappingTimeBase(MoCCMLMappingTimeBase object)
+	{
+		return new MoCCMLMappingTimeBaseContinuation(context, object);
+	}
+
+	protected static class MoCCMLMappingTimeBaseContinuation extends SingleContinuation<MoCCMLMappingTimeBase>
+	{
+		public MoCCMLMappingTimeBaseContinuation(CS2ASConversion context, MoCCMLMappingTimeBase csElement) {
+			super(context, null, null, csElement, context.getTypesHaveSignaturesInterDependency());
+			
+		}
+
+		@Override
+		public BasicContinuation<?> execute() {
+			csElement.setName("TimeBase");
+
+			@NonNull
+			AnyType anyType = context.getEnvironmentFactory().getStandardLibrary().getOclAnyType();
+			@NonNull
+			Comment c = PivotFactoryImpl.eINSTANCE.createComment();
+			c.setBody("OCL_Any is extended here as TimeBase !");
+			anyType.getAnnotatingComments().add(c);				
+			csElement.setPivot(anyType);
+			
+			return null;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@Override
 	public Continuation<?> visitBlockType(BlockType object)
@@ -146,14 +168,14 @@ public class ECLPreOrderVisitor
 	}
 	
 	@Override
-	public Continuation<?> visitECLDocument(ECLDocument object) {
+	public Continuation<?> visitMoCCMLMappingDocument(MoCCMLMappingDocument object) {
 		
 		Continuation<?> continuation = super.visitCompleteOCLDocumentCS(object);
 		return continuation;
 	}
 
 	@Override
-	public Continuation<?> visitECLDefCS(ECLDefCS object) {
+	public Continuation<?> visitMoCCMLMappingDefCS(MoCCMLMappingDefCS object) {
 		
 //		Continuation<?> continuation = super.visitExpCS(object.getCondition());
 		return null;//continuation;

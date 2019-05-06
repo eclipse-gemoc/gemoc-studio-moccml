@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2010, 2015 Willink Transformations and others.&#xD;&#xA;All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;  E.D.Willink - Initial API and implementation"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="/*******************************************************************************&#xA; * Copyright (c) 2015, 2017  I3S Laboratory  and others.&#xA; * All rights reserved. This program and the accompanying materials&#xA; * are made available under the terms of the Eclipse Public License v1.0&#xA; * which accompanies this distribution, and is available at&#xA; * http://www.eclipse.org/legal/epl-v10.html&#xA; *&#xA; * Contributors:&#xA; *     I3S Laboratory - initial API and implementation&#xA; *******************************************************************************"
     modelDirectory="/org.eclipse.gemoc.moccml.mapping/emf-gen" editDirectory="/org.eclipse.gemoc.moccml.mapping.edit/emf-gen"
-    editorDirectory="/org.eclipse.gemoc.moccml.mapping.editor/emf-gen" modelPluginID="org.eclipse.ocl.xtext.completeocl"
+    editorDirectory="/org.eclipse.gemoc.moccml.mapping.editor/emf-gen" modelPluginID="org.eclipse.gemoc.moccml.mapping"
     forceOverwrite="true" modelName="MoCCMLmappinggen" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" testsDirectory="/org.eclipse.ocl.xtext.completeocl.tests/emf-gen"
+    codeFormatting="true" testsDirectory="/org.eclipse.gemoc.moccml.mapping.tests/emf-gen"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    editPluginID="org.eclipse.gemoc.moccml.mapping" editorPluginID="org.eclipse.ocl.xtext.completeocl.editor"
+    editPluginID="org.eclipse.gemoc.moccml.mapping.edit" editorPluginID="org.eclipse.gemoc.moccml_mapping.editor"
     runtimeVersion="2.7" usedGenPackages="../../org.eclipse.ocl.xtext.base/model/BaseCS.genmodel#//basecs ../../org.eclipse.ocl.xtext.completeocl/model/CompleteOCLCS.genmodel#//completeoclcs ../../org.eclipse.ocl.xtext.essentialocl/model/EssentialOCLCS.genmodel#//essentialoclcs ../../org.eclipse.ocl.pivot/model/Pivot.genmodel#//pivot ../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.genmodel#//TimeModel"
     importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
@@ -20,7 +20,7 @@
   </genAnnotations>
   <foreignModel>moccml_mapping.ecore</foreignModel>
   <genPackages prefix="MoCCMLmapping" basePackage="org.eclipse.gemoc.moccml.mapping"
-      disposableProviderFactory="true" ecorePackage="moccml_mapping.ecore#/">
+      disposableProviderFactory="true" fileExtensions="moccmlmappingmodel" ecorePackage="moccml_mapping.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="moccml_mapping.ecore#//EventKind">
       <genEnumLiterals ecoreEnumLiteral="moccml_mapping.ecore#//EventKind/undefined"/>
       <genEnumLiterals ecoreEnumLiteral="moccml_mapping.ecore#//EventKind/start"/>
@@ -44,9 +44,9 @@
       <genEnumLiterals ecoreEnumLiteral="moccml_mapping.ecore#//FeedBackKind/forbid"/>
     </genEnums>
     <genClasses ecoreClass="moccml_mapping.ecore#//EventType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//EventType/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//EventType/referedElement"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//EventType/accept">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//EventType/name"/>
+      <genOperations ecoreOperation="moccml_mapping.ecore#//EventType/accept" body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitEventType(this);">
         <genParameters ecoreParameter="moccml_mapping.ecore#//EventType/accept/visitor"/>
         <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//EventType/accept/R"/>
       </genOperations>
@@ -54,7 +54,7 @@
     <genClasses ecoreClass="moccml_mapping.ecore#//DSAFeedback">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//DSAFeedback/cases"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference moccml_mapping.ecore#//DSAFeedback/owner"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//DSAFeedback/accept">
+      <genOperations ecoreOperation="moccml_mapping.ecore#//DSAFeedback/accept" body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitDSAFeedBack(this);">
         <genParameters ecoreParameter="moccml_mapping.ecore#//DSAFeedback/accept/visitor"/>
         <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//DSAFeedback/accept/R"/>
       </genOperations>
@@ -64,55 +64,53 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//Case/eventToForce"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//Case/on"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//Case/kindOfFeedback"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//Case/accept">
+      <genOperations ecoreOperation="moccml_mapping.ecore#//Case/accept" body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitCase(this);">
         <genParameters ecoreParameter="moccml_mapping.ecore#//Case/accept/visitor"/>
         <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//Case/accept/R"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="moccml_mapping.ecore#//ECLDocument">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//ECLDocument/imports"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//ECLDocument/accept">
-        <genParameters ecoreParameter="moccml_mapping.ecore#//ECLDocument/accept/visitor"/>
-        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//ECLDocument/accept/R"/>
+    <genClasses ecoreClass="moccml_mapping.ecore#//MoCCMLMappingDocument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLMappingDocument/imports"/>
+      <genOperations ecoreOperation="moccml_mapping.ecore#//MoCCMLMappingDocument/accept"
+          body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingDocument(this);">
+        <genParameters ecoreParameter="moccml_mapping.ecore#//MoCCMLMappingDocument/accept/visitor"/>
+        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//MoCCMLMappingDocument/accept/R"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="moccml_mapping.ecore#//EventLiteralExp">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//EventLiteralExp/value"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//EventLiteralExp/accept">
-        <genParameters ecoreParameter="moccml_mapping.ecore#//EventLiteralExp/accept/visitor"/>
-        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//EventLiteralExp/accept/R"/>
-      </genOperations>
-    </genClasses>
-    <genClasses ecoreClass="moccml_mapping.ecore#//ECLRelation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//ECLRelation/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//ECLRelation/parameters"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//ECLRelation/isAnAssertion"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//ECLRelation/accept">
-        <genParameters ecoreParameter="moccml_mapping.ecore#//ECLRelation/accept/visitor"/>
-        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//ECLRelation/accept/R"/>
+    <genClasses ecoreClass="moccml_mapping.ecore#//MoCCMLRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLRelation/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLRelation/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//MoCCMLRelation/isAnAssertion"/>
+      <genOperations ecoreOperation="moccml_mapping.ecore#//MoCCMLRelation/accept"
+          body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLRelation(this);">
+        <genParameters ecoreParameter="moccml_mapping.ecore#//MoCCMLRelation/accept/visitor"/>
+        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//MoCCMLRelation/accept/R"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="moccml_mapping.ecore#//ImportStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//ImportStatement/importURI"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//ImportStatement/accept">
+      <genOperations ecoreOperation="moccml_mapping.ecore#//ImportStatement/accept"
+          body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitImportStatement(this);">
         <genParameters ecoreParameter="moccml_mapping.ecore#//ImportStatement/accept/visitor"/>
         <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//ImportStatement/accept/R"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="moccml_mapping.ecore#//ECLExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//ECLExpression/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//ECLExpression/parameters"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//ECLExpression/accept">
-        <genParameters ecoreParameter="moccml_mapping.ecore#//ECLExpression/accept/visitor"/>
-        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//ECLExpression/accept/R"/>
+    <genClasses ecoreClass="moccml_mapping.ecore#//MoCCMLExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLExpression/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLExpression/parameters"/>
+      <genOperations ecoreOperation="moccml_mapping.ecore#//MoCCMLExpression/accept"
+          body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLExpression(this);">
+        <genParameters ecoreParameter="moccml_mapping.ecore#//MoCCMLExpression/accept/visitor"/>
+        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//MoCCMLExpression/accept/R"/>
       </genOperations>
     </genClasses>
-    <genClasses image="false" ecoreClass="moccml_mapping.ecore#//ECLDefCS">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//ECLDefCS/condition"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//ECLDefCS/visibility"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//ECLDefCS/accept">
-        <genParameters ecoreParameter="moccml_mapping.ecore#//ECLDefCS/accept/visitor"/>
-        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//ECLDefCS/accept/R"/>
+    <genClasses image="false" ecoreClass="moccml_mapping.ecore#//MoCCMLMappingDefCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLMappingDefCS/condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//MoCCMLMappingDefCS/visibility"/>
+      <genOperations ecoreOperation="moccml_mapping.ecore#//MoCCMLMappingDefCS/accept"
+          body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingDefCS(this);">
+        <genParameters ecoreParameter="moccml_mapping.ecore#//MoCCMLMappingDefCS/accept/visitor"/>
+        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//MoCCMLMappingDefCS/accept/R"/>
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="moccml_mapping.ecore#//BaseCSVisitor">
@@ -120,26 +118,46 @@
     </genClasses>
     <genClasses ecoreClass="moccml_mapping.ecore#//BlockType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//BlockType/name"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//BlockType/accept">
+      <genOperations ecoreOperation="moccml_mapping.ecore#//BlockType/accept" body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitBlockType(this);">
         <genParameters ecoreParameter="moccml_mapping.ecore#//BlockType/accept/visitor"/>
         <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//BlockType/accept/R"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="moccml_mapping.ecore#//ECLEventDefCS">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//ECLEventDefCS/feedback"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//ECLEventDefCS/future"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//ECLEventDefCS/dsaResultName"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//ECLEventDefCS/accept">
-        <genParameters ecoreParameter="moccml_mapping.ecore#//ECLEventDefCS/accept/visitor"/>
-        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//ECLEventDefCS/accept/R"/>
+    <genClasses ecoreClass="moccml_mapping.ecore#//MoCCMLMappingEventDefCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLMappingEventDefCS/feedback"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLMappingEventDefCS/future"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//MoCCMLMappingEventDefCS/dsaResultName"/>
+      <genOperations ecoreOperation="moccml_mapping.ecore#//MoCCMLMappingEventDefCS/accept"
+          body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingEventDefCS(this);">
+        <genParameters ecoreParameter="moccml_mapping.ecore#//MoCCMLMappingEventDefCS/accept/visitor"/>
+        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//MoCCMLMappingEventDefCS/accept/R"/>
       </genOperations>
     </genClasses>
-    <genClasses ecoreClass="moccml_mapping.ecore#//ECLBlockDefCS">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//ECLBlockDefCS/enterWhen"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//ECLBlockDefCS/leaveWhen"/>
-      <genOperations ecoreOperation="moccml_mapping.ecore#//ECLBlockDefCS/accept">
-        <genParameters ecoreParameter="moccml_mapping.ecore#//ECLBlockDefCS/accept/visitor"/>
-        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//ECLBlockDefCS/accept/R"/>
+    <genClasses ecoreClass="moccml_mapping.ecore#//MoCCMLMappingBlockDefCS">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLMappingBlockDefCS/enterWhen"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLMappingBlockDefCS/leaveWhen"/>
+      <genOperations ecoreOperation="moccml_mapping.ecore#//MoCCMLMappingBlockDefCS/accept"
+          body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingBlockDefCS(this);">
+        <genParameters ecoreParameter="moccml_mapping.ecore#//MoCCMLMappingBlockDefCS/accept/visitor"/>
+        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//MoCCMLMappingBlockDefCS/accept/R"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="moccml_mapping.ecore#//MoCCMLMappingTimeBase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute moccml_mapping.ecore#//MoCCMLMappingTimeBase/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLMappingTimeBase/timeBase"/>
+      <genOperations ecoreOperation="moccml_mapping.ecore#//MoCCMLMappingTimeBase/accept"
+          body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingTimeBase(this);">
+        <genParameters ecoreParameter="moccml_mapping.ecore#//MoCCMLMappingTimeBase/accept/visitor"/>
+        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//MoCCMLMappingTimeBase/accept/R"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="moccml_mapping.ecore#//MoCCMLMappingPriority">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLMappingPriority/higher"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference moccml_mapping.ecore#//MoCCMLMappingPriority/lower"/>
+      <genOperations ecoreOperation="moccml_mapping.ecore#//MoCCMLMappingPriority/accept"
+          body="return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingPriority(this);">
+        <genParameters ecoreParameter="moccml_mapping.ecore#//MoCCMLMappingPriority/accept/visitor"/>
+        <genTypeParameters ecoreTypeParameter="moccml_mapping.ecore#//MoCCMLMappingPriority/accept/R"/>
       </genOperations>
     </genClasses>
   </genPackages>

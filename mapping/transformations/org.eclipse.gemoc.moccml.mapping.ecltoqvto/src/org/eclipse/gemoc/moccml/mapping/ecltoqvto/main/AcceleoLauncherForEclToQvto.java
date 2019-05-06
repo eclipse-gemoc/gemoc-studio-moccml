@@ -355,6 +355,9 @@ public class AcceleoLauncherForEclToQvto extends AbstractAcceleoGenerator {
         if (!isInWorkspace(fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.KernelRelation.KernelRelationPackage.class)) {
             resourceSet.getPackageRegistry().put(fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.KernelRelation.KernelRelationPackage.eINSTANCE.getNsURI(), fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpressionAndRelation.KernelRelation.KernelRelationPackage.eINSTANCE);
         }
+        if (!isInWorkspace(fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.BasicTypePackage.class)) {
+            resourceSet.getPackageRegistry().put(fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.BasicTypePackage.eINSTANCE.getNsURI(), fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.BasicTypePackage.eINSTANCE);
+        }
         if (!isInWorkspace(org.eclipse.ocl.xtext.completeoclcs.CompleteOCLCSPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.ocl.xtext.completeoclcs.CompleteOCLCSPackage.eINSTANCE.getNsURI(), org.eclipse.ocl.xtext.completeoclcs.CompleteOCLCSPackage.eINSTANCE);
         }

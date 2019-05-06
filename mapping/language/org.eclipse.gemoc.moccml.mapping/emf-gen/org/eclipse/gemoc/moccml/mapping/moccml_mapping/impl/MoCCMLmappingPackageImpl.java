@@ -1,15 +1,18 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl;
 
+import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.BasicTypePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -22,17 +25,18 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.Case;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.FeedBackKind;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingFactory;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.Visibility;
@@ -78,21 +82,14 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eclDocumentEClass = null;
+	private EClass moCCMLMappingDocumentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eventLiteralExpEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass eclRelationEClass = null;
+	private EClass moCCMLRelationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,14 +103,14 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eclExpressionEClass = null;
+	private EClass moCCMLExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eclDefCSEClass = null;
+	private EClass moCCMLMappingDefCSEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,14 +131,28 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eclEventDefCSEClass = null;
+	private EClass moCCMLMappingEventDefCSEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eclBlockDefCSEClass = null;
+	private EClass moCCMLMappingBlockDefCSEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass moCCMLMappingTimeBaseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass moCCMLMappingPriorityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,7 +203,7 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link MoCCMLmappingPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -207,14 +218,18 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 			return (MoCCMLmappingPackage) EPackage.Registry.INSTANCE.getEPackage(MoCCMLmappingPackage.eNS_URI);
 
 		// Obtain or create and register package
-		MoCCMLmappingPackageImpl theMoCCMLmappingPackage = (MoCCMLmappingPackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof MoCCMLmappingPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new MoCCMLmappingPackageImpl());
+		Object registeredMoCCMLmappingPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		MoCCMLmappingPackageImpl theMoCCMLmappingPackage = registeredMoCCMLmappingPackage instanceof MoCCMLmappingPackageImpl
+				? (MoCCMLmappingPackageImpl) registeredMoCCMLmappingPackage
+				: new MoCCMLmappingPackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
+		BaseCSPackage.eINSTANCE.eClass();
 		CompleteOCLCSPackage.eINSTANCE.eClass();
+		EssentialOCLCSPackage.eINSTANCE.eClass();
+		PivotPackage.eINSTANCE.eClass();
 		TimeModelPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -245,7 +260,7 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEventType_Name() {
+	public EAttribute getEventType_ReferedElement() {
 		return (EAttribute) eventTypeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -254,7 +269,7 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEventType_ReferedElement() {
+	public EAttribute getEventType_Name() {
 		return (EAttribute) eventTypeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -335,8 +350,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getECLDocument() {
-		return eclDocumentEClass;
+	public EClass getMoCCMLMappingDocument() {
+		return moCCMLMappingDocumentEClass;
 	}
 
 	/**
@@ -344,8 +359,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getECLDocument_Imports() {
-		return (EReference) eclDocumentEClass.getEStructuralFeatures().get(0);
+	public EReference getMoCCMLMappingDocument_Imports() {
+		return (EReference) moCCMLMappingDocumentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -353,8 +368,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEventLiteralExp() {
-		return eventLiteralExpEClass;
+	public EClass getMoCCMLRelation() {
+		return moCCMLRelationEClass;
 	}
 
 	/**
@@ -362,8 +377,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEventLiteralExp_Value() {
-		return (EAttribute) eventLiteralExpEClass.getEStructuralFeatures().get(0);
+	public EReference getMoCCMLRelation_Type() {
+		return (EReference) moCCMLRelationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -371,8 +386,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getECLRelation() {
-		return eclRelationEClass;
+	public EReference getMoCCMLRelation_Parameters() {
+		return (EReference) moCCMLRelationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -380,26 +395,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getECLRelation_Type() {
-		return (EReference) eclRelationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getECLRelation_Parameters() {
-		return (EReference) eclRelationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getECLRelation_IsAnAssertion() {
-		return (EAttribute) eclRelationEClass.getEStructuralFeatures().get(2);
+	public EAttribute getMoCCMLRelation_IsAnAssertion() {
+		return (EAttribute) moCCMLRelationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -425,8 +422,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getECLExpression() {
-		return eclExpressionEClass;
+	public EClass getMoCCMLExpression() {
+		return moCCMLExpressionEClass;
 	}
 
 	/**
@@ -434,8 +431,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getECLExpression_Type() {
-		return (EReference) eclExpressionEClass.getEStructuralFeatures().get(0);
+	public EReference getMoCCMLExpression_Type() {
+		return (EReference) moCCMLExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -443,8 +440,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getECLExpression_Parameters() {
-		return (EReference) eclExpressionEClass.getEStructuralFeatures().get(1);
+	public EReference getMoCCMLExpression_Parameters() {
+		return (EReference) moCCMLExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -452,8 +449,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getECLDefCS() {
-		return eclDefCSEClass;
+	public EClass getMoCCMLMappingDefCS() {
+		return moCCMLMappingDefCSEClass;
 	}
 
 	/**
@@ -461,8 +458,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getECLDefCS_Condition() {
-		return (EReference) eclDefCSEClass.getEStructuralFeatures().get(0);
+	public EReference getMoCCMLMappingDefCS_Condition() {
+		return (EReference) moCCMLMappingDefCSEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -470,8 +467,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getECLDefCS_Visibility() {
-		return (EAttribute) eclDefCSEClass.getEStructuralFeatures().get(1);
+	public EAttribute getMoCCMLMappingDefCS_Visibility() {
+		return (EAttribute) moCCMLMappingDefCSEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -506,8 +503,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getECLEventDefCS() {
-		return eclEventDefCSEClass;
+	public EClass getMoCCMLMappingEventDefCS() {
+		return moCCMLMappingEventDefCSEClass;
 	}
 
 	/**
@@ -515,8 +512,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getECLEventDefCS_Feedback() {
-		return (EReference) eclEventDefCSEClass.getEStructuralFeatures().get(0);
+	public EReference getMoCCMLMappingEventDefCS_Feedback() {
+		return (EReference) moCCMLMappingEventDefCSEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -524,8 +521,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getECLEventDefCS_Future() {
-		return (EReference) eclEventDefCSEClass.getEStructuralFeatures().get(1);
+	public EReference getMoCCMLMappingEventDefCS_Future() {
+		return (EReference) moCCMLMappingEventDefCSEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -533,8 +530,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getECLEventDefCS_DsaResultName() {
-		return (EAttribute) eclEventDefCSEClass.getEStructuralFeatures().get(2);
+	public EAttribute getMoCCMLMappingEventDefCS_DsaResultName() {
+		return (EAttribute) moCCMLMappingEventDefCSEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -542,8 +539,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getECLBlockDefCS() {
-		return eclBlockDefCSEClass;
+	public EClass getMoCCMLMappingBlockDefCS() {
+		return moCCMLMappingBlockDefCSEClass;
 	}
 
 	/**
@@ -551,8 +548,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getECLBlockDefCS_EnterWhen() {
-		return (EReference) eclBlockDefCSEClass.getEStructuralFeatures().get(0);
+	public EReference getMoCCMLMappingBlockDefCS_EnterWhen() {
+		return (EReference) moCCMLMappingBlockDefCSEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -560,8 +557,62 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getECLBlockDefCS_LeaveWhen() {
-		return (EReference) eclBlockDefCSEClass.getEStructuralFeatures().get(1);
+	public EReference getMoCCMLMappingBlockDefCS_LeaveWhen() {
+		return (EReference) moCCMLMappingBlockDefCSEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMoCCMLMappingTimeBase() {
+		return moCCMLMappingTimeBaseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMoCCMLMappingTimeBase_Name() {
+		return (EAttribute) moCCMLMappingTimeBaseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMoCCMLMappingTimeBase_TimeBase() {
+		return (EReference) moCCMLMappingTimeBaseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMoCCMLMappingPriority() {
+		return moCCMLMappingPriorityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMoCCMLMappingPriority_Higher() {
+		return (EReference) moCCMLMappingPriorityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMoCCMLMappingPriority_Lower() {
+		return (EReference) moCCMLMappingPriorityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -621,8 +672,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 
 		// Create classes and their features
 		eventTypeEClass = createEClass(EVENT_TYPE);
-		createEAttribute(eventTypeEClass, EVENT_TYPE__NAME);
 		createEAttribute(eventTypeEClass, EVENT_TYPE__REFERED_ELEMENT);
+		createEAttribute(eventTypeEClass, EVENT_TYPE__NAME);
 
 		dsaFeedbackEClass = createEClass(DSA_FEEDBACK);
 		createEReference(dsaFeedbackEClass, DSA_FEEDBACK__CASES);
@@ -634,41 +685,46 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 		createEReference(caseEClass, CASE__ON);
 		createEAttribute(caseEClass, CASE__KIND_OF_FEEDBACK);
 
-		eclDocumentEClass = createEClass(ECL_DOCUMENT);
-		createEReference(eclDocumentEClass, ECL_DOCUMENT__IMPORTS);
+		moCCMLMappingDocumentEClass = createEClass(MO_CCML_MAPPING_DOCUMENT);
+		createEReference(moCCMLMappingDocumentEClass, MO_CCML_MAPPING_DOCUMENT__IMPORTS);
 
-		eventLiteralExpEClass = createEClass(EVENT_LITERAL_EXP);
-		createEAttribute(eventLiteralExpEClass, EVENT_LITERAL_EXP__VALUE);
-
-		eclRelationEClass = createEClass(ECL_RELATION);
-		createEReference(eclRelationEClass, ECL_RELATION__TYPE);
-		createEReference(eclRelationEClass, ECL_RELATION__PARAMETERS);
-		createEAttribute(eclRelationEClass, ECL_RELATION__IS_AN_ASSERTION);
+		moCCMLRelationEClass = createEClass(MO_CCML_RELATION);
+		createEReference(moCCMLRelationEClass, MO_CCML_RELATION__TYPE);
+		createEReference(moCCMLRelationEClass, MO_CCML_RELATION__PARAMETERS);
+		createEAttribute(moCCMLRelationEClass, MO_CCML_RELATION__IS_AN_ASSERTION);
 
 		importStatementEClass = createEClass(IMPORT_STATEMENT);
 		createEAttribute(importStatementEClass, IMPORT_STATEMENT__IMPORT_URI);
 
-		eclExpressionEClass = createEClass(ECL_EXPRESSION);
-		createEReference(eclExpressionEClass, ECL_EXPRESSION__TYPE);
-		createEReference(eclExpressionEClass, ECL_EXPRESSION__PARAMETERS);
+		moCCMLExpressionEClass = createEClass(MO_CCML_EXPRESSION);
+		createEReference(moCCMLExpressionEClass, MO_CCML_EXPRESSION__TYPE);
+		createEReference(moCCMLExpressionEClass, MO_CCML_EXPRESSION__PARAMETERS);
 
-		eclDefCSEClass = createEClass(ECL_DEF_CS);
-		createEReference(eclDefCSEClass, ECL_DEF_CS__CONDITION);
-		createEAttribute(eclDefCSEClass, ECL_DEF_CS__VISIBILITY);
+		moCCMLMappingDefCSEClass = createEClass(MO_CCML_MAPPING_DEF_CS);
+		createEReference(moCCMLMappingDefCSEClass, MO_CCML_MAPPING_DEF_CS__CONDITION);
+		createEAttribute(moCCMLMappingDefCSEClass, MO_CCML_MAPPING_DEF_CS__VISIBILITY);
 
 		baseCSVisitorEClass = createEClass(BASE_CS_VISITOR);
 
 		blockTypeEClass = createEClass(BLOCK_TYPE);
 		createEAttribute(blockTypeEClass, BLOCK_TYPE__NAME);
 
-		eclEventDefCSEClass = createEClass(ECL_EVENT_DEF_CS);
-		createEReference(eclEventDefCSEClass, ECL_EVENT_DEF_CS__FEEDBACK);
-		createEReference(eclEventDefCSEClass, ECL_EVENT_DEF_CS__FUTURE);
-		createEAttribute(eclEventDefCSEClass, ECL_EVENT_DEF_CS__DSA_RESULT_NAME);
+		moCCMLMappingEventDefCSEClass = createEClass(MO_CCML_MAPPING_EVENT_DEF_CS);
+		createEReference(moCCMLMappingEventDefCSEClass, MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK);
+		createEReference(moCCMLMappingEventDefCSEClass, MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE);
+		createEAttribute(moCCMLMappingEventDefCSEClass, MO_CCML_MAPPING_EVENT_DEF_CS__DSA_RESULT_NAME);
 
-		eclBlockDefCSEClass = createEClass(ECL_BLOCK_DEF_CS);
-		createEReference(eclBlockDefCSEClass, ECL_BLOCK_DEF_CS__ENTER_WHEN);
-		createEReference(eclBlockDefCSEClass, ECL_BLOCK_DEF_CS__LEAVE_WHEN);
+		moCCMLMappingBlockDefCSEClass = createEClass(MO_CCML_MAPPING_BLOCK_DEF_CS);
+		createEReference(moCCMLMappingBlockDefCSEClass, MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN);
+		createEReference(moCCMLMappingBlockDefCSEClass, MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN);
+
+		moCCMLMappingTimeBaseEClass = createEClass(MO_CCML_MAPPING_TIME_BASE);
+		createEAttribute(moCCMLMappingTimeBaseEClass, MO_CCML_MAPPING_TIME_BASE__NAME);
+		createEReference(moCCMLMappingTimeBaseEClass, MO_CCML_MAPPING_TIME_BASE__TIME_BASE);
+
+		moCCMLMappingPriorityEClass = createEClass(MO_CCML_MAPPING_PRIORITY);
+		createEReference(moCCMLMappingPriorityEClass, MO_CCML_MAPPING_PRIORITY__HIGHER);
+		createEReference(moCCMLMappingPriorityEClass, MO_CCML_MAPPING_PRIORITY__LOWER);
 
 		// Create enums
 		eventKindEEnum = createEEnum(EVENT_KIND);
@@ -709,6 +765,8 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 				.getEPackage(EssentialOCLCSPackage.eNS_URI);
 		ClockExpressionAndRelationPackage theClockExpressionAndRelationPackage = (ClockExpressionAndRelationPackage) EPackage.Registry.INSTANCE
 				.getEPackage(ClockExpressionAndRelationPackage.eNS_URI);
+		BasicTypePackage theBasicTypePackage = (BasicTypePackage) EPackage.Registry.INSTANCE
+				.getEPackage(BasicTypePackage.eNS_URI);
 
 		// Create type parameters
 		addETypeParameter(baseCSVisitorEClass, "R");
@@ -720,25 +778,27 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 		eventTypeEClass.getESuperTypes().add(thePivotPackage.getNameable());
 		dsaFeedbackEClass.getESuperTypes().add(theCompleteOCLCSPackage.getDefPropertyCS());
 		caseEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
-		eclDocumentEClass.getESuperTypes().add(theCompleteOCLCSPackage.getCompleteOCLDocumentCS());
-		eventLiteralExpEClass.getESuperTypes().add(theEssentialOCLCSPackage.getLiteralExpCS());
-		eclRelationEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
+		moCCMLMappingDocumentEClass.getESuperTypes().add(theCompleteOCLCSPackage.getCompleteOCLDocumentCS());
+		moCCMLRelationEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
 		importStatementEClass.getESuperTypes().add(theBaseCSPackage.getImportCS());
-		eclExpressionEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
-		eclDefCSEClass.getESuperTypes().add(theCompleteOCLCSPackage.getDefPropertyCS());
+		moCCMLExpressionEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
+		moCCMLMappingDefCSEClass.getESuperTypes().add(theCompleteOCLCSPackage.getDefPropertyCS());
 		blockTypeEClass.getESuperTypes().add(theBaseCSPackage.getTypedRefCS());
 		blockTypeEClass.getESuperTypes().add(thePivotPackage.getNameable());
-		eclEventDefCSEClass.getESuperTypes().add(this.getECLDefCS());
-		eclBlockDefCSEClass.getESuperTypes().add(this.getECLDefCS());
+		moCCMLMappingEventDefCSEClass.getESuperTypes().add(this.getMoCCMLMappingDefCS());
+		moCCMLMappingBlockDefCSEClass.getESuperTypes().add(this.getMoCCMLMappingDefCS());
+		moCCMLMappingTimeBaseEClass.getESuperTypes().add(theBaseCSPackage.getTypedRefCS());
+		moCCMLMappingTimeBaseEClass.getESuperTypes().add(thePivotPackage.getNameable());
+		moCCMLMappingPriorityEClass.getESuperTypes().add(theEssentialOCLCSPackage.getExpCS());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(eventTypeEClass, EventType.class, "EventType", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEventType_Name(), ecorePackage.getEString(), "name", null, 0, 1, EventType.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEventType_ReferedElement(), this.getEventKind(), "referedElement", null, 0, 1,
 				EventType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEventType_Name(), ecorePackage.getEString(), "name", null, 0, 1, EventType.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(eventTypeEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		ETypeParameter t1 = addETypeParameter(op, "R");
@@ -754,9 +814,10 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 		initEReference(getDSAFeedback_Cases(), this.getCase(), null, "cases", null, 0, -1, DSAFeedback.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDSAFeedback_Owner(), this.getECLEventDefCS(), this.getECLEventDefCS_Feedback(), "owner", null,
-				1, 1, DSAFeedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDSAFeedback_Owner(), this.getMoCCMLMappingEventDefCS(),
+				this.getMoCCMLMappingEventDefCS_Feedback(), "owner", null, 1, 1, DSAFeedback.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		op = addEOperation(dsaFeedbackEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "R");
@@ -789,13 +850,13 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		initEClass(eclDocumentEClass, ECLDocument.class, "ECLDocument", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getECLDocument_Imports(), this.getImportStatement(), null, "imports", null, 0, -1,
-				ECLDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(moCCMLMappingDocumentEClass, MoCCMLMappingDocument.class, "MoCCMLMappingDocument", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMoCCMLMappingDocument_Imports(), this.getImportStatement(), null, "imports", null, 0, -1,
+				MoCCMLMappingDocument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(eclDocumentEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(moCCMLMappingDocumentEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "R");
 		g1 = createEGenericType(this.getBaseCSVisitor());
 		g2 = createEGenericType(t1);
@@ -804,33 +865,19 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		initEClass(eventLiteralExpEClass, EventLiteralExp.class, "EventLiteralExp", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(moCCMLRelationEClass, MoCCMLRelation.class, "MoCCMLRelation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEventLiteralExp_Value(), this.getEventKind(), "value", null, 0, 1, EventLiteralExp.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = addEOperation(eventLiteralExpEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
-		t1 = addETypeParameter(op, "R");
-		g1 = createEGenericType(this.getBaseCSVisitor());
-		g2 = createEGenericType(t1);
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "visitor", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(t1);
-		initEOperation(op, g1);
-
-		initEClass(eclRelationEClass, ECLRelation.class, "ECLRelation", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getECLRelation_Type(), theClockExpressionAndRelationPackage.getRelationDeclaration(), null,
-				"type", null, 1, 1, ECLRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+		initEReference(getMoCCMLRelation_Type(), theClockExpressionAndRelationPackage.getRelationDeclaration(), null,
+				"type", null, 1, 1, MoCCMLRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getECLRelation_Parameters(), theEssentialOCLCSPackage.getExpCS(), null, "parameters", null, 1,
-				-1, ECLRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getMoCCMLRelation_Parameters(), theEssentialOCLCSPackage.getExpCS(), null, "parameters", null, 1,
+				-1, MoCCMLRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getECLRelation_IsAnAssertion(), ecorePackage.getEBoolean(), "isAnAssertion", "false", 0, 1,
-				ECLRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getMoCCMLRelation_IsAnAssertion(), ecorePackage.getEBoolean(), "isAnAssertion", "false", 0, 1,
+				MoCCMLRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(eclRelationEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(moCCMLRelationEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "R");
 		g1 = createEGenericType(this.getBaseCSVisitor());
 		g2 = createEGenericType(t1);
@@ -854,16 +901,16 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		initEClass(eclExpressionEClass, ECLExpression.class, "ECLExpression", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(moCCMLExpressionEClass, MoCCMLExpression.class, "MoCCMLExpression", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getECLExpression_Type(), theClockExpressionAndRelationPackage.getExpressionDeclaration(), null,
-				"type", null, 1, 1, ECLExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getECLExpression_Parameters(), theEssentialOCLCSPackage.getExpCS(), null, "parameters", null, 1,
-				-1, ECLExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMoCCMLExpression_Type(), theClockExpressionAndRelationPackage.getExpressionDeclaration(),
+				null, "type", null, 1, 1, MoCCMLExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMoCCMLExpression_Parameters(), theEssentialOCLCSPackage.getExpCS(), null, "parameters", null,
+				1, -1, MoCCMLExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(eclExpressionEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(moCCMLExpressionEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "R");
 		g1 = createEGenericType(this.getBaseCSVisitor());
 		g2 = createEGenericType(t1);
@@ -872,14 +919,16 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		initEClass(eclDefCSEClass, ECLDefCS.class, "ECLDefCS", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getECLDefCS_Condition(), theEssentialOCLCSPackage.getExpCS(), null, "condition", null, 0, 1,
-				ECLDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getECLDefCS_Visibility(), this.getVisibility(), "visibility", null, 1, 1, ECLDefCS.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(moCCMLMappingDefCSEClass, MoCCMLMappingDefCS.class, "MoCCMLMappingDefCS", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMoCCMLMappingDefCS_Condition(), theEssentialOCLCSPackage.getExpCS(), null, "condition", null,
+				0, 1, MoCCMLMappingDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMoCCMLMappingDefCS_Visibility(), this.getVisibility(), "visibility", null, 1, 1,
+				MoCCMLMappingDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(eclDefCSEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(moCCMLMappingDefCSEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "R");
 		g1 = createEGenericType(this.getBaseCSVisitor());
 		g2 = createEGenericType(t1);
@@ -905,19 +954,19 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		initEClass(eclEventDefCSEClass, ECLEventDefCS.class, "ECLEventDefCS", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getECLEventDefCS_Feedback(), this.getDSAFeedback(), this.getDSAFeedback_Owner(), "feedback",
-				null, 0, 1, ECLEventDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+		initEClass(moCCMLMappingEventDefCSEClass, MoCCMLMappingEventDefCS.class, "MoCCMLMappingEventDefCS",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMoCCMLMappingEventDefCS_Feedback(), this.getDSAFeedback(), this.getDSAFeedback_Owner(),
+				"feedback", null, 0, 1, MoCCMLMappingEventDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMoCCMLMappingEventDefCS_Future(), theEssentialOCLCSPackage.getExpCS(), null, "future", null,
+				0, 1, MoCCMLMappingEventDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getECLEventDefCS_Future(), theEssentialOCLCSPackage.getExpCS(), null, "future", null, 0, 1,
-				ECLEventDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getECLEventDefCS_DsaResultName(), ecorePackage.getEString(), "dsaResultName", null, 0, 1,
-				ECLEventDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMoCCMLMappingEventDefCS_DsaResultName(), ecorePackage.getEString(), "dsaResultName", null, 0,
+				1, MoCCMLMappingEventDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(eclEventDefCSEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(moCCMLMappingEventDefCSEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "R");
 		g1 = createEGenericType(this.getBaseCSVisitor());
 		g2 = createEGenericType(t1);
@@ -926,16 +975,52 @@ public class MoCCMLmappingPackageImpl extends EPackageImpl implements MoCCMLmapp
 		g1 = createEGenericType(t1);
 		initEOperation(op, g1);
 
-		initEClass(eclBlockDefCSEClass, ECLBlockDefCS.class, "ECLBlockDefCS", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getECLBlockDefCS_EnterWhen(), theEssentialOCLCSPackage.getExpCS(), null, "enterWhen", null, 0, 1,
-				ECLBlockDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getECLBlockDefCS_LeaveWhen(), theEssentialOCLCSPackage.getExpCS(), null, "leaveWhen", null, 0, 1,
-				ECLBlockDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(moCCMLMappingBlockDefCSEClass, MoCCMLMappingBlockDefCS.class, "MoCCMLMappingBlockDefCS",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMoCCMLMappingBlockDefCS_EnterWhen(), theEssentialOCLCSPackage.getExpCS(), null, "enterWhen",
+				null, 0, 1, MoCCMLMappingBlockDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMoCCMLMappingBlockDefCS_LeaveWhen(), theEssentialOCLCSPackage.getExpCS(), null, "leaveWhen",
+				null, 0, 1, MoCCMLMappingBlockDefCS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = addEOperation(eclBlockDefCSEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(moCCMLMappingBlockDefCSEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "R");
+		g1 = createEGenericType(this.getBaseCSVisitor());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "visitor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
+
+		initEClass(moCCMLMappingTimeBaseEClass, MoCCMLMappingTimeBase.class, "MoCCMLMappingTimeBase", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMoCCMLMappingTimeBase_Name(), ecorePackage.getEString(), "name", null, 0, 1,
+				MoCCMLMappingTimeBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMoCCMLMappingTimeBase_TimeBase(), theBasicTypePackage.getDenseClockType(), null, "timeBase",
+				null, 0, 1, MoCCMLMappingTimeBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = addEOperation(moCCMLMappingTimeBaseEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
+		t1 = addETypeParameter(op, "R");
+		g1 = createEGenericType(this.getBaseCSVisitor());
+		g2 = createEGenericType(t1);
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "visitor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(t1);
+		initEOperation(op, g1);
+
+		initEClass(moCCMLMappingPriorityEClass, MoCCMLMappingPriority.class, "MoCCMLMappingPriority", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMoCCMLMappingPriority_Higher(), theEssentialOCLCSPackage.getExpCS(), null, "higher", null, 1,
+				1, MoCCMLMappingPriority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMoCCMLMappingPriority_Lower(), theEssentialOCLCSPackage.getExpCS(), null, "lower", null, 1, 1,
+				MoCCMLMappingPriority.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = addEOperation(moCCMLMappingPriorityEClass, null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		t1 = addETypeParameter(op, "R");
 		g1 = createEGenericType(this.getBaseCSVisitor());
 		g2 = createEGenericType(t1);

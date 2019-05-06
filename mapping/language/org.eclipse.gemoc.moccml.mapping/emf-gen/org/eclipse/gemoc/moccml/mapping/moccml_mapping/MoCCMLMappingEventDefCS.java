@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping;
 
@@ -14,23 +16,23 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>ECL Event Def CS</b></em>'.
+ * A representation of the model object '<em><b>Mo CCML Mapping Event Def CS</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getFeedback <em>Feedback</em>}</li>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getFuture <em>Future</em>}</li>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getDsaResultName <em>Dsa Result Name</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getFeedback <em>Feedback</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getFuture <em>Future</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getDsaResultName <em>Dsa Result Name</em>}</li>
  * </ul>
  *
- * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLEventDefCS()
+ * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoCCMLMappingEventDefCS()
  * @model
  * @generated
  */
-public interface ECLEventDefCS extends ECLDefCS {
+public interface MoCCMLMappingEventDefCS extends MoCCMLMappingDefCS {
 	/**
 	 * Returns the value of the '<em><b>Feedback</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback#getOwner <em>Owner</em>}'.
@@ -42,7 +44,7 @@ public interface ECLEventDefCS extends ECLDefCS {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Feedback</em>' containment reference.
 	 * @see #setFeedback(DSAFeedback)
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLEventDefCS_Feedback()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoCCMLMappingEventDefCS_Feedback()
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback#getOwner
 	 * @model opposite="owner" containment="true"
 	 * @generated
@@ -50,7 +52,7 @@ public interface ECLEventDefCS extends ECLDefCS {
 	DSAFeedback getFeedback();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getFeedback <em>Feedback</em>}' containment reference.
+	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getFeedback <em>Feedback</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Feedback</em>' containment reference.
@@ -69,14 +71,14 @@ public interface ECLEventDefCS extends ECLDefCS {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Future</em>' containment reference.
 	 * @see #setFuture(ExpCS)
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLEventDefCS_Future()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoCCMLMappingEventDefCS_Future()
 	 * @model containment="true"
 	 * @generated
 	 */
 	ExpCS getFuture();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getFuture <em>Future</em>}' containment reference.
+	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getFuture <em>Future</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Future</em>' containment reference.
@@ -95,14 +97,14 @@ public interface ECLEventDefCS extends ECLDefCS {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dsa Result Name</em>' attribute.
 	 * @see #setDsaResultName(String)
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLEventDefCS_DsaResultName()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoCCMLMappingEventDefCS_DsaResultName()
 	 * @model
 	 * @generated
 	 */
 	String getDsaResultName();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getDsaResultName <em>Dsa Result Name</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getDsaResultName <em>Dsa Result Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Dsa Result Name</em>' attribute.
@@ -111,4 +113,4 @@ public interface ECLEventDefCS extends ECLDefCS {
 	 */
 	void setDsaResultName(String value);
 
-} // ECLEventDefCS
+} // MoCCMLMappingEventDefCS

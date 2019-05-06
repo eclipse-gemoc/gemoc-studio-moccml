@@ -27,20 +27,20 @@ package	org.eclipse.gemoc.moccml.mapping.util;
 
 
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 
 
 /**
- * An AbstractDelegatingECLVisitor delegates all visits.
+ * An AbstractDelegatingMoCCMLMappingVisitor delegates all visits.
  */
-public abstract class AbstractDelegatingECLVisitor<R, C, D extends ECLVisitor<R>>
+public abstract class AbstractDelegatingMoCCMLMappingVisitor<R, C, D extends MoCCMLMappingVisitor<R>>
 	extends org.eclipse.ocl.xtext.completeoclcs.util.AbstractDelegatingCompleteOCLCSVisitor<R, C, D >
-	implements ECLVisitor<R>
+	implements MoCCMLMappingVisitor<R>
 {
-	protected AbstractDelegatingECLVisitor( D delegate,  C context) {
+	protected AbstractDelegatingMoCCMLMappingVisitor( D delegate,  C context) {
         super(delegate, context);
     }
 
@@ -80,15 +80,15 @@ public abstract class AbstractDelegatingECLVisitor<R, C, D extends ECLVisitor<R>
 		return delegate.visitDefCS(object);
 	}
 
-	public  R visitECLDefCS( ECLDefCS object) {
+	public  R visitMoCCMLMappingDefCS( MoCCMLMappingDefCS object) {
 		return delegate.visitDefCS(object);
 	}
 	
-	public  R visitECLEventDefCS( ECLEventDefCS object) {
+	public  R visitMoCCMLMappingEventDefCS( MoCCMLMappingEventDefCS object) {
 		return delegate.visitDefCS(object);
 	}
 	
-	public  R visitECLBlockDefCS( ECLBlockDefCS object) {
+	public  R visitMoCCMLMappingBlockDefCS( MoCCMLMappingBlockDefCS object) {
 		return delegate.visitDefCS(object);
 	}
 	

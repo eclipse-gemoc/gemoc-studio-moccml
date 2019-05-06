@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping;
 
@@ -18,23 +20,23 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>ECL Relation</b></em>'.
+ * A representation of the model object '<em><b>Mocc ML Mapping Priority</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#getParameters <em>Parameters</em>}</li>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#isIsAnAssertion <em>Is An Assertion</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoccMLMappingPriority#getType <em>Type</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoccMLMappingPriority#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoccMLMappingPriority#isIsAnAssertion <em>Is An Assertion</em>}</li>
  * </ul>
  *
- * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLRelation()
+ * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoccMLMappingPriority()
  * @model
  * @generated
  */
-public interface ECLRelation extends ExpCS {
+public interface MoccMLMappingPriority extends ExpCS {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -45,14 +47,14 @@ public interface ECLRelation extends ExpCS {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(RelationDeclaration)
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLRelation_Type()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoccMLMappingPriority_Type()
 	 * @model required="true"
 	 * @generated
 	 */
 	RelationDeclaration getType();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#getType <em>Type</em>}' reference.
+	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoccMLMappingPriority#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' reference.
@@ -71,7 +73,7 @@ public interface ECLRelation extends ExpCS {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLRelation_Parameters()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoccMLMappingPriority_Parameters()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -88,14 +90,14 @@ public interface ECLRelation extends ExpCS {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is An Assertion</em>' attribute.
 	 * @see #setIsAnAssertion(boolean)
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLRelation_IsAnAssertion()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoccMLMappingPriority_IsAnAssertion()
 	 * @model default="false"
 	 * @generated
 	 */
 	boolean isIsAnAssertion();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#isIsAnAssertion <em>Is An Assertion</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoccMLMappingPriority#isIsAnAssertion <em>Is An Assertion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Is An Assertion</em>' attribute.
@@ -104,4 +106,4 @@ public interface ECLRelation extends ExpCS {
 	 */
 	void setIsAnAssertion(boolean value);
 
-} // ECLRelation
+} // MoccMLMappingPriority

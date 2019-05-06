@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping;
 
@@ -118,22 +120,22 @@ public interface MoCCMLmappingPackage extends EPackage {
 	int EVENT_TYPE__OWNED_MULTIPLICITY = BaseCSPackage.TYPED_REF_CS__OWNED_MULTIPLICITY;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_TYPE__NAME = BaseCSPackage.TYPED_REF_CS_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Refered Element</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_TYPE__REFERED_ELEMENT = BaseCSPackage.TYPED_REF_CS_FEATURE_COUNT + 1;
+	int EVENT_TYPE__REFERED_ELEMENT = BaseCSPackage.TYPED_REF_CS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_TYPE__NAME = BaseCSPackage.TYPED_REF_CS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Event Type</em>' class.
@@ -453,14 +455,14 @@ public interface MoCCMLmappingPackage extends EPackage {
 	int CASE_FEATURE_COUNT = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 4;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLDocumentImpl <em>ECL Document</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDocumentImpl <em>Mo CCML Mapping Document</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLDocumentImpl
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLDocument()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDocumentImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingDocument()
 	 * @generated
 	 */
-	int ECL_DOCUMENT = 3;
+	int MO_CCML_MAPPING_DOCUMENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -469,7 +471,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT__CSI = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__CSI;
+	int MO_CCML_MAPPING_DOCUMENT__CSI = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__CSI;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -478,7 +480,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT__PARENT = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__PARENT;
+	int MO_CCML_MAPPING_DOCUMENT__PARENT = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Pivot</b></em>' reference.
@@ -487,7 +489,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT__PIVOT = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__PIVOT;
+	int MO_CCML_MAPPING_DOCUMENT__PIVOT = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__PIVOT;
 
 	/**
 	 * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
@@ -496,7 +498,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT__ORIGINAL_XMI_ID = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__ORIGINAL_XMI_ID;
+	int MO_CCML_MAPPING_DOCUMENT__ORIGINAL_XMI_ID = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__ORIGINAL_XMI_ID;
 
 	/**
 	 * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
@@ -505,7 +507,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT__OWNED_ANNOTATIONS = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__OWNED_ANNOTATIONS;
+	int MO_CCML_MAPPING_DOCUMENT__OWNED_ANNOTATIONS = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__OWNED_ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -514,7 +516,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT__NAME = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__NAME;
+	int MO_CCML_MAPPING_DOCUMENT__NAME = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Owned Imports</b></em>' containment reference list.
@@ -523,7 +525,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT__OWNED_IMPORTS = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__OWNED_IMPORTS;
+	int MO_CCML_MAPPING_DOCUMENT__OWNED_IMPORTS = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__OWNED_IMPORTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Contexts</b></em>' containment reference list.
@@ -532,7 +534,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT__OWNED_CONTEXTS = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__OWNED_CONTEXTS;
+	int MO_CCML_MAPPING_DOCUMENT__OWNED_CONTEXTS = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__OWNED_CONTEXTS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Packages</b></em>' containment reference list.
@@ -541,7 +543,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT__OWNED_PACKAGES = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__OWNED_PACKAGES;
+	int MO_CCML_MAPPING_DOCUMENT__OWNED_PACKAGES = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS__OWNED_PACKAGES;
 
 	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
@@ -550,26 +552,26 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT__IMPORTS = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 0;
+	int MO_CCML_MAPPING_DOCUMENT__IMPORTS = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>ECL Document</em>' class.
+	 * The number of structural features of the '<em>Mo CCML Mapping Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DOCUMENT_FEATURE_COUNT = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 1;
+	int MO_CCML_MAPPING_DOCUMENT_FEATURE_COUNT = CompleteOCLCSPackage.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.EventLiteralExpImpl <em>Event Literal Exp</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLRelationImpl <em>Mo CCML Relation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.EventLiteralExpImpl
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getEventLiteralExp()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLRelationImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLRelation()
 	 * @generated
 	 */
-	int EVENT_LITERAL_EXP = 4;
+	int MO_CCML_RELATION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -578,7 +580,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__CSI = EssentialOCLCSPackage.LITERAL_EXP_CS__CSI;
+	int MO_CCML_RELATION__CSI = EssentialOCLCSPackage.EXP_CS__CSI;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -587,7 +589,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__PARENT = EssentialOCLCSPackage.LITERAL_EXP_CS__PARENT;
+	int MO_CCML_RELATION__PARENT = EssentialOCLCSPackage.EXP_CS__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Pivot</b></em>' reference.
@@ -596,7 +598,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__PIVOT = EssentialOCLCSPackage.LITERAL_EXP_CS__PIVOT;
+	int MO_CCML_RELATION__PIVOT = EssentialOCLCSPackage.EXP_CS__PIVOT;
 
 	/**
 	 * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
@@ -605,7 +607,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__ORIGINAL_XMI_ID = EssentialOCLCSPackage.LITERAL_EXP_CS__ORIGINAL_XMI_ID;
+	int MO_CCML_RELATION__ORIGINAL_XMI_ID = EssentialOCLCSPackage.EXP_CS__ORIGINAL_XMI_ID;
 
 	/**
 	 * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
@@ -614,7 +616,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__OWNED_ANNOTATIONS = EssentialOCLCSPackage.LITERAL_EXP_CS__OWNED_ANNOTATIONS;
+	int MO_CCML_RELATION__OWNED_ANNOTATIONS = EssentialOCLCSPackage.EXP_CS__OWNED_ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Has Error</b></em>' attribute.
@@ -623,7 +625,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__HAS_ERROR = EssentialOCLCSPackage.LITERAL_EXP_CS__HAS_ERROR;
+	int MO_CCML_RELATION__HAS_ERROR = EssentialOCLCSPackage.EXP_CS__HAS_ERROR;
 
 	/**
 	 * The feature id for the '<em><b>Local Left</b></em>' reference.
@@ -632,7 +634,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__LOCAL_LEFT = EssentialOCLCSPackage.LITERAL_EXP_CS__LOCAL_LEFT;
+	int MO_CCML_RELATION__LOCAL_LEFT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFT;
 
 	/**
 	 * The feature id for the '<em><b>Local Leftmost Descendant</b></em>' reference.
@@ -641,7 +643,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__LOCAL_LEFTMOST_DESCENDANT = EssentialOCLCSPackage.LITERAL_EXP_CS__LOCAL_LEFTMOST_DESCENDANT;
+	int MO_CCML_RELATION__LOCAL_LEFTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFTMOST_DESCENDANT;
 
 	/**
 	 * The feature id for the '<em><b>Local Parent</b></em>' reference.
@@ -650,7 +652,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__LOCAL_PARENT = EssentialOCLCSPackage.LITERAL_EXP_CS__LOCAL_PARENT;
+	int MO_CCML_RELATION__LOCAL_PARENT = EssentialOCLCSPackage.EXP_CS__LOCAL_PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Local Right</b></em>' reference.
@@ -659,7 +661,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__LOCAL_RIGHT = EssentialOCLCSPackage.LITERAL_EXP_CS__LOCAL_RIGHT;
+	int MO_CCML_RELATION__LOCAL_RIGHT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHT;
 
 	/**
 	 * The feature id for the '<em><b>Local Rightmost Descendant</b></em>' reference.
@@ -668,7 +670,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__LOCAL_RIGHTMOST_DESCENDANT = EssentialOCLCSPackage.LITERAL_EXP_CS__LOCAL_RIGHTMOST_DESCENDANT;
+	int MO_CCML_RELATION__LOCAL_RIGHTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHTMOST_DESCENDANT;
 
 	/**
 	 * The feature id for the '<em><b>Precedence</b></em>' reference.
@@ -677,143 +679,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_LITERAL_EXP__PRECEDENCE = EssentialOCLCSPackage.LITERAL_EXP_CS__PRECEDENCE;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_LITERAL_EXP__VALUE = EssentialOCLCSPackage.LITERAL_EXP_CS_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Event Literal Exp</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_LITERAL_EXP_FEATURE_COUNT = EssentialOCLCSPackage.LITERAL_EXP_CS_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLRelationImpl <em>ECL Relation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLRelationImpl
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLRelation()
-	 * @generated
-	 */
-	int ECL_RELATION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Csi</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__CSI = EssentialOCLCSPackage.EXP_CS__CSI;
-
-	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__PARENT = EssentialOCLCSPackage.EXP_CS__PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Pivot</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__PIVOT = EssentialOCLCSPackage.EXP_CS__PIVOT;
-
-	/**
-	 * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__ORIGINAL_XMI_ID = EssentialOCLCSPackage.EXP_CS__ORIGINAL_XMI_ID;
-
-	/**
-	 * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__OWNED_ANNOTATIONS = EssentialOCLCSPackage.EXP_CS__OWNED_ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Has Error</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__HAS_ERROR = EssentialOCLCSPackage.EXP_CS__HAS_ERROR;
-
-	/**
-	 * The feature id for the '<em><b>Local Left</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__LOCAL_LEFT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFT;
-
-	/**
-	 * The feature id for the '<em><b>Local Leftmost Descendant</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__LOCAL_LEFTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFTMOST_DESCENDANT;
-
-	/**
-	 * The feature id for the '<em><b>Local Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__LOCAL_PARENT = EssentialOCLCSPackage.EXP_CS__LOCAL_PARENT;
-
-	/**
-	 * The feature id for the '<em><b>Local Right</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__LOCAL_RIGHT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHT;
-
-	/**
-	 * The feature id for the '<em><b>Local Rightmost Descendant</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__LOCAL_RIGHTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHTMOST_DESCENDANT;
-
-	/**
-	 * The feature id for the '<em><b>Precedence</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ECL_RELATION__PRECEDENCE = EssentialOCLCSPackage.EXP_CS__PRECEDENCE;
+	int MO_CCML_RELATION__PRECEDENCE = EssentialOCLCSPackage.EXP_CS__PRECEDENCE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -822,7 +688,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_RELATION__TYPE = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
+	int MO_CCML_RELATION__TYPE = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -831,7 +697,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_RELATION__PARAMETERS = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 1;
+	int MO_CCML_RELATION__PARAMETERS = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is An Assertion</b></em>' attribute.
@@ -840,16 +706,16 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_RELATION__IS_AN_ASSERTION = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 2;
+	int MO_CCML_RELATION__IS_AN_ASSERTION = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>ECL Relation</em>' class.
+	 * The number of structural features of the '<em>Mo CCML Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_RELATION_FEATURE_COUNT = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 3;
+	int MO_CCML_RELATION_FEATURE_COUNT = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ImportStatementImpl <em>Import Statement</em>}' class.
@@ -859,7 +725,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getImportStatement()
 	 * @generated
 	 */
-	int IMPORT_STATEMENT = 6;
+	int IMPORT_STATEMENT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -961,14 +827,14 @@ public interface MoCCMLmappingPackage extends EPackage {
 	int IMPORT_STATEMENT_FEATURE_COUNT = BaseCSPackage.IMPORT_CS_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLExpressionImpl <em>ECL Expression</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLExpressionImpl <em>Mo CCML Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLExpressionImpl
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLExpression()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLExpressionImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLExpression()
 	 * @generated
 	 */
-	int ECL_EXPRESSION = 7;
+	int MO_CCML_EXPRESSION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -977,7 +843,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__CSI = EssentialOCLCSPackage.EXP_CS__CSI;
+	int MO_CCML_EXPRESSION__CSI = EssentialOCLCSPackage.EXP_CS__CSI;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -986,7 +852,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__PARENT = EssentialOCLCSPackage.EXP_CS__PARENT;
+	int MO_CCML_EXPRESSION__PARENT = EssentialOCLCSPackage.EXP_CS__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Pivot</b></em>' reference.
@@ -995,7 +861,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__PIVOT = EssentialOCLCSPackage.EXP_CS__PIVOT;
+	int MO_CCML_EXPRESSION__PIVOT = EssentialOCLCSPackage.EXP_CS__PIVOT;
 
 	/**
 	 * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
@@ -1004,7 +870,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__ORIGINAL_XMI_ID = EssentialOCLCSPackage.EXP_CS__ORIGINAL_XMI_ID;
+	int MO_CCML_EXPRESSION__ORIGINAL_XMI_ID = EssentialOCLCSPackage.EXP_CS__ORIGINAL_XMI_ID;
 
 	/**
 	 * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
@@ -1013,7 +879,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__OWNED_ANNOTATIONS = EssentialOCLCSPackage.EXP_CS__OWNED_ANNOTATIONS;
+	int MO_CCML_EXPRESSION__OWNED_ANNOTATIONS = EssentialOCLCSPackage.EXP_CS__OWNED_ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Has Error</b></em>' attribute.
@@ -1022,7 +888,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__HAS_ERROR = EssentialOCLCSPackage.EXP_CS__HAS_ERROR;
+	int MO_CCML_EXPRESSION__HAS_ERROR = EssentialOCLCSPackage.EXP_CS__HAS_ERROR;
 
 	/**
 	 * The feature id for the '<em><b>Local Left</b></em>' reference.
@@ -1031,7 +897,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__LOCAL_LEFT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFT;
+	int MO_CCML_EXPRESSION__LOCAL_LEFT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFT;
 
 	/**
 	 * The feature id for the '<em><b>Local Leftmost Descendant</b></em>' reference.
@@ -1040,7 +906,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__LOCAL_LEFTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFTMOST_DESCENDANT;
+	int MO_CCML_EXPRESSION__LOCAL_LEFTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFTMOST_DESCENDANT;
 
 	/**
 	 * The feature id for the '<em><b>Local Parent</b></em>' reference.
@@ -1049,7 +915,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__LOCAL_PARENT = EssentialOCLCSPackage.EXP_CS__LOCAL_PARENT;
+	int MO_CCML_EXPRESSION__LOCAL_PARENT = EssentialOCLCSPackage.EXP_CS__LOCAL_PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Local Right</b></em>' reference.
@@ -1058,7 +924,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__LOCAL_RIGHT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHT;
+	int MO_CCML_EXPRESSION__LOCAL_RIGHT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHT;
 
 	/**
 	 * The feature id for the '<em><b>Local Rightmost Descendant</b></em>' reference.
@@ -1067,7 +933,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__LOCAL_RIGHTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHTMOST_DESCENDANT;
+	int MO_CCML_EXPRESSION__LOCAL_RIGHTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHTMOST_DESCENDANT;
 
 	/**
 	 * The feature id for the '<em><b>Precedence</b></em>' reference.
@@ -1076,7 +942,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__PRECEDENCE = EssentialOCLCSPackage.EXP_CS__PRECEDENCE;
+	int MO_CCML_EXPRESSION__PRECEDENCE = EssentialOCLCSPackage.EXP_CS__PRECEDENCE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1085,7 +951,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__TYPE = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
+	int MO_CCML_EXPRESSION__TYPE = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -1094,26 +960,26 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION__PARAMETERS = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 1;
+	int MO_CCML_EXPRESSION__PARAMETERS = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>ECL Expression</em>' class.
+	 * The number of structural features of the '<em>Mo CCML Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EXPRESSION_FEATURE_COUNT = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 2;
+	int MO_CCML_EXPRESSION_FEATURE_COUNT = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLDefCSImpl <em>ECL Def CS</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDefCSImpl <em>Mo CCML Mapping Def CS</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLDefCSImpl
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLDefCS()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDefCSImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingDefCS()
 	 * @generated
 	 */
-	int ECL_DEF_CS = 8;
+	int MO_CCML_MAPPING_DEF_CS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -1122,7 +988,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__CSI = CompleteOCLCSPackage.DEF_PROPERTY_CS__CSI;
+	int MO_CCML_MAPPING_DEF_CS__CSI = CompleteOCLCSPackage.DEF_PROPERTY_CS__CSI;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -1131,7 +997,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__PARENT = CompleteOCLCSPackage.DEF_PROPERTY_CS__PARENT;
+	int MO_CCML_MAPPING_DEF_CS__PARENT = CompleteOCLCSPackage.DEF_PROPERTY_CS__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Pivot</b></em>' reference.
@@ -1140,7 +1006,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__PIVOT = CompleteOCLCSPackage.DEF_PROPERTY_CS__PIVOT;
+	int MO_CCML_MAPPING_DEF_CS__PIVOT = CompleteOCLCSPackage.DEF_PROPERTY_CS__PIVOT;
 
 	/**
 	 * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
@@ -1149,7 +1015,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__ORIGINAL_XMI_ID = CompleteOCLCSPackage.DEF_PROPERTY_CS__ORIGINAL_XMI_ID;
+	int MO_CCML_MAPPING_DEF_CS__ORIGINAL_XMI_ID = CompleteOCLCSPackage.DEF_PROPERTY_CS__ORIGINAL_XMI_ID;
 
 	/**
 	 * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
@@ -1158,7 +1024,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__OWNED_ANNOTATIONS = CompleteOCLCSPackage.DEF_PROPERTY_CS__OWNED_ANNOTATIONS;
+	int MO_CCML_MAPPING_DEF_CS__OWNED_ANNOTATIONS = CompleteOCLCSPackage.DEF_PROPERTY_CS__OWNED_ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1167,7 +1033,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__NAME = CompleteOCLCSPackage.DEF_PROPERTY_CS__NAME;
+	int MO_CCML_MAPPING_DEF_CS__NAME = CompleteOCLCSPackage.DEF_PROPERTY_CS__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is Optional</b></em>' attribute.
@@ -1176,7 +1042,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__IS_OPTIONAL = CompleteOCLCSPackage.DEF_PROPERTY_CS__IS_OPTIONAL;
+	int MO_CCML_MAPPING_DEF_CS__IS_OPTIONAL = CompleteOCLCSPackage.DEF_PROPERTY_CS__IS_OPTIONAL;
 
 	/**
 	 * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
@@ -1185,7 +1051,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__OWNED_TYPE = CompleteOCLCSPackage.DEF_PROPERTY_CS__OWNED_TYPE;
+	int MO_CCML_MAPPING_DEF_CS__OWNED_TYPE = CompleteOCLCSPackage.DEF_PROPERTY_CS__OWNED_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Qualifiers</b></em>' attribute list.
@@ -1194,7 +1060,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__QUALIFIERS = CompleteOCLCSPackage.DEF_PROPERTY_CS__QUALIFIERS;
+	int MO_CCML_MAPPING_DEF_CS__QUALIFIERS = CompleteOCLCSPackage.DEF_PROPERTY_CS__QUALIFIERS;
 
 	/**
 	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
@@ -1203,7 +1069,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__IS_STATIC = CompleteOCLCSPackage.DEF_PROPERTY_CS__IS_STATIC;
+	int MO_CCML_MAPPING_DEF_CS__IS_STATIC = CompleteOCLCSPackage.DEF_PROPERTY_CS__IS_STATIC;
 
 	/**
 	 * The feature id for the '<em><b>Owned Specification</b></em>' containment reference.
@@ -1212,7 +1078,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__OWNED_SPECIFICATION = CompleteOCLCSPackage.DEF_PROPERTY_CS__OWNED_SPECIFICATION;
+	int MO_CCML_MAPPING_DEF_CS__OWNED_SPECIFICATION = CompleteOCLCSPackage.DEF_PROPERTY_CS__OWNED_SPECIFICATION;
 
 	/**
 	 * The feature id for the '<em><b>Owning Classifier Context Decl</b></em>' container reference.
@@ -1221,7 +1087,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__OWNING_CLASSIFIER_CONTEXT_DECL = CompleteOCLCSPackage.DEF_PROPERTY_CS__OWNING_CLASSIFIER_CONTEXT_DECL;
+	int MO_CCML_MAPPING_DEF_CS__OWNING_CLASSIFIER_CONTEXT_DECL = CompleteOCLCSPackage.DEF_PROPERTY_CS__OWNING_CLASSIFIER_CONTEXT_DECL;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1230,7 +1096,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__CONDITION = CompleteOCLCSPackage.DEF_PROPERTY_CS_FEATURE_COUNT + 0;
+	int MO_CCML_MAPPING_DEF_CS__CONDITION = CompleteOCLCSPackage.DEF_PROPERTY_CS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1239,16 +1105,16 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS__VISIBILITY = CompleteOCLCSPackage.DEF_PROPERTY_CS_FEATURE_COUNT + 1;
+	int MO_CCML_MAPPING_DEF_CS__VISIBILITY = CompleteOCLCSPackage.DEF_PROPERTY_CS_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>ECL Def CS</em>' class.
+	 * The number of structural features of the '<em>Mo CCML Mapping Def CS</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_DEF_CS_FEATURE_COUNT = CompleteOCLCSPackage.DEF_PROPERTY_CS_FEATURE_COUNT + 2;
+	int MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT = CompleteOCLCSPackage.DEF_PROPERTY_CS_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor <em>Base CS Visitor</em>}' class.
@@ -1258,7 +1124,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getBaseCSVisitor()
 	 * @generated
 	 */
-	int BASE_CS_VISITOR = 9;
+	int BASE_CS_VISITOR = 8;
 
 	/**
 	 * The number of structural features of the '<em>Base CS Visitor</em>' class.
@@ -1277,7 +1143,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getBlockType()
 	 * @generated
 	 */
-	int BLOCK_TYPE = 10;
+	int BLOCK_TYPE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -1334,14 +1200,14 @@ public interface MoCCMLmappingPackage extends EPackage {
 	int BLOCK_TYPE_FEATURE_COUNT = BaseCSPackage.TYPED_REF_CS_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLEventDefCSImpl <em>ECL Event Def CS</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingEventDefCSImpl <em>Mo CCML Mapping Event Def CS</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLEventDefCSImpl
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLEventDefCS()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingEventDefCSImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingEventDefCS()
 	 * @generated
 	 */
-	int ECL_EVENT_DEF_CS = 11;
+	int MO_CCML_MAPPING_EVENT_DEF_CS = 10;
 
 	/**
 	 * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -1350,7 +1216,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__CSI = ECL_DEF_CS__CSI;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__CSI = MO_CCML_MAPPING_DEF_CS__CSI;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -1359,7 +1225,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__PARENT = ECL_DEF_CS__PARENT;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__PARENT = MO_CCML_MAPPING_DEF_CS__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Pivot</b></em>' reference.
@@ -1368,7 +1234,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__PIVOT = ECL_DEF_CS__PIVOT;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__PIVOT = MO_CCML_MAPPING_DEF_CS__PIVOT;
 
 	/**
 	 * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
@@ -1377,7 +1243,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__ORIGINAL_XMI_ID = ECL_DEF_CS__ORIGINAL_XMI_ID;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__ORIGINAL_XMI_ID = MO_CCML_MAPPING_DEF_CS__ORIGINAL_XMI_ID;
 
 	/**
 	 * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
@@ -1386,7 +1252,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__OWNED_ANNOTATIONS = ECL_DEF_CS__OWNED_ANNOTATIONS;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__OWNED_ANNOTATIONS = MO_CCML_MAPPING_DEF_CS__OWNED_ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1395,7 +1261,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__NAME = ECL_DEF_CS__NAME;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__NAME = MO_CCML_MAPPING_DEF_CS__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is Optional</b></em>' attribute.
@@ -1404,7 +1270,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__IS_OPTIONAL = ECL_DEF_CS__IS_OPTIONAL;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__IS_OPTIONAL = MO_CCML_MAPPING_DEF_CS__IS_OPTIONAL;
 
 	/**
 	 * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
@@ -1413,7 +1279,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__OWNED_TYPE = ECL_DEF_CS__OWNED_TYPE;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__OWNED_TYPE = MO_CCML_MAPPING_DEF_CS__OWNED_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Qualifiers</b></em>' attribute list.
@@ -1422,7 +1288,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__QUALIFIERS = ECL_DEF_CS__QUALIFIERS;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__QUALIFIERS = MO_CCML_MAPPING_DEF_CS__QUALIFIERS;
 
 	/**
 	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
@@ -1431,7 +1297,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__IS_STATIC = ECL_DEF_CS__IS_STATIC;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__IS_STATIC = MO_CCML_MAPPING_DEF_CS__IS_STATIC;
 
 	/**
 	 * The feature id for the '<em><b>Owned Specification</b></em>' containment reference.
@@ -1440,7 +1306,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__OWNED_SPECIFICATION = ECL_DEF_CS__OWNED_SPECIFICATION;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__OWNED_SPECIFICATION = MO_CCML_MAPPING_DEF_CS__OWNED_SPECIFICATION;
 
 	/**
 	 * The feature id for the '<em><b>Owning Classifier Context Decl</b></em>' container reference.
@@ -1449,7 +1315,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__OWNING_CLASSIFIER_CONTEXT_DECL = ECL_DEF_CS__OWNING_CLASSIFIER_CONTEXT_DECL;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__OWNING_CLASSIFIER_CONTEXT_DECL = MO_CCML_MAPPING_DEF_CS__OWNING_CLASSIFIER_CONTEXT_DECL;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1458,7 +1324,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__CONDITION = ECL_DEF_CS__CONDITION;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__CONDITION = MO_CCML_MAPPING_DEF_CS__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1467,7 +1333,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__VISIBILITY = ECL_DEF_CS__VISIBILITY;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__VISIBILITY = MO_CCML_MAPPING_DEF_CS__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Feedback</b></em>' containment reference.
@@ -1476,7 +1342,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__FEEDBACK = ECL_DEF_CS_FEATURE_COUNT + 0;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK = MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Future</b></em>' containment reference.
@@ -1485,7 +1351,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__FUTURE = ECL_DEF_CS_FEATURE_COUNT + 1;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE = MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Dsa Result Name</b></em>' attribute.
@@ -1494,26 +1360,26 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS__DSA_RESULT_NAME = ECL_DEF_CS_FEATURE_COUNT + 2;
+	int MO_CCML_MAPPING_EVENT_DEF_CS__DSA_RESULT_NAME = MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>ECL Event Def CS</em>' class.
+	 * The number of structural features of the '<em>Mo CCML Mapping Event Def CS</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_EVENT_DEF_CS_FEATURE_COUNT = ECL_DEF_CS_FEATURE_COUNT + 3;
+	int MO_CCML_MAPPING_EVENT_DEF_CS_FEATURE_COUNT = MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT + 3;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLBlockDefCSImpl <em>ECL Block Def CS</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingBlockDefCSImpl <em>Mo CCML Mapping Block Def CS</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLBlockDefCSImpl
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLBlockDefCS()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingBlockDefCSImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingBlockDefCS()
 	 * @generated
 	 */
-	int ECL_BLOCK_DEF_CS = 12;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS = 11;
 
 	/**
 	 * The feature id for the '<em><b>Csi</b></em>' attribute.
@@ -1522,7 +1388,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__CSI = ECL_DEF_CS__CSI;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__CSI = MO_CCML_MAPPING_DEF_CS__CSI;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -1531,7 +1397,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__PARENT = ECL_DEF_CS__PARENT;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__PARENT = MO_CCML_MAPPING_DEF_CS__PARENT;
 
 	/**
 	 * The feature id for the '<em><b>Pivot</b></em>' reference.
@@ -1540,7 +1406,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__PIVOT = ECL_DEF_CS__PIVOT;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__PIVOT = MO_CCML_MAPPING_DEF_CS__PIVOT;
 
 	/**
 	 * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
@@ -1549,7 +1415,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__ORIGINAL_XMI_ID = ECL_DEF_CS__ORIGINAL_XMI_ID;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__ORIGINAL_XMI_ID = MO_CCML_MAPPING_DEF_CS__ORIGINAL_XMI_ID;
 
 	/**
 	 * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
@@ -1558,7 +1424,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__OWNED_ANNOTATIONS = ECL_DEF_CS__OWNED_ANNOTATIONS;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__OWNED_ANNOTATIONS = MO_CCML_MAPPING_DEF_CS__OWNED_ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1567,7 +1433,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__NAME = ECL_DEF_CS__NAME;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__NAME = MO_CCML_MAPPING_DEF_CS__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is Optional</b></em>' attribute.
@@ -1576,7 +1442,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__IS_OPTIONAL = ECL_DEF_CS__IS_OPTIONAL;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__IS_OPTIONAL = MO_CCML_MAPPING_DEF_CS__IS_OPTIONAL;
 
 	/**
 	 * The feature id for the '<em><b>Owned Type</b></em>' containment reference.
@@ -1585,7 +1451,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__OWNED_TYPE = ECL_DEF_CS__OWNED_TYPE;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__OWNED_TYPE = MO_CCML_MAPPING_DEF_CS__OWNED_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Qualifiers</b></em>' attribute list.
@@ -1594,7 +1460,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__QUALIFIERS = ECL_DEF_CS__QUALIFIERS;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__QUALIFIERS = MO_CCML_MAPPING_DEF_CS__QUALIFIERS;
 
 	/**
 	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
@@ -1603,7 +1469,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__IS_STATIC = ECL_DEF_CS__IS_STATIC;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__IS_STATIC = MO_CCML_MAPPING_DEF_CS__IS_STATIC;
 
 	/**
 	 * The feature id for the '<em><b>Owned Specification</b></em>' containment reference.
@@ -1612,7 +1478,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__OWNED_SPECIFICATION = ECL_DEF_CS__OWNED_SPECIFICATION;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__OWNED_SPECIFICATION = MO_CCML_MAPPING_DEF_CS__OWNED_SPECIFICATION;
 
 	/**
 	 * The feature id for the '<em><b>Owning Classifier Context Decl</b></em>' container reference.
@@ -1621,7 +1487,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__OWNING_CLASSIFIER_CONTEXT_DECL = ECL_DEF_CS__OWNING_CLASSIFIER_CONTEXT_DECL;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__OWNING_CLASSIFIER_CONTEXT_DECL = MO_CCML_MAPPING_DEF_CS__OWNING_CLASSIFIER_CONTEXT_DECL;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1630,7 +1496,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__CONDITION = ECL_DEF_CS__CONDITION;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__CONDITION = MO_CCML_MAPPING_DEF_CS__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1639,7 +1505,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__VISIBILITY = ECL_DEF_CS__VISIBILITY;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__VISIBILITY = MO_CCML_MAPPING_DEF_CS__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Enter When</b></em>' containment reference.
@@ -1648,7 +1514,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__ENTER_WHEN = ECL_DEF_CS_FEATURE_COUNT + 0;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN = MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Leave When</b></em>' containment reference.
@@ -1657,16 +1523,234 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS__LEAVE_WHEN = ECL_DEF_CS_FEATURE_COUNT + 1;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN = MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>ECL Block Def CS</em>' class.
+	 * The number of structural features of the '<em>Mo CCML Mapping Block Def CS</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ECL_BLOCK_DEF_CS_FEATURE_COUNT = ECL_DEF_CS_FEATURE_COUNT + 2;
+	int MO_CCML_MAPPING_BLOCK_DEF_CS_FEATURE_COUNT = MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingTimeBaseImpl <em>Mo CCML Mapping Time Base</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingTimeBaseImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingTimeBase()
+	 * @generated
+	 */
+	int MO_CCML_MAPPING_TIME_BASE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Csi</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_TIME_BASE__CSI = BaseCSPackage.TYPED_REF_CS__CSI;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_TIME_BASE__PARENT = BaseCSPackage.TYPED_REF_CS__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Pivot</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_TIME_BASE__PIVOT = BaseCSPackage.TYPED_REF_CS__PIVOT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Multiplicity</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_TIME_BASE__OWNED_MULTIPLICITY = BaseCSPackage.TYPED_REF_CS__OWNED_MULTIPLICITY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_TIME_BASE__NAME = BaseCSPackage.TYPED_REF_CS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Time Base</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_TIME_BASE__TIME_BASE = BaseCSPackage.TYPED_REF_CS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Mo CCML Mapping Time Base</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_TIME_BASE_FEATURE_COUNT = BaseCSPackage.TYPED_REF_CS_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingPriorityImpl <em>Mo CCML Mapping Priority</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingPriorityImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingPriority()
+	 * @generated
+	 */
+	int MO_CCML_MAPPING_PRIORITY = 13;
+
+	/**
+	 * The feature id for the '<em><b>Csi</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__CSI = EssentialOCLCSPackage.EXP_CS__CSI;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__PARENT = EssentialOCLCSPackage.EXP_CS__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Pivot</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__PIVOT = EssentialOCLCSPackage.EXP_CS__PIVOT;
+
+	/**
+	 * The feature id for the '<em><b>Original Xmi Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__ORIGINAL_XMI_ID = EssentialOCLCSPackage.EXP_CS__ORIGINAL_XMI_ID;
+
+	/**
+	 * The feature id for the '<em><b>Owned Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__OWNED_ANNOTATIONS = EssentialOCLCSPackage.EXP_CS__OWNED_ANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Has Error</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__HAS_ERROR = EssentialOCLCSPackage.EXP_CS__HAS_ERROR;
+
+	/**
+	 * The feature id for the '<em><b>Local Left</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__LOCAL_LEFT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Local Leftmost Descendant</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__LOCAL_LEFTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_LEFTMOST_DESCENDANT;
+
+	/**
+	 * The feature id for the '<em><b>Local Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__LOCAL_PARENT = EssentialOCLCSPackage.EXP_CS__LOCAL_PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Local Right</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__LOCAL_RIGHT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHT;
+
+	/**
+	 * The feature id for the '<em><b>Local Rightmost Descendant</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__LOCAL_RIGHTMOST_DESCENDANT = EssentialOCLCSPackage.EXP_CS__LOCAL_RIGHTMOST_DESCENDANT;
+
+	/**
+	 * The feature id for the '<em><b>Precedence</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__PRECEDENCE = EssentialOCLCSPackage.EXP_CS__PRECEDENCE;
+
+	/**
+	 * The feature id for the '<em><b>Higher</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__HIGHER = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Lower</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY__LOWER = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Mo CCML Mapping Priority</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MO_CCML_MAPPING_PRIORITY_FEATURE_COUNT = EssentialOCLCSPackage.EXP_CS_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind <em>Event Kind</em>}' enum.
@@ -1676,7 +1760,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getEventKind()
 	 * @generated
 	 */
-	int EVENT_KIND = 13;
+	int EVENT_KIND = 14;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.Visibility <em>Visibility</em>}' enum.
@@ -1686,7 +1770,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 14;
+	int VISIBILITY = 15;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.FeedBackKind <em>Feed Back Kind</em>}' enum.
@@ -1696,7 +1780,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getFeedBackKind()
 	 * @generated
 	 */
-	int FEED_BACK_KIND = 15;
+	int FEED_BACK_KIND = 16;
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType <em>Event Type</em>}'.
@@ -1709,17 +1793,6 @@ public interface MoCCMLmappingPackage extends EPackage {
 	EClass getEventType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType#getName()
-	 * @see #getEventType()
-	 * @generated
-	 */
-	EAttribute getEventType_Name();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType#getReferedElement <em>Refered Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1729,6 +1802,17 @@ public interface MoCCMLmappingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEventType_ReferedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType#getName()
+	 * @see #getEventType()
+	 * @generated
+	 */
+	EAttribute getEventType_Name();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback <em>DSA Feedback</em>}'.
@@ -1817,89 +1901,68 @@ public interface MoCCMLmappingPackage extends EPackage {
 	EAttribute getCase_KindOfFeedback();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument <em>ECL Document</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument <em>Mo CCML Mapping Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ECL Document</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument
+	 * @return the meta object for class '<em>Mo CCML Mapping Document</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument
 	 * @generated
 	 */
-	EClass getECLDocument();
+	EClass getMoCCMLMappingDocument();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument#getImports <em>Imports</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument#getImports <em>Imports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Imports</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument#getImports()
-	 * @see #getECLDocument()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument#getImports()
+	 * @see #getMoCCMLMappingDocument()
 	 * @generated
 	 */
-	EReference getECLDocument_Imports();
+	EReference getMoCCMLMappingDocument_Imports();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp <em>Event Literal Exp</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation <em>Mo CCML Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Event Literal Exp</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp
+	 * @return the meta object for class '<em>Mo CCML Relation</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation
 	 * @generated
 	 */
-	EClass getEventLiteralExp();
+	EClass getMoCCMLRelation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp#getValue()
-	 * @see #getEventLiteralExp()
-	 * @generated
-	 */
-	EAttribute getEventLiteralExp_Value();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation <em>ECL Relation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ECL Relation</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation
-	 * @generated
-	 */
-	EClass getECLRelation();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#getType <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#getType()
-	 * @see #getECLRelation()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation#getType()
+	 * @see #getMoCCMLRelation()
 	 * @generated
 	 */
-	EReference getECLRelation_Type();
+	EReference getMoCCMLRelation_Type();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#getParameters()
-	 * @see #getECLRelation()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation#getParameters()
+	 * @see #getMoCCMLRelation()
 	 * @generated
 	 */
-	EReference getECLRelation_Parameters();
+	EReference getMoCCMLRelation_Parameters();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#isIsAnAssertion <em>Is An Assertion</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation#isIsAnAssertion <em>Is An Assertion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is An Assertion</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation#isIsAnAssertion()
-	 * @see #getECLRelation()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation#isIsAnAssertion()
+	 * @see #getMoCCMLRelation()
 	 * @generated
 	 */
-	EAttribute getECLRelation_IsAnAssertion();
+	EAttribute getMoCCMLRelation_IsAnAssertion();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement <em>Import Statement</em>}'.
@@ -1923,68 +1986,68 @@ public interface MoCCMLmappingPackage extends EPackage {
 	EAttribute getImportStatement_ImportURI();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression <em>ECL Expression</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression <em>Mo CCML Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ECL Expression</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression
+	 * @return the meta object for class '<em>Mo CCML Expression</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression
 	 * @generated
 	 */
-	EClass getECLExpression();
+	EClass getMoCCMLExpression();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression#getType <em>Type</em>}'.
+	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression#getType()
-	 * @see #getECLExpression()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression#getType()
+	 * @see #getMoCCMLExpression()
 	 * @generated
 	 */
-	EReference getECLExpression_Type();
+	EReference getMoCCMLExpression_Type();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression#getParameters()
-	 * @see #getECLExpression()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression#getParameters()
+	 * @see #getMoCCMLExpression()
 	 * @generated
 	 */
-	EReference getECLExpression_Parameters();
+	EReference getMoCCMLExpression_Parameters();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS <em>ECL Def CS</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS <em>Mo CCML Mapping Def CS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ECL Def CS</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS
+	 * @return the meta object for class '<em>Mo CCML Mapping Def CS</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS
 	 * @generated
 	 */
-	EClass getECLDefCS();
+	EClass getMoCCMLMappingDefCS();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS#getCondition <em>Condition</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Condition</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS#getCondition()
-	 * @see #getECLDefCS()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS#getCondition()
+	 * @see #getMoCCMLMappingDefCS()
 	 * @generated
 	 */
-	EReference getECLDefCS_Condition();
+	EReference getMoCCMLMappingDefCS_Condition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS#getVisibility <em>Visibility</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS#getVisibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Visibility</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS#getVisibility()
-	 * @see #getECLDefCS()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS#getVisibility()
+	 * @see #getMoCCMLMappingDefCS()
 	 * @generated
 	 */
-	EAttribute getECLDefCS_Visibility();
+	EAttribute getMoCCMLMappingDefCS_Visibility();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor <em>Base CS Visitor</em>}'.
@@ -2019,79 +2082,143 @@ public interface MoCCMLmappingPackage extends EPackage {
 	EAttribute getBlockType_Name();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS <em>ECL Event Def CS</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS <em>Mo CCML Mapping Event Def CS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ECL Event Def CS</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS
+	 * @return the meta object for class '<em>Mo CCML Mapping Event Def CS</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS
 	 * @generated
 	 */
-	EClass getECLEventDefCS();
+	EClass getMoCCMLMappingEventDefCS();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getFeedback <em>Feedback</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getFeedback <em>Feedback</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Feedback</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getFeedback()
-	 * @see #getECLEventDefCS()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getFeedback()
+	 * @see #getMoCCMLMappingEventDefCS()
 	 * @generated
 	 */
-	EReference getECLEventDefCS_Feedback();
+	EReference getMoCCMLMappingEventDefCS_Feedback();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getFuture <em>Future</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getFuture <em>Future</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Future</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getFuture()
-	 * @see #getECLEventDefCS()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getFuture()
+	 * @see #getMoCCMLMappingEventDefCS()
 	 * @generated
 	 */
-	EReference getECLEventDefCS_Future();
+	EReference getMoCCMLMappingEventDefCS_Future();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getDsaResultName <em>Dsa Result Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getDsaResultName <em>Dsa Result Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Dsa Result Name</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS#getDsaResultName()
-	 * @see #getECLEventDefCS()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS#getDsaResultName()
+	 * @see #getMoCCMLMappingEventDefCS()
 	 * @generated
 	 */
-	EAttribute getECLEventDefCS_DsaResultName();
+	EAttribute getMoCCMLMappingEventDefCS_DsaResultName();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS <em>ECL Block Def CS</em>}'.
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS <em>Mo CCML Mapping Block Def CS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>ECL Block Def CS</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS
+	 * @return the meta object for class '<em>Mo CCML Mapping Block Def CS</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS
 	 * @generated
 	 */
-	EClass getECLBlockDefCS();
+	EClass getMoCCMLMappingBlockDefCS();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS#getEnterWhen <em>Enter When</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS#getEnterWhen <em>Enter When</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Enter When</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS#getEnterWhen()
-	 * @see #getECLBlockDefCS()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS#getEnterWhen()
+	 * @see #getMoCCMLMappingBlockDefCS()
 	 * @generated
 	 */
-	EReference getECLBlockDefCS_EnterWhen();
+	EReference getMoCCMLMappingBlockDefCS_EnterWhen();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS#getLeaveWhen <em>Leave When</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS#getLeaveWhen <em>Leave When</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Leave When</em>'.
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS#getLeaveWhen()
-	 * @see #getECLBlockDefCS()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS#getLeaveWhen()
+	 * @see #getMoCCMLMappingBlockDefCS()
 	 * @generated
 	 */
-	EReference getECLBlockDefCS_LeaveWhen();
+	EReference getMoCCMLMappingBlockDefCS_LeaveWhen();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase <em>Mo CCML Mapping Time Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mo CCML Mapping Time Base</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase
+	 * @generated
+	 */
+	EClass getMoCCMLMappingTimeBase();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase#getName()
+	 * @see #getMoCCMLMappingTimeBase()
+	 * @generated
+	 */
+	EAttribute getMoCCMLMappingTimeBase_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase#getTimeBase <em>Time Base</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Time Base</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase#getTimeBase()
+	 * @see #getMoCCMLMappingTimeBase()
+	 * @generated
+	 */
+	EReference getMoCCMLMappingTimeBase_TimeBase();
+
+	/**
+	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority <em>Mo CCML Mapping Priority</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mo CCML Mapping Priority</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority
+	 * @generated
+	 */
+	EClass getMoCCMLMappingPriority();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority#getHigher <em>Higher</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Higher</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority#getHigher()
+	 * @see #getMoCCMLMappingPriority()
+	 * @generated
+	 */
+	EReference getMoCCMLMappingPriority_Higher();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority#getLower <em>Lower</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Lower</em>'.
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority#getLower()
+	 * @see #getMoCCMLMappingPriority()
+	 * @generated
+	 */
+	EReference getMoCCMLMappingPriority_Lower();
 
 	/**
 	 * Returns the meta object for enum '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind <em>Event Kind</em>}'.
@@ -2156,20 +2283,20 @@ public interface MoCCMLmappingPackage extends EPackage {
 		EClass EVENT_TYPE = eINSTANCE.getEventType();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EVENT_TYPE__NAME = eINSTANCE.getEventType_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Refered Element</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute EVENT_TYPE__REFERED_ELEMENT = eINSTANCE.getEventType_ReferedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EVENT_TYPE__NAME = eINSTANCE.getEventType_Name();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.DSAFeedbackImpl <em>DSA Feedback</em>}' class.
@@ -2240,14 +2367,14 @@ public interface MoCCMLmappingPackage extends EPackage {
 		EAttribute CASE__KIND_OF_FEEDBACK = eINSTANCE.getCase_KindOfFeedback();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLDocumentImpl <em>ECL Document</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDocumentImpl <em>Mo CCML Mapping Document</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLDocumentImpl
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLDocument()
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDocumentImpl
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingDocument()
 		 * @generated
 		 */
-		EClass ECL_DOCUMENT = eINSTANCE.getECLDocument();
+		EClass MO_CCML_MAPPING_DOCUMENT = eINSTANCE.getMoCCMLMappingDocument();
 
 		/**
 		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
@@ -2255,35 +2382,17 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECL_DOCUMENT__IMPORTS = eINSTANCE.getECLDocument_Imports();
+		EReference MO_CCML_MAPPING_DOCUMENT__IMPORTS = eINSTANCE.getMoCCMLMappingDocument_Imports();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.EventLiteralExpImpl <em>Event Literal Exp</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLRelationImpl <em>Mo CCML Relation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.EventLiteralExpImpl
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getEventLiteralExp()
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLRelationImpl
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLRelation()
 		 * @generated
 		 */
-		EClass EVENT_LITERAL_EXP = eINSTANCE.getEventLiteralExp();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EVENT_LITERAL_EXP__VALUE = eINSTANCE.getEventLiteralExp_Value();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLRelationImpl <em>ECL Relation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLRelationImpl
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLRelation()
-		 * @generated
-		 */
-		EClass ECL_RELATION = eINSTANCE.getECLRelation();
+		EClass MO_CCML_RELATION = eINSTANCE.getMoCCMLRelation();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
@@ -2291,7 +2400,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECL_RELATION__TYPE = eINSTANCE.getECLRelation_Type();
+		EReference MO_CCML_RELATION__TYPE = eINSTANCE.getMoCCMLRelation_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
@@ -2299,7 +2408,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECL_RELATION__PARAMETERS = eINSTANCE.getECLRelation_Parameters();
+		EReference MO_CCML_RELATION__PARAMETERS = eINSTANCE.getMoCCMLRelation_Parameters();
 
 		/**
 		 * The meta object literal for the '<em><b>Is An Assertion</b></em>' attribute feature.
@@ -2307,7 +2416,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECL_RELATION__IS_AN_ASSERTION = eINSTANCE.getECLRelation_IsAnAssertion();
+		EAttribute MO_CCML_RELATION__IS_AN_ASSERTION = eINSTANCE.getMoCCMLRelation_IsAnAssertion();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ImportStatementImpl <em>Import Statement</em>}' class.
@@ -2328,14 +2437,14 @@ public interface MoCCMLmappingPackage extends EPackage {
 		EAttribute IMPORT_STATEMENT__IMPORT_URI = eINSTANCE.getImportStatement_ImportURI();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLExpressionImpl <em>ECL Expression</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLExpressionImpl <em>Mo CCML Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLExpressionImpl
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLExpression()
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLExpressionImpl
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLExpression()
 		 * @generated
 		 */
-		EClass ECL_EXPRESSION = eINSTANCE.getECLExpression();
+		EClass MO_CCML_EXPRESSION = eINSTANCE.getMoCCMLExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
@@ -2343,7 +2452,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECL_EXPRESSION__TYPE = eINSTANCE.getECLExpression_Type();
+		EReference MO_CCML_EXPRESSION__TYPE = eINSTANCE.getMoCCMLExpression_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
@@ -2351,17 +2460,17 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECL_EXPRESSION__PARAMETERS = eINSTANCE.getECLExpression_Parameters();
+		EReference MO_CCML_EXPRESSION__PARAMETERS = eINSTANCE.getMoCCMLExpression_Parameters();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLDefCSImpl <em>ECL Def CS</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDefCSImpl <em>Mo CCML Mapping Def CS</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLDefCSImpl
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLDefCS()
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDefCSImpl
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingDefCS()
 		 * @generated
 		 */
-		EClass ECL_DEF_CS = eINSTANCE.getECLDefCS();
+		EClass MO_CCML_MAPPING_DEF_CS = eINSTANCE.getMoCCMLMappingDefCS();
 
 		/**
 		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
@@ -2369,7 +2478,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECL_DEF_CS__CONDITION = eINSTANCE.getECLDefCS_Condition();
+		EReference MO_CCML_MAPPING_DEF_CS__CONDITION = eINSTANCE.getMoCCMLMappingDefCS_Condition();
 
 		/**
 		 * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
@@ -2377,7 +2486,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECL_DEF_CS__VISIBILITY = eINSTANCE.getECLDefCS_Visibility();
+		EAttribute MO_CCML_MAPPING_DEF_CS__VISIBILITY = eINSTANCE.getMoCCMLMappingDefCS_Visibility();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor <em>Base CS Visitor</em>}' class.
@@ -2408,14 +2517,14 @@ public interface MoCCMLmappingPackage extends EPackage {
 		EAttribute BLOCK_TYPE__NAME = eINSTANCE.getBlockType_Name();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLEventDefCSImpl <em>ECL Event Def CS</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingEventDefCSImpl <em>Mo CCML Mapping Event Def CS</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLEventDefCSImpl
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLEventDefCS()
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingEventDefCSImpl
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingEventDefCS()
 		 * @generated
 		 */
-		EClass ECL_EVENT_DEF_CS = eINSTANCE.getECLEventDefCS();
+		EClass MO_CCML_MAPPING_EVENT_DEF_CS = eINSTANCE.getMoCCMLMappingEventDefCS();
 
 		/**
 		 * The meta object literal for the '<em><b>Feedback</b></em>' containment reference feature.
@@ -2423,7 +2532,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECL_EVENT_DEF_CS__FEEDBACK = eINSTANCE.getECLEventDefCS_Feedback();
+		EReference MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK = eINSTANCE.getMoCCMLMappingEventDefCS_Feedback();
 
 		/**
 		 * The meta object literal for the '<em><b>Future</b></em>' containment reference feature.
@@ -2431,7 +2540,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECL_EVENT_DEF_CS__FUTURE = eINSTANCE.getECLEventDefCS_Future();
+		EReference MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE = eINSTANCE.getMoCCMLMappingEventDefCS_Future();
 
 		/**
 		 * The meta object literal for the '<em><b>Dsa Result Name</b></em>' attribute feature.
@@ -2439,17 +2548,17 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ECL_EVENT_DEF_CS__DSA_RESULT_NAME = eINSTANCE.getECLEventDefCS_DsaResultName();
+		EAttribute MO_CCML_MAPPING_EVENT_DEF_CS__DSA_RESULT_NAME = eINSTANCE.getMoCCMLMappingEventDefCS_DsaResultName();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLBlockDefCSImpl <em>ECL Block Def CS</em>}' class.
+		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingBlockDefCSImpl <em>Mo CCML Mapping Block Def CS</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLBlockDefCSImpl
-		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getECLBlockDefCS()
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingBlockDefCSImpl
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingBlockDefCS()
 		 * @generated
 		 */
-		EClass ECL_BLOCK_DEF_CS = eINSTANCE.getECLBlockDefCS();
+		EClass MO_CCML_MAPPING_BLOCK_DEF_CS = eINSTANCE.getMoCCMLMappingBlockDefCS();
 
 		/**
 		 * The meta object literal for the '<em><b>Enter When</b></em>' containment reference feature.
@@ -2457,7 +2566,7 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECL_BLOCK_DEF_CS__ENTER_WHEN = eINSTANCE.getECLBlockDefCS_EnterWhen();
+		EReference MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN = eINSTANCE.getMoCCMLMappingBlockDefCS_EnterWhen();
 
 		/**
 		 * The meta object literal for the '<em><b>Leave When</b></em>' containment reference feature.
@@ -2465,7 +2574,59 @@ public interface MoCCMLmappingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ECL_BLOCK_DEF_CS__LEAVE_WHEN = eINSTANCE.getECLBlockDefCS_LeaveWhen();
+		EReference MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN = eINSTANCE.getMoCCMLMappingBlockDefCS_LeaveWhen();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingTimeBaseImpl <em>Mo CCML Mapping Time Base</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingTimeBaseImpl
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingTimeBase()
+		 * @generated
+		 */
+		EClass MO_CCML_MAPPING_TIME_BASE = eINSTANCE.getMoCCMLMappingTimeBase();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MO_CCML_MAPPING_TIME_BASE__NAME = eINSTANCE.getMoCCMLMappingTimeBase_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Base</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MO_CCML_MAPPING_TIME_BASE__TIME_BASE = eINSTANCE.getMoCCMLMappingTimeBase_TimeBase();
+
+		/**
+		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingPriorityImpl <em>Mo CCML Mapping Priority</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingPriorityImpl
+		 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingPriority()
+		 * @generated
+		 */
+		EClass MO_CCML_MAPPING_PRIORITY = eINSTANCE.getMoCCMLMappingPriority();
+
+		/**
+		 * The meta object literal for the '<em><b>Higher</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MO_CCML_MAPPING_PRIORITY__HIGHER = eINSTANCE.getMoCCMLMappingPriority_Higher();
+
+		/**
+		 * The meta object literal for the '<em><b>Lower</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MO_CCML_MAPPING_PRIORITY__LOWER = eINSTANCE.getMoCCMLMappingPriority_Lower();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind <em>Event Kind</em>}' enum.

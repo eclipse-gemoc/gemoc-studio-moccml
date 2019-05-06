@@ -18,11 +18,11 @@ package org.eclipse.gemoc.moccml.mapping.xtext.cs2pivot;
 
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
 import org.eclipse.ocl.pivot.AnyType;
 import org.eclipse.ocl.pivot.Element;
 import org.eclipse.ocl.pivot.OCLExpression;
@@ -32,7 +32,6 @@ import org.eclipse.ocl.pivot.Parameter;
 import org.eclipse.ocl.pivot.PivotFactory;
 import org.eclipse.ocl.pivot.PivotPackage;
 import org.eclipse.ocl.pivot.PrimitiveType;
-import org.eclipse.ocl.pivot.StringLiteralExp;
 import org.eclipse.ocl.pivot.Type;
 import org.eclipse.ocl.pivot.TypedElement;
 import org.eclipse.ocl.pivot.utilities.MetamodelManager;
@@ -55,21 +54,21 @@ public class ECLLeft2RightVisitor
 	}
 
 
-	@Override
-	public Element visitEventLiteralExp(EventLiteralExp eventLiteralExp)
-	{
-		StringLiteralExp expression = context.refreshModelElement(StringLiteralExp.class, PivotPackage.Literals.STRING_LITERAL_EXP, eventLiteralExp);
-		expression.setName(eventLiteralExp.getValue().getLiteral());
-		expression.setStringSymbol(eventLiteralExp.getValue().getLiteral());
-		context.installPivotUsage(eventLiteralExp, expression);
-		//super.visitEventLiteralExp(eventLiteralExpImpl);
-		return expression;
-	}
+//	@Override
+//	public Element visitEventLiteralExp(EventLiteralExp eventLiteralExp)
+//	{
+//		StringLiteralExp expression = context.refreshModelElement(StringLiteralExp.class, PivotPackage.Literals.STRING_LITERAL_EXP, eventLiteralExp);
+//		expression.setName(eventLiteralExp.getValue().getLiteral());
+//		expression.setStringSymbol(eventLiteralExp.getValue().getLiteral());
+//		context.installPivotUsage(eventLiteralExp, expression);
+//		//super.visitEventLiteralExp(eventLiteralExpImpl);
+//		return expression;
+//	}
 
 	
 
 	@Override
-	public Element visitECLRelation(ECLRelation relation)
+	public Element visitMoCCMLRelation(MoCCMLRelation relation)
 	{	
 			ExpCS csExpression = relation;
 			OperationCallExp pivotSpecification = context.refreshModelElement(OperationCallExp.class,
@@ -84,7 +83,7 @@ public class ECLLeft2RightVisitor
 			if(rd.eIsProxy()){
 				 rd = (RelationDeclaration) EcoreUtil.resolve(relation.getType(), (ResourceSet)null);
 			}
-			pivotSpecification.setName("ECL_" +rd.getName());
+			pivotSpecification.setName("MoCCMLMapping_" +rd.getName());
 			pivotSpecification.getOwnedArguments().clear();
 			Operation rop = PivotFactory.eINSTANCE.createOperation();
 			pivotSpecification.setReferredOperation(rop);
@@ -122,10 +121,59 @@ public class ECLLeft2RightVisitor
 	}
 
 	
+	@Override
+	public Element visitMoCCMLMappingPriority(MoCCMLMappingPriority priority)
+	{	
+			ExpCS csExpression = priority;
+			OperationCallExp pivotSpecification = context.refreshModelElement(OperationCallExp.class,
+					PivotPackage.Literals.OPERATION_CALL_EXP, csExpression);
+			
+			
+			Type type = context.getEnvironmentFactory().getStandardLibrary().getBooleanType();
+			pivotSpecification.setType(type);
+			//pivotSpecification.setBooleanSymbol(true);
+			//EcoreUtil2.resolveLazyCrossReferences(relation.eResource(), null);
+			pivotSpecification.setName("MoCCMLMapping_Priority");
+			pivotSpecification.getOwnedArguments().clear();
+			Operation rop = PivotFactory.eINSTANCE.createOperation();
+			pivotSpecification.setReferredOperation(rop);
+			rop.setName(pivotSpecification.getName());
+			rop.setType(pivotSpecification.getType());
+			((PrimitiveType) type).getOwnedOperations().add(rop);
+			if (priority.getHigher() != null){
+				//most often a collection
+				ExpCS param = priority.getHigher();
+				Parameter p = PivotFactory.eINSTANCE.createParameter();
+		
+				ValueUtil.integerValueOf(0);
+				p.setType(((TypedElement)visit(param)).getType());
+				p.setName("anEventCollection");
+				rop.getOwnedParameters().add(p);
+				OCLExpression pivot = context.visitLeft2Right(OCLExpression.class, param);
+				pivotSpecification.getOwnedArguments().add(pivot);
+			}
+			if (priority.getLower() != null){
+				//most often a collection
+				ExpCS param = priority.getLower();
+				Parameter p = PivotFactory.eINSTANCE.createParameter();
+		
+				ValueUtil.integerValueOf(0);
+				p.setType(((TypedElement)visit(param)).getType());
+				p.setName("anEventCollection");
+				rop.getOwnedParameters().add(p);
+				OCLExpression pivot = context.visitLeft2Right(OCLExpression.class, param);
+				pivotSpecification.getOwnedArguments().add(pivot);
+			}
+		
+		context.setReferredOperation(pivotSpecification,rop);
+		context.installPivotUsage(priority, pivotSpecification);
+		return pivotSpecification;
+	}
+	
 
 	
 	@Override
-	public Element visitECLExpression(ECLExpression eclExpression) {
+	public Element visitMoCCMLExpression(MoCCMLExpression eclExpression) {
 		ExpCS csExpression = eclExpression;
 		OperationCallExp pivotSpecification = context.refreshModelElement(OperationCallExp.class,
 				PivotPackage.Literals.OPERATION_CALL_EXP, csExpression);
@@ -133,7 +181,7 @@ public class ECLLeft2RightVisitor
 		pivotSpecification.setType(type);
 		//pivotSpecification.setBooleanSymbol(true);
 		//EcoreUtil.resolveAll(eclExpression.eResource());
-		pivotSpecification.setName("ECL_" +eclExpression.getType().getName());
+		pivotSpecification.setName("MoCCMLMapping_" +eclExpression.getType().getName());
 		
 		pivotSpecification.getOwnedArguments().clear();
 		Operation rop = PivotFactory.eINSTANCE.createOperation();
@@ -165,37 +213,15 @@ public class ECLLeft2RightVisitor
 	}
 	
 	@Override
-	public Element visitECLDefCS(ECLDefCS eclDefCS){
-
-//		if(eclDefCS.getCondition()!=null){
-//		StringLiteralExp expression = context.refreshModelElement(StringLiteralExp.class, PivotPackage.Literals.STRING_LITERAL_EXP, eclDefCS.getCondition());
-//		expression.setName(eclDefCS.getName()+"_cond");
-//		expression.setStringSymbol(eclDefCS.getCondition().toString());
-//		context.installPivotUsage(eclDefCS, expression);
-//		return expression;
-//		}
-	
+	public Element visitMoCCMLMappingDefCS(MoCCMLMappingDefCS eclDefCS){
 		Element fromDefCS= PivotUtil.getPivot(OCLExpression.class, eclDefCS);
-	//	OCLExpression dsaFeedBack = context.visitLeft2Right(OCLExpression.class, eclDefCS.getFeedback());
-//		fromDefCS.allOwnedElements().add(condElem);
 		return fromDefCS;
-		
 	}
 	
 	@Override
 	public Element visitEventType(EventType object){
-
 		return null;
 	}
-	
-//	@Override
-//	public Element visitDSAFeedBack(DSAFeedback object){
-//		StringLiteralExp expression = context.refreshModelElement(StringLiteralExp.class, PivotPackage.Literals.STRING_LITERAL_EXP, object);
-//		expression.setName(object.getOwner().toString()+"_switch");
-//		expression.setStringSymbol(object.getOwner().toString()+"_switch");
-//		context.installPivotUsage(object, expression);
-//		//super.visitEventLiteralExp(eventLiteralExpImpl);
-//		return expression;
-//	}
+
 
 }

@@ -20,9 +20,9 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 import org.eclipse.ocl.pivot.IteratorExp;
 import org.eclipse.ocl.pivot.NamedElement;
@@ -66,7 +66,7 @@ public class helperNsURI {
 	    return null; 
 	}
 	
-	public String getpackageIndex(ECLDocument eclDoc, String objectName){
+	public String getpackageIndex(MoCCMLMappingDocument eclDoc, String objectName){
 		EList<PackageDeclarationCS> allpackages = eclDoc.getOwnedPackages();
 		
 		for(int i=0; i< allpackages.size(); i++){
@@ -113,7 +113,7 @@ public class helperNsURI {
  */
 	public ArrayList<LetExpCS> getAllLetExpParents(EObject root){
 		ArrayList<LetExpCS> tmpRes = new ArrayList<LetExpCS>();
-		if (root instanceof InfixExpCS && (! (root instanceof ECLRelation))){
+		if (root instanceof InfixExpCS && (! (root instanceof MoCCMLRelation))){
 			
 			while ((((ElementCS)root).getParent() != null ) && ! (((ElementCS)root).getParent() instanceof ContextDeclCS)){
 //				System.out.println(root);
@@ -182,7 +182,7 @@ public class helperNsURI {
 	}
 
 	public String prettyPrintButLast(ExpCS e) {
-		if (e instanceof ECLExpression){
+		if (e instanceof MoCCMLExpression){
 			return "self"; //is it sufficient to avoid doing bad stuff ?
 		}
 		String s=e.toString();
@@ -207,7 +207,7 @@ public class helperNsURI {
 		String rel="";
 		for (TreeIterator<EObject> iterator = e.eAllContents(); iterator.hasNext();) {
 			EObject eo = iterator.next();
-			if (eo instanceof ECLRelation){
+			if (eo instanceof MoCCMLRelation){
 				rel=eo.toString();
 				int end = rel.indexOf(')');
 				rel = rel.substring(0, end);
@@ -301,7 +301,7 @@ public class helperNsURI {
 
 	public String prettyPrintOnlyLast(ExpCS e) {
 		//System.out.println("==>"+e.toString());
-		if (e instanceof ECLExpression){
+		if (e instanceof MoCCMLExpression){
 			//System.out.println("   avoid dealing with instance of ecl expression ("+e.getClass().getName()+")");
 			return ""; //is it sufficient to avoid doing bad stuff ?
 		}
@@ -443,7 +443,7 @@ public class helperNsURI {
 		return e.substring(maxPositive(0,e.lastIndexOf('/')+1), e.lastIndexOf('.'));
 	}
 	
-	public String getModelPath(ECLDocument d){
+	public String getModelPath(MoCCMLMappingDocument d){
 		String res ="";
 			res = d.eResource().getURI().toFileString();
 		return res;
