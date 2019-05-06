@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl;
 
@@ -23,9 +25,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.Case;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
-import org.eclipse.gemoc.moccml.mapping.util.ECLVisitor;
+import org.eclipse.gemoc.moccml.mapping.util.MoCCMLMappingVisitor;
 import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
 import org.eclipse.ocl.xtext.completeoclcs.impl.DefPropertyCSImpl;
 
@@ -90,10 +92,10 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ECLEventDefCS getOwner() {
+	public MoCCMLMappingEventDefCS getOwner() {
 		if (eContainerFeatureID() != MoCCMLmappingPackage.DSA_FEEDBACK__OWNER)
 			return null;
-		return (ECLEventDefCS) eInternalContainer();
+		return (MoCCMLMappingEventDefCS) eInternalContainer();
 	}
 
 	/**
@@ -101,7 +103,7 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOwner(ECLEventDefCS newOwner, NotificationChain msgs) {
+	public NotificationChain basicSetOwner(MoCCMLMappingEventDefCS newOwner, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newOwner, MoCCMLmappingPackage.DSA_FEEDBACK__OWNER, msgs);
 		return msgs;
 	}
@@ -111,7 +113,7 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOwner(ECLEventDefCS newOwner) {
+	public void setOwner(MoCCMLMappingEventDefCS newOwner) {
 		if (newOwner != eInternalContainer()
 				|| (eContainerFeatureID() != MoCCMLmappingPackage.DSA_FEEDBACK__OWNER && newOwner != null)) {
 			if (EcoreUtil.isAncestor(this, newOwner))
@@ -120,8 +122,9 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwner != null)
-				msgs = ((InternalEObject) newOwner).eInverseAdd(this, MoCCMLmappingPackage.ECL_EVENT_DEF_CS__FEEDBACK,
-						ECLEventDefCS.class, msgs);
+				msgs = ((InternalEObject) newOwner).eInverseAdd(this,
+						MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK, MoCCMLMappingEventDefCS.class,
+						msgs);
 			msgs = basicSetOwner(newOwner, msgs);
 			if (msgs != null)
 				msgs.dispatch();
@@ -136,7 +139,7 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * @generated
 	 */
 	public <R> R accept(final BaseCSVisitor<R> visitor) {
-		return (R) visitor.getAdapter(ECLVisitor.class).visitDSAFeedBack(this);
+		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitDSAFeedBack(this);
 	}
 
 	/**
@@ -150,7 +153,7 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetOwner((ECLEventDefCS) otherEnd, msgs);
+			return basicSetOwner((MoCCMLMappingEventDefCS) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -180,8 +183,8 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
-			return eInternalContainer().eInverseRemove(this, MoCCMLmappingPackage.ECL_EVENT_DEF_CS__FEEDBACK,
-					ECLEventDefCS.class, msgs);
+			return eInternalContainer().eInverseRemove(this,
+					MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK, MoCCMLMappingEventDefCS.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -216,7 +219,7 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 			getCases().addAll((Collection<? extends Case>) newValue);
 			return;
 		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
-			setOwner((ECLEventDefCS) newValue);
+			setOwner((MoCCMLMappingEventDefCS) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -234,7 +237,7 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 			getCases().clear();
 			return;
 		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
-			setOwner((ECLEventDefCS) null);
+			setOwner((MoCCMLMappingEventDefCS) null);
 			return;
 		}
 		super.eUnset(featureID);

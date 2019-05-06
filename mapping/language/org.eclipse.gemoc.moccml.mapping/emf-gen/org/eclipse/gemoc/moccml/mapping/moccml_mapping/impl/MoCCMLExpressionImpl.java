@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl;
 
@@ -20,9 +22,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
-import org.eclipse.gemoc.moccml.mapping.util.ECLVisitor;
+import org.eclipse.gemoc.moccml.mapping.util.MoCCMLMappingVisitor;
 import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.impl.ExpCSImpl;
@@ -31,19 +33,19 @@ import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpre
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>ECL Expression</b></em>'.
+ * An implementation of the model object '<em><b>Mo CCML Expression</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLExpressionImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLExpressionImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLExpressionImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLExpressionImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
+public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -69,7 +71,7 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ECLExpressionImpl() {
+	protected MoCCMLExpressionImpl() {
 		super();
 	}
 
@@ -80,7 +82,7 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MoCCMLmappingPackage.Literals.ECL_EXPRESSION;
+		return MoCCMLmappingPackage.Literals.MO_CCML_EXPRESSION;
 	}
 
 	/**
@@ -94,8 +96,8 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 			type = (ExpressionDeclaration) eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MoCCMLmappingPackage.ECL_EXPRESSION__TYPE,
-							oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -119,8 +121,8 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 		ExpressionDeclaration oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.ECL_EXPRESSION__TYPE, oldType,
-					type));
+			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE,
+					oldType, type));
 	}
 
 	/**
@@ -131,7 +133,7 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 	public EList<ExpCS> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentEList<ExpCS>(ExpCS.class, this,
-					MoCCMLmappingPackage.ECL_EXPRESSION__PARAMETERS);
+					MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -142,7 +144,7 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 	 * @generated
 	 */
 	public <R> R accept(final BaseCSVisitor<R> visitor) {
-		return (R) visitor.getAdapter(ECLVisitor.class).visitECLExpression(this);
+		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLExpression(this);
 	}
 
 	/**
@@ -153,7 +155,7 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.ECL_EXPRESSION__PARAMETERS:
+		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS:
 			return ((InternalEList<?>) getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -167,11 +169,11 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.ECL_EXPRESSION__TYPE:
+		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE:
 			if (resolve)
 				return getType();
 			return basicGetType();
-		case MoCCMLmappingPackage.ECL_EXPRESSION__PARAMETERS:
+		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS:
 			return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -186,10 +188,10 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.ECL_EXPRESSION__TYPE:
+		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE:
 			setType((ExpressionDeclaration) newValue);
 			return;
-		case MoCCMLmappingPackage.ECL_EXPRESSION__PARAMETERS:
+		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS:
 			getParameters().clear();
 			getParameters().addAll((Collection<? extends ExpCS>) newValue);
 			return;
@@ -205,10 +207,10 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.ECL_EXPRESSION__TYPE:
+		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE:
 			setType((ExpressionDeclaration) null);
 			return;
-		case MoCCMLmappingPackage.ECL_EXPRESSION__PARAMETERS:
+		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS:
 			getParameters().clear();
 			return;
 		}
@@ -223,12 +225,12 @@ public class ECLExpressionImpl extends ExpCSImpl implements ECLExpression {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.ECL_EXPRESSION__TYPE:
+		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE:
 			return type != null;
-		case MoCCMLmappingPackage.ECL_EXPRESSION__PARAMETERS:
+		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS:
 			return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ECLExpressionImpl
+} //MoCCMLExpressionImpl

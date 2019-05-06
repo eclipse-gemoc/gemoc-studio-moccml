@@ -27,8 +27,16 @@ package	org.eclipse.gemoc.moccml.mapping.util;
 
 /**
  */
-public interface DecorableECLVisitor<R> extends ECLVisitor<R>, org.eclipse.ocl.xtext.completeoclcs.util.DecorableCompleteOCLCSVisitor<R>
+public abstract class AbstractMoCCMLMappingVisitor<R, C>
+ extends org.eclipse.ocl.xtext.completeoclcs.util.AbstractCompleteOCLCSVisitor<R, C>
+	implements MoCCMLMappingVisitor<R>
 {
-//	DecorableECLVisitor<R, C> createNestedVisitor();
-	void setUndecoratedVisitor(org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor<R> visitor);
+	/**
+	 * Initializes me with an initial value for my result.
+	 * 
+	 * @param context my initial result value
+	 */
+	protected AbstractMoCCMLMappingVisitor(C context) {
+	    super(context);
+	}
 }

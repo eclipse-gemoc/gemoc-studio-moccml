@@ -17,8 +17,8 @@
 package org.eclipse.gemoc.moccml.mapping.xtext.attributes;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
 import org.eclipse.ocl.pivot.IteratorExp;
 import org.eclipse.ocl.pivot.OCLExpression;
 import org.eclipse.ocl.pivot.OperationCallExp;
@@ -36,8 +36,8 @@ public class ECLExpressionAttribution extends AbstractAttribution
 
 	@Override
 	public ScopeView computeLookup(EObject target, EnvironmentView environmentView, ScopeView scopeView) {
-		if(target instanceof ECLRelation){
-			ECLRelation r = (ECLRelation)target;
+		if(target instanceof MoCCMLRelation){
+			MoCCMLRelation r = (MoCCMLRelation)target;
 			
 			OperationCallExp pivot = PivotUtil.getPivot(OperationCallExp.class, r);
 			if (pivot != null) {
@@ -64,7 +64,7 @@ public class ECLExpressionAttribution extends AbstractAttribution
 		}
 		else //instance of eclExpression
 			{
-			ECLExpression eclExpr = (ECLExpression)target;
+			MoCCMLExpression eclExpr = (MoCCMLExpression)target;
 				OperationCallExp pivot = PivotUtil.getPivot(OperationCallExp.class, eclExpr);
 				if (pivot != null) {
 					for(OCLExpression paramPivot : pivot.getOwnedArguments()){

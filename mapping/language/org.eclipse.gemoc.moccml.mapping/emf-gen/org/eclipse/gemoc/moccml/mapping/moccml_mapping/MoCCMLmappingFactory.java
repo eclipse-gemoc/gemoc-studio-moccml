@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping;
 
@@ -58,31 +60,22 @@ public interface MoCCMLmappingFactory extends EFactory {
 	Case createCase();
 
 	/**
-	 * Returns a new object of class '<em>ECL Document</em>'.
+	 * Returns a new object of class '<em>Mo CCML Mapping Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ECL Document</em>'.
+	 * @return a new object of class '<em>Mo CCML Mapping Document</em>'.
 	 * @generated
 	 */
-	ECLDocument createECLDocument();
+	MoCCMLMappingDocument createMoCCMLMappingDocument();
 
 	/**
-	 * Returns a new object of class '<em>Event Literal Exp</em>'.
+	 * Returns a new object of class '<em>Mo CCML Relation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Event Literal Exp</em>'.
+	 * @return a new object of class '<em>Mo CCML Relation</em>'.
 	 * @generated
 	 */
-	EventLiteralExp createEventLiteralExp();
-
-	/**
-	 * Returns a new object of class '<em>ECL Relation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ECL Relation</em>'.
-	 * @generated
-	 */
-	ECLRelation createECLRelation();
+	MoCCMLRelation createMoCCMLRelation();
 
 	/**
 	 * Returns a new object of class '<em>Import Statement</em>'.
@@ -94,13 +87,13 @@ public interface MoCCMLmappingFactory extends EFactory {
 	ImportStatement createImportStatement();
 
 	/**
-	 * Returns a new object of class '<em>ECL Expression</em>'.
+	 * Returns a new object of class '<em>Mo CCML Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ECL Expression</em>'.
+	 * @return a new object of class '<em>Mo CCML Expression</em>'.
 	 * @generated
 	 */
-	ECLExpression createECLExpression();
+	MoCCMLExpression createMoCCMLExpression();
 
 	/**
 	 * Returns a new object of class '<em>Block Type</em>'.
@@ -112,22 +105,40 @@ public interface MoCCMLmappingFactory extends EFactory {
 	BlockType createBlockType();
 
 	/**
-	 * Returns a new object of class '<em>ECL Event Def CS</em>'.
+	 * Returns a new object of class '<em>Mo CCML Mapping Event Def CS</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ECL Event Def CS</em>'.
+	 * @return a new object of class '<em>Mo CCML Mapping Event Def CS</em>'.
 	 * @generated
 	 */
-	ECLEventDefCS createECLEventDefCS();
+	MoCCMLMappingEventDefCS createMoCCMLMappingEventDefCS();
 
 	/**
-	 * Returns a new object of class '<em>ECL Block Def CS</em>'.
+	 * Returns a new object of class '<em>Mo CCML Mapping Block Def CS</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>ECL Block Def CS</em>'.
+	 * @return a new object of class '<em>Mo CCML Mapping Block Def CS</em>'.
 	 * @generated
 	 */
-	ECLBlockDefCS createECLBlockDefCS();
+	MoCCMLMappingBlockDefCS createMoCCMLMappingBlockDefCS();
+
+	/**
+	 * Returns a new object of class '<em>Mo CCML Mapping Time Base</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mo CCML Mapping Time Base</em>'.
+	 * @generated
+	 */
+	MoCCMLMappingTimeBase createMoCCMLMappingTimeBase();
+
+	/**
+	 * Returns a new object of class '<em>Mo CCML Mapping Priority</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mo CCML Mapping Priority</em>'.
+	 * @generated
+	 */
+	MoCCMLMappingPriority createMoCCMLMappingPriority();
 
 	/**
 	 * Returns the package supported by this factory.

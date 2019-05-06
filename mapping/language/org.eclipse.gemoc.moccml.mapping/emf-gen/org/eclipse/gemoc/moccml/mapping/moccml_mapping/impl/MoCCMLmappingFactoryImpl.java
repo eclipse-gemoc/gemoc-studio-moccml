@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl;
 
@@ -16,22 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.Case;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.FeedBackKind;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingFactory;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.Visibility;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,22 +70,24 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 			return createDSAFeedback();
 		case MoCCMLmappingPackage.CASE:
 			return createCase();
-		case MoCCMLmappingPackage.ECL_DOCUMENT:
-			return createECLDocument();
-		case MoCCMLmappingPackage.EVENT_LITERAL_EXP:
-			return createEventLiteralExp();
-		case MoCCMLmappingPackage.ECL_RELATION:
-			return createECLRelation();
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_DOCUMENT:
+			return createMoCCMLMappingDocument();
+		case MoCCMLmappingPackage.MO_CCML_RELATION:
+			return createMoCCMLRelation();
 		case MoCCMLmappingPackage.IMPORT_STATEMENT:
 			return createImportStatement();
-		case MoCCMLmappingPackage.ECL_EXPRESSION:
-			return createECLExpression();
+		case MoCCMLmappingPackage.MO_CCML_EXPRESSION:
+			return createMoCCMLExpression();
 		case MoCCMLmappingPackage.BLOCK_TYPE:
 			return createBlockType();
-		case MoCCMLmappingPackage.ECL_EVENT_DEF_CS:
-			return createECLEventDefCS();
-		case MoCCMLmappingPackage.ECL_BLOCK_DEF_CS:
-			return createECLBlockDefCS();
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS:
+			return createMoCCMLMappingEventDefCS();
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS:
+			return createMoCCMLMappingBlockDefCS();
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE:
+			return createMoCCMLMappingTimeBase();
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY:
+			return createMoCCMLMappingPriority();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -177,9 +166,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ECLDocument createECLDocument() {
-		ECLDocumentImpl eclDocument = new ECLDocumentImpl();
-		return eclDocument;
+	public MoCCMLMappingDocument createMoCCMLMappingDocument() {
+		MoCCMLMappingDocumentImpl moCCMLMappingDocument = new MoCCMLMappingDocumentImpl();
+		return moCCMLMappingDocument;
 	}
 
 	/**
@@ -187,19 +176,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventLiteralExp createEventLiteralExp() {
-		EventLiteralExpImpl eventLiteralExp = new EventLiteralExpImpl();
-		return eventLiteralExp;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ECLRelation createECLRelation() {
-		ECLRelationImpl eclRelation = new ECLRelationImpl();
-		return eclRelation;
+	public MoCCMLRelation createMoCCMLRelation() {
+		MoCCMLRelationImpl moCCMLRelation = new MoCCMLRelationImpl();
+		return moCCMLRelation;
 	}
 
 	/**
@@ -217,9 +196,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ECLExpression createECLExpression() {
-		ECLExpressionImpl eclExpression = new ECLExpressionImpl();
-		return eclExpression;
+	public MoCCMLExpression createMoCCMLExpression() {
+		MoCCMLExpressionImpl moCCMLExpression = new MoCCMLExpressionImpl();
+		return moCCMLExpression;
 	}
 
 	/**
@@ -237,9 +216,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ECLEventDefCS createECLEventDefCS() {
-		ECLEventDefCSImpl eclEventDefCS = new ECLEventDefCSImpl();
-		return eclEventDefCS;
+	public MoCCMLMappingEventDefCS createMoCCMLMappingEventDefCS() {
+		MoCCMLMappingEventDefCSImpl moCCMLMappingEventDefCS = new MoCCMLMappingEventDefCSImpl();
+		return moCCMLMappingEventDefCS;
 	}
 
 	/**
@@ -247,9 +226,29 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ECLBlockDefCS createECLBlockDefCS() {
-		ECLBlockDefCSImpl eclBlockDefCS = new ECLBlockDefCSImpl();
-		return eclBlockDefCS;
+	public MoCCMLMappingBlockDefCS createMoCCMLMappingBlockDefCS() {
+		MoCCMLMappingBlockDefCSImpl moCCMLMappingBlockDefCS = new MoCCMLMappingBlockDefCSImpl();
+		return moCCMLMappingBlockDefCS;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MoCCMLMappingTimeBase createMoCCMLMappingTimeBase() {
+		MoCCMLMappingTimeBaseImpl moCCMLMappingTimeBase = new MoCCMLMappingTimeBaseImpl();
+		return moCCMLMappingTimeBase;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MoCCMLMappingPriority createMoCCMLMappingPriority() {
+		MoCCMLMappingPriorityImpl moCCMLMappingPriority = new MoCCMLMappingPriorityImpl();
+		return moCCMLMappingPriority;
 	}
 
 	/**

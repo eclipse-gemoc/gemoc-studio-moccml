@@ -12,7 +12,7 @@ package org.eclipse.gemoc.moccml.mapping.xtext.attributes;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
 import org.eclipse.ocl.pivot.internal.scoping.AbstractAttribution;
 import org.eclipse.ocl.pivot.internal.scoping.EnvironmentView;
 import org.eclipse.ocl.pivot.internal.scoping.ScopeView;
@@ -28,7 +28,7 @@ public class ECLFeedBackAttribution  extends AbstractAttribution
 	public ScopeView computeLookup(EObject target, EnvironmentView environmentView, ScopeView scopeView) {
 		DSAFeedback feedBack = (DSAFeedback)target;
 			
-			environmentView.addElement(((ECLDefCS)feedBack.eContainer()).getName()+"_switch", feedBack);
+			environmentView.addElement(((MoCCMLMappingDefCS)feedBack.eContainer()).getName()+"_switch", feedBack);
 			environmentView.addElementsOfScope(feedBack.getPivot(), scopeView);
 			ClassifierContextDeclCS context = ((DefPropertyCS)feedBack.eContainer()).getOwningClassifierContextDecl();
 			environmentView.addNamedElement((Nameable) context.getPivot());	

@@ -18,8 +18,9 @@
 package org.eclipse.gemoc.moccml.mapping.xtext.cs2pivot;
 
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.AnyType;
 import org.eclipse.ocl.pivot.Comment;
@@ -80,41 +81,65 @@ public class ECLPostOrderVisitor
 	}
 	
 	
-	
 	@Override
-	public Continuation<?> visitECLDefCS(ECLDefCS object)
+	public Continuation<?> visitMoCCMLMappingTimeBase(MoCCMLMappingTimeBase object)
 	{
-		return new ECLDefCSContinuation(context, object);
+		return new MoCCMLMappingTimeBaseContinuation(context, object, this);
 	}
 
-	protected static class ECLDefCSContinuation extends SingleContinuation<ECLDefCS>
+	protected static class MoCCMLMappingTimeBaseContinuation extends SingleContinuation<MoCCMLMappingTimeBase>
 	{
-		public ECLDefCSContinuation(CS2ASConversion context, ECLDefCS csElement) {
+		public MoCCMLMappingTimeBaseContinuation(CS2ASConversion context, MoCCMLMappingTimeBase csElement, ECLPostOrderVisitor anEclPostOrderVisitor) {
 			super(context, null, null, csElement, context.getTypesHaveSignaturesInterDependency());
 		}
 		
 		@Override
 		public BasicContinuation<?> execute() {
-			
-			if (csElement.getCondition() != null){
-				ExpCS exp= csElement.getCondition();
-		
-				ClassifierContextDeclCS csContext = ((DefPropertyCS)csElement).getOwningClassifierContextDecl();
-				/*ExpressionInOCL pivotExp = PivotUtil.getExpressionInOCL((NamedElement)csContext.getPivot(), csElement.getCondition().toString());
-				if(pivotExp != null){
-					OCLExpression ocle = pivotExp.getBodyExpression();
-					pivotExp.setBodyExpression(ocle);
-					context.installPivotUsage(exp, ocle);
-					context.setContextVariable(pivotExp, pivotExp.getContextVariable().getName(), pivotExp.getType());
-					pivotExp.getContextVariable().setInitExpression(ocle);
-					context.refreshModelElement(ExpressionInOCL.class, PivotPackage.Literals.EXPRESSION_IN_OCL,exp);
-					context.installPivotUsage(exp, pivotExp);
-					exp.setPivot(pivotExp);
-				}*/
-			}
+			AnyType anyType = context.getEnvironmentFactory().getStandardLibrary().getOclAnyType();//new PivotFactoryImpl().createAnyType();
+			@NonNull
+			Comment c = PivotFactoryImpl.eINSTANCE.createComment();
+			c.setBody("OCL_Any is extended here as TimeBase !");
+			anyType.getAnnotatingComments().add(c);
+			csElement.setPivot(anyType);
 			return null;
 		}
 	}
+	
+	
+//	@Override
+//	public Continuation<?> visitMoCCMLMappingDefCS(MoCCMLMappingDefCS object)
+//	{
+//		return new MoCCMLMappingDefCSContinuation(context, object);
+//	}
+//
+//	protected static class MoCCMLMappingDefCSContinuation extends SingleContinuation<MoCCMLMappingDefCS>
+//	{
+//		public MoCCMLMappingDefCSContinuation(CS2ASConversion context, MoCCMLMappingDefCS csElement) {
+//			super(context, null, null, csElement, context.getTypesHaveSignaturesInterDependency());
+//		}
+//		
+//		@Override
+//		public BasicContinuation<?> execute() {
+//			
+//			if (csElement.getCondition() != null){
+//				ExpCS exp= csElement.getCondition();
+//		
+//				ClassifierContextDeclCS csContext = ((DefPropertyCS)csElement).getOwningClassifierContextDecl();
+//				/*ExpressionInOCL pivotExp = PivotUtil.getExpressionInOCL((NamedElement)csContext.getPivot(), csElement.getCondition().toString());
+//				if(pivotExp != null){
+//					OCLExpression ocle = pivotExp.getBodyExpression();
+//					pivotExp.setBodyExpression(ocle);
+//					context.installPivotUsage(exp, ocle);
+//					context.setContextVariable(pivotExp, pivotExp.getContextVariable().getName(), pivotExp.getType());
+//					pivotExp.getContextVariable().setInitExpression(ocle);
+//					context.refreshModelElement(ExpressionInOCL.class, PivotPackage.Literals.EXPRESSION_IN_OCL,exp);
+//					context.installPivotUsage(exp, pivotExp);
+//					exp.setPivot(pivotExp);
+//				}*/
+//			}
+//			return null;
+//		}
+//	}
 
 	
 	@Override

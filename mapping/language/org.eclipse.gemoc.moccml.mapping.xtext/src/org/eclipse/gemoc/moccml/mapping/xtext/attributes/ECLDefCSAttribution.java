@@ -11,9 +11,10 @@
 package org.eclipse.gemoc.moccml.mapping.xtext.attributes;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
 import org.eclipse.ocl.pivot.internal.scoping.AbstractAttribution;
 import org.eclipse.ocl.pivot.internal.scoping.EnvironmentView;
 import org.eclipse.ocl.pivot.internal.scoping.ScopeView;
@@ -27,19 +28,20 @@ public class ECLDefCSAttribution  extends AbstractAttribution
 
 	@Override
 	public ScopeView computeLookup(EObject target, EnvironmentView environmentView, ScopeView scopeView) {
-			ECLDefCS def = (ECLDefCS)target;
-			if(def instanceof ECLEventDefCS){
-				return attributeECLEventDef(environmentView, scopeView, (ECLEventDefCS) def);
+			MoCCMLMappingDefCS def = (MoCCMLMappingDefCS)target;
+			if(def instanceof MoCCMLMappingEventDefCS){
+				return attributeMoCCMLMappingEventDef(environmentView, scopeView, (MoCCMLMappingEventDefCS) def);
 			}
-			if (def instanceof ECLBlockDefCS){
-				return attributeECLBlockDef(environmentView, scopeView, (ECLBlockDefCS) def);
+			if (def instanceof MoCCMLMappingBlockDefCS){
+				return attributeMoCCMLMappingBlockDef(environmentView, scopeView, (MoCCMLMappingBlockDefCS) def);
 			}
 		return null;
 	}
 
 
-	private ScopeView attributeECLEventDef(EnvironmentView environmentView,
-			ScopeView scopeView, ECLEventDefCS def) {
+	private ScopeView attributeMoCCMLMappingEventDef(EnvironmentView environmentView,
+			ScopeView scopeView, MoCCMLMappingEventDefCS def) {
+		
 		environmentView.addNamedElement(def);
 		if(def.getOwnedSpecification() != null)
 		{
@@ -83,8 +85,8 @@ public class ECLDefCSAttribution  extends AbstractAttribution
 		return scopeView.getParent();
 	}
 	
-	private ScopeView attributeECLBlockDef(EnvironmentView environmentView,
-			ScopeView scopeView, ECLBlockDefCS def) {
+	private ScopeView attributeMoCCMLMappingBlockDef(EnvironmentView environmentView,
+			ScopeView scopeView, MoCCMLMappingBlockDefCS def) {
 		environmentView.addNamedElement(def);
 		if(def.getCondition() != null)
 		{

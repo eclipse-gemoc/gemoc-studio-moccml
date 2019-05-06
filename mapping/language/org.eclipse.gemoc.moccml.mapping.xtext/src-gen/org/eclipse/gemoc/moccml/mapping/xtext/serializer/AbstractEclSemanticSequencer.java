@@ -10,13 +10,15 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.Case;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
 import org.eclipse.gemoc.moccml.mapping.xtext.services.EclGrammarAccess;
 import org.eclipse.ocl.xtext.basecs.BaseCSPackage;
@@ -452,21 +454,6 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 			case MoCCMLmappingPackage.DSA_FEEDBACK:
 				sequence_DSAFeedBackRule(context, (DSAFeedback) semanticObject); 
 				return; 
-			case MoCCMLmappingPackage.ECL_BLOCK_DEF_CS:
-				sequence_ECLBlockDefCS(context, (ECLBlockDefCS) semanticObject); 
-				return; 
-			case MoCCMLmappingPackage.ECL_DOCUMENT:
-				sequence_ECLDocument(context, (ECLDocument) semanticObject); 
-				return; 
-			case MoCCMLmappingPackage.ECL_EVENT_DEF_CS:
-				sequence_ECLEventDefCS(context, (ECLEventDefCS) semanticObject); 
-				return; 
-			case MoCCMLmappingPackage.ECL_EXPRESSION:
-				sequence_ECLExpression(context, (ECLExpression) semanticObject); 
-				return; 
-			case MoCCMLmappingPackage.ECL_RELATION:
-				sequence_ECLRelation(context, (ECLRelation) semanticObject); 
-				return; 
 			case MoCCMLmappingPackage.EVENT_TYPE:
 				if (rule == grammarAccess.getEventTypeRule()) {
 					sequence_EventType(context, (EventType) semanticObject); 
@@ -479,6 +466,34 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 				else break;
 			case MoCCMLmappingPackage.IMPORT_STATEMENT:
 				sequence_Import(context, (ImportStatement) semanticObject); 
+				return; 
+			case MoCCMLmappingPackage.MO_CCML_EXPRESSION:
+				sequence_MoCCMLExpression(context, (MoCCMLExpression) semanticObject); 
+				return; 
+			case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS:
+				sequence_MoCCMLMappingBlockDefCS(context, (MoCCMLMappingBlockDefCS) semanticObject); 
+				return; 
+			case MoCCMLmappingPackage.MO_CCML_MAPPING_DOCUMENT:
+				sequence_MoCCMLMappingDocument(context, (MoCCMLMappingDocument) semanticObject); 
+				return; 
+			case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS:
+				sequence_MoCCMLMappingEventDefCS(context, (MoCCMLMappingEventDefCS) semanticObject); 
+				return; 
+			case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY:
+				sequence_MoCCMLMappingPriority(context, (MoCCMLMappingPriority) semanticObject); 
+				return; 
+			case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE:
+				if (rule == grammarAccess.getTimebaseRule()) {
+					sequence_Timebase(context, (MoCCMLMappingTimeBase) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getTypeExpCSRule()) {
+					sequence_Timebase_TypeExpCS(context, (MoCCMLMappingTimeBase) semanticObject); 
+					return; 
+				}
+				else break;
+			case MoCCMLmappingPackage.MO_CCML_RELATION:
+				sequence_MoCCMLRelation(context, (MoCCMLRelation) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -581,89 +596,6 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	/**
 	 * Contexts:
-	 *     DefCS returns ECLBlockDefCS
-	 *     ECLBlockDefCS returns ECLBlockDefCS
-	 *
-	 * Constraint:
-	 *     (
-	 *         visibility=Visibility? 
-	 *         condition=ExpCS? 
-	 *         name=UnrestrictedName 
-	 *         ownedType=TypeExpCS 
-	 *         ownedSpecification=SpecificationCS 
-	 *         enterWhen=ExpCS? 
-	 *         leaveWhen=ExpCS?
-	 *     )
-	 */
-	protected void sequence_ECLBlockDefCS(ISerializationContext context, ECLBlockDefCS semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ECLDocument returns ECLDocument
-	 *
-	 * Constraint:
-	 *     (ownedImports+=ImportCS* imports+=Import* (ownedPackages+=PackageDeclarationCS | ownedContexts+=ContextDeclCS)*)
-	 */
-	protected void sequence_ECLDocument(ISerializationContext context, ECLDocument semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     DefCS returns ECLEventDefCS
-	 *     ECLEventDefCS returns ECLEventDefCS
-	 *
-	 * Constraint:
-	 *     (
-	 *         visibility=Visibility? 
-	 *         condition=ExpCS? 
-	 *         name=UnrestrictedName 
-	 *         ownedType=TypeExpCS 
-	 *         ownedSpecification=SpecificationCS 
-	 *         dsaResultName=UnrestrictedName? 
-	 *         future=ExpCS? 
-	 *         feedback=DSAFeedBackRule?
-	 *     )
-	 */
-	protected void sequence_ECLEventDefCS(ISerializationContext context, ECLEventDefCS semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ExpCS returns ECLExpression
-	 *     ECLExpression returns ECLExpression
-	 *     NavigatingArgExpCS returns ECLExpression
-	 *
-	 * Constraint:
-	 *     (type=[ExpressionDeclaration|ID] parameters+=ExpCS parameters+=ExpCS*)
-	 */
-	protected void sequence_ECLExpression(ISerializationContext context, ECLExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ExpCS returns ECLRelation
-	 *     ECLRelation returns ECLRelation
-	 *     NavigatingArgExpCS returns ECLRelation
-	 *
-	 * Constraint:
-	 *     (type=[RelationDeclaration|ID] parameters+=ExpCS parameters+=ExpCS*)
-	 */
-	protected void sequence_ECLRelation(ISerializationContext context, ECLRelation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     EventType returns EventType
 	 *
 	 * Constraint:
@@ -743,12 +675,142 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	/**
 	 * Contexts:
+	 *     ExpCS returns MoCCMLExpression
+	 *     MoCCMLExpression returns MoCCMLExpression
+	 *     NavigatingArgExpCS returns MoCCMLExpression
+	 *
+	 * Constraint:
+	 *     (type=[ExpressionDeclaration|ID] parameters+=ExpCS parameters+=ExpCS*)
+	 */
+	protected void sequence_MoCCMLExpression(ISerializationContext context, MoCCMLExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DefCS returns MoCCMLMappingBlockDefCS
+	 *     MoCCMLMappingBlockDefCS returns MoCCMLMappingBlockDefCS
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=Visibility? 
+	 *         condition=ExpCS? 
+	 *         name=UnrestrictedName 
+	 *         ownedType=TypeExpCS 
+	 *         ownedSpecification=SpecificationCS 
+	 *         enterWhen=ExpCS? 
+	 *         leaveWhen=ExpCS?
+	 *     )
+	 */
+	protected void sequence_MoCCMLMappingBlockDefCS(ISerializationContext context, MoCCMLMappingBlockDefCS semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MoCCMLMappingDocument returns MoCCMLMappingDocument
+	 *
+	 * Constraint:
+	 *     (ownedImports+=ImportCS* imports+=Import* (ownedPackages+=PackageDeclarationCS | ownedContexts+=ContextDeclCS)*)
+	 */
+	protected void sequence_MoCCMLMappingDocument(ISerializationContext context, MoCCMLMappingDocument semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DefCS returns MoCCMLMappingEventDefCS
+	 *     MoCCMLMappingEventDefCS returns MoCCMLMappingEventDefCS
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=Visibility? 
+	 *         condition=ExpCS? 
+	 *         name=UnrestrictedName 
+	 *         ownedType=TypeExpCS 
+	 *         ownedSpecification=SpecificationCS 
+	 *         dsaResultName=UnrestrictedName? 
+	 *         future=ExpCS? 
+	 *         feedback=DSAFeedBackRule?
+	 *     )
+	 */
+	protected void sequence_MoCCMLMappingEventDefCS(ISerializationContext context, MoCCMLMappingEventDefCS semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ExpCS returns MoCCMLMappingPriority
+	 *     MoCCMLMappingPriority returns MoCCMLMappingPriority
+	 *     NavigatingArgExpCS returns MoCCMLMappingPriority
+	 *
+	 * Constraint:
+	 *     (higher=ExpCS lower=ExpCS)
+	 */
+	protected void sequence_MoCCMLMappingPriority(ISerializationContext context, MoCCMLMappingPriority semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_PRIORITY__HIGHER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_PRIORITY__HIGHER));
+			if (transientValues.isValueTransient(semanticObject, MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_PRIORITY__LOWER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_PRIORITY__LOWER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMoCCMLMappingPriorityAccess().getHigherExpCSParserRuleCall_3_0(), semanticObject.getHigher());
+		feeder.accept(grammarAccess.getMoCCMLMappingPriorityAccess().getLowerExpCSParserRuleCall_6_0(), semanticObject.getLower());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ExpCS returns MoCCMLRelation
+	 *     MoCCMLRelation returns MoCCMLRelation
+	 *     NavigatingArgExpCS returns MoCCMLRelation
+	 *
+	 * Constraint:
+	 *     (type=[RelationDeclaration|ID] parameters+=ExpCS parameters+=ExpCS*)
+	 */
+	protected void sequence_MoCCMLRelation(ISerializationContext context, MoCCMLRelation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     TypeExpCS returns PrimitiveTypeRefCS
 	 *
 	 * Constraint:
 	 *     (name=PrimitiveTypeIdentifier ownedMultiplicity=MultiplicityCS?)
 	 */
 	protected void sequence_PrimitiveTypeCS_TypeExpCS(ISerializationContext context, PrimitiveTypeRefCS semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Timebase returns MoCCMLMappingTimeBase
+	 *
+	 * Constraint:
+	 *     timeBase=[DenseClockType|ID]?
+	 */
+	protected void sequence_Timebase(ISerializationContext context, MoCCMLMappingTimeBase semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TypeExpCS returns MoCCMLMappingTimeBase
+	 *
+	 * Constraint:
+	 *     (timeBase=[DenseClockType|ID]? ownedMultiplicity=MultiplicityCS?)
+	 */
+	protected void sequence_Timebase_TypeExpCS(ISerializationContext context, MoCCMLMappingTimeBase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

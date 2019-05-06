@@ -12,51 +12,37 @@
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl;
 
+import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.DenseClockType;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
+
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
 import org.eclipse.gemoc.moccml.mapping.util.MoCCMLMappingVisitor;
 import org.eclipse.ocl.xtext.basecs.impl.TypedRefCSImpl;
+
 import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Event Type</b></em>'.
+ * An implementation of the model object '<em><b>Mo CCML Mapping Time Base</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.EventTypeImpl#getReferedElement <em>Refered Element</em>}</li>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.EventTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingTimeBaseImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingTimeBaseImpl#getTimeBase <em>Time Base</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EventTypeImpl extends TypedRefCSImpl implements EventType {
-	/**
-	 * The default value of the '{@link #getReferedElement() <em>Refered Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferedElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final EventKind REFERED_ELEMENT_EDEFAULT = EventKind.UNDEFINED;
-
-	/**
-	 * The cached value of the '{@link #getReferedElement() <em>Refered Element</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReferedElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected EventKind referedElement = REFERED_ELEMENT_EDEFAULT;
-
+public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLMappingTimeBase {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -78,11 +64,21 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getTimeBase() <em>Time Base</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeBase()
+	 * @generated
+	 * @ordered
+	 */
+	protected DenseClockType timeBase;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EventTypeImpl() {
+	protected MoCCMLMappingTimeBaseImpl() {
 		super();
 	}
 
@@ -93,29 +89,7 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MoCCMLmappingPackage.Literals.EVENT_TYPE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EventKind getReferedElement() {
-		return referedElement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setReferedElement(EventKind newReferedElement) {
-		EventKind oldReferedElement = referedElement;
-		referedElement = newReferedElement == null ? REFERED_ELEMENT_EDEFAULT : newReferedElement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.EVENT_TYPE__REFERED_ELEMENT,
-					oldReferedElement, referedElement));
+		return MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_TIME_BASE;
 	}
 
 	/**
@@ -136,8 +110,48 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.EVENT_TYPE__NAME, oldName,
-					name));
+			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__NAME,
+					oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DenseClockType getTimeBase() {
+		if (timeBase != null && timeBase.eIsProxy()) {
+			InternalEObject oldTimeBase = (InternalEObject) timeBase;
+			timeBase = (DenseClockType) eResolveProxy(oldTimeBase);
+			if (timeBase != oldTimeBase) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE, oldTimeBase, timeBase));
+			}
+		}
+		return timeBase;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DenseClockType basicGetTimeBase() {
+		return timeBase;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTimeBase(DenseClockType newTimeBase) {
+		DenseClockType oldTimeBase = timeBase;
+		timeBase = newTimeBase;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE, oldTimeBase, timeBase));
 	}
 
 	/**
@@ -146,7 +160,7 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * @generated
 	 */
 	public <R> R accept(final BaseCSVisitor<R> visitor) {
-		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitEventType(this);
+		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingTimeBase(this);
 	}
 
 	/**
@@ -157,10 +171,12 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.EVENT_TYPE__REFERED_ELEMENT:
-			return getReferedElement();
-		case MoCCMLmappingPackage.EVENT_TYPE__NAME:
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__NAME:
 			return getName();
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE:
+			if (resolve)
+				return getTimeBase();
+			return basicGetTimeBase();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,11 +189,11 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.EVENT_TYPE__REFERED_ELEMENT:
-			setReferedElement((EventKind) newValue);
-			return;
-		case MoCCMLmappingPackage.EVENT_TYPE__NAME:
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__NAME:
 			setName((String) newValue);
+			return;
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE:
+			setTimeBase((DenseClockType) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,11 +207,11 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.EVENT_TYPE__REFERED_ELEMENT:
-			setReferedElement(REFERED_ELEMENT_EDEFAULT);
-			return;
-		case MoCCMLmappingPackage.EVENT_TYPE__NAME:
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__NAME:
 			setName(NAME_EDEFAULT);
+			return;
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE:
+			setTimeBase((DenseClockType) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -209,10 +225,10 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.EVENT_TYPE__REFERED_ELEMENT:
-			return referedElement != REFERED_ELEMENT_EDEFAULT;
-		case MoCCMLmappingPackage.EVENT_TYPE__NAME:
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE:
+			return timeBase != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -228,12 +244,10 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (referedElement: ");
-		result.append(referedElement);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
 
-} //EventTypeImpl
+} //MoCCMLMappingTimeBaseImpl

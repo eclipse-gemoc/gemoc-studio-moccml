@@ -20,10 +20,10 @@ import org.eclipse.ocl.xtext.base.services.BaseGrammarAccess;
 public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
-	public class ECLDocumentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ECLDocument");
+	public class MoCCMLMappingDocumentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.MoCCMLMappingDocument");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cECLDocumentAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cMoCCMLMappingDocumentAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cOwnedImportsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOwnedImportsImportCSParserRuleCall_1_0 = (RuleCall)cOwnedImportsAssignment_1.eContents().get(0);
 		private final Assignment cImportsAssignment_2 = (Assignment)cGroup.eContents().get(2);
@@ -36,17 +36,17 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////import  "http://org.eclipse.gemoc.moccml.mapping"  
 		////import "http://fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation"  as CCSL
-		//ECLDocument:
-		//	{ECLDocument} ownedImports+=ImportCS*
+		//MoCCMLMappingDocument:
+		//	{MoCCMLMappingDocument} ownedImports+=ImportCS*
 		//	imports+=Import* (ownedPackages+=PackageDeclarationCS | ownedContexts+=ContextDeclCS)*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{ECLDocument} ownedImports+=ImportCS* imports+=Import* (ownedPackages+=PackageDeclarationCS |
+		//{MoCCMLMappingDocument} ownedImports+=ImportCS* imports+=Import* (ownedPackages+=PackageDeclarationCS |
 		//ownedContexts+=ContextDeclCS)*
 		public Group getGroup() { return cGroup; }
 
-		//{ECLDocument}
-		public Action getECLDocumentAction_0() { return cECLDocumentAction_0; }
+		//{MoCCMLMappingDocument}
+		public Action getMoCCMLMappingDocumentAction_0() { return cMoCCMLMappingDocumentAction_0; }
 
 		//ownedImports+=ImportCS*
 		public Assignment getOwnedImportsAssignment_1() { return cOwnedImportsAssignment_1; }
@@ -109,18 +109,21 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCollectionPatternCSParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
 		private final RuleCall cEventTypeParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
 		private final RuleCall cBlockTypeParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
+		private final RuleCall cTimebaseParserRuleCall_0_5 = (RuleCall)cAlternatives_0.eContents().get(5);
 		private final Assignment cOwnedMultiplicityAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOwnedMultiplicityMultiplicityCSParserRuleCall_1_0 = (RuleCall)cOwnedMultiplicityAssignment_1.eContents().get(0);
 		
-		////override essential OCL rule 
+		//@Override
 		//TypeExpCS baseCST::TypedRefCS:
-		//	(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType) ownedMultiplicity=MultiplicityCS?;
+		//	(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase)
+		//	ownedMultiplicity=MultiplicityCS?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType) ownedMultiplicity=MultiplicityCS?
+		//(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase)
+		//ownedMultiplicity=MultiplicityCS?
 		public Group getGroup() { return cGroup; }
 
-		//TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType
+		//TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//TypeNameExpCS
@@ -137,6 +140,9 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 		//BlockType
 		public RuleCall getBlockTypeParserRuleCall_0_4() { return cBlockTypeParserRuleCall_0_4; }
+
+		//Timebase
+		public RuleCall getTimebaseParserRuleCall_0_5() { return cTimebaseParserRuleCall_0_5; }
 
 		//ownedMultiplicity=MultiplicityCS?
 		public Assignment getOwnedMultiplicityAssignment_1() { return cOwnedMultiplicityAssignment_1; }
@@ -186,6 +192,51 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 	}
 
+	public class TimebaseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.Timebase");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMoCCMLMappingTimeBaseAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cTimeBaseKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftSquareBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cTimeBaseAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cTimeBaseDenseClockTypeCrossReference_2_1_0 = (CrossReference)cTimeBaseAssignment_2_1.eContents().get(0);
+		private final RuleCall cTimeBaseDenseClockTypeIDParserRuleCall_2_1_0_1 = (RuleCall)cTimeBaseDenseClockTypeCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		
+		//Timebase MoCCMLMappingTimeBase:
+		//	{MoCCMLMappingTimeBase}
+		//	'TimeBase' ('[' timeBase=[CCSLBasicTypes::DenseClockType] ']')?;
+		@Override public ParserRule getRule() { return rule; }
+
+		//{MoCCMLMappingTimeBase} 'TimeBase' ('[' timeBase=[CCSLBasicTypes::DenseClockType] ']')?
+		public Group getGroup() { return cGroup; }
+
+		//{MoCCMLMappingTimeBase}
+		public Action getMoCCMLMappingTimeBaseAction_0() { return cMoCCMLMappingTimeBaseAction_0; }
+
+		//'TimeBase'
+		public Keyword getTimeBaseKeyword_1() { return cTimeBaseKeyword_1; }
+
+		//('[' timeBase=[CCSLBasicTypes::DenseClockType] ']')?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//'['
+		public Keyword getLeftSquareBracketKeyword_2_0() { return cLeftSquareBracketKeyword_2_0; }
+
+		//timeBase=[CCSLBasicTypes::DenseClockType]
+		public Assignment getTimeBaseAssignment_2_1() { return cTimeBaseAssignment_2_1; }
+
+		//[CCSLBasicTypes::DenseClockType]
+		public CrossReference getTimeBaseDenseClockTypeCrossReference_2_1_0() { return cTimeBaseDenseClockTypeCrossReference_2_1_0; }
+
+		//ID
+		public RuleCall getTimeBaseDenseClockTypeIDParserRuleCall_2_1_0_1() { return cTimeBaseDenseClockTypeIDParserRuleCall_2_1_0_1; }
+
+		//']'
+		public Keyword getRightSquareBracketKeyword_2_2() { return cRightSquareBracketKeyword_2_2; }
+	}
+
 	public class BlockTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.BlockType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -219,21 +270,22 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOwnedRightAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
 		private final RuleCall cOwnedRightExpCSParserRuleCall_0_1_2_0 = (RuleCall)cOwnedRightAssignment_0_1_2.eContents().get(0);
 		private final RuleCall cPrefixedLetExpCSParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cECLRelationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cECLExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cMoCCMLRelationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cMoCCMLExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cMoCCMLMappingPriorityParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
-		////NEON FROM ESSENTIAL
+		//@Override
 		//ExpCS essentialOCLCST::ExpCS:
 		//	PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? |
 		//	PrefixedLetExpCS
-		//	| ECLRelation | ECLExpression;
+		//	| MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority;
 		@Override public ParserRule getRule() { return rule; }
 
 		////	({InfixExpCS} ownedSource=PrefixedExpCS name=BinaryOperatorName ownedArgument=ExpCS)
 		////| 	PrefixedExpCS
 		//// the above takes exponential or worse time for backtracking, below is fast
 		//PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? |
-		//PrefixedLetExpCS | ECLRelation | ECLExpression
+		//PrefixedLetExpCS | MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		////	({InfixExpCS} ownedSource=PrefixedExpCS name=BinaryOperatorName ownedArgument=ExpCS)
@@ -266,11 +318,63 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//PrefixedLetExpCS
 		public RuleCall getPrefixedLetExpCSParserRuleCall_1() { return cPrefixedLetExpCSParserRuleCall_1; }
 
-		//ECLRelation
-		public RuleCall getECLRelationParserRuleCall_2() { return cECLRelationParserRuleCall_2; }
+		//MoCCMLRelation
+		public RuleCall getMoCCMLRelationParserRuleCall_2() { return cMoCCMLRelationParserRuleCall_2; }
 
-		//ECLExpression
-		public RuleCall getECLExpressionParserRuleCall_3() { return cECLExpressionParserRuleCall_3; }
+		//MoCCMLExpression
+		public RuleCall getMoCCMLExpressionParserRuleCall_3() { return cMoCCMLExpressionParserRuleCall_3; }
+
+		//MoCCMLMappingPriority
+		public RuleCall getMoCCMLMappingPriorityParserRuleCall_4() { return cMoCCMLMappingPriorityParserRuleCall_4; }
+	}
+
+	public class MoCCMLMappingPriorityElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.MoCCMLMappingPriority");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cMoCCMLMappingPriorityAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cPriorKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cHigherAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cHigherExpCSParserRuleCall_3_0 = (RuleCall)cHigherAssignment_3.eContents().get(0);
+		private final Keyword cPrevailsKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cOnKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cLowerAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cLowerExpCSParserRuleCall_6_0 = (RuleCall)cLowerAssignment_6.eContents().get(0);
+		
+		//MoCCMLMappingPriority:
+		//	{MoCCMLMappingPriority}
+		//	'Prior' ':' higher=ExpCS 'prevails' 'on' lower=ExpCS;
+		@Override public ParserRule getRule() { return rule; }
+
+		//{MoCCMLMappingPriority} 'Prior' ':' higher=ExpCS 'prevails' 'on' lower=ExpCS
+		public Group getGroup() { return cGroup; }
+
+		//{MoCCMLMappingPriority}
+		public Action getMoCCMLMappingPriorityAction_0() { return cMoCCMLMappingPriorityAction_0; }
+
+		//'Prior'
+		public Keyword getPriorKeyword_1() { return cPriorKeyword_1; }
+
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+
+		//higher=ExpCS
+		public Assignment getHigherAssignment_3() { return cHigherAssignment_3; }
+
+		//ExpCS
+		public RuleCall getHigherExpCSParserRuleCall_3_0() { return cHigherExpCSParserRuleCall_3_0; }
+
+		//'prevails'
+		public Keyword getPrevailsKeyword_4() { return cPrevailsKeyword_4; }
+
+		//'on'
+		public Keyword getOnKeyword_5() { return cOnKeyword_5; }
+
+		//lower=ExpCS
+		public Assignment getLowerAssignment_6() { return cLowerAssignment_6; }
+
+		//ExpCS
+		public RuleCall getLowerExpCSParserRuleCall_6_0() { return cLowerExpCSParserRuleCall_6_0; }
 	}
 
 	public class ClassifierContextDeclCSElements extends AbstractParserRuleElementFinder {
@@ -291,7 +395,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOwnedDefinitionsAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
 		private final RuleCall cOwnedDefinitionsDefCSParserRuleCall_4_1_0 = (RuleCall)cOwnedDefinitionsAssignment_4_1.eContents().get(0);
 		
-		////neon from compleocl
+		//@Override
 		//ClassifierContextDeclCS completeOCL::ClassifierContextDeclCS:
 		//	'context' ownedSignature=TemplateSignatureCS? selfName=UnrestrictedName?
 		//	ownedPathName=PathNameCS ('inv' ownedInvariants+=ConstraintCS | ownedDefinitions+=DefCS)+;
@@ -349,15 +453,15 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDefOperationCSParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cDefPropertyCSParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cECLEventDefCSParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cECLBlockDefCSParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cMoCCMLMappingEventDefCSParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cMoCCMLMappingBlockDefCSParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		////completeOCL override
+		//@Override
 		//DefCS completeOCL::DefCS:
-		//	DefOperationCS | DefPropertyCS | ECLEventDefCS | ECLBlockDefCS;
+		//	DefOperationCS | DefPropertyCS | MoCCMLMappingEventDefCS | MoCCMLMappingBlockDefCS;
 		@Override public ParserRule getRule() { return rule; }
 
-		//DefOperationCS | DefPropertyCS | ECLEventDefCS | ECLBlockDefCS
+		//DefOperationCS | DefPropertyCS | MoCCMLMappingEventDefCS | MoCCMLMappingBlockDefCS
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//DefOperationCS
@@ -366,15 +470,15 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//DefPropertyCS
 		public RuleCall getDefPropertyCSParserRuleCall_1() { return cDefPropertyCSParserRuleCall_1; }
 
-		//ECLEventDefCS
-		public RuleCall getECLEventDefCSParserRuleCall_2() { return cECLEventDefCSParserRuleCall_2; }
+		//MoCCMLMappingEventDefCS
+		public RuleCall getMoCCMLMappingEventDefCSParserRuleCall_2() { return cMoCCMLMappingEventDefCSParserRuleCall_2; }
 
-		//ECLBlockDefCS
-		public RuleCall getECLBlockDefCSParserRuleCall_3() { return cECLBlockDefCSParserRuleCall_3; }
+		//MoCCMLMappingBlockDefCS
+		public RuleCall getMoCCMLMappingBlockDefCSParserRuleCall_3() { return cMoCCMLMappingBlockDefCSParserRuleCall_3; }
 	}
 
-	public class ECLBlockDefCSElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ECLBlockDefCS");
+	public class MoCCMLMappingBlockDefCSElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.MoCCMLMappingBlockDefCS");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cVisibilityAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cVisibilityVisibilityEnumRuleCall_0_0 = (RuleCall)cVisibilityAssignment_0.eContents().get(0);
@@ -403,7 +507,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLeaveWhenAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
 		private final RuleCall cLeaveWhenExpCSParserRuleCall_10_2_0 = (RuleCall)cLeaveWhenAssignment_10_2.eContents().get(0);
 		
-		//ECLBlockDefCS:
+		//MoCCMLMappingBlockDefCS:
 		//	visibility=Visibility? 'blockDef' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS
 		//	'=' ownedSpecification=SpecificationCS ("enter" "when" enterWhen=ExpCS)? ("leave" "when" leaveWhen=ExpCS)?;
 		@Override public ParserRule getRule() { return rule; }
@@ -491,8 +595,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getLeaveWhenExpCSParserRuleCall_10_2_0() { return cLeaveWhenExpCSParserRuleCall_10_2_0; }
 	}
 
-	public class ECLEventDefCSElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ECLEventDefCS");
+	public class MoCCMLMappingEventDefCSElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.MoCCMLMappingEventDefCS");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cVisibilityAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cVisibilityVisibilityEnumRuleCall_0_0 = (RuleCall)cVisibilityAssignment_0.eContents().get(0);
@@ -527,7 +631,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cFeedbackAssignment_9_2_1 = (Assignment)cGroup_9_2.eContents().get(1);
 		private final RuleCall cFeedbackDSAFeedBackRuleParserRuleCall_9_2_1_0 = (RuleCall)cFeedbackAssignment_9_2_1.eContents().get(0);
 		
-		//ECLEventDefCS:
+		//MoCCMLMappingEventDefCS:
 		//	visibility=Visibility? 'def' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS
 		//	'=' ownedSpecification=SpecificationCS (('[' dsaResultName=UnrestrictedName ']')? ("future" "(" future=ExpCS ")")?
 		//	("switch" feedback=DSAFeedBackRule)?);
@@ -723,10 +827,10 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 
-	public class ECLExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ECLExpression");
+	public class MoCCMLExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.MoCCMLExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cECLExpressionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cMoCCMLExpressionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cExpressionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cTypeExpressionDeclarationCrossReference_2_0 = (CrossReference)cTypeAssignment_2.eContents().get(0);
@@ -740,15 +844,16 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParametersExpCSParserRuleCall_5_1_0 = (RuleCall)cParametersAssignment_5_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//ECLExpression:
-		//	{ECLExpression} "Expression"? type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
+		//MoCCMLExpression:
+		//	{MoCCMLExpression} "Expression"? type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)*
+		//	')';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{ECLExpression} "Expression"? type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')'
+		//{MoCCMLExpression} "Expression"? type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')'
 		public Group getGroup() { return cGroup; }
 
-		//{ECLExpression}
-		public Action getECLExpressionAction_0() { return cECLExpressionAction_0; }
+		//{MoCCMLExpression}
+		public Action getMoCCMLExpressionAction_0() { return cMoCCMLExpressionAction_0; }
 
 		////we need to add a keyWord to make the EclScopeProvider working :-/
 		//"Expression"?
@@ -788,10 +893,10 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
 
-	public class ECLRelationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ECLRelation");
+	public class MoCCMLRelationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.MoCCMLRelation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cECLRelationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cMoCCMLRelationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cRelationKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cTypeRelationDeclarationCrossReference_2_0 = (CrossReference)cTypeAssignment_2.eContents().get(0);
@@ -805,15 +910,15 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParametersExpCSParserRuleCall_5_1_0 = (RuleCall)cParametersAssignment_5_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//ECLRelation:
-		//	{ECLRelation} "Relation"? type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
+		//MoCCMLRelation:
+		//	{MoCCMLRelation} "Relation"? type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{ECLRelation} "Relation"? type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')'
+		//{MoCCMLRelation} "Relation"? type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')'
 		public Group getGroup() { return cGroup; }
 
-		//{ECLRelation}
-		public Action getECLRelationAction_0() { return cECLRelationAction_0; }
+		//{MoCCMLRelation}
+		public Action getMoCCMLRelationAction_0() { return cMoCCMLRelationAction_0; }
 
 		////we need to add a keyWord to make the EclScopeProvider working :-/
 		//"Relation"?
@@ -1084,23 +1189,25 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getForbidForbidKeyword_1_0() { return cForbidForbidKeyword_1_0; }
 	}
 	
-	private final ECLDocumentElements pECLDocument;
+	private final MoCCMLMappingDocumentElements pMoCCMLMappingDocument;
 	private final ImportElements pImport;
 	private final TypeExpCSElements pTypeExpCS;
 	private final EventTypeElements pEventType;
+	private final TimebaseElements pTimebase;
 	private final BlockTypeElements pBlockType;
 	private final EventKindElements eEventKind;
 	private final ExpCSElements pExpCS;
+	private final MoCCMLMappingPriorityElements pMoCCMLMappingPriority;
 	private final ClassifierContextDeclCSElements pClassifierContextDeclCS;
 	private final DefCSElements pDefCS;
 	private final VisibilityElements eVisibility;
-	private final ECLBlockDefCSElements pECLBlockDefCS;
-	private final ECLEventDefCSElements pECLEventDefCS;
+	private final MoCCMLMappingBlockDefCSElements pMoCCMLMappingBlockDefCS;
+	private final MoCCMLMappingEventDefCSElements pMoCCMLMappingEventDefCS;
 	private final DSAFeedBackRuleElements pDSAFeedBackRule;
 	private final CasesRuleElements pCasesRule;
 	private final FeedBackKindElements eFeedBackKind;
-	private final ECLExpressionElements pECLExpression;
-	private final ECLRelationElements pECLRelation;
+	private final MoCCMLExpressionElements pMoCCMLExpression;
+	private final MoCCMLRelationElements pMoCCMLRelation;
 	
 	private final Grammar grammar;
 
@@ -1119,23 +1226,25 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaCompleteOCL = gaCompleteOCL;
 		this.gaEssentialOCL = gaEssentialOCL;
 		this.gaBase = gaBase;
-		this.pECLDocument = new ECLDocumentElements();
+		this.pMoCCMLMappingDocument = new MoCCMLMappingDocumentElements();
 		this.pImport = new ImportElements();
 		this.pTypeExpCS = new TypeExpCSElements();
 		this.pEventType = new EventTypeElements();
+		this.pTimebase = new TimebaseElements();
 		this.pBlockType = new BlockTypeElements();
 		this.eEventKind = new EventKindElements();
 		this.pExpCS = new ExpCSElements();
+		this.pMoCCMLMappingPriority = new MoCCMLMappingPriorityElements();
 		this.pClassifierContextDeclCS = new ClassifierContextDeclCSElements();
 		this.pDefCS = new DefCSElements();
 		this.eVisibility = new VisibilityElements();
-		this.pECLBlockDefCS = new ECLBlockDefCSElements();
-		this.pECLEventDefCS = new ECLEventDefCSElements();
+		this.pMoCCMLMappingBlockDefCS = new MoCCMLMappingBlockDefCSElements();
+		this.pMoCCMLMappingEventDefCS = new MoCCMLMappingEventDefCSElements();
 		this.pDSAFeedBackRule = new DSAFeedBackRuleElements();
 		this.pCasesRule = new CasesRuleElements();
 		this.eFeedBackKind = new FeedBackKindElements();
-		this.pECLExpression = new ECLExpressionElements();
-		this.pECLRelation = new ECLRelationElements();
+		this.pMoCCMLExpression = new MoCCMLExpressionElements();
+		this.pMoCCMLRelation = new MoCCMLRelationElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1175,15 +1284,15 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////import  "http://org.eclipse.gemoc.moccml.mapping"  
 	////import "http://fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation"  as CCSL
-	//ECLDocument:
-	//	{ECLDocument} ownedImports+=ImportCS*
+	//MoCCMLMappingDocument:
+	//	{MoCCMLMappingDocument} ownedImports+=ImportCS*
 	//	imports+=Import* (ownedPackages+=PackageDeclarationCS | ownedContexts+=ContextDeclCS)*;
-	public ECLDocumentElements getECLDocumentAccess() {
-		return pECLDocument;
+	public MoCCMLMappingDocumentElements getMoCCMLMappingDocumentAccess() {
+		return pMoCCMLMappingDocument;
 	}
 	
-	public ParserRule getECLDocumentRule() {
-		return getECLDocumentAccess().getRule();
+	public ParserRule getMoCCMLMappingDocumentRule() {
+		return getMoCCMLMappingDocumentAccess().getRule();
 	}
 
 	//Import ImportStatement:
@@ -1196,9 +1305,10 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getImportAccess().getRule();
 	}
 
-	////override essential OCL rule 
+	//@Override
 	//TypeExpCS baseCST::TypedRefCS:
-	//	(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType) ownedMultiplicity=MultiplicityCS?;
+	//	(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase)
+	//	ownedMultiplicity=MultiplicityCS?;
 	public TypeExpCSElements getTypeExpCSAccess() {
 		return pTypeExpCS;
 	}
@@ -1216,6 +1326,17 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEventTypeRule() {
 		return getEventTypeAccess().getRule();
+	}
+
+	//Timebase MoCCMLMappingTimeBase:
+	//	{MoCCMLMappingTimeBase}
+	//	'TimeBase' ('[' timeBase=[CCSLBasicTypes::DenseClockType] ']')?;
+	public TimebaseElements getTimebaseAccess() {
+		return pTimebase;
+	}
+	
+	public ParserRule getTimebaseRule() {
+		return getTimebaseAccess().getRule();
 	}
 
 	//BlockType:
@@ -1252,11 +1373,11 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getEventKindAccess().getRule();
 	}
 
-	////NEON FROM ESSENTIAL
+	//@Override
 	//ExpCS essentialOCLCST::ExpCS:
 	//	PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? |
 	//	PrefixedLetExpCS
-	//	| ECLRelation | ECLExpression;
+	//	| MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority;
 	public ExpCSElements getExpCSAccess() {
 		return pExpCS;
 	}
@@ -1265,7 +1386,18 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getExpCSAccess().getRule();
 	}
 
-	////neon from compleocl
+	//MoCCMLMappingPriority:
+	//	{MoCCMLMappingPriority}
+	//	'Prior' ':' higher=ExpCS 'prevails' 'on' lower=ExpCS;
+	public MoCCMLMappingPriorityElements getMoCCMLMappingPriorityAccess() {
+		return pMoCCMLMappingPriority;
+	}
+	
+	public ParserRule getMoCCMLMappingPriorityRule() {
+		return getMoCCMLMappingPriorityAccess().getRule();
+	}
+
+	//@Override
 	//ClassifierContextDeclCS completeOCL::ClassifierContextDeclCS:
 	//	'context' ownedSignature=TemplateSignatureCS? selfName=UnrestrictedName?
 	//	ownedPathName=PathNameCS ('inv' ownedInvariants+=ConstraintCS | ownedDefinitions+=DefCS)+;
@@ -1277,9 +1409,9 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getClassifierContextDeclCSAccess().getRule();
 	}
 
-	////completeOCL override
+	//@Override
 	//DefCS completeOCL::DefCS:
-	//	DefOperationCS | DefPropertyCS | ECLEventDefCS | ECLBlockDefCS;
+	//	DefOperationCS | DefPropertyCS | MoCCMLMappingEventDefCS | MoCCMLMappingBlockDefCS;
 	public DefCSElements getDefCSAccess() {
 		return pDefCS;
 	}
@@ -1299,27 +1431,27 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getVisibilityAccess().getRule();
 	}
 
-	//ECLBlockDefCS:
+	//MoCCMLMappingBlockDefCS:
 	//	visibility=Visibility? 'blockDef' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS
 	//	'=' ownedSpecification=SpecificationCS ("enter" "when" enterWhen=ExpCS)? ("leave" "when" leaveWhen=ExpCS)?;
-	public ECLBlockDefCSElements getECLBlockDefCSAccess() {
-		return pECLBlockDefCS;
+	public MoCCMLMappingBlockDefCSElements getMoCCMLMappingBlockDefCSAccess() {
+		return pMoCCMLMappingBlockDefCS;
 	}
 	
-	public ParserRule getECLBlockDefCSRule() {
-		return getECLBlockDefCSAccess().getRule();
+	public ParserRule getMoCCMLMappingBlockDefCSRule() {
+		return getMoCCMLMappingBlockDefCSAccess().getRule();
 	}
 
-	//ECLEventDefCS:
+	//MoCCMLMappingEventDefCS:
 	//	visibility=Visibility? 'def' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS
 	//	'=' ownedSpecification=SpecificationCS (('[' dsaResultName=UnrestrictedName ']')? ("future" "(" future=ExpCS ")")?
 	//	("switch" feedback=DSAFeedBackRule)?);
-	public ECLEventDefCSElements getECLEventDefCSAccess() {
-		return pECLEventDefCS;
+	public MoCCMLMappingEventDefCSElements getMoCCMLMappingEventDefCSAccess() {
+		return pMoCCMLMappingEventDefCS;
 	}
 	
-	public ParserRule getECLEventDefCSRule() {
-		return getECLEventDefCSAccess().getRule();
+	public ParserRule getMoCCMLMappingEventDefCSRule() {
+		return getMoCCMLMappingEventDefCSAccess().getRule();
 	}
 
 	//DSAFeedBackRule DSAFeedback:
@@ -1353,24 +1485,25 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getFeedBackKindAccess().getRule();
 	}
 
-	//ECLExpression:
-	//	{ECLExpression} "Expression"? type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
-	public ECLExpressionElements getECLExpressionAccess() {
-		return pECLExpression;
+	//MoCCMLExpression:
+	//	{MoCCMLExpression} "Expression"? type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)*
+	//	')';
+	public MoCCMLExpressionElements getMoCCMLExpressionAccess() {
+		return pMoCCMLExpression;
 	}
 	
-	public ParserRule getECLExpressionRule() {
-		return getECLExpressionAccess().getRule();
+	public ParserRule getMoCCMLExpressionRule() {
+		return getMoCCMLExpressionAccess().getRule();
 	}
 
-	//ECLRelation:
-	//	{ECLRelation} "Relation"? type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
-	public ECLRelationElements getECLRelationAccess() {
-		return pECLRelation;
+	//MoCCMLRelation:
+	//	{MoCCMLRelation} "Relation"? type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
+	public MoCCMLRelationElements getMoCCMLRelationAccess() {
+		return pMoCCMLRelation;
 	}
 	
-	public ParserRule getECLRelationRule() {
-		return getECLRelationAccess().getRule();
+	public ParserRule getMoCCMLRelationRule() {
+		return getMoCCMLRelationAccess().getRule();
 	}
 
 	///*

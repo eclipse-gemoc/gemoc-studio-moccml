@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping;
 
@@ -16,22 +18,22 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>ECL Def CS</b></em>'.
+ * A representation of the model object '<em><b>Mo CCML Mapping Def CS</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS#getCondition <em>Condition</em>}</li>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS#getCondition <em>Condition</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS#getVisibility <em>Visibility</em>}</li>
  * </ul>
  *
- * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLDefCS()
+ * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoCCMLMappingDefCS()
  * @model abstract="true"
  * @generated
  */
-public interface ECLDefCS extends DefPropertyCS {
+public interface MoCCMLMappingDefCS extends DefPropertyCS {
 	/**
 	 * Returns the value of the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -42,14 +44,14 @@ public interface ECLDefCS extends DefPropertyCS {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Condition</em>' containment reference.
 	 * @see #setCondition(ExpCS)
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLDefCS_Condition()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoCCMLMappingDefCS_Condition()
 	 * @model containment="true"
 	 * @generated
 	 */
 	ExpCS getCondition();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS#getCondition <em>Condition</em>}' containment reference.
+	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS#getCondition <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Condition</em>' containment reference.
@@ -70,14 +72,14 @@ public interface ECLDefCS extends DefPropertyCS {
 	 * @return the value of the '<em>Visibility</em>' attribute.
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.Visibility
 	 * @see #setVisibility(Visibility)
-	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getECLDefCS_Visibility()
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage#getMoCCMLMappingDefCS_Visibility()
 	 * @model required="true"
 	 * @generated
 	 */
 	Visibility getVisibility();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS#getVisibility <em>Visibility</em>}' attribute.
+	 * Sets the value of the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS#getVisibility <em>Visibility</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Visibility</em>' attribute.
@@ -87,4 +89,4 @@ public interface ECLDefCS extends DefPropertyCS {
 	 */
 	void setVisibility(Visibility value);
 
-} // ECLDefCS
+} // MoCCMLMappingDefCS

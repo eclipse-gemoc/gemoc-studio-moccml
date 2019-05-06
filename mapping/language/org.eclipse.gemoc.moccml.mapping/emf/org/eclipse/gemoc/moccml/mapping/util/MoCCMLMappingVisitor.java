@@ -28,32 +28,34 @@ package	org.eclipse.gemoc.moccml.mapping.util;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.Case;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
 
 /**
  */
-public interface ECLVisitor<R> extends org.eclipse.ocl.xtext.completeoclcs.util.CompleteOCLCSVisitor<R>
+public interface MoCCMLMappingVisitor<R> extends org.eclipse.ocl.xtext.completeoclcs.util.CompleteOCLCSVisitor<R>
 {
-	R visitECLDocument(ECLDocument object);
+	R visitMoCCMLMappingDocument(MoCCMLMappingDocument object);
 	R visitEventType(EventType object);
-	R visitEventLiteralExp(EventLiteralExp startEventLiteralExp);
 	R visitEventKind(EventKind eventKind);
-	R visitECLRelation(ECLRelation relation);
+	R visitMoCCMLRelation(MoCCMLRelation relation);
 	R visitImportStatement(ImportStatement importStatement);
-	R visitECLExpression(ECLExpression eclExpression);
-	R visitECLDefCS(ECLDefCS eclDefCS);
+	R visitMoCCMLExpression(MoCCMLExpression eclExpression);
+	R visitMoCCMLMappingDefCS(MoCCMLMappingDefCS eclDefCS);
 	R visitDSAFeedBack(DSAFeedback dsaFeedback);
 	R visitCase(Case itsCase);
 	R visitBlockType(BlockType blockType);
-	R visitECLBlockDefCS(ECLBlockDefCS eclBlockDefCS);
-	R visitECLEventDefCS(ECLEventDefCS eclEventDefCS);
+	R visitMoCCMLMappingBlockDefCS(MoCCMLMappingBlockDefCS eclBlockDefCS);
+	R visitMoCCMLMappingEventDefCS(MoCCMLMappingEventDefCS eclEventDefCS);
+	R visitMoCCMLMappingPriority(MoCCMLMappingPriority moccMLMappingPriority);
+	R visitMoCCMLMappingTimeBase(MoCCMLMappingTimeBase moCCMLMappingTimeBase);
 }

@@ -25,29 +25,28 @@
  */
 package	org.eclipse.gemoc.moccml.mapping.util;
 
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
 import org.eclipse.ocl.xtext.completeoclcs.util.AbstractDelegatingCompleteOCLCSVisitor;
 import org.eclipse.ocl.xtext.completeoclcs.util.CompleteOCLCSVisitor;
 
 
 
 /**
- * An AbstractExtendingDelegatingECLVisitor delegates all visits.
+ * An AbstractExtendingDelegatingMoCCMLMappingVisitor delegates all visits.
  */
-public abstract class AbstractExtendingDelegatingECLVisitor<R, C, D extends CompleteOCLCSVisitor<R>>
+public abstract class AbstractExtendingDelegatingMoCCMLMappingVisitor<R, C, D extends CompleteOCLCSVisitor<R>>
 	extends AbstractDelegatingCompleteOCLCSVisitor<R, C, D>
-	implements ECLVisitor<R>
+	implements MoCCMLMappingVisitor<R>
 {
-    protected AbstractExtendingDelegatingECLVisitor(D delegate, C context) {
+    protected AbstractExtendingDelegatingMoCCMLMappingVisitor(D delegate, C context) {
         super(delegate, context);
     }
 
@@ -57,16 +56,12 @@ public abstract class AbstractExtendingDelegatingECLVisitor<R, C, D extends Comp
 	}
 
 	@Override
-	public R visitECLDocument(ECLDocument object) {
+	public R visitMoCCMLMappingDocument(MoCCMLMappingDocument object) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public R visitEventLiteralExp(EventLiteralExp eventLiteralExp)
-	{
-		return null;
-	}
+	
 
 	@Override
 	public R visitEventKind(EventKind eventKind) {
@@ -74,7 +69,7 @@ public abstract class AbstractExtendingDelegatingECLVisitor<R, C, D extends Comp
 	}
 
 	@Override
-	public R visitECLRelation(ECLRelation relation)
+	public R visitMoCCMLRelation(MoCCMLRelation relation)
 	{
 		return null;
 	}
@@ -87,22 +82,22 @@ public abstract class AbstractExtendingDelegatingECLVisitor<R, C, D extends Comp
 	}
 
 	@Override
-	public R visitECLExpression(ECLExpression eclExpression) {
+	public R visitMoCCMLExpression(MoCCMLExpression eclExpression) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
-	public R visitECLDefCS(ECLDefCS eclDefCS) {
+	public R visitMoCCMLMappingDefCS(MoCCMLMappingDefCS eclDefCS) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
-	public R visitECLEventDefCS(ECLEventDefCS eclDefCS) {
+	public R visitMoCCMLMappingEventDefCS(MoCCMLMappingEventDefCS eclDefCS) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
-	public R visitECLBlockDefCS(ECLBlockDefCS eclDefCS) {
+	public R visitMoCCMLMappingBlockDefCS(MoCCMLMappingBlockDefCS eclDefCS) {
 		// TODO Auto-generated method stub
 		return null;
 	}

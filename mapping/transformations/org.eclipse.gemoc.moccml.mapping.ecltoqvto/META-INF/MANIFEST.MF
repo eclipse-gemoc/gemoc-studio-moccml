@@ -17,7 +17,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.ocl.xtext.base,
  org.eclipse.ocl.xtext.essentialocl,
- org.eclipse.gemoc.moccml.mapping.xtext
+ org.eclipse.gemoc.moccml.mapping.xtext,
+ org.eclipse.gemoc.moccml.mapping,
+ org.eclipse.gemoc.moccml.mapping
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8,
  JavaSE-1.7
 Bundle-ActivationPolicy: lazy

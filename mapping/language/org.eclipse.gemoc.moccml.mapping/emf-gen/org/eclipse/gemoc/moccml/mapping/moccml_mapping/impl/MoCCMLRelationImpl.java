@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2010, 2017 Willink Transformations and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *   E.D.Willink - Initial API and implementation
+ * /*******************************************************************************
+ *  * Copyright (c) 2015, 2017  I3S Laboratory  and others.
+ *  * All rights reserved. This program and the accompanying materials
+ *  * are made available under the terms of the Eclipse Public License v1.0
+ *  * which accompanies this distribution, and is available at
+ *  * http://www.eclipse.org/legal/epl-v10.html
+ *  *
+ *  * Contributors:
+ *  *     I3S Laboratory - initial API and implementation
+ *  *******************************************************************************
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl;
 
@@ -20,9 +22,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
-import org.eclipse.gemoc.moccml.mapping.util.ECLVisitor;
+import org.eclipse.gemoc.moccml.mapping.util.MoCCMLMappingVisitor;
 import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.impl.ExpCSImpl;
@@ -31,20 +33,20 @@ import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpre
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>ECL Relation</b></em>'.
+ * An implementation of the model object '<em><b>Mo CCML Relation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLRelationImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLRelationImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ECLRelationImpl#isIsAnAssertion <em>Is An Assertion</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLRelationImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLRelationImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLRelationImpl#isIsAnAssertion <em>Is An Assertion</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
+public class MoCCMLRelationImpl extends ExpCSImpl implements MoCCMLRelation {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -90,7 +92,7 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ECLRelationImpl() {
+	protected MoCCMLRelationImpl() {
 		super();
 	}
 
@@ -101,7 +103,7 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MoCCMLmappingPackage.Literals.ECL_RELATION;
+		return MoCCMLmappingPackage.Literals.MO_CCML_RELATION;
 	}
 
 	/**
@@ -115,8 +117,8 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 			type = (RelationDeclaration) eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MoCCMLmappingPackage.ECL_RELATION__TYPE,
-							oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							MoCCMLmappingPackage.MO_CCML_RELATION__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -140,7 +142,7 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 		RelationDeclaration oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.ECL_RELATION__TYPE, oldType,
+			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.MO_CCML_RELATION__TYPE, oldType,
 					type));
 	}
 
@@ -152,7 +154,7 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 	public EList<ExpCS> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentEList<ExpCS>(ExpCS.class, this,
-					MoCCMLmappingPackage.ECL_RELATION__PARAMETERS);
+					MoCCMLmappingPackage.MO_CCML_RELATION__PARAMETERS);
 		}
 		return parameters;
 	}
@@ -175,8 +177,8 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 		boolean oldIsAnAssertion = isAnAssertion;
 		isAnAssertion = newIsAnAssertion;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.ECL_RELATION__IS_AN_ASSERTION,
-					oldIsAnAssertion, isAnAssertion));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					MoCCMLmappingPackage.MO_CCML_RELATION__IS_AN_ASSERTION, oldIsAnAssertion, isAnAssertion));
 	}
 
 	/**
@@ -185,7 +187,7 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 	 * @generated
 	 */
 	public <R> R accept(final BaseCSVisitor<R> visitor) {
-		return (R) visitor.getAdapter(ECLVisitor.class).visitECLRelation(this);
+		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLRelation(this);
 	}
 
 	/**
@@ -196,7 +198,7 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.ECL_RELATION__PARAMETERS:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__PARAMETERS:
 			return ((InternalEList<?>) getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -210,13 +212,13 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.ECL_RELATION__TYPE:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__TYPE:
 			if (resolve)
 				return getType();
 			return basicGetType();
-		case MoCCMLmappingPackage.ECL_RELATION__PARAMETERS:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__PARAMETERS:
 			return getParameters();
-		case MoCCMLmappingPackage.ECL_RELATION__IS_AN_ASSERTION:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__IS_AN_ASSERTION:
 			return isIsAnAssertion();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -231,14 +233,14 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.ECL_RELATION__TYPE:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__TYPE:
 			setType((RelationDeclaration) newValue);
 			return;
-		case MoCCMLmappingPackage.ECL_RELATION__PARAMETERS:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__PARAMETERS:
 			getParameters().clear();
 			getParameters().addAll((Collection<? extends ExpCS>) newValue);
 			return;
-		case MoCCMLmappingPackage.ECL_RELATION__IS_AN_ASSERTION:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__IS_AN_ASSERTION:
 			setIsAnAssertion((Boolean) newValue);
 			return;
 		}
@@ -253,13 +255,13 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.ECL_RELATION__TYPE:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__TYPE:
 			setType((RelationDeclaration) null);
 			return;
-		case MoCCMLmappingPackage.ECL_RELATION__PARAMETERS:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__PARAMETERS:
 			getParameters().clear();
 			return;
-		case MoCCMLmappingPackage.ECL_RELATION__IS_AN_ASSERTION:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__IS_AN_ASSERTION:
 			setIsAnAssertion(IS_AN_ASSERTION_EDEFAULT);
 			return;
 		}
@@ -274,11 +276,11 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case MoCCMLmappingPackage.ECL_RELATION__TYPE:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__TYPE:
 			return type != null;
-		case MoCCMLmappingPackage.ECL_RELATION__PARAMETERS:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__PARAMETERS:
 			return parameters != null && !parameters.isEmpty();
-		case MoCCMLmappingPackage.ECL_RELATION__IS_AN_ASSERTION:
+		case MoCCMLmappingPackage.MO_CCML_RELATION__IS_AN_ASSERTION:
 			return isAnAssertion != IS_AN_ASSERTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -294,11 +296,11 @@ public class ECLRelationImpl extends ExpCSImpl implements ECLRelation {
 		if (eIsProxy())
 			return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (isAnAssertion: ");
 		result.append(isAnAssertion);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ECLRelationImpl
+} //MoCCMLRelationImpl

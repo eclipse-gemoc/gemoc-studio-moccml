@@ -26,34 +26,33 @@
 package	org.eclipse.gemoc.moccml.mapping.util;
 
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLBlockDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLDocument;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLEventDefCS;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLExpression;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ECLRelation;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind;
-import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventLiteralExp;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation;
 
 /**
- * An AbstractExtendingECLVisitor provides a default implementation for each
+ * An AbstractExtendingMoCCMLMappingVisitor provides a default implementation for each
  * visitXxx method that delegates to the visitYyy method of the first
  * super class, (or transitively its first super class first super class
  * until a non-interface super-class is found). In the absence of any
  * suitable first super class, the method delegates to visiting().
  */
-public abstract class AbstractExtendingECLVisitor<R, C>
+public abstract class AbstractExtendingMoCCMLMappingVisitor<R, C>
 	extends org.eclipse.ocl.xtext.completeoclcs.util.AbstractExtendingCompleteOCLCSVisitor<R, C>
-	implements ECLVisitor<R>
+	implements MoCCMLMappingVisitor<R>
 {
 	/**
 	 * Initializes me with an initial value for my result.
 	 * 
 	 * @param context my initial result value
 	 */
-	protected AbstractExtendingECLVisitor(C context) {
+	protected AbstractExtendingMoCCMLMappingVisitor(C context) {
 	    super(context);
 	}
 	
@@ -68,16 +67,11 @@ public abstract class AbstractExtendingECLVisitor<R, C>
 	}
 	
 	@Override
-	public R visitECLDocument(ECLDocument object) {
+	public R visitMoCCMLMappingDocument(MoCCMLMappingDocument object) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public R visitEventLiteralExp(EventLiteralExp eventLiteralExp)
-	{
-		return null;
-	}
 
 	@Override
 	public R visitEventKind(EventKind eventKind) {
@@ -85,7 +79,7 @@ public abstract class AbstractExtendingECLVisitor<R, C>
 	}
 
 	@Override
-	public R visitECLRelation(ECLRelation relation)
+	public R visitMoCCMLRelation(MoCCMLRelation relation)
 	{
 		return null;
 	}
@@ -98,25 +92,25 @@ public abstract class AbstractExtendingECLVisitor<R, C>
 	}
 
 	@Override
-	public R visitECLExpression(ECLExpression eclExpression) {
+	public R visitMoCCMLExpression(MoCCMLExpression eclExpression) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
 	@Override
-	public R visitECLDefCS(ECLDefCS eclDefCS) {
+	public R visitMoCCMLMappingDefCS(MoCCMLMappingDefCS eclDefCS) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
 	@Override
-	public R visitECLEventDefCS(ECLEventDefCS eclDefCS) {
+	public R visitMoCCMLMappingEventDefCS(MoCCMLMappingEventDefCS eclDefCS) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
 	@Override
-	public R visitECLBlockDefCS(ECLBlockDefCS eclDefCS) {
+	public R visitMoCCMLMappingBlockDefCS(MoCCMLMappingBlockDefCS eclDefCS) {
 		// TODO Auto-generated method stub
 		return null;
 	}

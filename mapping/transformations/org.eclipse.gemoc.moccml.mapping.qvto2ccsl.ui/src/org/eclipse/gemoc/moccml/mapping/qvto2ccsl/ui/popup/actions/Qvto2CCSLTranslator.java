@@ -46,6 +46,7 @@ public class Qvto2CCSLTranslator implements IObjectActionDelegate {
 	private XtextResourceSet aModelResourceSet=null;
 	private XtextResourceSet outputResourceSet=null;
 	private ResourceSet feedbackResourceSet=null;
+	private ResourceSet priorityResourceSet=null;
 	/**
 	 * Constructor for Action1.
 	 */
@@ -73,6 +74,7 @@ public class Qvto2CCSLTranslator implements IObjectActionDelegate {
 		ExtendedCCSLStandaloneSetup.doSetup();
 		
 		feedbackResourceSet = new ResourceSetImpl();
+		priorityResourceSet = new ResourceSetImpl();
 	}
 	
 	/**
@@ -110,10 +112,11 @@ public class Qvto2CCSLTranslator implements IObjectActionDelegate {
 		ModelExtent input = new BasicModelExtent(modelResource.getContents());
 		ModelExtent output = new BasicModelExtent();
 		ModelExtent feedback = new BasicModelExtent();
+		ModelExtent priority = new BasicModelExtent();
 		
 		ExecutionContextImpl context = new ExecutionContextImpl();
 
-		ExecutionDiagnostic diagnostic = executor.execute(context, input, output, feedback);
+		ExecutionDiagnostic diagnostic = executor.execute(context, input, output, feedback, priority);
 		System.out.println(diagnostic);
 		//output resource saving
 		int numberOfCharToRemove = modelUriString.length() - modelUri.fileExtension().length() -1;
@@ -153,6 +156,26 @@ public class Qvto2CCSLTranslator implements IObjectActionDelegate {
 	    feedbackResource.getContents().addAll(feedback.getContents());
 	    try {
 	    	feedbackResource.save(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	    
+	  //priority file
+	    String priorityPathString = modelUriString.substring(0, numberOfCharToRemove)+ ".prioritymodel";
+	    URI priorityUri = URI.createPlatformResourceURI(priorityPathString,false);
+	    Resource priorityResource=null;
+	    try{
+	    	priorityResource = priorityResourceSet.createResource(priorityUri);
+	    }catch( Exception e){
+	    	System.out.println(e);
+	    	priorityResource = priorityResourceSet.createResource(priorityUri);
+
+	    //	outputResource = outputResourceSet.getResource(outputUri,true);
+	    };
+	    priorityResource.getContents().addAll(priority.getContents());
+	    try {
+	    	priorityResource.save(null);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

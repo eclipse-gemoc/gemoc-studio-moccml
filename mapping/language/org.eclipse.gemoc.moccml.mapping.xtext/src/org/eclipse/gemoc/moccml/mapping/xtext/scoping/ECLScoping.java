@@ -25,6 +25,7 @@ import org.eclipse.gemoc.moccml.mapping.xtext.attributes.ECLExpressionAttributio
 import org.eclipse.gemoc.moccml.mapping.xtext.attributes.ECLFeedBackAttribution;
 import org.eclipse.gemoc.moccml.mapping.xtext.attributes.EventTypeAttribution;
 import org.eclipse.gemoc.moccml.mapping.xtext.attributes.ImportStatementAttribution;
+import org.eclipse.gemoc.moccml.mapping.xtext.attributes.TimeBaseAttribution;
 //import org.eclipse.ocl.xtext.completeocl.attributes.IncludeCSAttribution;
 import org.eclipse.ocl.pivot.internal.scoping.Attribution;
 import org.eclipse.ocl.xtext.completeocl.attributes.ClassifierContextCSAttribution;
@@ -39,11 +40,12 @@ public class ECLScoping
 	public static void init() {
 		Map<EClassifier, Attribution> registry = Attribution.REGISTRY;
 		registry.put(MoCCMLmappingPackage.Literals.IMPORT_STATEMENT, ImportStatementAttribution.INSTANCE);	
-		registry.put(MoCCMLmappingPackage.Literals.ECL_DOCUMENT, ECLAttribution.INSTANCE);
+		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_DOCUMENT, ECLAttribution.INSTANCE);
 		registry.put(MoCCMLmappingPackage.Literals.EVENT_TYPE, EventTypeAttribution.INSTANCE);
-		registry.put(MoCCMLmappingPackage.Literals.ECL_EXPRESSION, ECLExpressionAttribution.INSTANCE);
-		registry.put(MoCCMLmappingPackage.Literals.ECL_RELATION, ECLExpressionAttribution.INSTANCE);
-		registry.put(MoCCMLmappingPackage.Literals.ECL_DEF_CS, ECLDefCSAttribution.INSTANCE);
+		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_TIME_BASE, TimeBaseAttribution.INSTANCE);
+		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_EXPRESSION, ECLExpressionAttribution.INSTANCE);
+		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_RELATION, ECLExpressionAttribution.INSTANCE);
+		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_DEF_CS, ECLDefCSAttribution.INSTANCE);
 		registry.put(MoCCMLmappingPackage.Literals.CASE, ECLCaseAttribution.INSTANCE);
 		registry.put(MoCCMLmappingPackage.Literals.DSA_FEEDBACK, ECLFeedBackAttribution.INSTANCE);
 		registry.put(CompleteOCLCSPackage.Literals.CLASSIFIER_CONTEXT_DECL_CS, ClassifierContextCSAttribution.INSTANCE);
