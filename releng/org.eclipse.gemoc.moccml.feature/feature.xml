@@ -126,10 +126,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl.sdk"
-         version="0.0.0"/>
-
-   <includes
          id="org.eclipse.gemoc.moccml.constraint.core.feature"
          version="0.0.0"/>
 
