@@ -16,6 +16,7 @@
 	<modules>
 		<module>mapping/deployment/org.eclipse.gemoc.moccml.mapping.build</module>
 		<module>constraint</module>
+		<module>releng</module>
 	</modules>
   	<repositories>
 
