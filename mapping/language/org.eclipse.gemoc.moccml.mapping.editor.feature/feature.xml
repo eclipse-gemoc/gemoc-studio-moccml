@@ -36,7 +36,7 @@ and timing aspect of your language ! (Ie. moccml.mapings)
    </license>
 
    <url>
-      <update label="ECL update site" url="https://ci.inria.fr/gemoc/job/MoCCML-mapping/lastSuccessfulBuild/artifact/moccml/mapping/deployment/org.eclipse.gemoc.moccml.mapping.updatesite/target/repository/"/>
+      <update label="GEMOC update site" url="https://download.eclipse.org/gemoc/updates/nightly/"/>
       <discovery label="Photon" url="http://download.eclipse.org/releases/photon"/>
       <discovery label="The Eclipse Project Updates" url="http://download.eclipse.org/eclipse/updates/4.6"/>
       <discovery label="Acceleo" url="http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.2"/>
