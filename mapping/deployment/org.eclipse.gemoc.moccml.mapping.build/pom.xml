@@ -20,7 +20,7 @@
 	<packaging>pom</packaging>
 
 	<name>Event Constraint Language</name>
-	<url>https://ci.inria.fr/gemoc/job/MoCCML-mapping/lastSuccessfulBuild/artifact/moccml/mapping/deployment/org.eclipse.gemoc.moccml.mapping.updatesite/target/repository/</url>
+	<url>https://download.eclipse.org/gemoc/updates/nightly/</url>
 	<organization>
 		<name>GEMOC initiative, I3S</name>
 		<url>http://team.inria.fr/kairos</url>
@@ -64,7 +64,6 @@
 		<module>../../feedback/model/org.eclipse.gemoc.moccml.mapping.feedback.model.feature</module>
 		
 		<!-- <module>../org.eclipse.gemoc.moccml.mapping.branding</module> -->
-		<module>../org.eclipse.gemoc.moccml.mapping.updatesite</module>
 		<module>../org.eclipse.gemoc.moccml.mapping.license.feature</module>
 	</modules>    
 	<repositories>

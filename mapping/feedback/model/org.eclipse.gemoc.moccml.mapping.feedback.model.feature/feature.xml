@@ -34,7 +34,7 @@ are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
    </license>
    <url>
-      <update label="MoCCML mapping update site" url="https://ci.inria.fr/gemoc/job/MoCCML-mapping/lastSuccessfulBuild/artifact/moccml/mapping/deployment/org.eclipse.gemoc.moccml.mapping.updatesite/target/repository/"/>
+      <update label="GEMOC update site" url="https://download.eclipse.org/gemoc/updates/nightly/"/>
       <discovery label="Neon" url="http://download.eclipse.org/releases/neon/"/>
       <discovery label="The Eclipse Project Updates" url="http://download.eclipse.org/eclipse/updates/4.2"/>
       <discovery label="Acceleo" url="http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.2"/>

@@ -38,7 +38,6 @@
         <module>releng/org.eclipse.gemoc.moccml.constraint.graphical.editors.feature</module>
         <module>releng/org.eclipse.gemoc.moccml.constraint.text.editors.feature</module>
         <module>releng/org.eclipse.gemoc.moccml.constraint.ccsl.solver.extension.automata.feature</module>
-        <module>releng/org.eclipse.gemoc.mocc.p2updatesite</module>
     </modules>
 
     <properties>
