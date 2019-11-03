@@ -49,7 +49,7 @@ property Kernel_Clock_Type 	: TimeModel::BasicType::Type		= null;
 property seqOfRelationDeclaration :	Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::RelationDeclaration)    = Sequence{};
 property seqOfAbstractEntity :		Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)    = Sequence{};
 property seqOfExpressionDeclaration :	Sequence(TimeModel::CCSLModel::ClockExpressionAndRelation::ExpressionDeclaration)    = Sequence{};
-
+property allVarDefs : Sequence(String) = Sequence{}; 
 
 query identifyUserRelations() {
 	var kernelTypes :  	Sequence(TimeModel::BasicType::Type) := Sequence{};
@@ -180,7 +180,11 @@ main() {
 		var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
 				[/if]
 			[/for]
-		[/let]		 
+		[/let]	
+
+		[expr.createVarFromDefs()/]
+
+
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 		 			bindable := theMainBlock.elements['['/]name = getNameOrUID(an1.oclAsType(EObject))+'_[expr.oclAsType(MoCCMLExpression).parameters->at(1).prettyPrintOnlyLast()/]'[']'/]->first();
 					[if (expr.oclAsType(MoCCMLExpression).type.oclIsKindOf(KernelExpressionDeclaration))]
@@ -219,7 +223,9 @@ main() {
 		var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
 				[/if]
 			[/for]
-		[/let]
+		[/let] 
+
+		[expr.createVarFromDefs()/]	
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.expressions['['/]name = expr.name[']'/]->first();
 					[if (expr.oclAsType(MoCCMLExpression).type.oclIsKindOf(KernelExpressionDeclaration))]
@@ -261,6 +267,9 @@ main() {
 				[/if]
 			[/for]
 		[/let]
+
+		[expr.createVarFromDefs()/]
+
 		[let navSet : String = expr.oclAsType(MoCCMLExpression).parameters->at(1).prettyPrintButLast()]
 		var sources : Sequence([expr.oclAsType(MoCCMLExpression).parameters->at(1).getTypeOfSet()/]) := [navSet.first(navSet.size()-1)/]->asSequence();
 		[/let]
@@ -300,6 +309,7 @@ main() {
 				[/if]
 			[/for]
 		[/let]
+		[expr.createVarFromDefs()/]
 
 		[for (p : ExpCS | expr.oclAsType(MoCCMLExpression).parameters)]
 				[let paramNumber : EInt = i]
@@ -481,16 +491,17 @@ main() {
 			when { [theImpliesOp.ownedLeft/] }
 			[/if]
 		[/let]
-		[/if]	
+	[/if]	
 	{
 		init{
 			[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)->select(l | true)]
-			[for (aVar : LetVariableCS | allLetExpr.ownedVariables)]
-				[if (not aVar.ownedType.oclIsKindOf(EventType))]	
-					var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
-				[/if]
-			[/for]
+				[for (aVar : LetVariableCS | allLetExpr.ownedVariables)]
+					[if (not aVar.ownedType.oclIsKindOf(EventType))]	
+						var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
+					[/if]
+				[/for]
 			[/let]
+			[expr.createVarFromDefs()/]
 			[let navSet : String = expr.oclAsType(MoCCMLRelation).parameters->at(1).prettyPrintButLast()]
 			var sources : Sequence([expr.oclAsType(MoCCMLRelation).parameters->at(1).getTypeOfSet()/]) := [navSet.first(navSet.size()-1)/]->asSequence();
 			[/let]
@@ -517,6 +528,11 @@ main() {
 				[for (letExp : LetExpCS | theImpliesOp.getAllLetExpParents()) ]
 			  let [letExp.ownedVariables.toString()/] in
 				[/for]
+			[let allDef : Sequence(DefCS) = expr.ancestors(ClassifierContextDeclCS)->first().oclAsType(EObject).eAllContents(DefCS)->select(l  | not l.oclAsType(DefCS).ownedType.oclIsTypeOf(EventType))]
+				[for (aVar : DefCS | allDef)]
+		      let [aVar.name/] : [aVar.ownedType/] = [aVar.ownedSpecification/] in
+				[/for]
+			[/let]	
 				[theImpliesOp.ownedLeft/] 
 				
 }
@@ -534,6 +550,7 @@ main() {
 					var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
 				[/if]
 			[/for]
+			[expr.createVarFromDefs()/]
 			[for (p : ExpCS | expr.oclAsType(MoCCMLRelation).parameters)]
 				[let paramNumber : EInt = i]
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
@@ -847,6 +864,14 @@ mapping inMM[getpackageIndex(aMoCCMLMappingDoc, rootElementName)/]::[rootElement
 [/let]
 [/template]
 
+[template public createVarFromDefs (expr : ExpCS) ]
+		[let allDef : Sequence(DefCS) = expr.ancestors(ClassifierContextDeclCS)->first().oclAsType(EObject).eAllContents(DefCS)->select(l  | not l.oclAsType(DefCS).ownedType.oclIsTypeOf(EventType))]
+			[for (aVar : DefCS | allDef)]
+		var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedSpecification/];
+		allVarDefs->append("[aVar.ancestors(ClassifierContextDeclCS).referredClass.name/]::[aVar.name/]"); --to be exploited later. If you have an error close to here, please remove the explicit self when navigating to the def
+			[/for]
+		[/let]		 
+[/template]
 
 
 [template public getinMMindex(anObject:EObject)]
