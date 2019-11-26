@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="CCSLMoCC" version="9.0.0">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="CCSLMoCC" version="12.0.0.2017041100">
   <ownedViewpoints name="MoCCML" modelFileExtension="ccsl xmi mocdsl moccml">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="State-Based Library Diagram" label="Constraint-Automata Library Diagram" domainClass="moccml.StateRelationBasedLibrary" enablePopupBars="true">
       <metamodel href="http://fr.inria.aoste.timemodel#/"/>
@@ -22,14 +22,15 @@
         <edgeMappings name="RelationDefToDeclaration" deletionDescription="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DelDeclarationRelation']" sourceMapping="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@containerMappings[name='RelationLibrary']/@subContainerMappings[name='StateMachineRelationDefinition']" targetMapping="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@containerMappings[name='RelationLibrary']/@subContainerMappings[name='RelationDeclaration']" targetFinderExpression="feature:declaration" reconnections="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeclarationMoveTarget'] //@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='DeclarationMoveSource']">
           <style lineStyle="dash" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription labelFormat="italic" showIcon="false" labelExpression="defines">
+            <centerLabelStyleDescription showIcon="false" labelExpression="defines">
+              <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
         <containerMappings name="RelationLibrary" labelDirectEdit="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='NameEditRelationTools']" semanticCandidatesExpression="feature:eAllContents" domainClass="RelationLibrary">
           <subContainerMappings name="StateMachineRelationDefinition" detailDescriptions="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='CreateStateBasedDefDiagram']" labelDirectEdit="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='NameEditRelationTools']" semanticCandidatesExpression="feature:eAllContents" domainClass="moccml.StateMachineRelationDefinition">
-            <style xsi:type="style:FlatContainerStyleDescription" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/FSM.gif" backgroundStyle="Liquid">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/FSM.gif" backgroundStyle="Liquid">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -39,19 +40,20 @@
           </subContainerMappings>
           <subContainerMappings name="RelationDeclaration" labelDirectEdit="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='EditRelationDeclaration']" semanticCandidatesExpression="feature:eAllContents" doubleClickDescription="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@toolSections.4/@ownedTools[name='OpenXtextEditorOnDeclAndSMRDef']" domainClass="RelationDeclaration" childrenPresentation="List" listContainer="true">
             <subNodeMappings name="AbstractEntity" labelDirectEdit="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@defaultLayer/@toolSections.3/@ownedTools[name='NameEditAbstractEntity']" semanticCandidatesExpression="feature:eAllContents" domainClass="AbstractEntity">
-              <style xsi:type="style:SquareDescription" labelFormat="italic" labelExpression="service:computeLabel" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/Parameter.gif" labelAlignment="LEFT" resizeKind="NSEW">
+              <style xsi:type="style:SquareDescription" labelExpression="service:computeLabel" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/Parameter.gif" labelAlignment="LEFT" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>italic</labelFormat>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               </style>
             </subNodeMappings>
-            <style xsi:type="style:ShapeContainerStyleDescription" arcWidth="2" arcHeight="2" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/Variable.gif">
+            <style xsi:type="style:ShapeContainerStyleDescription" arcWidth="2" arcHeight="2" borderSizeComputationExpression="1" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/Variable.gif">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/RelationLibrary.jpg" backgroundStyle="Liquid">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/RelationLibrary.jpg" backgroundStyle="Liquid">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -333,14 +335,17 @@
       <additionalLayers name="LibraryDefinition" label="Library Definition" activeByDefault="true">
         <containerMappings name="ImportURIContainer" semanticCandidatesExpression="[thisEObject.imports->first()/]" synchronizationLock="true" domainClass="ImportStatement" childrenPresentation="List">
           <subNodeMappings name="ImportURI" labelDirectEdit="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@additionalLayers[name='LibraryDefinition']/@toolSections.2/@ownedTools[name='LabelImport']" semanticCandidatesExpression="[self.eContainer().oclAsType(StateRelationBasedLibrary).imports/]" synchronizationLock="true" domainClass="ImportStatement">
-            <style xsi:type="style:SquareDescription" labelFormat="bold" showIcon="false" labelExpression="['import &quot;'+self.importURI+'&quot; as '+self.alias/]" labelAlignment="LEFT" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="['import &quot;'+self.importURI+'&quot; as '+self.alias/]" labelAlignment="LEFT" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" labelFormat="bold_italic" showIcon="false" labelExpression="Imported Librairies" labelAlignment="LEFT" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" showIcon="false" labelExpression="Imported Librairies" labelAlignment="LEFT" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            <labelFormat>italic</labelFormat>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
@@ -349,14 +354,17 @@
         </containerMappings>
         <containerMappings name="ImportedTypeContainer" deletionDescription="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@additionalLayers[name='LibraryDefinition']/@toolSections.1/@ownedTools[name='DeleteImportedTypes']" semanticCandidatesExpression="[getImportedTypes()->first()/]" synchronizationLock="true" domainClass="BasicType.Type" childrenPresentation="List">
           <subNodeMappings name="ImportedTypeDeclaration" deletionDescription="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='State-Based%20Library%20Diagram']/@additionalLayers[name='LibraryDefinition']/@toolSections.1/@ownedTools[name='DeleteImportedTypes']" semanticCandidatesExpression="[containerView.eContainer(viewpoint::DSemanticDecorator).target.oclAsType(StateRelationBasedLibrary).getImportedTypes()/]" synchronizationLock="true" domainClass="BasicType.Type">
-            <style xsi:type="style:SquareDescription" labelFormat="italic" showIcon="false" labelExpression="[self.eClass().name+': '+self.name/]" labelAlignment="LEFT" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="[self.eClass().name+': '+self.name/]" labelAlignment="LEFT" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" labelFormat="bold_italic" showIcon="false" labelExpression="Predefined Types from Imported Librairies" labelAlignment="LEFT" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Predefined Types from Imported Librairies" labelAlignment="LEFT" roundedCorner="true" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            <labelFormat>italic</labelFormat>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
@@ -371,8 +379,10 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" labelFormat="bold_italic" showIcon="false" labelExpression="Predefined Types" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Predefined Types" roundedCorner="true" backgroundStyle="GradientTopToBottom">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            <labelFormat>italic</labelFormat>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
@@ -645,21 +655,24 @@
       <metamodel href="../../org.eclipse.gemoc.moccml.constraint.fsmkernel.model/model/FSMModel.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="FSMState" deletionDescription="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='StateMachineRelationDiagram']/@defaultLayer/@toolSections.1/@ownedTools[name='DeleteState']" labelDirectEdit="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='StateMachineRelationDiagram']/@defaultLayer/@toolSections.2/@ownedTools[name='SetStateName']" semanticCandidatesExpression="[states/]" domainClass="FSMModel.State">
-          <style xsi:type="style:BundledImageDescription" labelFormat="bold" showIcon="false" sizeComputationExpression="[self.name.toString().size()+5/]" labelPosition="node" resizeKind="NSEW" shape="dot">
+          <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="2" labelSize="10" showIcon="false" sizeComputationExpression="[self.name.toString().size()+5/]" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
           <conditionnalStyles predicateExpression="[self.eContainer()->filter(StateMachineDefinition).initialStates->includes(self)/]">
-            <style xsi:type="style:BundledImageDescription" labelFormat="bold" showIcon="false" resizeKind="NSEW" shape="dot">
+            <style xsi:type="style:BundledImageDescription" showIcon="false" resizeKind="NSEW" shape="dot">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
+              <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[self.eContainer()->filter(StateMachineDefinition).finalStates->includes(self)/]">
-            <style xsi:type="style:BundledImageDescription" labelFormat="bold" showIcon="false" resizeKind="NSEW" shape="dot">
+            <style xsi:type="style:BundledImageDescription" showIcon="false" resizeKind="NSEW" shape="dot">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             </style>
@@ -844,7 +857,7 @@
           </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
-          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="HasSomethingInTransition" position="CENTER" decoratorPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/Action.gif" preconditionExpression="[self.guard&lt;>null or self.actions->size()>0 or self.trigger&lt;>null/]" mappings="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='StateMachineRelationDiagram']/@defaultLayer/@edgeMappings[name='FSMTransition']"/>
+          <decorationDescriptions xsi:type="description_1:MappingBasedDecoration" name="HasSomethingInTransition" position="CENTER" preconditionExpression="[self.guard&lt;>null or self.actions->size()>0 or self.trigger&lt;>null/]" imageExpression="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/Action.gif" mappings="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='StateMachineRelationDiagram']/@defaultLayer/@edgeMappings[name='FSMTransition']"/>
         </decorationDescriptionsSet>
       </defaultLayer>
       <additionalLayers name="Declarations" activeByDefault="true">
@@ -863,8 +876,9 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" labelFormat="italic" labelExpression="Local Variables Block" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/DeclarationBloc.gif" roundedCorner="true" backgroundStyle="Liquid">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="Local Variables Block" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/DeclarationBloc.gif" roundedCorner="true" backgroundStyle="Liquid">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>italic</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
@@ -878,7 +892,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:ShapeContainerStyleDescription" arcWidth="2" arcHeight="2" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/Variable.gif">
+          <style xsi:type="style:ShapeContainerStyleDescription" arcWidth="2" arcHeight="2" borderSizeComputationExpression="1" iconPath="/org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design/images/Variable.gif">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
@@ -1039,15 +1053,16 @@
       </additionalLayers>
       <additionalLayers name="DetailedTransitionLayerID" label="Detailed Transition Layer">
         <nodeMappings name="TransitionDetailID" preconditionExpression="[self.trigger &lt;> null or self.guard&lt;>null or self.actions->isEmpty()=false/]" semanticCandidatesExpression="[eAllContents()/]" doubleClickDescription="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='StateMachineRelationDiagram']/@additionalLayers[name='DetailedTransitionLayerID']/@toolSections.2/@ownedTools[name='OpenXtextEditor']" domainClass="FSMModel.Transition">
-          <style xsi:type="style:BundledImageDescription" showIcon="false" labelExpression="service:computeLabel" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='MoCCMLColors']/@entries[name='veryPaleYellow']">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" borderLineStyle="dash" showIcon="false" labelExpression="service:computeLabel" sizeComputationExpression="10" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='MoCCMLColors']/@entries[name='veryPaleYellow']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
         <edgeMappings name="TransitionContentLink" preconditionExpression="[self.trigger &lt;> null or self.guard&lt;>null or self.actions->isEmpty()=false/]" sourceMapping="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='StateMachineRelationDiagram']/@defaultLayer/@edgeMappings[name='FSMTransition']" targetMapping="//@ownedViewpoints[name='MoCCML']/@ownedRepresentations[name='StateMachineRelationDiagram']/@additionalLayers[name='DetailedTransitionLayerID']/@nodeMappings[name='TransitionDetailID']" targetFinderExpression="[self/]">
           <style lineStyle="dash" targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
-            <centerLabelStyleDescription labelFormat="italic" showIcon="false">
+            <centerLabelStyleDescription showIcon="false">
+              <labelFormat>italic</labelFormat>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             </centerLabelStyleDescription>
           </style>
