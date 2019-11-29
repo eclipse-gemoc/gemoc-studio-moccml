@@ -41,7 +41,6 @@
     </modules>
 
     <properties>
-        <tycho-version>1.2.0</tycho-version>
         <project.build.sourceEncoding>UTF8</project.build.sourceEncoding>
     </properties>
 
