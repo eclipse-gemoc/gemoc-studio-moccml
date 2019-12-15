@@ -473,11 +473,21 @@ main() {
 		type := seqOfRelationDeclaration->select(rd | rd.name = "[expr.oclAsType(MoCCMLRelation).type.name/]")->first();
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements['['/]name = getNameOrUID(an1.oclAsType(EObject))+'_[expr.oclAsType(MoCCMLRelation).parameters->at(1).prettyPrintOnlyLast()/]'[']'/]->first();
-					_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					[if (expr.oclAsType(MoCCMLRelation).type.oclIsKindOf(KernelRelationDeclaration))]
+						_abstract := seqOfRelationDeclaration['['/]name = '[expr.oclAsType(MoCCMLRelation).type.name/]'[']'/]->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
+					[else]
+						_abstract := seqAbstract->at(1).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					[/if]	
+
 				};
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements['['/]name = getNameOrUID(an2.oclAsType(EObject))+'_[expr.oclAsType(MoCCMLRelation).parameters->at(1).prettyPrintOnlyLast()/]'[']'/]->first();
-					_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					[if (expr.oclAsType(MoCCMLRelation).type.oclIsKindOf(KernelRelationDeclaration))]
+						_abstract := seqOfRelationDeclaration['['/]name = '[expr.oclAsType(MoCCMLRelation).type.name/]'[']'/]->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).rightEntity;
+					[else]
+						_abstract := seqAbstract->at(2).oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity);
+					[/if]	
+
 				};
 		end{
 			theMainBlock.relations += result;
