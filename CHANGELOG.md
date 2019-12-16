@@ -1,6 +1,21 @@
 # Changelog
 
-## v3.2.0-20191213 (13/12/2019)
+## v3.2.0-20191216 (16/12/2019)
+
+#### Enhancements:
+
+- [**enhancement**] Prettier Moccml diagrams [#7](https://github.com/eclipse/gemoc-studio-moccml/pull/7)
+- [**enhancement**] Add possibility to use def to simplify the writing of constraint [#6](https://github.com/eclipse/gemoc-studio-moccml/pull/6)
+
+#### Release Engineering
+
+- [**releng**] Change Timesquare updatesite [#9](https://github.com/eclipse/gemoc-studio-moccml/pull/9)
+- [**releng**] Tycho 1.5 and p2 dependencies optimisation [#8](https://github.com/eclipse/gemoc-studio-moccml/pull/8)
+- [**releng**] Remove deprecated update site [#5](https://github.com/eclipse/gemoc-studio-moccml/pull/5)
+
+---
+
+## v3.2.0-20191213 (01/01/1970)
 
 #### Enhancements:
 
