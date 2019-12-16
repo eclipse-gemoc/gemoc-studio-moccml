@@ -7,6 +7,10 @@
 - [**enhancement**] Prettier Moccml diagrams [#7](https://github.com/eclipse/gemoc-studio-moccml/pull/7)
 - [**enhancement**] Add possibility to use def to simplify the writing of constraint [#6](https://github.com/eclipse/gemoc-studio-moccml/pull/6)
 
+#### Bug Fixes:
+
+- [**bug**] correct a bug due to unordered collection [#10](https://github.com/eclipse/gemoc-studio-moccml/pull/10)
+
 #### Release Engineering
 
 - [**releng**] Change Timesquare updatesite [#9](https://github.com/eclipse/gemoc-studio-moccml/pull/9)
