@@ -13,6 +13,7 @@
   <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
     <details key="Use Delegates" value="false"/>
     <details key="Use Null Annotations" value="true"/>
+    <details key="Generate Classifier ints" value="true"/>
   </genAnnotations>
   <genAnnotations source="http://www.eclipse.org/OCL/GenModel/ToString"/>
   <genAnnotations source="http://www.eclipse.org/OCL/GenModel/Visitor">

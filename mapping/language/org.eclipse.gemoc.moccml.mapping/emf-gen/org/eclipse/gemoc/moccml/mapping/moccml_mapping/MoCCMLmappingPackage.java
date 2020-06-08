@@ -70,6 +70,178 @@ public interface MoCCMLmappingPackage extends EPackage
 
 
 	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.EventTypeImpl <em>Event Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.EventTypeImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getEventType()
+	 * @generated
+	 */
+	int EVENT_TYPE = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.DSAFeedbackImpl <em>DSA Feedback</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.DSAFeedbackImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getDSAFeedback()
+	 * @generated
+	 */
+	int DSA_FEEDBACK = 1;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.CaseImpl <em>Case</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.CaseImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getCase()
+	 * @generated
+	 */
+	int CASE = 2;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDocumentImpl <em>Mo CCML Mapping Document</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDocumentImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingDocument()
+	 * @generated
+	 */
+	int MO_CCML_MAPPING_DOCUMENT = 3;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLRelationImpl <em>Mo CCML Relation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLRelationImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLRelation()
+	 * @generated
+	 */
+	int MO_CCML_RELATION = 4;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ImportStatementImpl <em>Import Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.ImportStatementImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getImportStatement()
+	 * @generated
+	 */
+	int IMPORT_STATEMENT = 5;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLExpressionImpl <em>Mo CCML Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLExpressionImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLExpression()
+	 * @generated
+	 */
+	int MO_CCML_EXPRESSION = 6;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDefCSImpl <em>Mo CCML Mapping Def CS</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingDefCSImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingDefCS()
+	 * @generated
+	 */
+	int MO_CCML_MAPPING_DEF_CS = 7;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor <em>Base CS Visitor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getBaseCSVisitor()
+	 * @generated
+	 */
+	int BASE_CS_VISITOR = 8;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.BlockTypeImpl <em>Block Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.BlockTypeImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getBlockType()
+	 * @generated
+	 */
+	int BLOCK_TYPE = 9;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingEventDefCSImpl <em>Mo CCML Mapping Event Def CS</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingEventDefCSImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingEventDefCS()
+	 * @generated
+	 */
+	int MO_CCML_MAPPING_EVENT_DEF_CS = 10;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingBlockDefCSImpl <em>Mo CCML Mapping Block Def CS</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingBlockDefCSImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingBlockDefCS()
+	 * @generated
+	 */
+	int MO_CCML_MAPPING_BLOCK_DEF_CS = 11;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingTimeBaseImpl <em>Mo CCML Mapping Time Base</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingTimeBaseImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingTimeBase()
+	 * @generated
+	 */
+	int MO_CCML_MAPPING_TIME_BASE = 12;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingPriorityImpl <em>Mo CCML Mapping Priority</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLMappingPriorityImpl
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getMoCCMLMappingPriority()
+	 * @generated
+	 */
+	int MO_CCML_MAPPING_PRIORITY = 13;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind <em>Event Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getEventKind()
+	 * @generated
+	 */
+	int EVENT_KIND = 14;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.Visibility <em>Visibility</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.Visibility
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getVisibility()
+	 * @generated
+	 */
+	int VISIBILITY = 15;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.FeedBackKind <em>Feed Back Kind</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.FeedBackKind
+	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingPackageImpl#getFeedBackKind()
+	 * @generated
+	 */
+	int FEED_BACK_KIND = 16;
+
+
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType <em>Event Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -2694,45 +2694,71 @@ rulePropertyContextDeclCS returns [EObject current=null]
     	newLeafNode(otherlv_4, grammarAccess.getPropertyContextDeclCSAccess().getDeriveKeyword_4_0_0());
     }
 (
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPropertyContextDeclCSAccess().getOwnedDerivedInvariantsConstraintCSParserRuleCall_4_0_1_0()); 
-	    }
-		lv_ownedDerivedInvariants_5_0=ruleConstraintCS		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPropertyContextDeclCSRule());
-	        }
-       		add(
-       			$current, 
-       			"ownedDerivedInvariants",
-        		lv_ownedDerivedInvariants_5_0, 
-        		"org.eclipse.ocl.xtext.completeocl.CompleteOCL.ConstraintCS");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-    |(	otherlv_6='init' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getPropertyContextDeclCSAccess().getInitKeyword_4_1_0());
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getPropertyContextDeclCSAccess().getUnrestrictedNameParserRuleCall_4_0_1()); 
     }
-	otherlv_7=':' 
+ruleUnrestrictedName
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)?	otherlv_6=':' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getPropertyContextDeclCSAccess().getColonKeyword_4_1_1());
+    	newLeafNode(otherlv_6, grammarAccess.getPropertyContextDeclCSAccess().getColonKeyword_4_0_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPropertyContextDeclCSAccess().getOwnedDefaultExpressionsSpecificationCSParserRuleCall_4_1_2_0()); 
+	        newCompositeNode(grammarAccess.getPropertyContextDeclCSAccess().getOwnedDefaultExpressionsSpecificationCSParserRuleCall_4_0_3_0()); 
 	    }
-		lv_ownedDefaultExpressions_8_0=ruleSpecificationCS		{
+		lv_ownedDefaultExpressions_7_0=ruleSpecificationCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPropertyContextDeclCSRule());
 	        }
        		add(
        			$current, 
        			"ownedDefaultExpressions",
-        		lv_ownedDefaultExpressions_8_0, 
+        		lv_ownedDefaultExpressions_7_0, 
+        		"org.eclipse.ocl.xtext.completeocl.CompleteOCL.SpecificationCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+    |(	otherlv_8='init' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getPropertyContextDeclCSAccess().getInitKeyword_4_1_0());
+    }
+(
+	{ 
+	  /* */ 
+	}
+    { 
+        newCompositeNode(grammarAccess.getPropertyContextDeclCSAccess().getUnrestrictedNameParserRuleCall_4_1_1()); 
+    }
+ruleUnrestrictedName
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)?	otherlv_10=':' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getPropertyContextDeclCSAccess().getColonKeyword_4_1_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPropertyContextDeclCSAccess().getOwnedDefaultExpressionsSpecificationCSParserRuleCall_4_1_3_0()); 
+	    }
+		lv_ownedDefaultExpressions_11_0=ruleSpecificationCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPropertyContextDeclCSRule());
+	        }
+       		add(
+       			$current, 
+       			"ownedDefaultExpressions",
+        		lv_ownedDefaultExpressions_11_0, 
         		"org.eclipse.ocl.xtext.completeocl.CompleteOCL.SpecificationCS");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -3232,6 +3258,13 @@ ruleEssentialOCLUnaryOperatorName returns [AntlrDatatypeRuleToken current=new An
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getEssentialOCLUnaryOperatorNameAccess().getNotKeyword_1()); 
     }
+
+    |
+	kw='not2' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEssentialOCLUnaryOperatorNameAccess().getNot2Keyword_2()); 
+    }
 )
     ;
 
@@ -3331,24 +3364,52 @@ ruleEssentialOCLInfixOperatorName returns [AntlrDatatypeRuleToken current=new An
     }
 
     |
-	kw='or' 
+	kw='and2' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getEssentialOCLInfixOperatorNameAccess().getOrKeyword_11()); 
-    }
-
-    |
-	kw='xor' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getEssentialOCLInfixOperatorNameAccess().getXorKeyword_12()); 
+        newLeafNode(kw, grammarAccess.getEssentialOCLInfixOperatorNameAccess().getAnd2Keyword_11()); 
     }
 
     |
 	kw='implies' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getEssentialOCLInfixOperatorNameAccess().getImpliesKeyword_13()); 
+        newLeafNode(kw, grammarAccess.getEssentialOCLInfixOperatorNameAccess().getImpliesKeyword_12()); 
+    }
+
+    |
+	kw='implies2' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEssentialOCLInfixOperatorNameAccess().getImplies2Keyword_13()); 
+    }
+
+    |
+	kw='or' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEssentialOCLInfixOperatorNameAccess().getOrKeyword_14()); 
+    }
+
+    |
+	kw='or2' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEssentialOCLInfixOperatorNameAccess().getOr2Keyword_15()); 
+    }
+
+    |
+	kw='xor' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEssentialOCLInfixOperatorNameAccess().getXorKeyword_16()); 
+    }
+
+    |
+	kw='xor2' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getEssentialOCLInfixOperatorNameAccess().getXor2Keyword_17()); 
     }
 )
     ;
@@ -3770,6 +3831,8 @@ ruleURIFirstPathElementCS returns [EObject current=null]
 )
 )))
 ;
+
+
 
 
 
@@ -6311,24 +6374,24 @@ ruleNavigatingArgCS returns [EObject current=null]
 	    }
 
 )
-)((	otherlv_1=':' 
+)((	otherlv_1='<-' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getNavigatingArgCSAccess().getColonKeyword_0_1_0_0());
+    	newLeafNode(otherlv_1, grammarAccess.getNavigatingArgCSAccess().getLessThanSignHyphenMinusKeyword_0_1_0_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedTypeTypeExpCSParserRuleCall_0_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedCoIteratorCoIteratorVariableCSParserRuleCall_0_1_0_1_0()); 
 	    }
-		lv_ownedType_2_0=ruleTypeExpCS		{
+		lv_ownedCoIterator_2_0=ruleCoIteratorVariableCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNavigatingArgCSRule());
 	        }
        		set(
        			$current, 
-       			"ownedType",
-        		lv_ownedType_2_0, 
-        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.TypeExpCS");
+       			"ownedCoIterator",
+        		lv_ownedCoIterator_2_0, 
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CoIteratorVariableCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6356,46 +6419,157 @@ ruleNavigatingArgCS returns [EObject current=null]
 
 )
 ))?)
-    |(	otherlv_5='in' 
+    |(	otherlv_5=':' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getNavigatingArgCSAccess().getInKeyword_0_1_1_0());
+    	newLeafNode(otherlv_5, grammarAccess.getNavigatingArgCSAccess().getColonKeyword_0_1_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedInitExpressionExpCSParserRuleCall_0_1_1_1_0()); 
+	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedTypeTypeExpCSParserRuleCall_0_1_1_1_0()); 
 	    }
-		lv_ownedInitExpression_6_0=ruleExpCS		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getNavigatingArgCSRule());
-	        }
-       		set(
-       			$current, 
-       			"ownedInitExpression",
-        		lv_ownedInitExpression_6_0, 
-        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ExpCS");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)))?)
-    |(	otherlv_7=':' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getNavigatingArgCSAccess().getColonKeyword_1_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedTypeTypeExpCSParserRuleCall_1_1_0()); 
-	    }
-		lv_ownedType_8_0=ruleTypeExpCS		{
+		lv_ownedType_6_0=ruleTypeExpCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNavigatingArgCSRule());
 	        }
        		set(
        			$current, 
        			"ownedType",
-        		lv_ownedType_8_0, 
+        		lv_ownedType_6_0, 
+        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.TypeExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_7='<-' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getNavigatingArgCSAccess().getLessThanSignHyphenMinusKeyword_0_1_1_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedCoIteratorCoIteratorVariableCSParserRuleCall_0_1_1_2_1_0()); 
+	    }
+		lv_ownedCoIterator_8_0=ruleCoIteratorVariableCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedCoIterator",
+        		lv_ownedCoIterator_8_0, 
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CoIteratorVariableCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_9='=' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getNavigatingArgCSAccess().getEqualsSignKeyword_0_1_1_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedInitExpressionExpCSParserRuleCall_0_1_1_3_1_0()); 
+	    }
+		lv_ownedInitExpression_10_0=ruleExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedInitExpression",
+        		lv_ownedInitExpression_10_0, 
+        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
+    |((	otherlv_11=':' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getNavigatingArgCSAccess().getColonKeyword_0_1_2_0_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedTypeTypeExpCSParserRuleCall_0_1_2_0_1_0()); 
+	    }
+		lv_ownedType_12_0=ruleTypeExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedType",
+        		lv_ownedType_12_0, 
+        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.TypeExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_13='<-' 
+    {
+    	newLeafNode(otherlv_13, grammarAccess.getNavigatingArgCSAccess().getLessThanSignHyphenMinusKeyword_0_1_2_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedCoIteratorCoIteratorVariableCSParserRuleCall_0_1_2_1_1_0()); 
+	    }
+		lv_ownedCoIterator_14_0=ruleCoIteratorVariableCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedCoIterator",
+        		lv_ownedCoIterator_14_0, 
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CoIteratorVariableCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_15='in' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getNavigatingArgCSAccess().getInKeyword_0_1_2_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedInitExpressionExpCSParserRuleCall_0_1_2_3_0()); 
+	    }
+		lv_ownedInitExpression_16_0=ruleExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedInitExpression",
+        		lv_ownedInitExpression_16_0, 
+        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))?)
+    |(	otherlv_17=':' 
+    {
+    	newLeafNode(otherlv_17, grammarAccess.getNavigatingArgCSAccess().getColonKeyword_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingArgCSAccess().getOwnedTypeTypeExpCSParserRuleCall_1_1_0()); 
+	    }
+		lv_ownedType_18_0=ruleTypeExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedType",
+        		lv_ownedType_18_0, 
         		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -6553,24 +6727,24 @@ ruleNavigatingCommaArgCS returns [EObject current=null]
 	    }
 
 )
-)((	otherlv_2=':' 
+)((	otherlv_2='<-' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getNavigatingCommaArgCSAccess().getColonKeyword_2_0_0());
+    	newLeafNode(otherlv_2, grammarAccess.getNavigatingCommaArgCSAccess().getLessThanSignHyphenMinusKeyword_2_0_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNavigatingCommaArgCSAccess().getOwnedTypeTypeExpCSParserRuleCall_2_0_1_0()); 
+	        newCompositeNode(grammarAccess.getNavigatingCommaArgCSAccess().getOwnedCoIteratorCoIteratorVariableCSParserRuleCall_2_0_1_0()); 
 	    }
-		lv_ownedType_3_0=ruleTypeExpCS		{
+		lv_ownedCoIterator_3_0=ruleCoIteratorVariableCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNavigatingCommaArgCSRule());
 	        }
        		set(
        			$current, 
-       			"ownedType",
-        		lv_ownedType_3_0, 
-        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.TypeExpCS");
+       			"ownedCoIterator",
+        		lv_ownedCoIterator_3_0, 
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CoIteratorVariableCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6598,23 +6772,134 @@ ruleNavigatingCommaArgCS returns [EObject current=null]
 
 )
 ))?)
-    |(	otherlv_6='in' 
+    |(	otherlv_6=':' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getNavigatingCommaArgCSAccess().getInKeyword_2_1_0());
+    	newLeafNode(otherlv_6, grammarAccess.getNavigatingCommaArgCSAccess().getColonKeyword_2_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNavigatingCommaArgCSAccess().getOwnedInitExpressionExpCSParserRuleCall_2_1_1_0()); 
+	        newCompositeNode(grammarAccess.getNavigatingCommaArgCSAccess().getOwnedTypeTypeExpCSParserRuleCall_2_1_1_0()); 
 	    }
-		lv_ownedInitExpression_7_0=ruleExpCS		{
+		lv_ownedType_7_0=ruleTypeExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingCommaArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedType",
+        		lv_ownedType_7_0, 
+        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.TypeExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_8='<-' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getNavigatingCommaArgCSAccess().getLessThanSignHyphenMinusKeyword_2_1_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingCommaArgCSAccess().getOwnedCoIteratorCoIteratorVariableCSParserRuleCall_2_1_2_1_0()); 
+	    }
+		lv_ownedCoIterator_9_0=ruleCoIteratorVariableCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingCommaArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedCoIterator",
+        		lv_ownedCoIterator_9_0, 
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CoIteratorVariableCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_10='=' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getNavigatingCommaArgCSAccess().getEqualsSignKeyword_2_1_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingCommaArgCSAccess().getOwnedInitExpressionExpCSParserRuleCall_2_1_3_1_0()); 
+	    }
+		lv_ownedInitExpression_11_0=ruleExpCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getNavigatingCommaArgCSRule());
 	        }
        		set(
        			$current, 
        			"ownedInitExpression",
-        		lv_ownedInitExpression_7_0, 
+        		lv_ownedInitExpression_11_0, 
+        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
+    |((	otherlv_12=':' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getNavigatingCommaArgCSAccess().getColonKeyword_2_2_0_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingCommaArgCSAccess().getOwnedTypeTypeExpCSParserRuleCall_2_2_0_1_0()); 
+	    }
+		lv_ownedType_13_0=ruleTypeExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingCommaArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedType",
+        		lv_ownedType_13_0, 
+        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.TypeExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_14='<-' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getNavigatingCommaArgCSAccess().getLessThanSignHyphenMinusKeyword_2_2_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingCommaArgCSAccess().getOwnedCoIteratorCoIteratorVariableCSParserRuleCall_2_2_1_1_0()); 
+	    }
+		lv_ownedCoIterator_15_0=ruleCoIteratorVariableCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingCommaArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedCoIterator",
+        		lv_ownedCoIterator_15_0, 
+        		"org.eclipse.ocl.xtext.essentialocl.EssentialOCL.CoIteratorVariableCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_16='in' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getNavigatingCommaArgCSAccess().getInKeyword_2_2_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getNavigatingCommaArgCSAccess().getOwnedInitExpressionExpCSParserRuleCall_2_2_3_0()); 
+	    }
+		lv_ownedInitExpression_17_0=ruleExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getNavigatingCommaArgCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedInitExpression",
+        		lv_ownedInitExpression_17_0, 
         		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -6696,14 +6981,14 @@ ruleNavigatingSemiArgCS returns [EObject current=null]
 	    }
 
 )
-))?(	otherlv_4='=' 
+)(	otherlv_4='=' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getNavigatingSemiArgCSAccess().getEqualsSignKeyword_3_0());
+    	newLeafNode(otherlv_4, grammarAccess.getNavigatingSemiArgCSAccess().getEqualsSignKeyword_2_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getNavigatingSemiArgCSAccess().getOwnedInitExpressionExpCSParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getNavigatingSemiArgCSAccess().getOwnedInitExpressionExpCSParserRuleCall_2_2_1_0()); 
 	    }
 		lv_ownedInitExpression_5_0=ruleExpCS		{
 	        if ($current==null) {
@@ -6714,6 +6999,67 @@ ruleNavigatingSemiArgCS returns [EObject current=null]
        			"ownedInitExpression",
         		lv_ownedInitExpression_5_0, 
         		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ExpCS");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)?)
+;
+
+
+
+
+
+// Entry rule entryRuleCoIteratorVariableCS
+entryRuleCoIteratorVariableCS returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCoIteratorVariableCSRule()); }
+	 iv_ruleCoIteratorVariableCS=ruleCoIteratorVariableCS 
+	 { $current=$iv_ruleCoIteratorVariableCS.current; } 
+	 EOF 
+;
+
+// Rule CoIteratorVariableCS
+ruleCoIteratorVariableCS returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCoIteratorVariableCSAccess().getNameUnrestrictedNameParserRuleCall_0_0()); 
+	    }
+		lv_name_0_0=ruleUnrestrictedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCoIteratorVariableCSRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"org.eclipse.ocl.xtext.completeocl.CompleteOCL.UnrestrictedName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_1=':' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getCoIteratorVariableCSAccess().getColonKeyword_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCoIteratorVariableCSAccess().getOwnedTypeTypeExpCSParserRuleCall_1_1_0()); 
+	    }
+		lv_ownedType_2_0=ruleTypeExpCS		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCoIteratorVariableCSRule());
+	        }
+       		set(
+       			$current, 
+       			"ownedType",
+        		lv_ownedType_2_0, 
+        		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.TypeExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 

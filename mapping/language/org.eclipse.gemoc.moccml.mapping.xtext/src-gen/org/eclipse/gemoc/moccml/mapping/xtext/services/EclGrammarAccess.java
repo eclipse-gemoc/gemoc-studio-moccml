@@ -123,7 +123,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//ownedMultiplicity=MultiplicityCS?
 		public Group getGroup() { return cGroup; }
 
-		//TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase
+		//(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase)
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//TypeNameExpCS
@@ -690,7 +690,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//SpecificationCS
 		public RuleCall getOwnedSpecificationSpecificationCSParserRuleCall_8_0() { return cOwnedSpecificationSpecificationCSParserRuleCall_8_0; }
 
-		//('[' dsaResultName=UnrestrictedName ']')? ("future" "(" future=ExpCS ")")? ("switch" feedback=DSAFeedBackRule)?
+		//(('[' dsaResultName=UnrestrictedName ']')? ("future" "(" future=ExpCS ")")? ("switch" feedback=DSAFeedBackRule)?)
 		public Group getGroup_9() { return cGroup_9; }
 
 		//('[' dsaResultName=UnrestrictedName ']')?
@@ -805,7 +805,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//(('until' | 'when' | 'on') on=ExpCS)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//'until' | 'when' | 'on'
+		//('until' | 'when' | 'on')
 		public Alternatives getAlternatives_4_0() { return cAlternatives_4_0; }
 
 		//'until'
@@ -1701,10 +1701,12 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * when its containing object is first created. 
 	// * 
 	// * For a derived property, an init expression defines the evaluation of the property, which
-	// * may vary from access to access even for read-only properties. 
+	// * may vary from access to access even for read-only properties.
+	// * 
+	// * NB. RoyalAndLoyal gratuitously names its derived values.
 	// */ PropertyContextDeclCS:
-	//	'context' ownedPathName=PathNameCS ':' ownedType=super::TypeExpCS ('derive' ownedDerivedInvariants+=ConstraintCS |
-	//	'init' ':' ownedDefaultExpressions+=SpecificationCS)*;
+	//	'context' ownedPathName=PathNameCS ':' ownedType=super::TypeExpCS ('derive' UnrestrictedName? ':'
+	//	ownedDefaultExpressions+=SpecificationCS | 'init' UnrestrictedName? ':' ownedDefaultExpressions+=SpecificationCS)*;
 	public CompleteOCLGrammarAccess.PropertyContextDeclCSElements getPropertyContextDeclCSAccess() {
 		return gaCompleteOCL.getPropertyContextDeclCSAccess();
 	}
@@ -1828,16 +1830,21 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	///** <<<This is a join point for derived grammars - replace with a more disciplined grammar extensibility>>> */
 	//EssentialOCLReservedKeyword:
 	//	'and'
+	//	| 'and2'
 	//	| 'else'
 	//	| 'endif'
 	//	| 'if'
 	//	| 'implies'
+	//	| 'implies2'
 	//	| 'in'
 	//	| 'let'
 	//	| 'not'
+	//	| 'not2'
 	//	| 'or'
+	//	| 'or2'
 	//	| 'then'
-	//	| 'xor';
+	//	| 'xor'
+	//	| 'xor2';
 	public EssentialOCLGrammarAccess.EssentialOCLReservedKeywordElements getEssentialOCLReservedKeywordAccess() {
 		return gaEssentialOCL.getEssentialOCLReservedKeywordAccess();
 	}
@@ -1848,7 +1855,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 	///** <<<This is a join point for derived grammars - replace with a more disciplined grammar extensibility>>> */
 	//EssentialOCLUnaryOperatorName:
-	//	'-' | 'not';
+	//	'-' | 'not' | 'not2';
 	public EssentialOCLGrammarAccess.EssentialOCLUnaryOperatorNameElements getEssentialOCLUnaryOperatorNameAccess() {
 		return gaEssentialOCL.getEssentialOCLUnaryOperatorNameAccess();
 	}
@@ -1859,7 +1866,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 	///** <<<This is a join point for derived grammars - replace with a more disciplined grammar extensibility>>> */
 	//EssentialOCLInfixOperatorName:
-	//	'*' | '/' | '+' | '-' | '>' | '<' | '>=' | '<=' | '=' | '<>' | 'and' | 'or' | 'xor' | 'implies';
+	//	'*' | '/' | '+' | '-' | '>' | '<' | '>=' | '<=' | '=' | '<>' | 'and' | 'and2' | 'implies' | 'implies2' | 'or' | 'or2'
+	//	| 'xor' | 'xor2';
 	public EssentialOCLGrammarAccess.EssentialOCLInfixOperatorNameElements getEssentialOCLInfixOperatorNameAccess() {
 		return gaEssentialOCL.getEssentialOCLInfixOperatorNameAccess();
 	}
@@ -1967,6 +1975,16 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getURIFirstPathElementCSRule() {
 		return getURIFirstPathElementCSAccess().getRule();
+	}
+
+	//SimplePathNameCS base::PathNameCS:
+	//	ownedPathElements+=FirstPathElementCS;
+	public EssentialOCLGrammarAccess.SimplePathNameCSElements getSimplePathNameCSAccess() {
+		return gaEssentialOCL.getSimplePathNameCSAccess();
+	}
+	
+	public ParserRule getSimplePathNameCSRule() {
+		return getSimplePathNameCSAccess().getRule();
 	}
 
 	//PrimitiveTypeCS base::PrimitiveTypeRefCS:
@@ -2362,8 +2380,11 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 	///* A navigating argument is a generalized rule for the first argument in a round bracket clause. This is typically the first operation
 	// * parameter or an iterator. */ NavigatingArgCS:
-	//	ownedNameExpression=super::NavigatingArgExpCS (':' ownedType=super::TypeExpCS ('=' ownedInitExpression=super::ExpCS)?
-	//	| 'in' ownedInitExpression=super::ExpCS)? | ':' ownedType=super::TypeExpCS;
+	//	ownedNameExpression=super::NavigatingArgExpCS ('<-' ownedCoIterator=CoIteratorVariableCS ('='
+	//	ownedInitExpression=super::ExpCS)? | ':' ownedType=super::TypeExpCS ('<-' ownedCoIterator=CoIteratorVariableCS)? ('='
+	//	ownedInitExpression=super::ExpCS)? | (':' ownedType=super::TypeExpCS)? ('<-' ownedCoIterator=CoIteratorVariableCS)?
+	//	'in' ownedInitExpression=super::ExpCS)?
+	//	| ':' ownedType=super::TypeExpCS;
 	public EssentialOCLGrammarAccess.NavigatingArgCSElements getNavigatingArgCSAccess() {
 		return gaEssentialOCL.getNavigatingArgCSAccess();
 	}
@@ -2388,8 +2409,10 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	//// Type-less init is an illegal infix expression
 	///* A navigating comma argument is a generalized rule for non-first argument in a round bracket clause. These are typically non-first operation
 	// * parameters or a second iterator. */ NavigatingCommaArgCS NavigatingArgCS:
-	//	prefix=',' ownedNameExpression=super::NavigatingArgExpCS (':' ownedType=super::TypeExpCS ('='
-	//	ownedInitExpression=super::ExpCS)? | 'in' ownedInitExpression=super::ExpCS)?;
+	//	prefix=',' ownedNameExpression=super::NavigatingArgExpCS ('<-' ownedCoIterator=CoIteratorVariableCS ('='
+	//	ownedInitExpression=super::ExpCS)? | ':' ownedType=super::TypeExpCS ('<-' ownedCoIterator=CoIteratorVariableCS)? ('='
+	//	ownedInitExpression=super::ExpCS)? | (':' ownedType=super::TypeExpCS)? ('<-' ownedCoIterator=CoIteratorVariableCS)?
+	//	'in' ownedInitExpression=super::ExpCS)?;
 	public EssentialOCLGrammarAccess.NavigatingCommaArgCSElements getNavigatingCommaArgCSAccess() {
 		return gaEssentialOCL.getNavigatingCommaArgCSAccess();
 	}
@@ -2401,14 +2424,24 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	//// Type-less init is an illegal infix expression
 	///* A navigating semi argument is a generalized rule for a semicolon prefixed argument in a round bracket clause. This is typically an iterate accumulator. */
 	//NavigatingSemiArgCS NavigatingArgCS:
-	//	prefix=';' ownedNameExpression=super::NavigatingArgExpCS (':' ownedType=super::TypeExpCS)? ('='
-	//	ownedInitExpression=super::ExpCS)?;
+	//	prefix=';' ownedNameExpression=super::NavigatingArgExpCS (':' ownedType=super::TypeExpCS ('='
+	//	ownedInitExpression=super::ExpCS)?)?;
 	public EssentialOCLGrammarAccess.NavigatingSemiArgCSElements getNavigatingSemiArgCSAccess() {
 		return gaEssentialOCL.getNavigatingSemiArgCSAccess();
 	}
 	
 	public ParserRule getNavigatingSemiArgCSRule() {
 		return getNavigatingSemiArgCSAccess().getRule();
+	}
+
+	//CoIteratorVariableCS VariableCS:
+	//	name=super::UnrestrictedName (':' ownedType=super::TypeExpCS)?;
+	public EssentialOCLGrammarAccess.CoIteratorVariableCSElements getCoIteratorVariableCSAccess() {
+		return gaEssentialOCL.getCoIteratorVariableCSAccess();
+	}
+	
+	public ParserRule getCoIteratorVariableCSRule() {
+		return getCoIteratorVariableCSAccess().getRule();
 	}
 
 	//IfExpCS:
