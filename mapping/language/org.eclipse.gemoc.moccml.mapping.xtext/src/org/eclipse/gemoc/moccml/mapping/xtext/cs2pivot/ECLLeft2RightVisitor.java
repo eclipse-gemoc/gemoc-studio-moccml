@@ -193,8 +193,10 @@ public class ECLLeft2RightVisitor
 			//most often a collection
 			ExpCS param = eclExpression.getParameters().get(0);
 			Parameter p = PivotFactory.eINSTANCE.createParameter();
-			p.setType(((TypedElement)visit(param)).getType());
-			rop.getOwnedParameters().add(p);
+			if (p != null && ((TypedElement)visit(param)) != null) {
+				p.setType(((TypedElement)visit(param)).getType());
+				rop.getOwnedParameters().add(p);
+			}
 			OCLExpression pivot = context.visitLeft2Right(OCLExpression.class, param);
 			pivotSpecification.getOwnedArguments().add(pivot);
 		}else{

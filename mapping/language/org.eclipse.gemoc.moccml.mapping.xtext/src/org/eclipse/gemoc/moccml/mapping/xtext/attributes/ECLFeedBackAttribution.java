@@ -27,7 +27,7 @@ public class ECLFeedBackAttribution  extends AbstractAttribution
 	@Override
 	public ScopeView computeLookup(EObject target, EnvironmentView environmentView, ScopeView scopeView) {
 		DSAFeedback feedBack = (DSAFeedback)target;
-			
+//			environmentView.addElement("res", feedBack); 
 			environmentView.addElement(((MoCCMLMappingDefCS)feedBack.eContainer()).getName()+"_switch", feedBack);
 			environmentView.addElementsOfScope(feedBack.getPivot(), scopeView);
 			ClassifierContextDeclCS context = ((DefPropertyCS)feedBack.eContainer()).getOwningClassifierContextDecl();

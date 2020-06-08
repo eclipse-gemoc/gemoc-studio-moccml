@@ -26,8 +26,6 @@ public abstract class AbstractEclSyntacticSequencer extends AbstractSyntacticSeq
 	protected AbstractElementAlias match_DefOperationCS_UnrestrictedNameParserRuleCall_2_q;
 	protected AbstractElementAlias match_DefPropertyCS_UnrestrictedNameParserRuleCall_2_q;
 	protected AbstractElementAlias match_ImportCS_ImportKeyword_0_0_or_IncludeKeyword_0_1_or_LibraryKeyword_0_2;
-	protected AbstractElementAlias match_MoCCMLExpression_ExpressionKeyword_1_q;
-	protected AbstractElementAlias match_MoCCMLRelation_RelationKeyword_1_q;
 	protected AbstractElementAlias match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q;
 	protected AbstractElementAlias match_OperationContextDeclCS_UnrestrictedNameParserRuleCall_8_2_1_q;
 	protected AbstractElementAlias match_PropertyContextDeclCS_UnrestrictedNameParserRuleCall_4_0_1_q;
@@ -41,8 +39,6 @@ public abstract class AbstractEclSyntacticSequencer extends AbstractSyntacticSeq
 		match_DefOperationCS_UnrestrictedNameParserRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getDefOperationCSAccess().getUnrestrictedNameParserRuleCall_2());
 		match_DefPropertyCS_UnrestrictedNameParserRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getDefPropertyCSAccess().getUnrestrictedNameParserRuleCall_2());
 		match_ImportCS_ImportKeyword_0_0_or_IncludeKeyword_0_1_or_LibraryKeyword_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportCSAccess().getImportKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getImportCSAccess().getIncludeKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getImportCSAccess().getLibraryKeyword_0_2()));
-		match_MoCCMLExpression_ExpressionKeyword_1_q = new TokenAlias(false, true, grammarAccess.getMoCCMLExpressionAccess().getExpressionKeyword_1());
-		match_MoCCMLRelation_RelationKeyword_1_q = new TokenAlias(false, true, grammarAccess.getMoCCMLRelationAccess().getRelationKeyword_1());
 		match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getMultiplicityCSAccess().getVerticalLineQuestionMarkKeyword_2_0());
 		match_OperationContextDeclCS_UnrestrictedNameParserRuleCall_8_2_1_q = new TokenAlias(false, true, grammarAccess.getOperationContextDeclCSAccess().getUnrestrictedNameParserRuleCall_8_2_1());
 		match_PropertyContextDeclCS_UnrestrictedNameParserRuleCall_4_0_1_q = new TokenAlias(false, true, grammarAccess.getPropertyContextDeclCSAccess().getUnrestrictedNameParserRuleCall_4_0_1());
@@ -85,10 +81,6 @@ public abstract class AbstractEclSyntacticSequencer extends AbstractSyntacticSeq
 				emit_DefPropertyCS_UnrestrictedNameParserRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ImportCS_ImportKeyword_0_0_or_IncludeKeyword_0_1_or_LibraryKeyword_0_2.equals(syntax))
 				emit_ImportCS_ImportKeyword_0_0_or_IncludeKeyword_0_1_or_LibraryKeyword_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_MoCCMLExpression_ExpressionKeyword_1_q.equals(syntax))
-				emit_MoCCMLExpression_ExpressionKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_MoCCMLRelation_RelationKeyword_1_q.equals(syntax))
-				emit_MoCCMLRelation_RelationKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q.equals(syntax))
 				emit_MultiplicityCS_VerticalLineQuestionMarkKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_OperationContextDeclCS_UnrestrictedNameParserRuleCall_8_2_1_q.equals(syntax))
@@ -149,28 +141,6 @@ public abstract class AbstractEclSyntacticSequencer extends AbstractSyntacticSeq
 	 *     (rule start) (ambiguity) ownedPathName=URIPathNameCS
 	 */
 	protected void emit_ImportCS_ImportKeyword_0_0_or_IncludeKeyword_0_1_or_LibraryKeyword_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'Expression'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) type=[ExpressionDeclaration|ID]
-	 */
-	protected void emit_MoCCMLExpression_ExpressionKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'Relation'?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) type=[RelationDeclaration|ID]
-	 */
-	protected void emit_MoCCMLRelation_RelationKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

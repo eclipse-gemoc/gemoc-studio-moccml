@@ -261,71 +261,75 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	public class ExpCSElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ExpCS");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final RuleCall cPrefixedPrimaryExpCSParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
-		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
-		private final Action cInfixExpCSOwnedLeftAction_0_1_0 = (Action)cGroup_0_1.eContents().get(0);
-		private final Assignment cNameAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
-		private final RuleCall cNameBinaryOperatorNameParserRuleCall_0_1_1_0 = (RuleCall)cNameAssignment_0_1_1.eContents().get(0);
-		private final Assignment cOwnedRightAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
-		private final RuleCall cOwnedRightExpCSParserRuleCall_0_1_2_0 = (RuleCall)cOwnedRightAssignment_0_1_2.eContents().get(0);
-		private final RuleCall cPrefixedLetExpCSParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cMoCCMLRelationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cMoCCMLExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cMoCCMLMappingPriorityParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cMoCCMLRelationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMoCCMLExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cMoCCMLMappingPriorityParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Alternatives cAlternatives_3 = (Alternatives)cAlternatives.eContents().get(3);
+		private final Group cGroup_3_0 = (Group)cAlternatives_3.eContents().get(0);
+		private final RuleCall cPrefixedPrimaryExpCSParserRuleCall_3_0_0 = (RuleCall)cGroup_3_0.eContents().get(0);
+		private final Group cGroup_3_0_1 = (Group)cGroup_3_0.eContents().get(1);
+		private final Action cInfixExpCSOwnedLeftAction_3_0_1_0 = (Action)cGroup_3_0_1.eContents().get(0);
+		private final Assignment cNameAssignment_3_0_1_1 = (Assignment)cGroup_3_0_1.eContents().get(1);
+		private final RuleCall cNameBinaryOperatorNameParserRuleCall_3_0_1_1_0 = (RuleCall)cNameAssignment_3_0_1_1.eContents().get(0);
+		private final Assignment cOwnedRightAssignment_3_0_1_2 = (Assignment)cGroup_3_0_1.eContents().get(2);
+		private final RuleCall cOwnedRightExpCSParserRuleCall_3_0_1_2_0 = (RuleCall)cOwnedRightAssignment_3_0_1_2.eContents().get(0);
+		private final RuleCall cPrefixedLetExpCSParserRuleCall_3_1 = (RuleCall)cAlternatives_3.eContents().get(1);
 		
 		//@Override
 		//ExpCS essentialOCLCST::ExpCS:
-		//	PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? |
-		//	PrefixedLetExpCS
-		//	| MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority;
+		//	MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority | (PrefixedPrimaryExpCS
+		//	({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? | PrefixedLetExpCS);
 		@Override public ParserRule getRule() { return rule; }
 
 		////	({InfixExpCS} ownedSource=PrefixedExpCS name=BinaryOperatorName ownedArgument=ExpCS)
 		////| 	PrefixedExpCS
 		//// the above takes exponential or worse time for backtracking, below is fast
-		//PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? |
-		//PrefixedLetExpCS | MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority
+		//MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority | (PrefixedPrimaryExpCS
+		//({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? | PrefixedLetExpCS)
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		////	({InfixExpCS} ownedSource=PrefixedExpCS name=BinaryOperatorName ownedArgument=ExpCS)
 		////| 	PrefixedExpCS
 		//// the above takes exponential or worse time for backtracking, below is fast
-		//PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)?
-		public Group getGroup_0() { return cGroup_0; }
-
-		//PrefixedPrimaryExpCS
-		public RuleCall getPrefixedPrimaryExpCSParserRuleCall_0_0() { return cPrefixedPrimaryExpCSParserRuleCall_0_0; }
-
-		//({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)?
-		public Group getGroup_0_1() { return cGroup_0_1; }
-
-		//{essentialOCLCST::InfixExpCS.ownedLeft=current}
-		public Action getInfixExpCSOwnedLeftAction_0_1_0() { return cInfixExpCSOwnedLeftAction_0_1_0; }
-
-		//name=BinaryOperatorName
-		public Assignment getNameAssignment_0_1_1() { return cNameAssignment_0_1_1; }
-
-		//BinaryOperatorName
-		public RuleCall getNameBinaryOperatorNameParserRuleCall_0_1_1_0() { return cNameBinaryOperatorNameParserRuleCall_0_1_1_0; }
-
-		//ownedRight=ExpCS
-		public Assignment getOwnedRightAssignment_0_1_2() { return cOwnedRightAssignment_0_1_2; }
-
-		//ExpCS
-		public RuleCall getOwnedRightExpCSParserRuleCall_0_1_2_0() { return cOwnedRightExpCSParserRuleCall_0_1_2_0; }
-
-		//PrefixedLetExpCS
-		public RuleCall getPrefixedLetExpCSParserRuleCall_1() { return cPrefixedLetExpCSParserRuleCall_1; }
-
 		//MoCCMLRelation
-		public RuleCall getMoCCMLRelationParserRuleCall_2() { return cMoCCMLRelationParserRuleCall_2; }
+		public RuleCall getMoCCMLRelationParserRuleCall_0() { return cMoCCMLRelationParserRuleCall_0; }
 
 		//MoCCMLExpression
-		public RuleCall getMoCCMLExpressionParserRuleCall_3() { return cMoCCMLExpressionParserRuleCall_3; }
+		public RuleCall getMoCCMLExpressionParserRuleCall_1() { return cMoCCMLExpressionParserRuleCall_1; }
 
 		//MoCCMLMappingPriority
-		public RuleCall getMoCCMLMappingPriorityParserRuleCall_4() { return cMoCCMLMappingPriorityParserRuleCall_4; }
+		public RuleCall getMoCCMLMappingPriorityParserRuleCall_2() { return cMoCCMLMappingPriorityParserRuleCall_2; }
+
+		//(PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? |
+		//PrefixedLetExpCS)
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+
+		//PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)?
+		public Group getGroup_3_0() { return cGroup_3_0; }
+
+		//PrefixedPrimaryExpCS
+		public RuleCall getPrefixedPrimaryExpCSParserRuleCall_3_0_0() { return cPrefixedPrimaryExpCSParserRuleCall_3_0_0; }
+
+		//({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)?
+		public Group getGroup_3_0_1() { return cGroup_3_0_1; }
+
+		//{essentialOCLCST::InfixExpCS.ownedLeft=current}
+		public Action getInfixExpCSOwnedLeftAction_3_0_1_0() { return cInfixExpCSOwnedLeftAction_3_0_1_0; }
+
+		//name=BinaryOperatorName
+		public Assignment getNameAssignment_3_0_1_1() { return cNameAssignment_3_0_1_1; }
+
+		//BinaryOperatorName
+		public RuleCall getNameBinaryOperatorNameParserRuleCall_3_0_1_1_0() { return cNameBinaryOperatorNameParserRuleCall_3_0_1_1_0; }
+
+		//ownedRight=ExpCS
+		public Assignment getOwnedRightAssignment_3_0_1_2() { return cOwnedRightAssignment_3_0_1_2; }
+
+		//ExpCS
+		public RuleCall getOwnedRightExpCSParserRuleCall_3_0_1_2_0() { return cOwnedRightExpCSParserRuleCall_3_0_1_2_0; }
+
+		//PrefixedLetExpCS
+		public RuleCall getPrefixedLetExpCSParserRuleCall_3_1() { return cPrefixedLetExpCSParserRuleCall_3_1; }
 	}
 
 	public class MoCCMLMappingPriorityElements extends AbstractParserRuleElementFinder {
@@ -375,77 +379,6 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ExpCS
 		public RuleCall getLowerExpCSParserRuleCall_6_0() { return cLowerExpCSParserRuleCall_6_0; }
-	}
-
-	public class ClassifierContextDeclCSElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ClassifierContextDeclCS");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cContextKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cOwnedSignatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cOwnedSignatureTemplateSignatureCSParserRuleCall_1_0 = (RuleCall)cOwnedSignatureAssignment_1.eContents().get(0);
-		private final Assignment cSelfNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSelfNameUnrestrictedNameParserRuleCall_2_0 = (RuleCall)cSelfNameAssignment_2.eContents().get(0);
-		private final Assignment cOwnedPathNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cOwnedPathNamePathNameCSParserRuleCall_3_0 = (RuleCall)cOwnedPathNameAssignment_3.eContents().get(0);
-		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
-		private final Group cGroup_4_0 = (Group)cAlternatives_4.eContents().get(0);
-		private final Keyword cInvKeyword_4_0_0 = (Keyword)cGroup_4_0.eContents().get(0);
-		private final Assignment cOwnedInvariantsAssignment_4_0_1 = (Assignment)cGroup_4_0.eContents().get(1);
-		private final RuleCall cOwnedInvariantsConstraintCSParserRuleCall_4_0_1_0 = (RuleCall)cOwnedInvariantsAssignment_4_0_1.eContents().get(0);
-		private final Assignment cOwnedDefinitionsAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
-		private final RuleCall cOwnedDefinitionsDefCSParserRuleCall_4_1_0 = (RuleCall)cOwnedDefinitionsAssignment_4_1.eContents().get(0);
-		
-		//@Override
-		//ClassifierContextDeclCS completeOCL::ClassifierContextDeclCS:
-		//	'context' ownedSignature=TemplateSignatureCS? selfName=UnrestrictedName?
-		//	ownedPathName=PathNameCS ('inv' ownedInvariants+=ConstraintCS | ownedDefinitions+=DefCS)+;
-		@Override public ParserRule getRule() { return rule; }
-
-		//'context' ownedSignature=TemplateSignatureCS? selfName=UnrestrictedName? ownedPathName=PathNameCS ('inv'
-		//ownedInvariants+=ConstraintCS | ownedDefinitions+=DefCS)+
-		public Group getGroup() { return cGroup; }
-
-		//'context'
-		public Keyword getContextKeyword_0() { return cContextKeyword_0; }
-
-		//ownedSignature=TemplateSignatureCS?
-		public Assignment getOwnedSignatureAssignment_1() { return cOwnedSignatureAssignment_1; }
-
-		//TemplateSignatureCS
-		public RuleCall getOwnedSignatureTemplateSignatureCSParserRuleCall_1_0() { return cOwnedSignatureTemplateSignatureCSParserRuleCall_1_0; }
-
-		//selfName=UnrestrictedName?
-		public Assignment getSelfNameAssignment_2() { return cSelfNameAssignment_2; }
-
-		//UnrestrictedName
-		public RuleCall getSelfNameUnrestrictedNameParserRuleCall_2_0() { return cSelfNameUnrestrictedNameParserRuleCall_2_0; }
-
-		//ownedPathName=PathNameCS
-		public Assignment getOwnedPathNameAssignment_3() { return cOwnedPathNameAssignment_3; }
-
-		//PathNameCS
-		public RuleCall getOwnedPathNamePathNameCSParserRuleCall_3_0() { return cOwnedPathNamePathNameCSParserRuleCall_3_0; }
-
-		//('inv' ownedInvariants+=ConstraintCS | ownedDefinitions+=DefCS)+
-		public Alternatives getAlternatives_4() { return cAlternatives_4; }
-
-		//'inv' ownedInvariants+=ConstraintCS
-		public Group getGroup_4_0() { return cGroup_4_0; }
-
-		//'inv'
-		public Keyword getInvKeyword_4_0_0() { return cInvKeyword_4_0_0; }
-
-		//ownedInvariants+=ConstraintCS
-		public Assignment getOwnedInvariantsAssignment_4_0_1() { return cOwnedInvariantsAssignment_4_0_1; }
-
-		//ConstraintCS
-		public RuleCall getOwnedInvariantsConstraintCSParserRuleCall_4_0_1_0() { return cOwnedInvariantsConstraintCSParserRuleCall_4_0_1_0; }
-
-		//ownedDefinitions+=DefCS
-		public Assignment getOwnedDefinitionsAssignment_4_1() { return cOwnedDefinitionsAssignment_4_1; }
-
-		//DefCS
-		public RuleCall getOwnedDefinitionsDefCSParserRuleCall_4_1_0() { return cOwnedDefinitionsDefCSParserRuleCall_4_1_0; }
 	}
 
 	public class DefCSElements extends AbstractParserRuleElementFinder {
@@ -845,18 +778,20 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//MoCCMLExpression:
-		//	{MoCCMLExpression} "Expression"? type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)*
-		//	')';
+		//	{MoCCMLExpression}
+		//	//we need to add a keyWord to make the EclScopeProvider working :-/
+		//	"Expression" type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{MoCCMLExpression} "Expression"? type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')'
+		//{MoCCMLExpression} //we need to add a keyWord to make the EclScopeProvider working :-/
+		//"Expression" type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')'
 		public Group getGroup() { return cGroup; }
 
 		//{MoCCMLExpression}
 		public Action getMoCCMLExpressionAction_0() { return cMoCCMLExpressionAction_0; }
 
 		////we need to add a keyWord to make the EclScopeProvider working :-/
-		//"Expression"?
+		//"Expression"
 		public Keyword getExpressionKeyword_1() { return cExpressionKeyword_1; }
 
 		//type=[CCSL::ExpressionDeclaration]
@@ -911,17 +846,20 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//MoCCMLRelation:
-		//	{MoCCMLRelation} "Relation"? type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
+		//	{MoCCMLRelation}
+		//	//we need to add a keyWord to make the EclScopeProvider working :-/
+		//	"Relation" type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{MoCCMLRelation} "Relation"? type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')'
+		//{MoCCMLRelation} //we need to add a keyWord to make the EclScopeProvider working :-/
+		//"Relation" type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')'
 		public Group getGroup() { return cGroup; }
 
 		//{MoCCMLRelation}
 		public Action getMoCCMLRelationAction_0() { return cMoCCMLRelationAction_0; }
 
 		////we need to add a keyWord to make the EclScopeProvider working :-/
-		//"Relation"?
+		//"Relation"
 		public Keyword getRelationKeyword_1() { return cRelationKeyword_1; }
 
 		//type=[CCSL::RelationDeclaration]
@@ -1198,7 +1136,6 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	private final EventKindElements eEventKind;
 	private final ExpCSElements pExpCS;
 	private final MoCCMLMappingPriorityElements pMoCCMLMappingPriority;
-	private final ClassifierContextDeclCSElements pClassifierContextDeclCS;
 	private final DefCSElements pDefCS;
 	private final VisibilityElements eVisibility;
 	private final MoCCMLMappingBlockDefCSElements pMoCCMLMappingBlockDefCS;
@@ -1235,7 +1172,6 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		this.eEventKind = new EventKindElements();
 		this.pExpCS = new ExpCSElements();
 		this.pMoCCMLMappingPriority = new MoCCMLMappingPriorityElements();
-		this.pClassifierContextDeclCS = new ClassifierContextDeclCSElements();
 		this.pDefCS = new DefCSElements();
 		this.eVisibility = new VisibilityElements();
 		this.pMoCCMLMappingBlockDefCS = new MoCCMLMappingBlockDefCSElements();
@@ -1375,9 +1311,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 	//@Override
 	//ExpCS essentialOCLCST::ExpCS:
-	//	PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? |
-	//	PrefixedLetExpCS
-	//	| MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority;
+	//	MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority | (PrefixedPrimaryExpCS
+	//	({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? | PrefixedLetExpCS);
 	public ExpCSElements getExpCSAccess() {
 		return pExpCS;
 	}
@@ -1395,18 +1330,6 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMoCCMLMappingPriorityRule() {
 		return getMoCCMLMappingPriorityAccess().getRule();
-	}
-
-	//@Override
-	//ClassifierContextDeclCS completeOCL::ClassifierContextDeclCS:
-	//	'context' ownedSignature=TemplateSignatureCS? selfName=UnrestrictedName?
-	//	ownedPathName=PathNameCS ('inv' ownedInvariants+=ConstraintCS | ownedDefinitions+=DefCS)+;
-	public ClassifierContextDeclCSElements getClassifierContextDeclCSAccess() {
-		return pClassifierContextDeclCS;
-	}
-	
-	public ParserRule getClassifierContextDeclCSRule() {
-		return getClassifierContextDeclCSAccess().getRule();
 	}
 
 	//@Override
@@ -1486,8 +1409,9 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MoCCMLExpression:
-	//	{MoCCMLExpression} "Expression"? type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)*
-	//	')';
+	//	{MoCCMLExpression}
+	//	//we need to add a keyWord to make the EclScopeProvider working :-/
+	//	"Expression" type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
 	public MoCCMLExpressionElements getMoCCMLExpressionAccess() {
 		return pMoCCMLExpression;
 	}
@@ -1497,7 +1421,9 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MoCCMLRelation:
-	//	{MoCCMLRelation} "Relation"? type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
+	//	{MoCCMLRelation}
+	//	//we need to add a keyWord to make the EclScopeProvider working :-/
+	//	"Relation" type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
 	public MoCCMLRelationElements getMoCCMLRelationAccess() {
 		return pMoCCMLRelation;
 	}
@@ -1540,6 +1466,17 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getCompleteOCLNavigationOperatorNameAccess().getRule();
 	}
 
+	//ClassifierContextDeclCS:
+	//	'context' ownedSignature=TemplateSignatureCS? selfName=UnrestrictedName?
+	//	ownedPathName=PathNameCS ('inv' ownedInvariants+=ConstraintCS | ownedDefinitions+=super::DefCS)+;
+	public CompleteOCLGrammarAccess.ClassifierContextDeclCSElements getClassifierContextDeclCSAccess() {
+		return gaCompleteOCL.getClassifierContextDeclCSAccess();
+	}
+	
+	public ParserRule getClassifierContextDeclCSRule() {
+		return getClassifierContextDeclCSAccess().getRule();
+	}
+
 	///*
 	// * A Constraint such as 
 	// * 
@@ -1562,7 +1499,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * A Context declaration can be a Classifier, Operation of Property Context declaration.
 	// */ ContextDeclCS:
 	//	PropertyContextDeclCS
-	//	| super::ClassifierContextDeclCS
+	//	| ClassifierContextDeclCS
 	//	| OperationContextDeclCS;
 	public CompleteOCLGrammarAccess.ContextDeclCSElements getContextDeclCSAccess() {
 		return gaCompleteOCL.getContextDeclCSAccess();

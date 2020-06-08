@@ -33,7 +33,7 @@ public class ECL2AS extends CompleteOCLCS2AS
 	}
 	
 	@Override
-	protected ECLContainmentVisitor createContainmentVisitor(CS2ASConversion converter) {
+	public ECLContainmentVisitor createContainmentVisitor(CS2ASConversion converter) {
 		return new ECLContainmentVisitor(converter);
 	}
 		

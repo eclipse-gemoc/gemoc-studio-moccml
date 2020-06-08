@@ -22,6 +22,8 @@ import org.eclipse.ocl.pivot.utilities.Nameable;
 import org.eclipse.ocl.xtext.completeoclcs.ClassifierContextDeclCS;
 import org.eclipse.ocl.xtext.completeoclcs.DefPropertyCS;
 
+import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.NamedElement;
+
 public class ECLDefCSAttribution  extends AbstractAttribution
 {
 	public static final ECLDefCSAttribution INSTANCE = new ECLDefCSAttribution();
@@ -47,6 +49,19 @@ public class ECLDefCSAttribution  extends AbstractAttribution
 		{
 			environmentView.addElement(def.getOwnedSpecification().toString(), def.getOwnedSpecification());
 			environmentView.addElementsOfScope(def.getOwnedSpecification().getPivot(), scopeView);
+		}
+		
+		if(def.getOwnedType() != null && def.getOwnedType() instanceof MoCCMLMappingTimeBase)
+		{
+//			NamedElement theTimeBase = null;
+//			for(NamedElement eo : ECLAttribution.INSTANCE.ListOfImportedDeclaration) {
+//				if (eo.getName().equals(environmentView.getName())){
+//					theTimeBase = eo;
+//					environmentView.addElement(eo.getName(), eo);
+//					break;
+//				}
+//			}
+			//environmentView.addElementsOfScope(def.getOwnedType().getPivot(), scopeView);
 		}
 		
 		if(def.getCondition() != null)

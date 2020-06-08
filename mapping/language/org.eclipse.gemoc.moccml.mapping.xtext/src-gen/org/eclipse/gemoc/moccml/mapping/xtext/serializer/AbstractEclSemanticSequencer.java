@@ -396,7 +396,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 					sequence_PrefixedLetExpCS_PrefixedPrimaryExpCS(context, (PrefixExpCS) semanticObject); 
 					return; 
 				}
-				else if (action == grammarAccess.getExpCSAccess().getInfixExpCSOwnedLeftAction_0_1_0()
+				else if (action == grammarAccess.getExpCSAccess().getInfixExpCSOwnedLeftAction_3_0_1_0()
 						|| rule == grammarAccess.getPrefixedPrimaryExpCSRule()) {
 					sequence_PrefixedPrimaryExpCS(context, (PrefixExpCS) semanticObject); 
 					return; 
@@ -546,24 +546,6 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	/**
 	 * Contexts:
-	 *     ClassifierContextDeclCS returns ClassifierContextDeclCS
-	 *     ContextDeclCS returns ClassifierContextDeclCS
-	 *
-	 * Constraint:
-	 *     (
-	 *         ownedSignature=TemplateSignatureCS? 
-	 *         selfName=UnrestrictedName? 
-	 *         ownedPathName=PathNameCS 
-	 *         (ownedInvariants+=ConstraintCS | ownedDefinitions+=DefCS)+
-	 *     )
-	 */
-	protected void sequence_ClassifierContextDeclCS(ISerializationContext context, ClassifierContextDeclCS semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     TypeExpCS returns CollectionPatternCS
 	 *
 	 * Constraint:
@@ -632,7 +614,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	 *     NavigatingArgExpCS returns InfixExpCS
 	 *
 	 * Constraint:
-	 *     (ownedLeft=ExpCS_InfixExpCS_0_1_0 name=BinaryOperatorName ownedRight=ExpCS)
+	 *     (ownedLeft=ExpCS_InfixExpCS_3_0_1_0 name=BinaryOperatorName ownedRight=ExpCS)
 	 */
 	protected void sequence_ExpCS(ISerializationContext context, InfixExpCS semanticObject) {
 		if (errorAcceptor != null) {
@@ -644,9 +626,9 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EssentialOCLCSPackage.Literals.OPERATOR_EXP_CS__OWNED_RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExpCSAccess().getInfixExpCSOwnedLeftAction_0_1_0(), semanticObject.getOwnedLeft());
-		feeder.accept(grammarAccess.getExpCSAccess().getNameBinaryOperatorNameParserRuleCall_0_1_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getExpCSAccess().getOwnedRightExpCSParserRuleCall_0_1_2_0(), semanticObject.getOwnedRight());
+		feeder.accept(grammarAccess.getExpCSAccess().getInfixExpCSOwnedLeftAction_3_0_1_0(), semanticObject.getOwnedLeft());
+		feeder.accept(grammarAccess.getExpCSAccess().getNameBinaryOperatorNameParserRuleCall_3_0_1_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getExpCSAccess().getOwnedRightExpCSParserRuleCall_3_0_1_2_0(), semanticObject.getOwnedRight());
 		feeder.finish();
 	}
 	

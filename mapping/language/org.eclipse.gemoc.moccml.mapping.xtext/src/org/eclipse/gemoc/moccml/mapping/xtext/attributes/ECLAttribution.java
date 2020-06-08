@@ -42,13 +42,13 @@ public class ECLAttribution extends CompleteOCLDocumentCSAttribution
 	public static final ECLAttribution INSTANCE = new ECLAttribution();
 	
 	private ArrayList<String> listOfURI = new ArrayList<String>();
-	private ArrayList<fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.NamedElement> ListOfImportedDeclaration = new ArrayList<fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.NamedElement>();
+	public ArrayList<fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.NamedElement> ListOfImportedDeclaration = new ArrayList<fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.NamedElement>();
 
 	
 	@Override
 	public  ScopeView computeLookup(EObject target, EnvironmentView environmentView, ScopeView scopeView) {
 		super.computeLookup(target, environmentView, scopeView);
-		CompleteOCLDocumentCSAttribution.INSTANCE.computeLookup(target, environmentView, scopeView);
+	//	CompleteOCLDocumentCSAttribution.INSTANCE.computeLookup(target, environmentView, scopeView);
 		MoCCMLMappingDocument targetElement = (MoCCMLMappingDocument)target;
 		
 		EnvironmentFactoryInternal environmentFactory = environmentView.getEnvironmentFactory();
@@ -105,19 +105,19 @@ public class ECLAttribution extends CompleteOCLDocumentCSAttribution
 				}
 			}
 		} 
-			
-			for(NamedElement ne : ListOfImportedDeclaration){
-				environmentView.addElement(ne.getName(), ne);
-//				if (ne instanceof DomainElement){
-//					DomainElement de= (DomainElement)ne;
-//					environmentView.addElement(ne.getName(),  de);
-//				}else{
-//					CCSLDomainNamedElement dne = new CCSLDomainNamedElement(ne);
-//					environmentView.addElement(ne.getName(), dne);
-//				}
-			}
-		
 
+//			for(NamedElement ne : ListOfImportedDeclaration){
+//				environmentView.addElement(ne.getName(), ne);
+////				if (ne instanceof DomainElement){
+////					DomainElement de= (DomainElement)ne;
+////					environmentView.addElement(ne.getName(),  de);
+////				}else{
+////					CCSLDomainNamedElement dne = new CCSLDomainNamedElement(ne);
+////					environmentView.addElement(ne.getName(), dne);
+////				}
+//			}
+//		
+////		ImportStatementAttribution.INSTANCE.computeLookup(targetElement, environmentView, scopeView);
 		return null;
 	}
 }
