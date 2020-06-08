@@ -12,21 +12,17 @@
  */
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl;
 
-import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.DenseClockType;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
 import org.eclipse.gemoc.moccml.mapping.util.MoCCMLMappingVisitor;
 import org.eclipse.ocl.xtext.basecs.impl.TypedRefCSImpl;
-
 import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
+
+import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.DenseClockType;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +38,18 @@ import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
  *
  * @generated
  */
-public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLMappingTimeBase {
+public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLMappingTimeBase
+{
+	/**
+	 * The number of structural features of the '<em>Mo CCML Mapping Time Base</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MO_CCML_MAPPING_TIME_BASE_FEATURE_COUNT = TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 2;
+
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -78,7 +85,8 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MoCCMLMappingTimeBaseImpl() {
+	protected MoCCMLMappingTimeBaseImpl()
+	{
 		super();
 	}
 
@@ -88,7 +96,8 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_TIME_BASE;
 	}
 
@@ -97,7 +106,9 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
+	@Override
+	public String getName()
+	{
 		return name;
 	}
 
@@ -106,12 +117,13 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
+	@Override
+	public void setName(String newName)
+	{
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__NAME,
-					oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0, oldName, name));
 	}
 
 	/**
@@ -119,14 +131,17 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DenseClockType getTimeBase() {
-		if (timeBase != null && timeBase.eIsProxy()) {
-			InternalEObject oldTimeBase = (InternalEObject) timeBase;
-			timeBase = (DenseClockType) eResolveProxy(oldTimeBase);
-			if (timeBase != oldTimeBase) {
+	@Override
+	public DenseClockType getTimeBase()
+	{
+		if (timeBase != null && timeBase.eIsProxy())
+		{
+			InternalEObject oldTimeBase = (InternalEObject)timeBase;
+			timeBase = (DenseClockType)eResolveProxy(oldTimeBase);
+			if (timeBase != oldTimeBase)
+			{
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE, oldTimeBase, timeBase));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1, oldTimeBase, timeBase));
 			}
 		}
 		return timeBase;
@@ -137,7 +152,8 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DenseClockType basicGetTimeBase() {
+	public DenseClockType basicGetTimeBase()
+	{
 		return timeBase;
 	}
 
@@ -146,12 +162,13 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTimeBase(DenseClockType newTimeBase) {
+	@Override
+	public void setTimeBase(DenseClockType newTimeBase)
+	{
 		DenseClockType oldTimeBase = timeBase;
 		timeBase = newTimeBase;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE, oldTimeBase, timeBase));
+			eNotify(new ENotificationImpl(this, Notification.SET, TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1, oldTimeBase, timeBase));
 	}
 
 	/**
@@ -159,9 +176,12 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
 		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingTimeBase(this);
 	}
+
+	
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,14 +189,15 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__NAME:
-			return getName();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE:
-			if (resolve)
-				return getTimeBase();
-			return basicGetTimeBase();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				return getName();
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1:
+				if (resolve) return getTimeBase();
+				return basicGetTimeBase();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -187,14 +208,16 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__NAME:
-			setName((String) newValue);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE:
-			setTimeBase((DenseClockType) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				setName((String)newValue);
+				return;
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1:
+				setTimeBase((DenseClockType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -205,14 +228,16 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__NAME:
-			setName(NAME_EDEFAULT);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE:
-			setTimeBase((DenseClockType) null);
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				setName(NAME_EDEFAULT);
+				return;
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1:
+				setTimeBase((DenseClockType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -223,12 +248,14 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE__TIME_BASE:
-			return timeBase != null;
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1:
+				return timeBase != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -239,9 +266,9 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
@@ -249,5 +276,7 @@ public class MoCCMLMappingTimeBaseImpl extends TypedRefCSImpl implements MoCCMLM
 		result.append(')');
 		return result.toString();
 	}
+
+
 
 } //MoCCMLMappingTimeBaseImpl

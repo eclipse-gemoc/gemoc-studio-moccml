@@ -16,8 +16,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.*;
 
 /**
@@ -26,21 +29,26 @@ import org.eclipse.gemoc.moccml.mapping.moccml_mapping.*;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmappingFactory {
+public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmappingFactory
+{
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static MoCCMLmappingFactory init() {
-		try {
-			MoCCMLmappingFactory theMoCCMLmappingFactory = (MoCCMLmappingFactory) EPackage.Registry.INSTANCE
-					.getEFactory(MoCCMLmappingPackage.eNS_URI);
-			if (theMoCCMLmappingFactory != null) {
+	public static MoCCMLmappingFactory init()
+	{
+		try
+		{
+			MoCCMLmappingFactory theMoCCMLmappingFactory = (MoCCMLmappingFactory)EPackage.Registry.INSTANCE.getEFactory(MoCCMLmappingPackage.eNS_URI);
+			if (theMoCCMLmappingFactory != null)
+			{
 				return theMoCCMLmappingFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new MoCCMLmappingFactoryImpl();
@@ -52,7 +60,8 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLmappingFactoryImpl() {
+	public MoCCMLmappingFactoryImpl()
+	{
 		super();
 	}
 
@@ -62,34 +71,24 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * @generated
 	 */
 	@Override
-	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-		case MoCCMLmappingPackage.EVENT_TYPE:
-			return createEventType();
-		case MoCCMLmappingPackage.DSA_FEEDBACK:
-			return createDSAFeedback();
-		case MoCCMLmappingPackage.CASE:
-			return createCase();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DOCUMENT:
-			return createMoCCMLMappingDocument();
-		case MoCCMLmappingPackage.MO_CCML_RELATION:
-			return createMoCCMLRelation();
-		case MoCCMLmappingPackage.IMPORT_STATEMENT:
-			return createImportStatement();
-		case MoCCMLmappingPackage.MO_CCML_EXPRESSION:
-			return createMoCCMLExpression();
-		case MoCCMLmappingPackage.BLOCK_TYPE:
-			return createBlockType();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS:
-			return createMoCCMLMappingEventDefCS();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS:
-			return createMoCCMLMappingBlockDefCS();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_TIME_BASE:
-			return createMoCCMLMappingTimeBase();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY:
-			return createMoCCMLMappingPriority();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+	public EObject create(EClass eClass)
+	{
+		switch (eClass.getClassifierID())
+		{
+			case 0: return createEventType();
+			case 1: return createDSAFeedback();
+			case 2: return createCase();
+			case 3: return createMoCCMLMappingDocument();
+			case 4: return createMoCCMLRelation();
+			case 5: return createImportStatement();
+			case 6: return createMoCCMLExpression();
+			case 9: return createBlockType();
+			case 10: return createMoCCMLMappingEventDefCS();
+			case 11: return createMoCCMLMappingBlockDefCS();
+			case 12: return createMoCCMLMappingTimeBase();
+			case 13: return createMoCCMLMappingPriority();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -99,16 +98,18 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * @generated
 	 */
 	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-		case MoCCMLmappingPackage.EVENT_KIND:
-			return createEventKindFromString(eDataType, initialValue);
-		case MoCCMLmappingPackage.VISIBILITY:
-			return createVisibilityFromString(eDataType, initialValue);
-		case MoCCMLmappingPackage.FEED_BACK_KIND:
-			return createFeedBackKindFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+	public Object createFromString(EDataType eDataType, String initialValue)
+	{
+		switch (eDataType.getClassifierID())
+		{
+			case 14:
+				return createEventKindFromString(eDataType, initialValue);
+			case 15:
+				return createVisibilityFromString(eDataType, initialValue);
+			case 16:
+				return createFeedBackKindFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -118,16 +119,18 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * @generated
 	 */
 	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-		case MoCCMLmappingPackage.EVENT_KIND:
-			return convertEventKindToString(eDataType, instanceValue);
-		case MoCCMLmappingPackage.VISIBILITY:
-			return convertVisibilityToString(eDataType, instanceValue);
-		case MoCCMLmappingPackage.FEED_BACK_KIND:
-			return convertFeedBackKindToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+	public String convertToString(EDataType eDataType, Object instanceValue)
+	{
+		switch (eDataType.getClassifierID())
+		{
+			case 14:
+				return convertEventKindToString(eDataType, instanceValue);
+			case 15:
+				return convertVisibilityToString(eDataType, instanceValue);
+			case 16:
+				return convertFeedBackKindToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -136,7 +139,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventType createEventType() {
+	@Override
+	public EventType createEventType()
+	{
 		EventTypeImpl eventType = new EventTypeImpl();
 		return eventType;
 	}
@@ -146,7 +151,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DSAFeedback createDSAFeedback() {
+	@Override
+	public DSAFeedback createDSAFeedback()
+	{
 		DSAFeedbackImpl dsaFeedback = new DSAFeedbackImpl();
 		return dsaFeedback;
 	}
@@ -156,7 +163,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Case createCase() {
+	@Override
+	public Case createCase()
+	{
 		CaseImpl case_ = new CaseImpl();
 		return case_;
 	}
@@ -166,7 +175,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLMappingDocument createMoCCMLMappingDocument() {
+	@Override
+	public MoCCMLMappingDocument createMoCCMLMappingDocument()
+	{
 		MoCCMLMappingDocumentImpl moCCMLMappingDocument = new MoCCMLMappingDocumentImpl();
 		return moCCMLMappingDocument;
 	}
@@ -176,7 +187,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLRelation createMoCCMLRelation() {
+	@Override
+	public MoCCMLRelation createMoCCMLRelation()
+	{
 		MoCCMLRelationImpl moCCMLRelation = new MoCCMLRelationImpl();
 		return moCCMLRelation;
 	}
@@ -186,7 +199,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ImportStatement createImportStatement() {
+	@Override
+	public ImportStatement createImportStatement()
+	{
 		ImportStatementImpl importStatement = new ImportStatementImpl();
 		return importStatement;
 	}
@@ -196,7 +211,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLExpression createMoCCMLExpression() {
+	@Override
+	public MoCCMLExpression createMoCCMLExpression()
+	{
 		MoCCMLExpressionImpl moCCMLExpression = new MoCCMLExpressionImpl();
 		return moCCMLExpression;
 	}
@@ -206,7 +223,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BlockType createBlockType() {
+	@Override
+	public BlockType createBlockType()
+	{
 		BlockTypeImpl blockType = new BlockTypeImpl();
 		return blockType;
 	}
@@ -216,7 +235,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLMappingEventDefCS createMoCCMLMappingEventDefCS() {
+	@Override
+	public MoCCMLMappingEventDefCS createMoCCMLMappingEventDefCS()
+	{
 		MoCCMLMappingEventDefCSImpl moCCMLMappingEventDefCS = new MoCCMLMappingEventDefCSImpl();
 		return moCCMLMappingEventDefCS;
 	}
@@ -226,7 +247,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLMappingBlockDefCS createMoCCMLMappingBlockDefCS() {
+	@Override
+	public MoCCMLMappingBlockDefCS createMoCCMLMappingBlockDefCS()
+	{
 		MoCCMLMappingBlockDefCSImpl moCCMLMappingBlockDefCS = new MoCCMLMappingBlockDefCSImpl();
 		return moCCMLMappingBlockDefCS;
 	}
@@ -236,7 +259,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLMappingTimeBase createMoCCMLMappingTimeBase() {
+	@Override
+	public MoCCMLMappingTimeBase createMoCCMLMappingTimeBase()
+	{
 		MoCCMLMappingTimeBaseImpl moCCMLMappingTimeBase = new MoCCMLMappingTimeBaseImpl();
 		return moCCMLMappingTimeBase;
 	}
@@ -246,7 +271,9 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLMappingPriority createMoCCMLMappingPriority() {
+	@Override
+	public MoCCMLMappingPriority createMoCCMLMappingPriority()
+	{
 		MoCCMLMappingPriorityImpl moCCMLMappingPriority = new MoCCMLMappingPriorityImpl();
 		return moCCMLMappingPriority;
 	}
@@ -256,11 +283,10 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventKind createEventKindFromString(EDataType eDataType, String initialValue) {
+	public EventKind createEventKindFromString(EDataType eDataType, String initialValue)
+	{
 		EventKind result = EventKind.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -269,7 +295,8 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEventKindToString(EDataType eDataType, Object instanceValue) {
+	public String convertEventKindToString(EDataType eDataType, Object instanceValue)
+	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -278,11 +305,10 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Visibility createVisibilityFromString(EDataType eDataType, String initialValue) {
+	public Visibility createVisibilityFromString(EDataType eDataType, String initialValue)
+	{
 		Visibility result = Visibility.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -291,7 +317,8 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertVisibilityToString(EDataType eDataType, Object instanceValue) {
+	public String convertVisibilityToString(EDataType eDataType, Object instanceValue)
+	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -300,11 +327,10 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeedBackKind createFeedBackKindFromString(EDataType eDataType, String initialValue) {
+	public FeedBackKind createFeedBackKindFromString(EDataType eDataType, String initialValue)
+	{
 		FeedBackKind result = FeedBackKind.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -313,7 +339,8 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertFeedBackKindToString(EDataType eDataType, Object instanceValue) {
+	public String convertFeedBackKindToString(EDataType eDataType, Object instanceValue)
+	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -322,8 +349,10 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLmappingPackage getMoCCMLmappingPackage() {
-		return (MoCCMLmappingPackage) getEPackage();
+	@Override
+	public MoCCMLmappingPackage getMoCCMLmappingPackage()
+	{
+		return (MoCCMLmappingPackage)getEPackage();
 	}
 
 	/**
@@ -333,7 +362,8 @@ public class MoCCMLmappingFactoryImpl extends EFactoryImpl implements MoCCMLmapp
 	 * @generated
 	 */
 	@Deprecated
-	public static MoCCMLmappingPackage getPackage() {
+	public static MoCCMLmappingPackage getPackage()
+	{
 		return MoCCMLmappingPackage.eINSTANCE;
 	}
 

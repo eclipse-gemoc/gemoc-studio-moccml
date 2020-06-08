@@ -35,7 +35,8 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * @model
  * @generated
  */
-public interface MoCCMLExpression extends ExpCS {
+public interface MoCCMLExpression extends ExpCS
+{
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

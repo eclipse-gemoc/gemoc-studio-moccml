@@ -32,7 +32,8 @@ import org.eclipse.ocl.xtext.basecs.TypedRefCS;
  * @model superTypes="org.eclipse.ocl.xtext.basecs.TypedRefCS org.eclipse.ocl.pivot.Nameable"
  * @generated
  */
-public interface BlockType extends TypedRefCS, Nameable {
+public interface BlockType extends TypedRefCS, Nameable
+{
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

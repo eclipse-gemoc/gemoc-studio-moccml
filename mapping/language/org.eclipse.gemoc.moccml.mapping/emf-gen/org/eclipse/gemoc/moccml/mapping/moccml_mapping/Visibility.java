@@ -27,7 +27,8 @@ import org.eclipse.emf.common.util.Enumerator;
  * @model
  * @generated
  */
-public enum Visibility implements Enumerator {
+public enum Visibility implements Enumerator
+{
 	/**
 	 * The '<em><b>Public</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -51,10 +52,6 @@ public enum Visibility implements Enumerator {
 	/**
 	 * The '<em><b>Public</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Public</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PUBLIC
 	 * @model name="public"
@@ -66,10 +63,6 @@ public enum Visibility implements Enumerator {
 	/**
 	 * The '<em><b>Private</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Private</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PRIVATE
 	 * @model name="private"
@@ -84,7 +77,12 @@ public enum Visibility implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Visibility[] VALUES_ARRAY = new Visibility[] { PUBLIC, PRIVATE, };
+	private static final Visibility[] VALUES_ARRAY =
+		new Visibility[]
+		{
+			PUBLIC,
+			PRIVATE,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Visibility</b></em>' enumerators.
@@ -102,10 +100,13 @@ public enum Visibility implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Visibility get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+	public static Visibility get(String literal)
+	{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			Visibility result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -120,10 +121,13 @@ public enum Visibility implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Visibility getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+	public static Visibility getByName(String name)
+	{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			Visibility result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -138,12 +142,12 @@ public enum Visibility implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Visibility get(int value) {
-		switch (value) {
-		case PUBLIC_VALUE:
-			return PUBLIC;
-		case PRIVATE_VALUE:
-			return PRIVATE;
+	public static Visibility get(int value)
+	{
+		switch (value)
+		{
+			case PUBLIC_VALUE: return PUBLIC;
+			case PRIVATE_VALUE: return PRIVATE;
 		}
 		return null;
 	}
@@ -175,7 +179,8 @@ public enum Visibility implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Visibility(int value, String name, String literal) {
+	private Visibility(int value, String name, String literal)
+	{
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -186,8 +191,10 @@ public enum Visibility implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
-		return value;
+	@Override
+	public int getValue()
+	{
+	  return value;
 	}
 
 	/**
@@ -195,8 +202,10 @@ public enum Visibility implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	@Override
+	public String getName()
+	{
+	  return name;
 	}
 
 	/**
@@ -204,8 +213,10 @@ public enum Visibility implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLiteral() {
-		return literal;
+	@Override
+	public String getLiteral()
+	{
+	  return literal;
 	}
 
 	/**
@@ -215,8 +226,9 @@ public enum Visibility implements Enumerator {
 	 * @generated
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return literal;
 	}
-
+	
 } //Visibility

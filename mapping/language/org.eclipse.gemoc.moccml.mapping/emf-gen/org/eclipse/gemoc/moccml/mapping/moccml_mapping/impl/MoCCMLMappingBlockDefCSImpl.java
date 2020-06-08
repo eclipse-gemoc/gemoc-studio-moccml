@@ -21,6 +21,7 @@ import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
 import org.eclipse.gemoc.moccml.mapping.util.MoCCMLMappingVisitor;
 import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
+import org.eclipse.ocl.xtext.completeoclcs.impl.DefPropertyCSImpl;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 /**
@@ -37,7 +38,18 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  *
  * @generated
  */
-public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implements MoCCMLMappingBlockDefCS {
+public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implements MoCCMLMappingBlockDefCS
+{
+	/**
+	 * The number of structural features of the '<em>Mo CCML Mapping Block Def CS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MO_CCML_MAPPING_BLOCK_DEF_CS_FEATURE_COUNT = MoCCMLMappingDefCSImpl.MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT + 2;
+
+
 	/**
 	 * The cached value of the '{@link #getEnterWhen() <em>Enter When</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -63,7 +75,8 @@ public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MoCCMLMappingBlockDefCSImpl() {
+	protected MoCCMLMappingBlockDefCSImpl()
+	{
 		super();
 	}
 
@@ -73,7 +86,8 @@ public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_BLOCK_DEF_CS;
 	}
 
@@ -82,7 +96,9 @@ public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpCS getEnterWhen() {
+	@Override
+	public ExpCS getEnterWhen()
+	{
 		return enterWhen;
 	}
 
@@ -91,103 +107,16 @@ public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEnterWhen(ExpCS newEnterWhen, NotificationChain msgs) {
+	public NotificationChain basicSetEnterWhen(ExpCS newEnterWhen, NotificationChain msgs)
+	{
 		ExpCS oldEnterWhen = enterWhen;
 		enterWhen = newEnterWhen;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN, oldEnterWhen, newEnterWhen);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2, oldEnterWhen, newEnterWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEnterWhen(ExpCS newEnterWhen) {
-		if (newEnterWhen != enterWhen) {
-			NotificationChain msgs = null;
-			if (enterWhen != null)
-				msgs = ((InternalEObject) enterWhen).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN, null,
-						msgs);
-			if (newEnterWhen != null)
-				msgs = ((InternalEObject) newEnterWhen).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN, null,
-						msgs);
-			msgs = basicSetEnterWhen(newEnterWhen, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN, newEnterWhen, newEnterWhen));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExpCS getLeaveWhen() {
-		return leaveWhen;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetLeaveWhen(ExpCS newLeaveWhen, NotificationChain msgs) {
-		ExpCS oldLeaveWhen = leaveWhen;
-		leaveWhen = newLeaveWhen;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN, oldLeaveWhen, newLeaveWhen);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLeaveWhen(ExpCS newLeaveWhen) {
-		if (newLeaveWhen != leaveWhen) {
-			NotificationChain msgs = null;
-			if (leaveWhen != null)
-				msgs = ((InternalEObject) leaveWhen).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN, null,
-						msgs);
-			if (newLeaveWhen != null)
-				msgs = ((InternalEObject) newLeaveWhen).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN, null,
-						msgs);
-			msgs = basicSetLeaveWhen(newLeaveWhen, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN, newLeaveWhen, newLeaveWhen));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
-		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingBlockDefCS(this);
 	}
 
 	/**
@@ -196,12 +125,98 @@ public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN:
-			return basicSetEnterWhen(null, msgs);
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN:
-			return basicSetLeaveWhen(null, msgs);
+	public void setEnterWhen(ExpCS newEnterWhen)
+	{
+		if (newEnterWhen != enterWhen)
+		{
+			NotificationChain msgs = null;
+			if (enterWhen != null)
+				msgs = ((InternalEObject)enterWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2), null, msgs);
+			if (newEnterWhen != null)
+				msgs = ((InternalEObject)newEnterWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2), null, msgs);
+			msgs = basicSetEnterWhen(newEnterWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2, newEnterWhen, newEnterWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ExpCS getLeaveWhen()
+	{
+		return leaveWhen;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLeaveWhen(ExpCS newLeaveWhen, NotificationChain msgs)
+	{
+		ExpCS oldLeaveWhen = leaveWhen;
+		leaveWhen = newLeaveWhen;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3, oldLeaveWhen, newLeaveWhen);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLeaveWhen(ExpCS newLeaveWhen)
+	{
+		if (newLeaveWhen != leaveWhen)
+		{
+			NotificationChain msgs = null;
+			if (leaveWhen != null)
+				msgs = ((InternalEObject)leaveWhen).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3), null, msgs);
+			if (newLeaveWhen != null)
+				msgs = ((InternalEObject)newLeaveWhen).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3), null, msgs);
+			msgs = basicSetLeaveWhen(newLeaveWhen, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3, newLeaveWhen, newLeaveWhen));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
+		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingBlockDefCS(this);
+	}
+
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				return basicSetEnterWhen(null, msgs);
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3:
+				return basicSetLeaveWhen(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -212,12 +227,14 @@ public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN:
-			return getEnterWhen();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN:
-			return getLeaveWhen();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				return getEnterWhen();
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3:
+				return getLeaveWhen();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -228,14 +245,16 @@ public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN:
-			setEnterWhen((ExpCS) newValue);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN:
-			setLeaveWhen((ExpCS) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				setEnterWhen((ExpCS)newValue);
+				return;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3:
+				setLeaveWhen((ExpCS)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -246,14 +265,16 @@ public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN:
-			setEnterWhen((ExpCS) null);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN:
-			setLeaveWhen((ExpCS) null);
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				setEnterWhen((ExpCS)null);
+				return;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3:
+				setLeaveWhen((ExpCS)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -264,14 +285,18 @@ public class MoCCMLMappingBlockDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__ENTER_WHEN:
-			return enterWhen != null;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_BLOCK_DEF_CS__LEAVE_WHEN:
-			return leaveWhen != null;
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				return enterWhen != null;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3:
+				return leaveWhen != null;
 		}
 		return super.eIsSet(featureID);
 	}
+
+
 
 } //MoCCMLMappingBlockDefCSImpl

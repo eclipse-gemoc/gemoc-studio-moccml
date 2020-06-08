@@ -34,7 +34,18 @@ import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
  *
  * @generated
  */
-public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
+public class BlockTypeImpl extends TypedRefCSImpl implements BlockType
+{
+	/**
+	 * The number of structural features of the '<em>Block Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int BLOCK_TYPE_FEATURE_COUNT = TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1;
+
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,7 +71,8 @@ public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BlockTypeImpl() {
+	protected BlockTypeImpl()
+	{
 		super();
 	}
 
@@ -70,7 +82,8 @@ public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.BLOCK_TYPE;
 	}
 
@@ -79,7 +92,9 @@ public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
+	@Override
+	public String getName()
+	{
 		return name;
 	}
 
@@ -88,20 +103,23 @@ public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
+	@Override
+	public void setName(String newName)
+	{
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.BLOCK_TYPE__NAME, oldName,
-					name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0, oldName, name));
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
 		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitBlockType(this);
 	}
 
@@ -111,10 +129,12 @@ public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.BLOCK_TYPE__NAME:
-			return getName();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,11 +145,13 @@ public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.BLOCK_TYPE__NAME:
-			setName((String) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -140,11 +162,13 @@ public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.BLOCK_TYPE__NAME:
-			setName(NAME_EDEFAULT);
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -155,10 +179,12 @@ public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.BLOCK_TYPE__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -169,9 +195,9 @@ public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
@@ -179,5 +205,7 @@ public class BlockTypeImpl extends TypedRefCSImpl implements BlockType {
 		result.append(')');
 		return result.toString();
 	}
+
+	
 
 } //BlockTypeImpl
