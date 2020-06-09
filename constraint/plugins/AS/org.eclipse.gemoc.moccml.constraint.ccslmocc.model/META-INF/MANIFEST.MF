@@ -11,10 +11,11 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model;bundle-version="0.0.1";visibility:=reexport,
  fr.inria.aoste.timesquare.ccslkernel.model;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.eclipse.gemoc.moccml.constraint.ccslmocc.model,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model,
  org.eclipse.gemoc.moccml.constraint.ccslmoc.model.moccml.moccml,
  org.eclipse.gemoc.moccml.constraint.ccslmoc.model.moccml.moccml.impl,
  org.eclipse.gemoc.moccml.constraint.ccslmoc.model.moccml.moccml.util
 Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: org.eclipse.gemoc.moccml.constraint.ccslmocc.model

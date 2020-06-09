@@ -23,7 +23,7 @@ Require-Bundle: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl;
  org.eclipse.xpand
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Activator: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.internal.MoCDslActivator
 Export-Package: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.contentassist,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.contentassist.antlr,
@@ -31,3 +31,4 @@ Export-Package: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.cont
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.quickfix,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.wizard,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.contentassist.antlr.internal
+Automatic-Module-Name: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl.ui
