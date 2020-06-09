@@ -22,15 +22,15 @@ import org.eclipse.emf.ecore.EFactory;
  * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage
  * @generated
  */
-public interface MoCCMLmappingFactory extends EFactory {
+public interface MoCCMLmappingFactory extends EFactory
+{
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	MoCCMLmappingFactory eINSTANCE = org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingFactoryImpl
-			.init();
+	MoCCMLmappingFactory eINSTANCE = org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl.MoCCMLmappingFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Event Type</em>'.

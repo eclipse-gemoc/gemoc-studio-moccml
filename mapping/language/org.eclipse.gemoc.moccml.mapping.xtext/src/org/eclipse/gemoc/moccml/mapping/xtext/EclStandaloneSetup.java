@@ -29,7 +29,7 @@ public class EclStandaloneSetup extends EclStandaloneSetupGenerated{
 	
 	public static void doSetup() {
 		if (injector == null) {
-			/*injector = */new EclStandaloneSetup().createInjectorAndDoEMFRegistration();
+			new EclStandaloneSetup().createInjectorAndDoEMFRegistration();
 		}
 	}
 	

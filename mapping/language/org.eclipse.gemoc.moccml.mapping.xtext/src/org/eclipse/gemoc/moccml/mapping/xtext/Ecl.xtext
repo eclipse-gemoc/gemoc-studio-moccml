@@ -69,15 +69,14 @@ enum EventKind:
 ;
 
 
-//NEON FROM ESSENTIAL
+//2020 FROM ESSENTIAL
 @Override 
 ExpCS returns essentialOCLCST::ExpCS:
 //	({InfixExpCS} ownedSource=PrefixedExpCS name=BinaryOperatorName ownedArgument=ExpCS)
 //| 	PrefixedExpCS
 // the above takes exponential or worse time for backtracking, below is fast
-	(PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)?)
-| 	PrefixedLetExpCS
-|MoCCMLRelation | 	MoCCMLExpression | MoCCMLMappingPriority;
+MoCCMLRelation | 	MoCCMLExpression | MoCCMLMappingPriority | ((PrefixedPrimaryExpCS ({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)?)
+| 	PrefixedLetExpCS);
 
 MoCCMLMappingPriority returns MoCCMLMappingPriority:
 	{MoCCMLMappingPriority}
@@ -87,14 +86,14 @@ MoCCMLMappingPriority returns MoCCMLMappingPriority:
 
 
 
-//neon from compleocl
-@Override 
-ClassifierContextDeclCS returns completeOCL::ClassifierContextDeclCS:
-	'context' (ownedSignature=TemplateSignatureCS)? (selfName=UnrestrictedName)?
-	ownedPathName=PathNameCS	
-	(('inv' ownedInvariants+=ConstraintCS)
-	| ownedDefinitions+=DefCS
-	)+;
+////neon from compleocl
+//@Override 
+//ClassifierContextDeclCS returns completeOCL::ClassifierContextDeclCS:
+//	'context' (ownedSignature=TemplateSignatureCS)? (selfName=UnrestrictedName)?
+//	ownedPathName=PathNameCS	
+//	(('inv' ownedInvariants+=ConstraintCS)
+//	| ownedDefinitions+=DefCS
+//	)+;
 	
 
 //completeOCL override
@@ -139,13 +138,13 @@ enum FeedBackKind:
 MoCCMLExpression returns MoCCMLExpression:
 	{MoCCMLExpression}
 	  //we need to add a keyWord to make the EclScopeProvider working :-/
-	("Expression")? type=[CCSL::ExpressionDeclaration | ID] '(' parameters+=ExpCS  ( ',' parameters+=ExpCS )* ')' 
+	"Expression" type=[CCSL::ExpressionDeclaration | ID] '(' parameters+=ExpCS  ( ',' parameters+=ExpCS )* ')' 
 ;
 
 
 MoCCMLRelation returns MoCCMLRelation: 
 	{MoCCMLRelation}
   //we need to add a keyWord to make the EclScopeProvider working :-/
-  ("Relation")? type=[CCSL::RelationDeclaration | ID] '(' parameters+=ExpCS  ( ',' parameters+=ExpCS )* ')' 
+  "Relation" type=[CCSL::RelationDeclaration | ID] '(' parameters+=ExpCS  ( ',' parameters+=ExpCS )* ')' 
 ;
  

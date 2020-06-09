@@ -13,6 +13,7 @@
 package org.eclipse.gemoc.moccml.mapping.moccml_mapping;
 
 import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.BasicType.DenseClockType;
+
 import org.eclipse.ocl.pivot.utilities.Nameable;
 
 import org.eclipse.ocl.xtext.basecs.TypedRefCS;
@@ -34,7 +35,8 @@ import org.eclipse.ocl.xtext.basecs.TypedRefCS;
  * @model superTypes="org.eclipse.ocl.xtext.basecs.TypedRefCS org.eclipse.ocl.pivot.Nameable"
  * @generated
  */
-public interface MoCCMLMappingTimeBase extends TypedRefCS, Nameable {
+public interface MoCCMLMappingTimeBase extends TypedRefCS, Nameable
+{
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

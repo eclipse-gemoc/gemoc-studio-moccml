@@ -36,7 +36,18 @@ import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
  *
  * @generated
  */
-public class EventTypeImpl extends TypedRefCSImpl implements EventType {
+public class EventTypeImpl extends TypedRefCSImpl implements EventType
+{
+	/**
+	 * The number of structural features of the '<em>Event Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int EVENT_TYPE_FEATURE_COUNT = TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 2;
+
+
 	/**
 	 * The default value of the '{@link #getReferedElement() <em>Refered Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -82,7 +93,8 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EventTypeImpl() {
+	protected EventTypeImpl()
+	{
 		super();
 	}
 
@@ -92,7 +104,8 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.EVENT_TYPE;
 	}
 
@@ -101,7 +114,9 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventKind getReferedElement() {
+	@Override
+	public EventKind getReferedElement()
+	{
 		return referedElement;
 	}
 
@@ -110,12 +125,13 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReferedElement(EventKind newReferedElement) {
+	@Override
+	public void setReferedElement(EventKind newReferedElement)
+	{
 		EventKind oldReferedElement = referedElement;
 		referedElement = newReferedElement == null ? REFERED_ELEMENT_EDEFAULT : newReferedElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.EVENT_TYPE__REFERED_ELEMENT,
-					oldReferedElement, referedElement));
+			eNotify(new ENotificationImpl(this, Notification.SET, TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0, oldReferedElement, referedElement));
 	}
 
 	/**
@@ -123,7 +139,9 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
+	@Override
+	public String getName()
+	{
 		return name;
 	}
 
@@ -132,20 +150,23 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
+	@Override
+	public void setName(String newName)
+	{
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.EVENT_TYPE__NAME, oldName,
-					name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1, oldName, name));
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
 		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitEventType(this);
 	}
 
@@ -155,12 +176,14 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.EVENT_TYPE__REFERED_ELEMENT:
-			return getReferedElement();
-		case MoCCMLmappingPackage.EVENT_TYPE__NAME:
-			return getName();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				return getReferedElement();
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,14 +194,16 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.EVENT_TYPE__REFERED_ELEMENT:
-			setReferedElement((EventKind) newValue);
-			return;
-		case MoCCMLmappingPackage.EVENT_TYPE__NAME:
-			setName((String) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				setReferedElement((EventKind)newValue);
+				return;
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -189,14 +214,16 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.EVENT_TYPE__REFERED_ELEMENT:
-			setReferedElement(REFERED_ELEMENT_EDEFAULT);
-			return;
-		case MoCCMLmappingPackage.EVENT_TYPE__NAME:
-			setName(NAME_EDEFAULT);
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				setReferedElement(REFERED_ELEMENT_EDEFAULT);
+				return;
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -207,12 +234,14 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.EVENT_TYPE__REFERED_ELEMENT:
-			return referedElement != REFERED_ELEMENT_EDEFAULT;
-		case MoCCMLmappingPackage.EVENT_TYPE__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 0:
+				return referedElement != REFERED_ELEMENT_EDEFAULT;
+			case TypedRefCSImpl.TYPED_REF_CS_FEATURE_COUNT + 1:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -223,9 +252,9 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (referedElement: ");
@@ -235,5 +264,6 @@ public class EventTypeImpl extends TypedRefCSImpl implements EventType {
 		result.append(')');
 		return result.toString();
 	}
+
 
 } //EventTypeImpl

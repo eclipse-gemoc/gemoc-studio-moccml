@@ -27,7 +27,8 @@ import org.eclipse.emf.common.util.Enumerator;
  * @model
  * @generated
  */
-public enum EventKind implements Enumerator {
+public enum EventKind implements Enumerator
+{
 	/**
 	 * The '<em><b>Undefined</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -151,10 +152,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Undefined</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Undefined</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #UNDEFINED
 	 * @model name="undefined"
@@ -166,10 +163,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Start</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Start</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #START
 	 * @model name="start"
@@ -181,10 +174,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Finish</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Finish</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FINISH
 	 * @model name="finish"
@@ -196,10 +185,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Send</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Send</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SEND
 	 * @model name="send"
@@ -211,10 +196,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Receive</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Receive</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RECEIVE
 	 * @model name="receive"
@@ -226,10 +207,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Consume</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Consume</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CONSUME
 	 * @model name="consume"
@@ -241,10 +218,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Produce</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Produce</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PRODUCE
 	 * @model name="produce"
@@ -256,10 +229,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Create</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Create</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CREATE
 	 * @model name="create"
@@ -271,10 +240,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Destroy</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Destroy</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DESTROY
 	 * @model name="destroy"
@@ -286,10 +251,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Suspend</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Suspend</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SUSPEND
 	 * @model name="suspend"
@@ -301,10 +262,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Resume</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Resume</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RESUME
 	 * @model name="resume"
@@ -316,10 +273,6 @@ public enum EventKind implements Enumerator {
 	/**
 	 * The '<em><b>Call</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Call</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CALL
 	 * @model name="call"
@@ -334,8 +287,22 @@ public enum EventKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final EventKind[] VALUES_ARRAY = new EventKind[] { UNDEFINED, START, FINISH, SEND, RECEIVE, CONSUME,
-			PRODUCE, CREATE, DESTROY, SUSPEND, RESUME, CALL, };
+	private static final EventKind[] VALUES_ARRAY =
+		new EventKind[]
+		{
+			UNDEFINED,
+			START,
+			FINISH,
+			SEND,
+			RECEIVE,
+			CONSUME,
+			PRODUCE,
+			CREATE,
+			DESTROY,
+			SUSPEND,
+			RESUME,
+			CALL,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Event Kind</b></em>' enumerators.
@@ -353,10 +320,13 @@ public enum EventKind implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static EventKind get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+	public static EventKind get(String literal)
+	{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			EventKind result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -371,10 +341,13 @@ public enum EventKind implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static EventKind getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+	public static EventKind getByName(String name)
+	{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			EventKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -389,32 +362,22 @@ public enum EventKind implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static EventKind get(int value) {
-		switch (value) {
-		case UNDEFINED_VALUE:
-			return UNDEFINED;
-		case START_VALUE:
-			return START;
-		case FINISH_VALUE:
-			return FINISH;
-		case SEND_VALUE:
-			return SEND;
-		case RECEIVE_VALUE:
-			return RECEIVE;
-		case CONSUME_VALUE:
-			return CONSUME;
-		case PRODUCE_VALUE:
-			return PRODUCE;
-		case CREATE_VALUE:
-			return CREATE;
-		case DESTROY_VALUE:
-			return DESTROY;
-		case SUSPEND_VALUE:
-			return SUSPEND;
-		case RESUME_VALUE:
-			return RESUME;
-		case CALL_VALUE:
-			return CALL;
+	public static EventKind get(int value)
+	{
+		switch (value)
+		{
+			case UNDEFINED_VALUE: return UNDEFINED;
+			case START_VALUE: return START;
+			case FINISH_VALUE: return FINISH;
+			case SEND_VALUE: return SEND;
+			case RECEIVE_VALUE: return RECEIVE;
+			case CONSUME_VALUE: return CONSUME;
+			case PRODUCE_VALUE: return PRODUCE;
+			case CREATE_VALUE: return CREATE;
+			case DESTROY_VALUE: return DESTROY;
+			case SUSPEND_VALUE: return SUSPEND;
+			case RESUME_VALUE: return RESUME;
+			case CALL_VALUE: return CALL;
 		}
 		return null;
 	}
@@ -446,7 +409,8 @@ public enum EventKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EventKind(int value, String name, String literal) {
+	private EventKind(int value, String name, String literal)
+	{
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -457,8 +421,10 @@ public enum EventKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
-		return value;
+	@Override
+	public int getValue()
+	{
+	  return value;
 	}
 
 	/**
@@ -466,8 +432,10 @@ public enum EventKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	@Override
+	public String getName()
+	{
+	  return name;
 	}
 
 	/**
@@ -475,8 +443,10 @@ public enum EventKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLiteral() {
-		return literal;
+	@Override
+	public String getLiteral()
+	{
+	  return literal;
 	}
 
 	/**
@@ -486,8 +456,9 @@ public enum EventKind implements Enumerator {
 	 * @generated
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return literal;
 	}
-
+	
 } //EventKind

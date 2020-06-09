@@ -41,7 +41,18 @@ import org.eclipse.ocl.xtext.essentialoclcs.impl.ExpCSImpl;
  *
  * @generated
  */
-public class CaseImpl extends ExpCSImpl implements Case {
+public class CaseImpl extends ExpCSImpl implements Case
+{
+	/**
+	 * The number of structural features of the '<em>Case</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CASE_FEATURE_COUNT = ExpCSImpl.EXP_CS_FEATURE_COUNT + 4;
+
+
 	/**
 	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -97,7 +108,8 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CaseImpl() {
+	protected CaseImpl()
+	{
 		super();
 	}
 
@@ -107,7 +119,8 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.CASE;
 	}
 
@@ -116,7 +129,9 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpCS getCondition() {
+	@Override
+	public ExpCS getCondition()
+	{
 		return condition;
 	}
 
@@ -125,16 +140,14 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCondition(ExpCS newCondition, NotificationChain msgs) {
+	public NotificationChain basicSetCondition(ExpCS newCondition, NotificationChain msgs)
+	{
 		ExpCS oldCondition = condition;
 		condition = newCondition;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.CASE__CONDITION, oldCondition, newCondition);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 0, oldCondition, newCondition);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -144,21 +157,21 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCondition(ExpCS newCondition) {
-		if (newCondition != condition) {
+	@Override
+	public void setCondition(ExpCS newCondition)
+	{
+		if (newCondition != condition)
+		{
 			NotificationChain msgs = null;
 			if (condition != null)
-				msgs = ((InternalEObject) condition).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.CASE__CONDITION, null, msgs);
+				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - (ExpCSImpl.EXP_CS_FEATURE_COUNT + 0), null, msgs);
 			if (newCondition != null)
-				msgs = ((InternalEObject) newCondition).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.CASE__CONDITION, null, msgs);
+				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - (ExpCSImpl.EXP_CS_FEATURE_COUNT + 0), null, msgs);
 			msgs = basicSetCondition(newCondition, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.CASE__CONDITION, newCondition,
-					newCondition));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 0, newCondition, newCondition));
 	}
 
 	/**
@@ -166,7 +179,9 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpCS getEventToForce() {
+	@Override
+	public ExpCS getEventToForce()
+	{
 		return eventToForce;
 	}
 
@@ -175,16 +190,14 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEventToForce(ExpCS newEventToForce, NotificationChain msgs) {
+	public NotificationChain basicSetEventToForce(ExpCS newEventToForce, NotificationChain msgs)
+	{
 		ExpCS oldEventToForce = eventToForce;
 		eventToForce = newEventToForce;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.CASE__EVENT_TO_FORCE, oldEventToForce, newEventToForce);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 1, oldEventToForce, newEventToForce);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -194,21 +207,21 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEventToForce(ExpCS newEventToForce) {
-		if (newEventToForce != eventToForce) {
+	@Override
+	public void setEventToForce(ExpCS newEventToForce)
+	{
+		if (newEventToForce != eventToForce)
+		{
 			NotificationChain msgs = null;
 			if (eventToForce != null)
-				msgs = ((InternalEObject) eventToForce).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.CASE__EVENT_TO_FORCE, null, msgs);
+				msgs = ((InternalEObject)eventToForce).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - (ExpCSImpl.EXP_CS_FEATURE_COUNT + 1), null, msgs);
 			if (newEventToForce != null)
-				msgs = ((InternalEObject) newEventToForce).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.CASE__EVENT_TO_FORCE, null, msgs);
+				msgs = ((InternalEObject)newEventToForce).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - (ExpCSImpl.EXP_CS_FEATURE_COUNT + 1), null, msgs);
 			msgs = basicSetEventToForce(newEventToForce, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.CASE__EVENT_TO_FORCE,
-					newEventToForce, newEventToForce));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 1, newEventToForce, newEventToForce));
 	}
 
 	/**
@@ -216,7 +229,9 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpCS getOn() {
+	@Override
+	public ExpCS getOn()
+	{
 		return on;
 	}
 
@@ -225,16 +240,14 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOn(ExpCS newOn, NotificationChain msgs) {
+	public NotificationChain basicSetOn(ExpCS newOn, NotificationChain msgs)
+	{
 		ExpCS oldOn = on;
 		on = newOn;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.CASE__ON, oldOn, newOn);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 2, oldOn, newOn);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -244,20 +257,21 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOn(ExpCS newOn) {
-		if (newOn != on) {
+	@Override
+	public void setOn(ExpCS newOn)
+	{
+		if (newOn != on)
+		{
 			NotificationChain msgs = null;
 			if (on != null)
-				msgs = ((InternalEObject) on).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.CASE__ON, null, msgs);
+				msgs = ((InternalEObject)on).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - (ExpCSImpl.EXP_CS_FEATURE_COUNT + 2), null, msgs);
 			if (newOn != null)
-				msgs = ((InternalEObject) newOn).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.CASE__ON, null, msgs);
+				msgs = ((InternalEObject)newOn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - (ExpCSImpl.EXP_CS_FEATURE_COUNT + 2), null, msgs);
 			msgs = basicSetOn(newOn, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.CASE__ON, newOn, newOn));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 2, newOn, newOn));
 	}
 
 	/**
@@ -265,7 +279,9 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeedBackKind getKindOfFeedback() {
+	@Override
+	public FeedBackKind getKindOfFeedback()
+	{
 		return kindOfFeedback;
 	}
 
@@ -274,20 +290,24 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKindOfFeedback(FeedBackKind newKindOfFeedback) {
+	@Override
+	public void setKindOfFeedback(FeedBackKind newKindOfFeedback)
+	{
 		FeedBackKind oldKindOfFeedback = kindOfFeedback;
 		kindOfFeedback = newKindOfFeedback == null ? KIND_OF_FEEDBACK_EDEFAULT : newKindOfFeedback;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.CASE__KIND_OF_FEEDBACK,
-					oldKindOfFeedback, kindOfFeedback));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 3, oldKindOfFeedback, kindOfFeedback));
 	}
+
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
 		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitCase(this);
 	}
 
@@ -297,14 +317,16 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.CASE__CONDITION:
-			return basicSetCondition(null, msgs);
-		case MoCCMLmappingPackage.CASE__EVENT_TO_FORCE:
-			return basicSetEventToForce(null, msgs);
-		case MoCCMLmappingPackage.CASE__ON:
-			return basicSetOn(null, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				return basicSetCondition(null, msgs);
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				return basicSetEventToForce(null, msgs);
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 2:
+				return basicSetOn(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -315,16 +337,18 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.CASE__CONDITION:
-			return getCondition();
-		case MoCCMLmappingPackage.CASE__EVENT_TO_FORCE:
-			return getEventToForce();
-		case MoCCMLmappingPackage.CASE__ON:
-			return getOn();
-		case MoCCMLmappingPackage.CASE__KIND_OF_FEEDBACK:
-			return getKindOfFeedback();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				return getCondition();
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				return getEventToForce();
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 2:
+				return getOn();
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 3:
+				return getKindOfFeedback();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -335,20 +359,22 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.CASE__CONDITION:
-			setCondition((ExpCS) newValue);
-			return;
-		case MoCCMLmappingPackage.CASE__EVENT_TO_FORCE:
-			setEventToForce((ExpCS) newValue);
-			return;
-		case MoCCMLmappingPackage.CASE__ON:
-			setOn((ExpCS) newValue);
-			return;
-		case MoCCMLmappingPackage.CASE__KIND_OF_FEEDBACK:
-			setKindOfFeedback((FeedBackKind) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				setCondition((ExpCS)newValue);
+				return;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				setEventToForce((ExpCS)newValue);
+				return;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 2:
+				setOn((ExpCS)newValue);
+				return;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 3:
+				setKindOfFeedback((FeedBackKind)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -359,20 +385,22 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.CASE__CONDITION:
-			setCondition((ExpCS) null);
-			return;
-		case MoCCMLmappingPackage.CASE__EVENT_TO_FORCE:
-			setEventToForce((ExpCS) null);
-			return;
-		case MoCCMLmappingPackage.CASE__ON:
-			setOn((ExpCS) null);
-			return;
-		case MoCCMLmappingPackage.CASE__KIND_OF_FEEDBACK:
-			setKindOfFeedback(KIND_OF_FEEDBACK_EDEFAULT);
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				setCondition((ExpCS)null);
+				return;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				setEventToForce((ExpCS)null);
+				return;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 2:
+				setOn((ExpCS)null);
+				return;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 3:
+				setKindOfFeedback(KIND_OF_FEEDBACK_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -383,16 +411,18 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.CASE__CONDITION:
-			return condition != null;
-		case MoCCMLmappingPackage.CASE__EVENT_TO_FORCE:
-			return eventToForce != null;
-		case MoCCMLmappingPackage.CASE__ON:
-			return on != null;
-		case MoCCMLmappingPackage.CASE__KIND_OF_FEEDBACK:
-			return kindOfFeedback != KIND_OF_FEEDBACK_EDEFAULT;
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				return condition != null;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				return eventToForce != null;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 2:
+				return on != null;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 3:
+				return kindOfFeedback != KIND_OF_FEEDBACK_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -403,9 +433,9 @@ public class CaseImpl extends ExpCSImpl implements Case {
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (kindOfFeedback: ");
@@ -413,5 +443,7 @@ public class CaseImpl extends ExpCSImpl implements Case {
 		result.append(')');
 		return result.toString();
 	}
+
+
 
 } //CaseImpl

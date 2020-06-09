@@ -27,7 +27,8 @@ import org.eclipse.emf.common.util.Enumerator;
  * @model
  * @generated
  */
-public enum FeedBackKind implements Enumerator {
+public enum FeedBackKind implements Enumerator
+{
 	/**
 	 * The '<em><b>Force</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -51,10 +52,6 @@ public enum FeedBackKind implements Enumerator {
 	/**
 	 * The '<em><b>Force</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Force</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FORCE
 	 * @model name="force"
@@ -66,10 +63,6 @@ public enum FeedBackKind implements Enumerator {
 	/**
 	 * The '<em><b>Forbid</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Forbid</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FORBID
 	 * @model name="forbid"
@@ -84,7 +77,12 @@ public enum FeedBackKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final FeedBackKind[] VALUES_ARRAY = new FeedBackKind[] { FORCE, FORBID, };
+	private static final FeedBackKind[] VALUES_ARRAY =
+		new FeedBackKind[]
+		{
+			FORCE,
+			FORBID,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Feed Back Kind</b></em>' enumerators.
@@ -102,10 +100,13 @@ public enum FeedBackKind implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static FeedBackKind get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+	public static FeedBackKind get(String literal)
+	{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			FeedBackKind result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -120,10 +121,13 @@ public enum FeedBackKind implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static FeedBackKind getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+	public static FeedBackKind getByName(String name)
+	{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			FeedBackKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -138,12 +142,12 @@ public enum FeedBackKind implements Enumerator {
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static FeedBackKind get(int value) {
-		switch (value) {
-		case FORCE_VALUE:
-			return FORCE;
-		case FORBID_VALUE:
-			return FORBID;
+	public static FeedBackKind get(int value)
+	{
+		switch (value)
+		{
+			case FORCE_VALUE: return FORCE;
+			case FORBID_VALUE: return FORBID;
 		}
 		return null;
 	}
@@ -175,7 +179,8 @@ public enum FeedBackKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private FeedBackKind(int value, String name, String literal) {
+	private FeedBackKind(int value, String name, String literal)
+	{
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -186,8 +191,10 @@ public enum FeedBackKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue() {
-		return value;
+	@Override
+	public int getValue()
+	{
+	  return value;
 	}
 
 	/**
@@ -195,8 +202,10 @@ public enum FeedBackKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	@Override
+	public String getName()
+	{
+	  return name;
 	}
 
 	/**
@@ -204,8 +213,10 @@ public enum FeedBackKind implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLiteral() {
-		return literal;
+	@Override
+	public String getLiteral()
+	{
+	  return literal;
 	}
 
 	/**
@@ -215,8 +226,9 @@ public enum FeedBackKind implements Enumerator {
 	 * @generated
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return literal;
 	}
-
+	
 } //FeedBackKind

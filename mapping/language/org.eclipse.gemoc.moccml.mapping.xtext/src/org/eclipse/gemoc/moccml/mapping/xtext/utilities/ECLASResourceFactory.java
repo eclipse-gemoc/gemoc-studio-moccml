@@ -68,29 +68,5 @@ public class ECLASResourceFactory extends CompleteOCLASResourceFactory
 	public @NonNull ASResourceFactory getASResourceFactory() {
 		return getInstance();
 	}
-//	public static final ECLASResourceFactory INSTANCE = new ECLASResourceFactory();
-//	
-//	protected ECLASResourceFactory() {
-//		super();
-//	}
-//
-//	@Override
-//	public int getHandlerPriority(Resource resource) {
-//		return resource instanceof ECLASResourceFactory ? CAN_HANDLE : CANNOT_HANDLE;
-//	}
-//
-//	@Override
-//	public Element importFromResource(MetaModelManager metaModelManager,  Resource resource, URI uri) {
-//		Resource asResource = ((ECLResource)resource).getASResource(metaModelManager);
-//		List<EObject> contents = asResource.getContents();
-//		if (contents.size() <= 0) {
-//			return null;
-//		}
-//		if ((uri != null) && (uri.fragment() == null)) {
-//			return (Element) contents.get(0);
-//		}
-//		else {
-//			throw new UnsupportedOperationException();	// FIXME
-//		}
-//	}
+
 }

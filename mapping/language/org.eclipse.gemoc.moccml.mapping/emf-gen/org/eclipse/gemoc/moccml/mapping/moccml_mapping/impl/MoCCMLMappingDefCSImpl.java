@@ -39,7 +39,18 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  *
  * @generated
  */
-public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implements MoCCMLMappingDefCS {
+public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implements MoCCMLMappingDefCS
+{
+	/**
+	 * The number of structural features of the '<em>Mo CCML Mapping Def CS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT = DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2;
+
+
 	/**
 	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -75,7 +86,8 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MoCCMLMappingDefCSImpl() {
+	protected MoCCMLMappingDefCSImpl()
+	{
 		super();
 	}
 
@@ -85,7 +97,8 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_DEF_CS;
 	}
 
@@ -94,7 +107,9 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpCS getCondition() {
+	@Override
+	public ExpCS getCondition()
+	{
 		return condition;
 	}
 
@@ -103,16 +118,14 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCondition(ExpCS newCondition, NotificationChain msgs) {
+	public NotificationChain basicSetCondition(ExpCS newCondition, NotificationChain msgs)
+	{
 		ExpCS oldCondition = condition;
 		condition = newCondition;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__CONDITION, oldCondition, newCondition);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0, oldCondition, newCondition);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -122,21 +135,21 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCondition(ExpCS newCondition) {
-		if (newCondition != condition) {
+	@Override
+	public void setCondition(ExpCS newCondition)
+	{
+		if (newCondition != condition)
+		{
 			NotificationChain msgs = null;
 			if (condition != null)
-				msgs = ((InternalEObject) condition).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__CONDITION, null, msgs);
+				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0), null, msgs);
 			if (newCondition != null)
-				msgs = ((InternalEObject) newCondition).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__CONDITION, null, msgs);
+				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0), null, msgs);
 			msgs = basicSetCondition(newCondition, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__CONDITION, newCondition, newCondition));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0, newCondition, newCondition));
 	}
 
 	/**
@@ -144,7 +157,9 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Visibility getVisibility() {
+	@Override
+	public Visibility getVisibility()
+	{
 		return visibility;
 	}
 
@@ -153,12 +168,13 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVisibility(Visibility newVisibility) {
+	@Override
+	public void setVisibility(Visibility newVisibility)
+	{
 		Visibility oldVisibility = visibility;
 		visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__VISIBILITY, oldVisibility, visibility));
+			eNotify(new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1, oldVisibility, visibility));
 	}
 
 	/**
@@ -166,7 +182,8 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
 		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingDefCS(this);
 	}
 
@@ -176,10 +193,12 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__CONDITION:
-			return basicSetCondition(null, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0:
+				return basicSetCondition(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -190,12 +209,14 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__CONDITION:
-			return getCondition();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__VISIBILITY:
-			return getVisibility();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0:
+				return getCondition();
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				return getVisibility();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,14 +227,16 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__CONDITION:
-			setCondition((ExpCS) newValue);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__VISIBILITY:
-			setVisibility((Visibility) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0:
+				setCondition((ExpCS)newValue);
+				return;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				setVisibility((Visibility)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -224,14 +247,16 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__CONDITION:
-			setCondition((ExpCS) null);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__VISIBILITY:
-			setVisibility(VISIBILITY_EDEFAULT);
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0:
+				setCondition((ExpCS)null);
+				return;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				setVisibility(VISIBILITY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -242,12 +267,14 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__CONDITION:
-			return condition != null;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DEF_CS__VISIBILITY:
-			return visibility != VISIBILITY_EDEFAULT;
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0:
+				return condition != null;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				return visibility != VISIBILITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -258,9 +285,9 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (visibility: ");
@@ -268,5 +295,6 @@ public abstract class MoCCMLMappingDefCSImpl extends DefPropertyCSImpl implement
 		result.append(')');
 		return result.toString();
 	}
+
 
 } //MoCCMLMappingDefCSImpl

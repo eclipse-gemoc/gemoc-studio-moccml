@@ -31,7 +31,8 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * @model
  * @generated
  */
-public interface MoCCMLMappingBlockDefCS extends MoCCMLMappingDefCS {
+public interface MoCCMLMappingBlockDefCS extends MoCCMLMappingDefCS
+{
 	/**
 	 * Returns the value of the '<em><b>Enter When</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

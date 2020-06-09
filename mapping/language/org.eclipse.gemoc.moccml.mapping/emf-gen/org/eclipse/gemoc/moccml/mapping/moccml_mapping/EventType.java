@@ -33,7 +33,8 @@ import org.eclipse.ocl.xtext.basecs.TypedRefCS;
  * @model superTypes="org.eclipse.ocl.xtext.basecs.TypedRefCS org.eclipse.ocl.pivot.Nameable"
  * @generated
  */
-public interface EventType extends TypedRefCS, Nameable {
+public interface EventType extends TypedRefCS, Nameable
+{
 	/**
 	 * Returns the value of the '<em><b>Refered Element</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventKind}.

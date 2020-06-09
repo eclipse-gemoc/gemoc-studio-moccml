@@ -30,7 +30,8 @@ import org.eclipse.ocl.xtext.basecs.ImportCS;
  * @model
  * @generated
  */
-public interface ImportStatement extends ImportCS {
+public interface ImportStatement extends ImportCS
+{
 	/**
 	 * Returns the value of the '<em><b>Import URI</b></em>' attribute.
 	 * <!-- begin-user-doc -->

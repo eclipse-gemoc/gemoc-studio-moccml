@@ -31,7 +31,8 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * @model
  * @generated
  */
-public interface MoCCMLMappingPriority extends ExpCS {
+public interface MoCCMLMappingPriority extends ExpCS
+{
 	/**
 	 * Returns the value of the '<em><b>Higher</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
