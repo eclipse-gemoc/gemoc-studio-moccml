@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.eclipse.gemoc</groupId>
 	<artifactId>org.eclipse.gemoc.concurrent.root</artifactId>
-	<version>3.0.0-SNAPSHOT</version>
+	<version>3.3.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
     <properties>
@@ -88,7 +88,7 @@
 			<url>${efxclipse.p2.url}</url>
 		</repository>
         <repository> <!-- indirectly, required by the test that indirectly grabs sequential_addon.stategraph that depends on it -->
-            <id>elk</id>
+            <id>ELK</id>
             <layout>p2</layout>
             <url>${elk.p2.url}</url>
         </repository>
