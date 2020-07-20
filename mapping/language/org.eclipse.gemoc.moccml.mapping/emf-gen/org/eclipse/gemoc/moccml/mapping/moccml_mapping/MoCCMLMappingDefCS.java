@@ -33,7 +33,8 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * @model abstract="true"
  * @generated
  */
-public interface MoCCMLMappingDefCS extends DefPropertyCS {
+public interface MoCCMLMappingDefCS extends DefPropertyCS
+{
 	/**
 	 * Returns the value of the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

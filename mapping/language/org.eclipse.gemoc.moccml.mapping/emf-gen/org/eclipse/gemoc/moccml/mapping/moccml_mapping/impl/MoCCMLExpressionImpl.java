@@ -25,7 +25,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
 import org.eclipse.gemoc.moccml.mapping.util.MoCCMLMappingVisitor;
+import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
+import org.eclipse.ocl.xtext.completeoclcs.util.CompleteOCLCSVisitor;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.impl.ExpCSImpl;
 
@@ -45,7 +47,18 @@ import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClockExpre
  *
  * @generated
  */
-public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression {
+public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression
+{
+	/**
+	 * The number of structural features of the '<em>Mo CCML Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MO_CCML_EXPRESSION_FEATURE_COUNT = ExpCSImpl.EXP_CS_FEATURE_COUNT + 2;
+
+
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -71,7 +84,8 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MoCCMLExpressionImpl() {
+	protected MoCCMLExpressionImpl()
+	{
 		super();
 	}
 
@@ -81,7 +95,8 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.MO_CCML_EXPRESSION;
 	}
 
@@ -90,14 +105,17 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpressionDeclaration getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject) type;
-			type = (ExpressionDeclaration) eResolveProxy(oldType);
-			if (type != oldType) {
+	@Override
+	public ExpressionDeclaration getType()
+	{
+		if (type != null && type.eIsProxy())
+		{
+			InternalEObject oldType = (InternalEObject)type;
+			type = (ExpressionDeclaration)eResolveProxy(oldType);
+			if (type != oldType)
+			{
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpCSImpl.EXP_CS_FEATURE_COUNT + 0, oldType, type));
 			}
 		}
 		return type;
@@ -108,7 +126,8 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpressionDeclaration basicGetType() {
+	public ExpressionDeclaration basicGetType()
+	{
 		return type;
 	}
 
@@ -117,12 +136,13 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setType(ExpressionDeclaration newType) {
+	@Override
+	public void setType(ExpressionDeclaration newType)
+	{
 		ExpressionDeclaration oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE,
-					oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 0, oldType, type));
 	}
 
 	/**
@@ -130,10 +150,12 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ExpCS> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectContainmentEList<ExpCS>(ExpCS.class, this,
-					MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS);
+	@Override
+	public EList<ExpCS> getParameters()
+	{
+		if (parameters == null)
+		{
+			parameters = new EObjectContainmentEList<ExpCS>(ExpCS.class, this, ExpCSImpl.EXP_CS_FEATURE_COUNT + 1);
 		}
 		return parameters;
 	}
@@ -143,9 +165,12 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
 		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLExpression(this);
 	}
+
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -153,10 +178,12 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS:
-			return ((InternalEList<?>) getParameters()).basicRemove(otherEnd, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -167,14 +194,15 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE:
-			if (resolve)
-				return getType();
-			return basicGetType();
-		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS:
-			return getParameters();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				if (resolve) return getType();
+				return basicGetType();
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,15 +214,17 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE:
-			setType((ExpressionDeclaration) newValue);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS:
-			getParameters().clear();
-			getParameters().addAll((Collection<? extends ExpCS>) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				setType((ExpressionDeclaration)newValue);
+				return;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends ExpCS>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -205,14 +235,16 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE:
-			setType((ExpressionDeclaration) null);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS:
-			getParameters().clear();
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				setType((ExpressionDeclaration)null);
+				return;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				getParameters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -223,14 +255,18 @@ public class MoCCMLExpressionImpl extends ExpCSImpl implements MoCCMLExpression 
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__TYPE:
-			return type != null;
-		case MoCCMLmappingPackage.MO_CCML_EXPRESSION__PARAMETERS:
-			return parameters != null && !parameters.isEmpty();
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				return type != null;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
+
+
 
 } //MoCCMLExpressionImpl

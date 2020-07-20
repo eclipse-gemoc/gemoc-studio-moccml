@@ -34,7 +34,18 @@ import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
  *
  * @generated
  */
-public class ImportStatementImpl extends ImportCSImpl implements ImportStatement {
+public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
+{
+	/**
+	 * The number of structural features of the '<em>Import Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int IMPORT_STATEMENT_FEATURE_COUNT = ImportCSImpl.IMPORT_CS_FEATURE_COUNT + 1;
+
+
 	/**
 	 * The default value of the '{@link #getImportURI() <em>Import URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,7 +71,8 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ImportStatementImpl() {
+	protected ImportStatementImpl()
+	{
 		super();
 	}
 
@@ -70,7 +82,8 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.IMPORT_STATEMENT;
 	}
 
@@ -79,7 +92,9 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getImportURI() {
+	@Override
+	public String getImportURI()
+	{
 		return importURI;
 	}
 
@@ -88,20 +103,24 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setImportURI(String newImportURI) {
+	@Override
+	public void setImportURI(String newImportURI)
+	{
 		String oldImportURI = importURI;
 		importURI = newImportURI;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.IMPORT_STATEMENT__IMPORT_URI,
-					oldImportURI, importURI));
+			eNotify(new ENotificationImpl(this, Notification.SET, ImportCSImpl.IMPORT_CS_FEATURE_COUNT + 0, oldImportURI, importURI));
 	}
+
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
 		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitImportStatement(this);
 	}
 
@@ -111,10 +130,12 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.IMPORT_STATEMENT__IMPORT_URI:
-			return getImportURI();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case ImportCSImpl.IMPORT_CS_FEATURE_COUNT + 0:
+				return getImportURI();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,11 +146,13 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.IMPORT_STATEMENT__IMPORT_URI:
-			setImportURI((String) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case ImportCSImpl.IMPORT_CS_FEATURE_COUNT + 0:
+				setImportURI((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -140,11 +163,13 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.IMPORT_STATEMENT__IMPORT_URI:
-			setImportURI(IMPORT_URI_EDEFAULT);
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case ImportCSImpl.IMPORT_CS_FEATURE_COUNT + 0:
+				setImportURI(IMPORT_URI_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -155,10 +180,12 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.IMPORT_STATEMENT__IMPORT_URI:
-			return IMPORT_URI_EDEFAULT == null ? importURI != null : !IMPORT_URI_EDEFAULT.equals(importURI);
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case ImportCSImpl.IMPORT_CS_FEATURE_COUNT + 0:
+				return IMPORT_URI_EDEFAULT == null ? importURI != null : !IMPORT_URI_EDEFAULT.equals(importURI);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -169,9 +196,9 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (importURI: ");
@@ -179,5 +206,7 @@ public class ImportStatementImpl extends ImportCSImpl implements ImportStatement
 		result.append(')');
 		return result.toString();
 	}
+
+
 
 } //ImportStatementImpl

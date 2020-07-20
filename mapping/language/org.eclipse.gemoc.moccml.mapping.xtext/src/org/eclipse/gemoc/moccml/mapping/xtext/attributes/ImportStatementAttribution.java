@@ -25,6 +25,8 @@ import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement;
+import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument;
 import org.eclipse.ocl.pivot.Element;
 import org.eclipse.ocl.pivot.internal.compatibility.EMF_2_9;
 import org.eclipse.ocl.pivot.internal.manager.PivotMetamodelManager;
@@ -56,7 +58,7 @@ public class ImportStatementAttribution extends AbstractAttribution// implements
 			private Element importedElement = null;
 			private Throwable throwable = null;
 		
-			public ScopeView computeLookup(ImportCS targetElement, EnvironmentView environmentView, ScopeView scopeView) {
+			public ScopeView computeLookup(ImportStatement targetElement, EnvironmentView environmentView, ScopeView scopeView) {
 				String name = environmentView.getName();
 				if (name != null) {				// Looking for a specific name
 					importModel(targetElement, environmentView);
@@ -82,8 +84,8 @@ public class ImportStatementAttribution extends AbstractAttribution// implements
 				return throwable != null ? throwable.getMessage() : null;
 			}
 		
-			protected void importModel(ImportCS target, EnvironmentView environmentView) {
-				String name = environmentView.getName();
+			protected void importModel(ImportStatement target, EnvironmentView environmentView) {
+				String name = target.getImportURI();
 				if (name == null) {
 					return;
 				}
@@ -107,7 +109,7 @@ public class ImportStatementAttribution extends AbstractAttribution// implements
 				}
 				try {
 					MetamodelManager metaModelManager = environmentView.getEnvironmentFactory().getMetamodelManager();
-					importedElement = ((PivotMetamodelManager) metaModelManager).loadResource(uri2, target.getName(), null);				
+					importedElement = ((PivotMetamodelManager) metaModelManager).loadResource(uri2, uri2.lastSegment(), null);				
 					Resource importedResource = importedElement.eResource();
 					List<Resource.Diagnostic> warnings = importedResource.getWarnings();
 					if (warnings.size() > 0) {
@@ -138,13 +140,15 @@ public class ImportStatementAttribution extends AbstractAttribution// implements
 
 		@Override
 		public ScopeView computeLookup( EObject target,  EnvironmentView environmentView,  ScopeView scopeView) {
-			ImportCS targetElement = (ImportCS)target;
-			ImportAdapter adapter = ClassUtil.getAdapter(ImportAdapter.class, targetElement);
-			if (adapter == null) {
-				adapter = new ImportAdapter();
-				targetElement.eAdapters().add(adapter);
+			for (ImportStatement targetElement : ((MoCCMLMappingDocument)target).getImports()) {
+				ImportAdapter adapter = ClassUtil.getAdapter(ImportAdapter.class, targetElement);
+				if (adapter == null) {
+					adapter = new ImportAdapter();
+					targetElement.eAdapters().add(adapter);
+				}
+				scopeView = adapter.computeLookup(targetElement, environmentView, scopeView);
 			}
-			return adapter.computeLookup(targetElement, environmentView, scopeView);
+			return scopeView;
 		}
 
 		public EReference getEReference() {

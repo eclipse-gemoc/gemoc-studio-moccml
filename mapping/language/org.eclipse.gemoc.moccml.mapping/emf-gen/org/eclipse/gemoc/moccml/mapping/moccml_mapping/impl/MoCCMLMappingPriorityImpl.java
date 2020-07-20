@@ -38,7 +38,18 @@ import org.eclipse.ocl.xtext.essentialoclcs.impl.ExpCSImpl;
  *
  * @generated
  */
-public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappingPriority {
+public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappingPriority
+{
+	/**
+	 * The number of structural features of the '<em>Mo CCML Mapping Priority</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MO_CCML_MAPPING_PRIORITY_FEATURE_COUNT = ExpCSImpl.EXP_CS_FEATURE_COUNT + 2;
+
+
 	/**
 	 * The cached value of the '{@link #getHigher() <em>Higher</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -64,7 +75,8 @@ public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MoCCMLMappingPriorityImpl() {
+	protected MoCCMLMappingPriorityImpl()
+	{
 		super();
 	}
 
@@ -74,7 +86,8 @@ public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappin
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_PRIORITY;
 	}
 
@@ -83,7 +96,9 @@ public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExpCS getHigher() {
+	@Override
+	public ExpCS getHigher()
+	{
 		return higher;
 	}
 
@@ -92,99 +107,16 @@ public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetHigher(ExpCS newHigher, NotificationChain msgs) {
+	public NotificationChain basicSetHigher(ExpCS newHigher, NotificationChain msgs)
+	{
 		ExpCS oldHigher = higher;
 		higher = newHigher;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__HIGHER, oldHigher, newHigher);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 0, oldHigher, newHigher);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHigher(ExpCS newHigher) {
-		if (newHigher != higher) {
-			NotificationChain msgs = null;
-			if (higher != null)
-				msgs = ((InternalEObject) higher).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__HIGHER, null, msgs);
-			if (newHigher != null)
-				msgs = ((InternalEObject) newHigher).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__HIGHER, null, msgs);
-			msgs = basicSetHigher(newHigher, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__HIGHER,
-					newHigher, newHigher));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExpCS getLower() {
-		return lower;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetLower(ExpCS newLower, NotificationChain msgs) {
-		ExpCS oldLower = lower;
-		lower = newLower;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__LOWER, oldLower, newLower);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLower(ExpCS newLower) {
-		if (newLower != lower) {
-			NotificationChain msgs = null;
-			if (lower != null)
-				msgs = ((InternalEObject) lower).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__LOWER, null, msgs);
-			if (newLower != null)
-				msgs = ((InternalEObject) newLower).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__LOWER, null, msgs);
-			msgs = basicSetLower(newLower, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__LOWER,
-					newLower, newLower));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
-		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingPriority(this);
 	}
 
 	/**
@@ -193,12 +125,98 @@ public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappin
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__HIGHER:
-			return basicSetHigher(null, msgs);
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__LOWER:
-			return basicSetLower(null, msgs);
+	public void setHigher(ExpCS newHigher)
+	{
+		if (newHigher != higher)
+		{
+			NotificationChain msgs = null;
+			if (higher != null)
+				msgs = ((InternalEObject)higher).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - (ExpCSImpl.EXP_CS_FEATURE_COUNT + 0), null, msgs);
+			if (newHigher != null)
+				msgs = ((InternalEObject)newHigher).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - (ExpCSImpl.EXP_CS_FEATURE_COUNT + 0), null, msgs);
+			msgs = basicSetHigher(newHigher, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 0, newHigher, newHigher));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ExpCS getLower()
+	{
+		return lower;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLower(ExpCS newLower, NotificationChain msgs)
+	{
+		ExpCS oldLower = lower;
+		lower = newLower;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 1, oldLower, newLower);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLower(ExpCS newLower)
+	{
+		if (newLower != lower)
+		{
+			NotificationChain msgs = null;
+			if (lower != null)
+				msgs = ((InternalEObject)lower).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - (ExpCSImpl.EXP_CS_FEATURE_COUNT + 1), null, msgs);
+			if (newLower != null)
+				msgs = ((InternalEObject)newLower).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - (ExpCSImpl.EXP_CS_FEATURE_COUNT + 1), null, msgs);
+			msgs = basicSetLower(newLower, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpCSImpl.EXP_CS_FEATURE_COUNT + 1, newLower, newLower));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
+		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingPriority(this);
+	}
+
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				return basicSetHigher(null, msgs);
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				return basicSetLower(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -209,12 +227,14 @@ public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappin
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__HIGHER:
-			return getHigher();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__LOWER:
-			return getLower();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				return getHigher();
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				return getLower();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -225,14 +245,16 @@ public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappin
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__HIGHER:
-			setHigher((ExpCS) newValue);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__LOWER:
-			setLower((ExpCS) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				setHigher((ExpCS)newValue);
+				return;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				setLower((ExpCS)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -243,14 +265,16 @@ public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappin
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__HIGHER:
-			setHigher((ExpCS) null);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__LOWER:
-			setLower((ExpCS) null);
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				setHigher((ExpCS)null);
+				return;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				setLower((ExpCS)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -261,14 +285,18 @@ public class MoCCMLMappingPriorityImpl extends ExpCSImpl implements MoCCMLMappin
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__HIGHER:
-			return higher != null;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_PRIORITY__LOWER:
-			return lower != null;
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 0:
+				return higher != null;
+			case ExpCSImpl.EXP_CS_FEATURE_COUNT + 1:
+				return lower != null;
 		}
 		return super.eIsSet(featureID);
 	}
+
+
 
 } //MoCCMLMappingPriorityImpl

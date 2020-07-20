@@ -40,7 +40,18 @@ import org.eclipse.ocl.xtext.completeoclcs.impl.CompleteOCLDocumentCSImpl;
  *
  * @generated
  */
-public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl implements MoCCMLMappingDocument {
+public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl implements MoCCMLMappingDocument
+{
+	/**
+	 * The number of structural features of the '<em>Mo CCML Mapping Document</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MO_CCML_MAPPING_DOCUMENT_FEATURE_COUNT = CompleteOCLDocumentCSImpl.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 1;
+
+
 	/**
 	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -56,7 +67,8 @@ public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MoCCMLMappingDocumentImpl() {
+	protected MoCCMLMappingDocumentImpl()
+	{
 		super();
 	}
 
@@ -66,7 +78,8 @@ public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl impleme
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_DOCUMENT;
 	}
 
@@ -75,10 +88,12 @@ public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ImportStatement> getImports() {
-		if (imports == null) {
-			imports = new EObjectContainmentEList<ImportStatement>(ImportStatement.class, this,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_DOCUMENT__IMPORTS);
+	@Override
+	public EList<ImportStatement> getImports()
+	{
+		if (imports == null)
+		{
+			imports = new EObjectContainmentEList<ImportStatement>(ImportStatement.class, this, CompleteOCLDocumentCSImpl.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 0);
 		}
 		return imports;
 	}
@@ -88,9 +103,11 @@ public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
 		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingDocument(this);
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,10 +115,12 @@ public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl impleme
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DOCUMENT__IMPORTS:
-			return ((InternalEList<?>) getImports()).basicRemove(otherEnd, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case CompleteOCLDocumentCSImpl.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 0:
+				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -112,10 +131,12 @@ public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl impleme
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DOCUMENT__IMPORTS:
-			return getImports();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case CompleteOCLDocumentCSImpl.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 0:
+				return getImports();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -127,12 +148,14 @@ public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl impleme
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DOCUMENT__IMPORTS:
-			getImports().clear();
-			getImports().addAll((Collection<? extends ImportStatement>) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case CompleteOCLDocumentCSImpl.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 0:
+				getImports().clear();
+				getImports().addAll((Collection<? extends ImportStatement>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -143,11 +166,13 @@ public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl impleme
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DOCUMENT__IMPORTS:
-			getImports().clear();
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case CompleteOCLDocumentCSImpl.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 0:
+				getImports().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -158,12 +183,16 @@ public class MoCCMLMappingDocumentImpl extends CompleteOCLDocumentCSImpl impleme
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_DOCUMENT__IMPORTS:
-			return imports != null && !imports.isEmpty();
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case CompleteOCLDocumentCSImpl.COMPLETE_OCL_DOCUMENT_CS_FEATURE_COUNT + 0:
+				return imports != null && !imports.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
+
+
 
 } //MoCCMLMappingDocumentImpl

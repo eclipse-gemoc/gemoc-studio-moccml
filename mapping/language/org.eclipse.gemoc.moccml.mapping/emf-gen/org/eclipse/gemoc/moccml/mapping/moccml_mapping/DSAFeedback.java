@@ -33,7 +33,8 @@ import org.eclipse.ocl.xtext.completeoclcs.DefPropertyCS;
  * @model
  * @generated
  */
-public interface DSAFeedback extends DefPropertyCS {
+public interface DSAFeedback extends DefPropertyCS
+{
 	/**
 	 * Returns the value of the '<em><b>Cases</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.Case}.

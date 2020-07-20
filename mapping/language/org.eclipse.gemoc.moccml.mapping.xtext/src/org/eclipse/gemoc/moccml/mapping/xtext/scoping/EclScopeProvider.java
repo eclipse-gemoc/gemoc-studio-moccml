@@ -13,7 +13,10 @@
  */
 package org.eclipse.gemoc.moccml.mapping.xtext.scoping;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.ocl.xtext.completeocl.scoping.CompleteOCLScopeProvider;
+import org.eclipse.xtext.scoping.IScope;
 
 /**
  * This class contains custom scoping description.

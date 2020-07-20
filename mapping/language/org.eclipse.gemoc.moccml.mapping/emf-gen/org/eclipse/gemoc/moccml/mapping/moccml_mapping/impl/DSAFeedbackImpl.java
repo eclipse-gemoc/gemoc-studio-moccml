@@ -45,7 +45,18 @@ import org.eclipse.ocl.xtext.completeoclcs.impl.DefPropertyCSImpl;
  *
  * @generated
  */
-public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
+public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback
+{
+	/**
+	 * The number of structural features of the '<em>DSA Feedback</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DSA_FEEDBACK_FEATURE_COUNT = DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2;
+
+
 	/**
 	 * The cached value of the '{@link #getCases() <em>Cases</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -61,7 +72,8 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DSAFeedbackImpl() {
+	protected DSAFeedbackImpl()
+	{
 		super();
 	}
 
@@ -71,7 +83,8 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.DSA_FEEDBACK;
 	}
 
@@ -80,9 +93,12 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Case> getCases() {
-		if (cases == null) {
-			cases = new EObjectContainmentEList<Case>(Case.class, this, MoCCMLmappingPackage.DSA_FEEDBACK__CASES);
+	@Override
+	public EList<Case> getCases()
+	{
+		if (cases == null)
+		{
+			cases = new EObjectContainmentEList<Case>(Case.class, this, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0);
 		}
 		return cases;
 	}
@@ -92,10 +108,11 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLMappingEventDefCS getOwner() {
-		if (eContainerFeatureID() != MoCCMLmappingPackage.DSA_FEEDBACK__OWNER)
-			return null;
-		return (MoCCMLMappingEventDefCS) eInternalContainer();
+	@Override
+	public MoCCMLMappingEventDefCS getOwner()
+	{
+		if (eContainerFeatureID() != (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1)) return null;
+		return (MoCCMLMappingEventDefCS)eInternalContainer();
 	}
 
 	/**
@@ -103,8 +120,9 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOwner(MoCCMLMappingEventDefCS newOwner, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newOwner, MoCCMLmappingPackage.DSA_FEEDBACK__OWNER, msgs);
+	public NotificationChain basicSetOwner(MoCCMLMappingEventDefCS newOwner, NotificationChain msgs)
+	{
+		msgs = eBasicSetContainer((InternalEObject)newOwner, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1, msgs);
 		return msgs;
 	}
 
@@ -113,32 +131,34 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOwner(MoCCMLMappingEventDefCS newOwner) {
-		if (newOwner != eInternalContainer()
-				|| (eContainerFeatureID() != MoCCMLmappingPackage.DSA_FEEDBACK__OWNER && newOwner != null)) {
+	@Override
+	public void setOwner(MoCCMLMappingEventDefCS newOwner)
+	{
+		if (newOwner != eInternalContainer() || (eContainerFeatureID() != (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1) && newOwner != null))
+		{
 			if (EcoreUtil.isAncestor(this, newOwner))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwner != null)
-				msgs = ((InternalEObject) newOwner).eInverseAdd(this,
-						MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK, MoCCMLMappingEventDefCS.class,
-						msgs);
+				msgs = ((InternalEObject)newOwner).eInverseAdd(this, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2, MoCCMLMappingEventDefCS.class, msgs);
 			msgs = basicSetOwner(newOwner, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MoCCMLmappingPackage.DSA_FEEDBACK__OWNER, newOwner,
-					newOwner));
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1, newOwner, newOwner));
 	}
+
+
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
 		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitDSAFeedBack(this);
 	}
 
@@ -148,12 +168,14 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetOwner((MoCCMLMappingEventDefCS) otherEnd, msgs);
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetOwner((MoCCMLMappingEventDefCS)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -164,12 +186,14 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.DSA_FEEDBACK__CASES:
-			return ((InternalEList<?>) getCases()).basicRemove(otherEnd, msgs);
-		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
-			return basicSetOwner(null, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0:
+				return ((InternalEList<?>)getCases()).basicRemove(otherEnd, msgs);
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				return basicSetOwner(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -180,11 +204,12 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
-			return eInternalContainer().eInverseRemove(this,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK, MoCCMLMappingEventDefCS.class, msgs);
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
+	{
+		switch (eContainerFeatureID())
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				return eInternalContainer().eInverseRemove(this, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2, MoCCMLMappingEventDefCS.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -195,12 +220,14 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.DSA_FEEDBACK__CASES:
-			return getCases();
-		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
-			return getOwner();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0:
+				return getCases();
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				return getOwner();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,15 +239,17 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.DSA_FEEDBACK__CASES:
-			getCases().clear();
-			getCases().addAll((Collection<? extends Case>) newValue);
-			return;
-		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
-			setOwner((MoCCMLMappingEventDefCS) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0:
+				getCases().clear();
+				getCases().addAll((Collection<? extends Case>)newValue);
+				return;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				setOwner((MoCCMLMappingEventDefCS)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -231,14 +260,16 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.DSA_FEEDBACK__CASES:
-			getCases().clear();
-			return;
-		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
-			setOwner((MoCCMLMappingEventDefCS) null);
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0:
+				getCases().clear();
+				return;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				setOwner((MoCCMLMappingEventDefCS)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -249,14 +280,18 @@ public class DSAFeedbackImpl extends DefPropertyCSImpl implements DSAFeedback {
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.DSA_FEEDBACK__CASES:
-			return cases != null && !cases.isEmpty();
-		case MoCCMLmappingPackage.DSA_FEEDBACK__OWNER:
-			return getOwner() != null;
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 0:
+				return cases != null && !cases.isEmpty();
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1:
+				return getOwner() != null;
 		}
 		return super.eIsSet(featureID);
 	}
+
+
 
 } //DSAFeedbackImpl

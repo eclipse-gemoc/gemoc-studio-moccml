@@ -85,6 +85,7 @@ import org.eclipse.ocl.xtext.essentialoclcs.TupleLiteralPartCS;
 import org.eclipse.ocl.xtext.essentialoclcs.TypeLiteralExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.TypeNameExpCS;
 import org.eclipse.ocl.xtext.essentialoclcs.UnlimitedNaturalLiteralExpCS;
+import org.eclipse.ocl.xtext.essentialoclcs.VariableCS;
 import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
@@ -162,6 +163,10 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 			case BaseCSPackage.PATH_NAME_CS:
 				if (rule == grammarAccess.getPathNameCSRule()) {
 					sequence_PathNameCS(context, (PathNameCS) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getSimplePathNameCSRule()) {
+					sequence_SimplePathNameCS(context, (PathNameCS) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getURIPathNameCSRule()) {
@@ -391,7 +396,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 					sequence_PrefixedLetExpCS_PrefixedPrimaryExpCS(context, (PrefixExpCS) semanticObject); 
 					return; 
 				}
-				else if (action == grammarAccess.getExpCSAccess().getInfixExpCSOwnedLeftAction_0_1_0()
+				else if (action == grammarAccess.getExpCSAccess().getInfixExpCSOwnedLeftAction_3_0_1_0()
 						|| rule == grammarAccess.getPrefixedPrimaryExpCSRule()) {
 					sequence_PrefixedPrimaryExpCS(context, (PrefixExpCS) semanticObject); 
 					return; 
@@ -434,6 +439,9 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 				else break;
 			case EssentialOCLCSPackage.UNLIMITED_NATURAL_LITERAL_EXP_CS:
 				sequence_UnlimitedNaturalLiteralExpCS(context, (UnlimitedNaturalLiteralExpCS) semanticObject); 
+				return; 
+			case EssentialOCLCSPackage.VARIABLE_CS:
+				sequence_CoIteratorVariableCS(context, (VariableCS) semanticObject); 
 				return; 
 			}
 		else if (epackage == MoCCMLmappingPackage.eINSTANCE)
@@ -538,24 +546,6 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	/**
 	 * Contexts:
-	 *     ClassifierContextDeclCS returns ClassifierContextDeclCS
-	 *     ContextDeclCS returns ClassifierContextDeclCS
-	 *
-	 * Constraint:
-	 *     (
-	 *         ownedSignature=TemplateSignatureCS? 
-	 *         selfName=UnrestrictedName? 
-	 *         ownedPathName=PathNameCS 
-	 *         (ownedInvariants+=ConstraintCS | ownedDefinitions+=DefCS)+
-	 *     )
-	 */
-	protected void sequence_ClassifierContextDeclCS(ISerializationContext context, ClassifierContextDeclCS semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     TypeExpCS returns CollectionPatternCS
 	 *
 	 * Constraint:
@@ -624,7 +614,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	 *     NavigatingArgExpCS returns InfixExpCS
 	 *
 	 * Constraint:
-	 *     (ownedLeft=ExpCS_InfixExpCS_0_1_0 name=BinaryOperatorName ownedRight=ExpCS)
+	 *     (ownedLeft=ExpCS_InfixExpCS_3_0_1_0 name=BinaryOperatorName ownedRight=ExpCS)
 	 */
 	protected void sequence_ExpCS(ISerializationContext context, InfixExpCS semanticObject) {
 		if (errorAcceptor != null) {
@@ -636,9 +626,9 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EssentialOCLCSPackage.Literals.OPERATOR_EXP_CS__OWNED_RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExpCSAccess().getInfixExpCSOwnedLeftAction_0_1_0(), semanticObject.getOwnedLeft());
-		feeder.accept(grammarAccess.getExpCSAccess().getNameBinaryOperatorNameParserRuleCall_0_1_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getExpCSAccess().getOwnedRightExpCSParserRuleCall_0_1_2_0(), semanticObject.getOwnedRight());
+		feeder.accept(grammarAccess.getExpCSAccess().getInfixExpCSOwnedLeftAction_3_0_1_0(), semanticObject.getOwnedLeft());
+		feeder.accept(grammarAccess.getExpCSAccess().getNameBinaryOperatorNameParserRuleCall_3_0_1_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getExpCSAccess().getOwnedRightExpCSParserRuleCall_3_0_1_2_0(), semanticObject.getOwnedRight());
 		feeder.finish();
 	}
 	

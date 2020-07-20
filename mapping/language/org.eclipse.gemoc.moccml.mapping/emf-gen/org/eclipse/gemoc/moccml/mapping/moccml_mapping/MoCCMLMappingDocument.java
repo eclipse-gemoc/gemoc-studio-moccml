@@ -32,7 +32,8 @@ import org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS;
  * @model
  * @generated
  */
-public interface MoCCMLMappingDocument extends CompleteOCLDocumentCS {
+public interface MoCCMLMappingDocument extends CompleteOCLDocumentCS
+{
 	/**
 	 * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement}.

@@ -32,7 +32,8 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * @model
  * @generated
  */
-public interface MoCCMLMappingEventDefCS extends MoCCMLMappingDefCS {
+public interface MoCCMLMappingEventDefCS extends MoCCMLMappingDefCS
+{
 	/**
 	 * Returns the value of the '<em><b>Feedback</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback#getOwner <em>Owner</em>}'.

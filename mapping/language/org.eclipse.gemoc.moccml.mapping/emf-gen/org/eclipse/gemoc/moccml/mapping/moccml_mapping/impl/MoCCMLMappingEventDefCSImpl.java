@@ -22,6 +22,7 @@ import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage;
 import org.eclipse.gemoc.moccml.mapping.util.MoCCMLMappingVisitor;
 import org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor;
+import org.eclipse.ocl.xtext.completeoclcs.impl.DefPropertyCSImpl;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
 
 /**
@@ -39,7 +40,18 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  *
  * @generated
  */
-public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implements MoCCMLMappingEventDefCS {
+public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implements MoCCMLMappingEventDefCS
+{
+	/**
+	 * The number of structural features of the '<em>Mo CCML Mapping Event Def CS</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MO_CCML_MAPPING_EVENT_DEF_CS_FEATURE_COUNT = MoCCMLMappingDefCSImpl.MO_CCML_MAPPING_DEF_CS_FEATURE_COUNT + 3;
+
+
 	/**
 	 * The cached value of the '{@link #getFeedback() <em>Feedback</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -85,7 +97,8 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MoCCMLMappingEventDefCSImpl() {
+	protected MoCCMLMappingEventDefCSImpl()
+	{
 		super();
 	}
 
@@ -95,7 +108,8 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_EVENT_DEF_CS;
 	}
 
@@ -104,7 +118,9 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DSAFeedback getFeedback() {
+	@Override
+	public DSAFeedback getFeedback()
+	{
 		return feedback;
 	}
 
@@ -113,122 +129,16 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetFeedback(DSAFeedback newFeedback, NotificationChain msgs) {
+	public NotificationChain basicSetFeedback(DSAFeedback newFeedback, NotificationChain msgs)
+	{
 		DSAFeedback oldFeedback = feedback;
 		feedback = newFeedback;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK, oldFeedback, newFeedback);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFeedback(DSAFeedback newFeedback) {
-		if (newFeedback != feedback) {
-			NotificationChain msgs = null;
-			if (feedback != null)
-				msgs = ((InternalEObject) feedback).eInverseRemove(this, MoCCMLmappingPackage.DSA_FEEDBACK__OWNER,
-						DSAFeedback.class, msgs);
-			if (newFeedback != null)
-				msgs = ((InternalEObject) newFeedback).eInverseAdd(this, MoCCMLmappingPackage.DSA_FEEDBACK__OWNER,
-						DSAFeedback.class, msgs);
-			msgs = basicSetFeedback(newFeedback, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK, newFeedback, newFeedback));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExpCS getFuture() {
-		return future;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetFuture(ExpCS newFuture, NotificationChain msgs) {
-		ExpCS oldFuture = future;
-		future = newFuture;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE, oldFuture, newFuture);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFuture(ExpCS newFuture) {
-		if (newFuture != future) {
-			NotificationChain msgs = null;
-			if (future != null)
-				msgs = ((InternalEObject) future).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE, null, msgs);
-			if (newFuture != null)
-				msgs = ((InternalEObject) newFuture).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE, null, msgs);
-			msgs = basicSetFuture(newFuture, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE, newFuture, newFuture));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getDsaResultName() {
-		return dsaResultName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDsaResultName(String newDsaResultName) {
-		String oldDsaResultName = dsaResultName;
-		dsaResultName = newDsaResultName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__DSA_RESULT_NAME, oldDsaResultName,
-					dsaResultName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public <R> R accept(final BaseCSVisitor<R> visitor) {
-		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingEventDefCS(this);
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2, oldFeedback, newFeedback);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -237,14 +147,123 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK:
+	public void setFeedback(DSAFeedback newFeedback)
+	{
+		if (newFeedback != feedback)
+		{
+			NotificationChain msgs = null;
 			if (feedback != null)
-				msgs = ((InternalEObject) feedback).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK, null,
-						msgs);
-			return basicSetFeedback((DSAFeedback) otherEnd, msgs);
+				msgs = ((InternalEObject)feedback).eInverseRemove(this, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1, DSAFeedback.class, msgs);
+			if (newFeedback != null)
+				msgs = ((InternalEObject)newFeedback).eInverseAdd(this, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 1, DSAFeedback.class, msgs);
+			msgs = basicSetFeedback(newFeedback, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2, newFeedback, newFeedback));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ExpCS getFuture()
+	{
+		return future;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetFuture(ExpCS newFuture, NotificationChain msgs)
+	{
+		ExpCS oldFuture = future;
+		future = newFuture;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3, oldFuture, newFuture);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFuture(ExpCS newFuture)
+	{
+		if (newFuture != future)
+		{
+			NotificationChain msgs = null;
+			if (future != null)
+				msgs = ((InternalEObject)future).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3), null, msgs);
+			if (newFuture != null)
+				msgs = ((InternalEObject)newFuture).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3), null, msgs);
+			msgs = basicSetFuture(newFuture, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3, newFuture, newFuture));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDsaResultName()
+	{
+		return dsaResultName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDsaResultName(String newDsaResultName)
+	{
+		String oldDsaResultName = dsaResultName;
+		dsaResultName = newDsaResultName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 4, oldDsaResultName, dsaResultName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public <R> R accept(final BaseCSVisitor<R> visitor)
+	{
+		return (R) visitor.getAdapter(MoCCMLMappingVisitor.class).visitMoCCMLMappingEventDefCS(this);
+	}
+
+	
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				if (feedback != null)
+					msgs = ((InternalEObject)feedback).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - (DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2), null, msgs);
+				return basicSetFeedback((DSAFeedback)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -255,12 +274,14 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK:
-			return basicSetFeedback(null, msgs);
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE:
-			return basicSetFuture(null, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				return basicSetFeedback(null, msgs);
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3:
+				return basicSetFuture(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -271,14 +292,16 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK:
-			return getFeedback();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE:
-			return getFuture();
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__DSA_RESULT_NAME:
-			return getDsaResultName();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				return getFeedback();
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3:
+				return getFuture();
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 4:
+				return getDsaResultName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -289,17 +312,19 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK:
-			setFeedback((DSAFeedback) newValue);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE:
-			setFuture((ExpCS) newValue);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__DSA_RESULT_NAME:
-			setDsaResultName((String) newValue);
-			return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				setFeedback((DSAFeedback)newValue);
+				return;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3:
+				setFuture((ExpCS)newValue);
+				return;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 4:
+				setDsaResultName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -310,17 +335,19 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK:
-			setFeedback((DSAFeedback) null);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE:
-			setFuture((ExpCS) null);
-			return;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__DSA_RESULT_NAME:
-			setDsaResultName(DSA_RESULT_NAME_EDEFAULT);
-			return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				setFeedback((DSAFeedback)null);
+				return;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3:
+				setFuture((ExpCS)null);
+				return;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 4:
+				setDsaResultName(DSA_RESULT_NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -331,15 +358,16 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FEEDBACK:
-			return feedback != null;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__FUTURE:
-			return future != null;
-		case MoCCMLmappingPackage.MO_CCML_MAPPING_EVENT_DEF_CS__DSA_RESULT_NAME:
-			return DSA_RESULT_NAME_EDEFAULT == null ? dsaResultName != null
-					: !DSA_RESULT_NAME_EDEFAULT.equals(dsaResultName);
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 2:
+				return feedback != null;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 3:
+				return future != null;
+			case DefPropertyCSImpl.DEF_PROPERTY_CS_FEATURE_COUNT + 4:
+				return DSA_RESULT_NAME_EDEFAULT == null ? dsaResultName != null : !DSA_RESULT_NAME_EDEFAULT.equals(dsaResultName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -350,9 +378,9 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (dsaResultName: ");
@@ -360,5 +388,7 @@ public class MoCCMLMappingEventDefCSImpl extends MoCCMLMappingDefCSImpl implemen
 		result.append(')');
 		return result.toString();
 	}
+
+
 
 } //MoCCMLMappingEventDefCSImpl

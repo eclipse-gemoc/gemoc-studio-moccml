@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.*;
 
+import org.eclipse.jdt.annotation.Nullable;
+
 import org.eclipse.ocl.pivot.utilities.Nameable;
 
 import org.eclipse.ocl.xtext.basecs.ElementCS;
@@ -51,7 +53,8 @@ import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
  * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLmappingPackage
  * @generated
  */
-public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
+public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl
+{
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -66,8 +69,10 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public MoCCMLmappingAdapterFactory() {
-		if (modelPackage == null) {
+	public MoCCMLmappingAdapterFactory()
+	{
+		if (modelPackage == null)
+		{
 			modelPackage = MoCCMLmappingPackage.eINSTANCE;
 		}
 	}
@@ -81,12 +86,15 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+	public boolean isFactoryForType(Object object)
+	{
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+		if (object instanceof EObject)
+		{
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -97,162 +105,165 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MoCCMLmappingSwitch<Adapter> modelSwitch = new MoCCMLmappingSwitch<Adapter>() {
-		@Override
-		public Adapter caseEventType(EventType object) {
-			return createEventTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseDSAFeedback(DSAFeedback object) {
-			return createDSAFeedbackAdapter();
-		}
-
-		@Override
-		public Adapter caseCase(Case object) {
-			return createCaseAdapter();
-		}
-
-		@Override
-		public Adapter caseMoCCMLMappingDocument(MoCCMLMappingDocument object) {
-			return createMoCCMLMappingDocumentAdapter();
-		}
-
-		@Override
-		public Adapter caseMoCCMLRelation(MoCCMLRelation object) {
-			return createMoCCMLRelationAdapter();
-		}
-
-		@Override
-		public Adapter caseImportStatement(ImportStatement object) {
-			return createImportStatementAdapter();
-		}
-
-		@Override
-		public Adapter caseMoCCMLExpression(MoCCMLExpression object) {
-			return createMoCCMLExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseMoCCMLMappingDefCS(MoCCMLMappingDefCS object) {
-			return createMoCCMLMappingDefCSAdapter();
-		}
-
-		@Override
-		public <R> Adapter caseBaseCSVisitor(BaseCSVisitor<R> object) {
-			return createBaseCSVisitorAdapter();
-		}
-
-		@Override
-		public Adapter caseBlockType(BlockType object) {
-			return createBlockTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseMoCCMLMappingEventDefCS(MoCCMLMappingEventDefCS object) {
-			return createMoCCMLMappingEventDefCSAdapter();
-		}
-
-		@Override
-		public Adapter caseMoCCMLMappingBlockDefCS(MoCCMLMappingBlockDefCS object) {
-			return createMoCCMLMappingBlockDefCSAdapter();
-		}
-
-		@Override
-		public Adapter caseMoCCMLMappingTimeBase(MoCCMLMappingTimeBase object) {
-			return createMoCCMLMappingTimeBaseAdapter();
-		}
-
-		@Override
-		public Adapter caseMoCCMLMappingPriority(MoCCMLMappingPriority object) {
-			return createMoCCMLMappingPriorityAdapter();
-		}
-
-		@Override
-		public Adapter caseElementCS(ElementCS object) {
-			return createElementCSAdapter();
-		}
-
-		@Override
-		public Adapter casePivotableElementCS(PivotableElementCS object) {
-			return createPivotableElementCSAdapter();
-		}
-
-		@Override
-		public Adapter caseElementRefCS(ElementRefCS object) {
-			return createElementRefCSAdapter();
-		}
-
-		@Override
-		public Adapter caseTypeRefCS(TypeRefCS object) {
-			return createTypeRefCSAdapter();
-		}
-
-		@Override
-		public Adapter caseTypedRefCS(TypedRefCS object) {
-			return createTypedRefCSAdapter();
-		}
-
-		@Override
-		public Adapter caseNameable(Nameable object) {
-			return createNameableAdapter();
-		}
-
-		@Override
-		public Adapter caseModelElementCS(ModelElementCS object) {
-			return createModelElementCSAdapter();
-		}
-
-		@Override
-		public Adapter caseNamedElementCS(NamedElementCS object) {
-			return createNamedElementCSAdapter();
-		}
-
-		@Override
-		public Adapter caseTypedElementCS(TypedElementCS object) {
-			return createTypedElementCSAdapter();
-		}
-
-		@Override
-		public Adapter caseDefCS(DefCS object) {
-			return createDefCSAdapter();
-		}
-
-		@Override
-		public Adapter caseDefPropertyCS(DefPropertyCS object) {
-			return createDefPropertyCSAdapter();
-		}
-
-		@Override
-		public Adapter caseExpCS(ExpCS object) {
-			return createExpCSAdapter();
-		}
-
-		@Override
-		public Adapter caseNamespaceCS(NamespaceCS object) {
-			return createNamespaceCSAdapter();
-		}
-
-		@Override
-		public Adapter caseRootCS(RootCS object) {
-			return createRootCSAdapter();
-		}
-
-		@Override
-		public Adapter caseCompleteOCLDocumentCS(CompleteOCLDocumentCS object) {
-			return createCompleteOCLDocumentCSAdapter();
-		}
-
-		@Override
-		public Adapter caseImportCS(ImportCS object) {
-			return createImportCSAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+	protected MoCCMLmappingSwitch<@Nullable Adapter> modelSwitch =
+		new MoCCMLmappingSwitch<@Nullable Adapter>()
+		{
+			@Override
+			public Adapter caseEventType(EventType object)
+			{
+				return createEventTypeAdapter();
+			}
+			@Override
+			public Adapter caseDSAFeedback(DSAFeedback object)
+			{
+				return createDSAFeedbackAdapter();
+			}
+			@Override
+			public Adapter caseCase(Case object)
+			{
+				return createCaseAdapter();
+			}
+			@Override
+			public Adapter caseMoCCMLMappingDocument(MoCCMLMappingDocument object)
+			{
+				return createMoCCMLMappingDocumentAdapter();
+			}
+			@Override
+			public Adapter caseMoCCMLRelation(MoCCMLRelation object)
+			{
+				return createMoCCMLRelationAdapter();
+			}
+			@Override
+			public Adapter caseImportStatement(ImportStatement object)
+			{
+				return createImportStatementAdapter();
+			}
+			@Override
+			public Adapter caseMoCCMLExpression(MoCCMLExpression object)
+			{
+				return createMoCCMLExpressionAdapter();
+			}
+			@Override
+			public Adapter caseMoCCMLMappingDefCS(MoCCMLMappingDefCS object)
+			{
+				return createMoCCMLMappingDefCSAdapter();
+			}
+			@Override
+			public <R> Adapter caseBaseCSVisitor(BaseCSVisitor<R> object)
+			{
+				return createBaseCSVisitorAdapter();
+			}
+			@Override
+			public Adapter caseBlockType(BlockType object)
+			{
+				return createBlockTypeAdapter();
+			}
+			@Override
+			public Adapter caseMoCCMLMappingEventDefCS(MoCCMLMappingEventDefCS object)
+			{
+				return createMoCCMLMappingEventDefCSAdapter();
+			}
+			@Override
+			public Adapter caseMoCCMLMappingBlockDefCS(MoCCMLMappingBlockDefCS object)
+			{
+				return createMoCCMLMappingBlockDefCSAdapter();
+			}
+			@Override
+			public Adapter caseMoCCMLMappingTimeBase(MoCCMLMappingTimeBase object)
+			{
+				return createMoCCMLMappingTimeBaseAdapter();
+			}
+			@Override
+			public Adapter caseMoCCMLMappingPriority(MoCCMLMappingPriority object)
+			{
+				return createMoCCMLMappingPriorityAdapter();
+			}
+			@Override
+			public Adapter caseElementCS(ElementCS object)
+			{
+				return createElementCSAdapter();
+			}
+			@Override
+			public Adapter casePivotableElementCS(PivotableElementCS object)
+			{
+				return createPivotableElementCSAdapter();
+			}
+			@Override
+			public Adapter caseElementRefCS(ElementRefCS object)
+			{
+				return createElementRefCSAdapter();
+			}
+			@Override
+			public Adapter caseTypeRefCS(TypeRefCS object)
+			{
+				return createTypeRefCSAdapter();
+			}
+			@Override
+			public Adapter caseTypedRefCS(TypedRefCS object)
+			{
+				return createTypedRefCSAdapter();
+			}
+			@Override
+			public Adapter caseNameable(Nameable object)
+			{
+				return createNameableAdapter();
+			}
+			@Override
+			public Adapter caseModelElementCS(ModelElementCS object)
+			{
+				return createModelElementCSAdapter();
+			}
+			@Override
+			public Adapter caseNamedElementCS(NamedElementCS object)
+			{
+				return createNamedElementCSAdapter();
+			}
+			@Override
+			public Adapter caseTypedElementCS(TypedElementCS object)
+			{
+				return createTypedElementCSAdapter();
+			}
+			@Override
+			public Adapter caseDefCS(DefCS object)
+			{
+				return createDefCSAdapter();
+			}
+			@Override
+			public Adapter caseDefPropertyCS(DefPropertyCS object)
+			{
+				return createDefPropertyCSAdapter();
+			}
+			@Override
+			public Adapter caseExpCS(ExpCS object)
+			{
+				return createExpCSAdapter();
+			}
+			@Override
+			public Adapter caseNamespaceCS(NamespaceCS object)
+			{
+				return createNamespaceCSAdapter();
+			}
+			@Override
+			public Adapter caseRootCS(RootCS object)
+			{
+				return createRootCSAdapter();
+			}
+			@Override
+			public Adapter caseCompleteOCLDocumentCS(CompleteOCLDocumentCS object)
+			{
+				return createCompleteOCLDocumentCSAdapter();
+			}
+			@Override
+			public Adapter caseImportCS(ImportCS object)
+			{
+				return createImportCSAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object)
+			{
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -263,9 +274,11 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	@Override
-	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+	public Adapter createAdapter(Notifier target)
+	{
+		return modelSwitch.doSwitch((EObject)target);
 	}
+
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType <em>Event Type</em>}'.
@@ -277,7 +290,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType
 	 * @generated
 	 */
-	public Adapter createEventTypeAdapter() {
+	public Adapter createEventTypeAdapter()
+	{
 		return null;
 	}
 
@@ -291,7 +305,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback
 	 * @generated
 	 */
-	public Adapter createDSAFeedbackAdapter() {
+	public Adapter createDSAFeedbackAdapter()
+	{
 		return null;
 	}
 
@@ -305,7 +320,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.Case
 	 * @generated
 	 */
-	public Adapter createCaseAdapter() {
+	public Adapter createCaseAdapter()
+	{
 		return null;
 	}
 
@@ -319,7 +335,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDocument
 	 * @generated
 	 */
-	public Adapter createMoCCMLMappingDocumentAdapter() {
+	public Adapter createMoCCMLMappingDocumentAdapter()
+	{
 		return null;
 	}
 
@@ -333,7 +350,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLRelation
 	 * @generated
 	 */
-	public Adapter createMoCCMLRelationAdapter() {
+	public Adapter createMoCCMLRelationAdapter()
+	{
 		return null;
 	}
 
@@ -347,7 +365,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.ImportStatement
 	 * @generated
 	 */
-	public Adapter createImportStatementAdapter() {
+	public Adapter createImportStatementAdapter()
+	{
 		return null;
 	}
 
@@ -361,7 +380,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLExpression
 	 * @generated
 	 */
-	public Adapter createMoCCMLExpressionAdapter() {
+	public Adapter createMoCCMLExpressionAdapter()
+	{
 		return null;
 	}
 
@@ -375,7 +395,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS
 	 * @generated
 	 */
-	public Adapter createMoCCMLMappingDefCSAdapter() {
+	public Adapter createMoCCMLMappingDefCSAdapter()
+	{
 		return null;
 	}
 
@@ -389,7 +410,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.util.BaseCSVisitor
 	 * @generated
 	 */
-	public Adapter createBaseCSVisitorAdapter() {
+	public Adapter createBaseCSVisitorAdapter()
+	{
 		return null;
 	}
 
@@ -403,7 +425,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType
 	 * @generated
 	 */
-	public Adapter createBlockTypeAdapter() {
+	public Adapter createBlockTypeAdapter()
+	{
 		return null;
 	}
 
@@ -417,7 +440,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS
 	 * @generated
 	 */
-	public Adapter createMoCCMLMappingEventDefCSAdapter() {
+	public Adapter createMoCCMLMappingEventDefCSAdapter()
+	{
 		return null;
 	}
 
@@ -431,7 +455,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS
 	 * @generated
 	 */
-	public Adapter createMoCCMLMappingBlockDefCSAdapter() {
+	public Adapter createMoCCMLMappingBlockDefCSAdapter()
+	{
 		return null;
 	}
 
@@ -445,7 +470,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase
 	 * @generated
 	 */
-	public Adapter createMoCCMLMappingTimeBaseAdapter() {
+	public Adapter createMoCCMLMappingTimeBaseAdapter()
+	{
 		return null;
 	}
 
@@ -459,7 +485,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingPriority
 	 * @generated
 	 */
-	public Adapter createMoCCMLMappingPriorityAdapter() {
+	public Adapter createMoCCMLMappingPriorityAdapter()
+	{
 		return null;
 	}
 
@@ -473,7 +500,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.ElementCS
 	 * @generated
 	 */
-	public Adapter createElementCSAdapter() {
+	public Adapter createElementCSAdapter()
+	{
 		return null;
 	}
 
@@ -487,7 +515,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.PivotableElementCS
 	 * @generated
 	 */
-	public Adapter createPivotableElementCSAdapter() {
+	public Adapter createPivotableElementCSAdapter()
+	{
 		return null;
 	}
 
@@ -501,7 +530,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.ElementRefCS
 	 * @generated
 	 */
-	public Adapter createElementRefCSAdapter() {
+	public Adapter createElementRefCSAdapter()
+	{
 		return null;
 	}
 
@@ -515,7 +545,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.TypeRefCS
 	 * @generated
 	 */
-	public Adapter createTypeRefCSAdapter() {
+	public Adapter createTypeRefCSAdapter()
+	{
 		return null;
 	}
 
@@ -529,7 +560,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.TypedRefCS
 	 * @generated
 	 */
-	public Adapter createTypedRefCSAdapter() {
+	public Adapter createTypedRefCSAdapter()
+	{
 		return null;
 	}
 
@@ -543,7 +575,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.pivot.utilities.Nameable
 	 * @generated
 	 */
-	public Adapter createNameableAdapter() {
+	public Adapter createNameableAdapter()
+	{
 		return null;
 	}
 
@@ -557,7 +590,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.ModelElementCS
 	 * @generated
 	 */
-	public Adapter createModelElementCSAdapter() {
+	public Adapter createModelElementCSAdapter()
+	{
 		return null;
 	}
 
@@ -571,7 +605,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.NamedElementCS
 	 * @generated
 	 */
-	public Adapter createNamedElementCSAdapter() {
+	public Adapter createNamedElementCSAdapter()
+	{
 		return null;
 	}
 
@@ -585,7 +620,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.TypedElementCS
 	 * @generated
 	 */
-	public Adapter createTypedElementCSAdapter() {
+	public Adapter createTypedElementCSAdapter()
+	{
 		return null;
 	}
 
@@ -599,7 +635,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.completeoclcs.DefCS
 	 * @generated
 	 */
-	public Adapter createDefCSAdapter() {
+	public Adapter createDefCSAdapter()
+	{
 		return null;
 	}
 
@@ -613,7 +650,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.completeoclcs.DefPropertyCS
 	 * @generated
 	 */
-	public Adapter createDefPropertyCSAdapter() {
+	public Adapter createDefPropertyCSAdapter()
+	{
 		return null;
 	}
 
@@ -627,7 +665,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.essentialoclcs.ExpCS
 	 * @generated
 	 */
-	public Adapter createExpCSAdapter() {
+	public Adapter createExpCSAdapter()
+	{
 		return null;
 	}
 
@@ -641,7 +680,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.NamespaceCS
 	 * @generated
 	 */
-	public Adapter createNamespaceCSAdapter() {
+	public Adapter createNamespaceCSAdapter()
+	{
 		return null;
 	}
 
@@ -655,7 +695,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.RootCS
 	 * @generated
 	 */
-	public Adapter createRootCSAdapter() {
+	public Adapter createRootCSAdapter()
+	{
 		return null;
 	}
 
@@ -669,7 +710,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS
 	 * @generated
 	 */
-	public Adapter createCompleteOCLDocumentCSAdapter() {
+	public Adapter createCompleteOCLDocumentCSAdapter()
+	{
 		return null;
 	}
 
@@ -683,7 +725,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @see org.eclipse.ocl.xtext.basecs.ImportCS
 	 * @generated
 	 */
-	public Adapter createImportCSAdapter() {
+	public Adapter createImportCSAdapter()
+	{
 		return null;
 	}
 
@@ -695,7 +738,8 @@ public class MoCCMLmappingAdapterFactory extends AdapterFactoryImpl {
 	 * @return the new adapter.
 	 * @generated
 	 */
-	public Adapter createEObjectAdapter() {
+	public Adapter createEObjectAdapter()
+	{
 		return null;
 	}
 

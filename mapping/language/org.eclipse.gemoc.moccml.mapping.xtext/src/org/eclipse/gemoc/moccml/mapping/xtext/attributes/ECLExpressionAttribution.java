@@ -29,6 +29,8 @@ import org.eclipse.ocl.pivot.internal.scoping.EnvironmentView;
 import org.eclipse.ocl.pivot.internal.scoping.ScopeView;
 import org.eclipse.ocl.pivot.utilities.PivotUtil;
 
+import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.NamedElement;
+
 
 public class ECLExpressionAttribution extends AbstractAttribution
 {
@@ -36,6 +38,13 @@ public class ECLExpressionAttribution extends AbstractAttribution
 
 	@Override
 	public ScopeView computeLookup(EObject target, EnvironmentView environmentView, ScopeView scopeView) {
+		NamedElement theDeclaration = null;
+		for(NamedElement eo : ECLAttribution.INSTANCE.ListOfImportedDeclaration) {
+			if (eo.getName().equals(environmentView.getName())){
+				theDeclaration = eo;
+				environmentView.addElement(eo.getName(), eo);
+			}
+		}
 		if(target instanceof MoCCMLRelation){
 			MoCCMLRelation r = (MoCCMLRelation)target;
 			
