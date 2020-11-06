@@ -36,7 +36,6 @@ modeltype TimeModel uses 'http://fr.inria.aoste.timemodel';
 modeltype FeedBack 	uses 'http://timesquare.inria.fr/feedback';
 modeltype Priority  uses 'http://fr.inria.aoste.timesquare.ccslkernel.solver.priorities';
 
-
 transformation do[aMoCCMLMappingDoc.ownedImports->first().referredNamespace.toString().replaceAll('\\.', '_').replaceAll(':', '_').replaceAll('/', '_')/]_To_CCSL(in inM : inMM[getpackageIndex(aMoCCMLMappingDoc, rootElementName)/], out ccsl : TimeModel, out feedback : FeedBack, out priority: Priority);
 
 property thePrioritySpec		:Priority::PrioritySpecification = null;
@@ -173,17 +172,10 @@ main() {
 	{ 
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_[expr.parent.oclAsType(LetVariableCS).name/]'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "[expr.type.name/]")->first();
-		[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)->select(l  | true)]
-[comment]			look if let is just a query to make the code cleaner --WARNING for now if an Int we both translate it into a CCSL int and a QVTo var[/comment]
-			[for (aVar : LetVariableCS | allLetExpr.ownedVariables)]
-				[if (not aVar.ownedType.oclIsKindOf(EventType))]	
-		var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
-				[/if]
-			[/for]
-		[/let]	
-
+		//from defs
 		[expr.createVarFromDefs()/]
-
+		//from lets
+		[expr.createVarFromLets()/]
 
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 		 			bindable := theMainBlock.elements['['/]name = getNameOrUID(an1.oclAsType(EObject))+'_[expr.oclAsType(MoCCMLExpression).parameters->at(1).prettyPrintOnlyLast()/]'[']'/]->first();
@@ -216,16 +208,10 @@ main() {
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_[expr.parent.oclAsType(LetVariableCS).name/]'+nb.toString();
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "[expr.type.name/]")->first();
-		[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)->select(l  | true)]
-[comment]			look if let is just a query to make the code cleaner --WARNING for now if an Int we both translate it into a CCSL int and a QVTo var[/comment]
-			[for (aVar : LetVariableCS | allLetExpr.ownedVariables)]
-				[if (not aVar.ownedType.oclIsKindOf(EventType))]	
-		var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
-				[/if]
-			[/for]
-		[/let] 
-
-		[expr.createVarFromDefs()/]	
+		//from defs
+		[expr.createVarFromDefs()/]
+		//from lets
+		[expr.createVarFromLets()/]
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.expressions['['/]name = expr.name[']'/]->first();
 					[if (expr.oclAsType(MoCCMLExpression).type.oclIsKindOf(KernelExpressionDeclaration))]
@@ -257,18 +243,10 @@ main() {
 	mapping inMM[expr.getinMMindex()/]::[expr.getClassifierContext()/]::[expr.parent.oclAsType(LetVariableCS).name/]2Expression():TimeModel::CCSLModel::ClockExpressionAndRelation::Expression
 	{
 		init{
-
-	
-		[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)->select(l  | true)]
-[comment]			look if let is just a query to make the code cleaner --WARNING for now if an Int we both translate it into a CCSL int and a QVTo var[/comment]
-			[for (aVar : LetVariableCS | allLetExpr.ownedVariables)]
-				[if (not aVar.ownedType.oclIsKindOf(EventType))]	
-		var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
-				[/if]
-			[/for]
-		[/let]
-
+		//from defs
 		[expr.createVarFromDefs()/]
+		//from lets
+		[expr.createVarFromLets()/]
 
 		[let navSet : String = expr.oclAsType(MoCCMLExpression).parameters->at(1).prettyPrintButLast()]
 		var sources : Sequence([expr.oclAsType(MoCCMLExpression).parameters->at(1).getTypeOfSet()/]) := [navSet.first(navSet.size()-1)/]->asSequence();
@@ -301,15 +279,10 @@ main() {
 	{
 		name := getNameOrUID(self.oclAsType(EObject))+'_[expr.oclAsType(MoCCMLExpression).type.name/]_[expr.parent.oclAsType(LetVariableCS).name/]';
 		type := seqOfExpressionDeclaration->select(rd | rd.name = "[expr.type.name/]")->first();
-		[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)->select(l  | true)]
-[comment]			look if let is just a query to make the code cleaner --WARNING for now if an Int we both translate it into a CCSL int and a QVTo var[/comment]
-			[for (aVar : LetVariableCS | allLetExpr.ownedVariables)]
-				[if (not aVar.ownedType.oclIsKindOf(EventType))]	
-		var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
-				[/if]
-			[/for]
-		[/let]
+		//from defs
 		[expr.createVarFromDefs()/]
+		//from lets
+		[expr.createVarFromLets()/]
 
 		[for (p : ExpCS | expr.oclAsType(MoCCMLExpression).parameters)]
 				[let paramNumber : EInt = i]
@@ -471,7 +444,10 @@ main() {
 		name := getNameOrUID(self.oclAsType(EObject))+'intermediate_[expr.ancestors(ConstraintCS)->first().name/]'+nbi.toString()+"_"+nbj.toString();
 		var seqAbstract : Sequence(Stdlib::Element) := seqOfRelationDeclaration['['/]name = '[expr.oclAsType(MoCCMLRelation).type.name/]'[']'/]->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::[expr.oclAsType(MoCCMLRelation).type.eClass().name/]).allSubobjectsOfKind(TimeModel::CCSLModel::ClockExpressionAndRelation::AbstractEntity)->asSequence();
 		type := seqOfRelationDeclaration->select(rd | rd.name = "[expr.oclAsType(MoCCMLRelation).type.name/]")->first();
-				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
+		[expr.createVarFromDefs()/]
+		[expr.createVarFromLets()/]
+
+					bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
 					bindable := theMainBlock.elements['['/]name = getNameOrUID(an1.oclAsType(EObject))+'_[expr.oclAsType(MoCCMLRelation).parameters->at(1).prettyPrintOnlyLast()/]'[']'/]->first();
 					[if (expr.oclAsType(MoCCMLRelation).type.oclIsKindOf(KernelRelationDeclaration))]
 						_abstract := seqOfRelationDeclaration['['/]name = '[expr.oclAsType(MoCCMLRelation).type.name/]'[']'/]->first().oclAsType(TimeModel::CCSLModel::ClockExpressionAndRelation::KernelRelation::KernelRelationDeclaration).leftEntity;
@@ -498,20 +474,20 @@ main() {
 	[if (expr.getAllContainingExpression()->filter(InfixExpCS)->size() > 0)]
 		[let theImpliesOp :InfixExpCS = expr.getAllContainingExpression()->filter(InfixExpCS)->select( ie | ie.name='implies')->first()] 
 			[if not theImpliesOp.oclIsUndefined() ]
-			when { [theImpliesOp.ownedLeft/] }
+			when { 
+				[expr.createLetFromDefs()/]
+				[if (theImpliesOp.parent.oclIsKindOf(LetExpCS))][comment it depends if the let are included in le left of implies or not (i.e., on parenthesis) /]
+					[expr.createLetFromLets()/]
+				[/if]
+				[theImpliesOp.ownedLeft/] 
+			}
 			[/if]
 		[/let]
 	[/if]	
 	{
 		init{
-			[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)->select(l | true)]
-				[for (aVar : LetVariableCS | allLetExpr.ownedVariables)]
-					[if (not aVar.ownedType.oclIsKindOf(EventType))]	
-						var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
-					[/if]
-				[/for]
-			[/let]
 			[expr.createVarFromDefs()/]
+			[expr.createVarFromLets()/]
 			[let navSet : String = expr.oclAsType(MoCCMLRelation).parameters->at(1).prettyPrintButLast()]
 			var sources : Sequence([expr.oclAsType(MoCCMLRelation).parameters->at(1).getTypeOfSet()/]) := [navSet.first(navSet.size()-1)/]->asSequence();
 			[/let]
@@ -535,14 +511,10 @@ main() {
 		[let theImpliesOp :InfixExpCS = expr.getAllContainingExpression()->filter(InfixExpCS)->select( ie | ie.name='implies')->first()] 
 			[if not theImpliesOp.oclIsUndefined() ]
 			when { 
-				[for (letExp : LetExpCS | theImpliesOp.getAllLetExpParents()) ]
-			  let [letExp.ownedVariables.toString()/] in
-				[/for]
-			[let allDef : Sequence(DefCS) = expr.ancestors(ClassifierContextDeclCS)->first().oclAsType(EObject).eAllContents(DefCS)->select(l  | not l.oclAsType(DefCS).ownedType.oclIsTypeOf(EventType))]
-				[for (aVar : DefCS | allDef)]
-		      let [aVar.name/] : [aVar.ownedType/] = [aVar.ownedSpecification/] in
-				[/for]
-			[/let]	
+				[expr.createLetFromDefs()/]
+				[if (theImpliesOp.parent.oclIsKindOf(LetExpCS))][comment it depends if the let are included in le left of implies or not (i.e., on parenthesis) /]
+					[expr.createLetFromLets()/]
+				[/if]
 				[theImpliesOp.ownedLeft/] 
 				
 }
@@ -553,14 +525,9 @@ main() {
 		 	name := getNameOrUID(self.oclAsType(EObject))+"[expr.oclAsType(MoCCMLRelation).type.name/]_[constraint.name/]";
 			[comment]The Expr : [expr/][/comment]
 			type := seqOfRelationDeclaration->select(rd | rd.name = "[expr.oclAsType(MoCCMLRelation).type.name/]")->first();
-			[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)->select(l  | true)]
-[comment]			look if let is just a query to make the code cleaner --WARNING for now if an Int we both translate it into a CCSL int and a QVTo var[/comment]
-			[for (aVar : LetVariableCS | allLetExpr.ownedVariables)]
-				[if (not aVar.ownedType.oclIsKindOf(EventType))]	
-					var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
-				[/if]
-			[/for]
 			[expr.createVarFromDefs()/]
+			[expr.createVarFromLets()/]
+			[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)->select(l  | true)]
 			[for (p : ExpCS | expr.oclAsType(MoCCMLRelation).parameters)]
 				[let paramNumber : EInt = i]
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
@@ -874,15 +841,47 @@ mapping inMM[getpackageIndex(aMoCCMLMappingDoc, rootElementName)/]::[rootElement
 [/let]
 [/template]
 
-[template public createVarFromDefs (expr : ExpCS) ]
+[template public createVarFromDefs (expr : ExpCS) ][comment warning we retrieve only defs of the classifier, not the one from its superClasses./]
 		[let allDef : Sequence(DefCS) = expr.ancestors(ClassifierContextDeclCS)->first().oclAsType(EObject).eAllContents(DefCS)->select(l  | not l.oclAsType(DefCS).ownedType.oclIsTypeOf(EventType))]
 			[for (aVar : DefCS | allDef)]
 		var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedSpecification/];
-		allVarDefs->append("[aVar.ancestors(ClassifierContextDeclCS).referredClass.name/]::[aVar.name/]"); --to be exploited later. If you have an error close to here, please remove the explicit self when navigating to the def
 			[/for]
 		[/let]		 
 [/template]
+[template public createVarFromLets (expr : ExpCS) ]
+		[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)]
+[comment]			look if let is just a query to make the code cleaner --WARNING for now if an Int we both translate it into a CCSL int and a QVTo var[/comment]
+			[for (aVar : LetVariableCS | allLetExpr.ownedVariables)]
+				[if aVar.ownedType <> null and (not aVar.ownedType.oclIsKindOf(EventType))]	
+		var [aVar.name/] : [aVar.ownedType/] := [aVar.ownedInitExpression/];
+				[/if]
+			[if aVar.ownedType = null]
+		var [aVar.name/] := [aVar.ownedInitExpression/];
+			[/if]
+			[/for]
+		[/let] 
+[/template]
 
+[template public createLetFromDefs (expr : ExpCS) ]
+		[let allDef : Sequence(DefCS) = expr.ancestors(ClassifierContextDeclCS)->first().oclAsType(EObject).eAllContents(DefCS)->select(l  | not l.oclAsType(DefCS).ownedType.oclIsTypeOf(EventType))]
+			[for (aVar : DefCS | allDef)]
+		let [aVar.name/] : [aVar.ownedType/] = [aVar.ownedSpecification/] in
+			[/for]
+		[/let]		 
+[/template]
+[template public createLetFromLets (expr : ExpCS) ]
+		[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)]
+[comment]			look if let is just a query to make the code cleaner --WARNING for now if an Int we both translate it into a CCSL int and a QVTo var[/comment]
+			[for (aVar : LetVariableCS | allLetExpr.ownedVariables)]
+				[if aVar.ownedType <> null and (not aVar.ownedType.oclIsKindOf(EventType))]	
+		let [aVar.name/] : [aVar.ownedType/] = [aVar.ownedInitExpression/] in
+				[/if]
+			[if aVar.ownedType = null]
+		let [aVar.name/] = [aVar.ownedInitExpression/] in
+			[/if]
+			[/for]
+		[/let] 
+[/template]
 
 [template public getinMMindex(anObject:EObject)]
 [for (p: PackageDeclarationCS | anObject.eContainer(MoCCMLMappingDocument).ownedPackages)]
@@ -892,13 +891,13 @@ mapping inMM[getpackageIndex(aMoCCMLMappingDoc, rootElementName)/]::[rootElement
 [/template]
 
 
-[query public getCCSLTypeOf(aType: TypeRefCS): String =
+[comment][query public getCCSLTypeOf(aType: TypeRefCS): String =
 if (aType.oclIsKindOf(PrimitiveTypeRefCS)) then
 	TimeModel::BasicType::IntegerElement
 else
 	TimeModel::Clock
 endif
-/]
+/][/comment]
 
 [query public getClassifierContext(elem : ElementCS) : String =
 invoke('org.eclipse.gemoc.moccml_mapping.ecltoqvto.helper.helperNsURI', 'getClassifierContext(org.eclipse.ocl.xtext.basecs.ElementCS)', Sequence{elem})/]
