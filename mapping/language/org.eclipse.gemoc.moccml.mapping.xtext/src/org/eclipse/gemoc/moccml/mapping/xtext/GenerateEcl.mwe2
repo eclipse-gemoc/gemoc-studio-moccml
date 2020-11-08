@@ -126,8 +126,8 @@ fragment = validation.JavaValidatorFragment {
             
 // scoping and exporting API
 
-fragment = scoping.ImportURIScopingFragment {}
-fragment = exporting.SimpleNamesFragment {}
+//fragment = scoping.ImportURIScopingFragment {}
+//fragment = exporting.SimpleNamesFragment {}
 
 
 // scoping and exporting API

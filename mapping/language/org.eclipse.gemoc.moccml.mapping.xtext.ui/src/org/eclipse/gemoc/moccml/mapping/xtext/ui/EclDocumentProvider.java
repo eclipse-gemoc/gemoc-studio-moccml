@@ -13,7 +13,6 @@ package org.eclipse.gemoc.moccml.mapping.xtext.ui;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.text.source.AnnotationModel;
 import org.eclipse.jface.text.source.IAnnotationModel;
-import org.eclipse.ocl.xtext.base.ui.model.BaseDocumentProvider;
 import org.eclipse.ocl.xtext.completeocl.ui.CompleteOCLDocumentProvider;
 import org.eclipse.ui.IStorageEditorInput;
 
@@ -22,12 +21,12 @@ import org.eclipse.ui.IStorageEditorInput;
  */
 public class EclDocumentProvider extends CompleteOCLDocumentProvider
 {
-//	@Override	// BUG 434948#5 add support for annotated ranges so that debug single stepping shows current element as a range
-//	protected IAnnotationModel createAnnotationModel(Object element) throws CoreException {
-//		IAnnotationModel annotationModel = super.createAnnotationModel(element);
-//		if ((annotationModel == null) && (element instanceof IStorageEditorInput)) {
-//			return new AnnotationModel();
-//		}
-//		return annotationModel;
-//	}
+	@Override	// BUG 434948#5 add support for annotated ranges so that debug single stepping shows current element as a range
+	protected IAnnotationModel createAnnotationModel(Object element) throws CoreException {
+		IAnnotationModel annotationModel = super.createAnnotationModel(element);
+		if ((annotationModel == null) && (element instanceof IStorageEditorInput)) {
+			return new AnnotationModel();
+		}
+		return annotationModel;
+	}
 }
