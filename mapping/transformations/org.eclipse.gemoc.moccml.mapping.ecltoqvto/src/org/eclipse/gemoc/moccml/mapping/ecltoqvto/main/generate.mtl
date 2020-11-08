@@ -123,7 +123,7 @@ main() {
 		////[ '[' /] [itsContext.pivot.oclAsType(NamedElement).name/] [ ']' /]
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), [itsContext.pivot.oclAsType(NamedElement).name/].oclAsType(EClass)).oclAsType([itsContext.pivot.oclAsType(NamedElement).name/])->map [constraint.pivot.oclAsType(NamedElement).name/]2Clock();
 			[/if]
-			[if (constraint.ownedType <> null and constraint.ownedType.oclIsKindOf(PrimitiveTypeRefCS))]
+			[if (constraint.ownedType <> null and constraint.ownedType.oclIsKindOf(PrimitiveTypeRefCS) and constraint.ownedType.oclAsType(PrimitiveTypeRefCS).name = 'Integer')]
 		getVeryAllElementsFromResourceSetOf(self.oclAsType(EObject), [itsContext.pivot.oclAsType(NamedElement).name/].oclAsType(EClass)).oclAsType([itsContext.pivot.oclAsType(NamedElement).name/])->map [constraint.pivot.oclAsType(NamedElement).name/]2Integer();
 			[/if]
 		[/for]
@@ -411,7 +411,7 @@ main() {
 		}
 		[comment]end if it is a def of event[/comment]
 		[/if]
-		[if (constraint.ownedType <> null and constraint.ownedType.oclIsKindOf(PrimitiveTypeRefCS))]
+			[if (constraint.ownedType <> null and constraint.ownedType.oclIsKindOf(PrimitiveTypeRefCS) and constraint.ownedType.oclAsType(PrimitiveTypeRefCS).name = 'Integer')]
 		mapping inMM[itsContext.getinMMindex()/]::[itsContext.pivot.oclAsType(NamedElement).name/]::[constraint.pivot.oclAsType(NamedElement).name/]2Integer() :TimeModel::BasicType::IntegerElement
 		[if constraint.oclIsKindOf(MoCCMLMappingDefCS) ]
 			when { [constraint.oclAsType(MoCCMLMappingDefCS).condition/] }

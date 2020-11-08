@@ -14,16 +14,24 @@
 package org.eclipse.gemoc.moccml.mapping.xtext.ui;
 
 import org.eclipse.gemoc.moccml.mapping.xtext.ui.internal.EclActivator;
+import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.model.XtextDocumentProvider;
 
 /**
  * Use this class to register components to be used within the IDE.
  */
 public class EclUiModule extends org.eclipse.gemoc.moccml.mapping.xtext.ui.AbstractEclUiModule {
-	
-	public static final String EDITOR_ID = EclActivator.ORG_ECLIPSE_GEMOC_MOCCML_MAPPING_XTEXT_ECL;
+	public static final @NonNull String PLUGIN_ID = "org.eclipse.gemoc.moccml.mapping.xtext.ui";
+	public static final @NonNull String EDITOR_ID = EclActivator.ORG_ECLIPSE_GEMOC_MOCCML_MAPPING_XTEXT_ECL;
+	public static final @NonNull String MARKER_ID = "rg.eclipse.gemoc.moccml.mapping.xtext.ui.Marker";
 
 	public EclUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+	
+	public Class<? extends XtextDocumentProvider> bindXtextDocumentProvider() {
+		return EclDocumentProvider.class;
+	}
 }
+

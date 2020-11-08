@@ -98,11 +98,6 @@ public abstract class AbstractEclRuntimeModule extends org.eclipse.xtext.service
 		return org.eclipse.gemoc.moccml.mapping.xtext.validation.EclJavaValidator.class;
 	}
 
-	// contributed by org.eclipse.xtext.generator.exporting.SimpleNamesFragment
-	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
-		return org.eclipse.xtext.naming.SimpleNameProvider.class;
-	}
-
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
 	public Class<? extends org.eclipse.xtext.scoping.IScopeProvider> bindIScopeProvider() {
 		return org.eclipse.gemoc.moccml.mapping.xtext.scoping.EclScopeProvider.class;
@@ -186,6 +181,11 @@ public abstract class AbstractEclRuntimeModule extends org.eclipse.xtext.service
 	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
 	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameConverter> bindIQualifiedNameConverter() {
 		return org.eclipse.ocl.xtext.base.services.BaseQualifiedNameConverter.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return org.eclipse.ocl.xtext.base.services.BaseQualifiedNameProvider.class;
 	}
 
 	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment

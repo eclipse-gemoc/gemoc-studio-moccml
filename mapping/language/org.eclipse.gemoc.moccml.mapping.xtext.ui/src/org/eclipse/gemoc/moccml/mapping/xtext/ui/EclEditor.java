@@ -10,14 +10,25 @@
  *******************************************************************************/
 package org.eclipse.gemoc.moccml.mapping.xtext.ui;
 
+import org.eclipse.gemoc.moccml.mapping.xtext.ui.internal.ECLActivator;
+import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.xtext.completeocl.ui.CompleteOCLEditor;
-import org.eclipse.ocl.xtext.completeocl.ui.internal.CompleteOCLActivator;
 
 public class EclEditor extends CompleteOCLEditor
 {
-	//public static final String EDITOR_ID = CompleteOCLActivator.ORG_ECLIPSE_OCL_XTEXT_COMPLETEOCL_COMPLETEOCL;
-
+	public static final String EDITOR_ID = ECLActivator.ORG_ECLIPSE_GEMOC_MOCCML_MAPPING_XTEXT_ECL;
 	public EclEditor() {
 		super();
+	}
+	@Override
+	public @NonNull String getMarkerId() {
+		return EclUiModule.MARKER_ID;
+	}
+	@Override
+	protected void initializeEditor() {
+		super.initializeEditor();
+		setEditorContextMenuId("#CompleteOCLEditorContext"); //$NON-NLS-1$
+		setRulerContextMenuId("#CompleteOCLRulerContext"); //$NON-NLS-1$
+		//		setHelpContextId(ITextEditorHelpContextIds.TEXT_EDITOR);
 	}
 }

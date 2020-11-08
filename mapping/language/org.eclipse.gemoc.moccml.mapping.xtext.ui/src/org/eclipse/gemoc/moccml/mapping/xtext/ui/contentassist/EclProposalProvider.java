@@ -28,12 +28,14 @@ import com.google.common.base.Predicate;
 public class EclProposalProvider extends AbstractEclProposalProvider {
 
 	
+/**
+ * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
+ */
+//
 //	@Override
-//	protected void lookupCrossReference(EObject model, EReference reference,
-//			ICompletionProposalAcceptor acceptor,
-//			Predicate<IEObjectDescription> filter,
-//			Function<IEObjectDescription, ICompletionProposal> proposalFactory) {
-////		System.out.println("    lookupCrossReference: " + reference.getEContainingClass().getName() + "::" + reference.getName());
-//		super.lookupCrossReference(model, reference, acceptor, filter, proposalFactory);
+//	public void complete_PrimitiveTypeIdentifier(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		proposeKeywordAlternatives(ruleCall, context, acceptor, getPrimitiveTypeImage());
 //	}
+//	
+	
 }

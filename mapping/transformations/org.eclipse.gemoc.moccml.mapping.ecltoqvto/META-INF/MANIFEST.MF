@@ -20,8 +20,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gemoc.moccml.mapping.xtext,
  org.eclipse.gemoc.moccml.mapping,
  org.eclipse.gemoc.moccml.mapping
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8,
- JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: org.eclipse.gemoc.moccml.mapping.ecltoqvto,
