@@ -54,6 +54,7 @@ public abstract class AbstractEclSyntacticSequencer extends AbstractSyntacticSeq
 	}
 	
 	/**
+	 * @Override
 	 * UnrestrictedName returns ecore::EString:
 	 * 	EssentialOCLUnrestrictedName
 	 * 						| 'import'

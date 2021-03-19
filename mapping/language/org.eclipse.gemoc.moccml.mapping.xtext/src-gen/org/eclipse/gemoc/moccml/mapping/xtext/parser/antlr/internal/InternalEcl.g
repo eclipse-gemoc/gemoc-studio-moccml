@@ -1439,9 +1439,24 @@ ruleMoCCMLRelation returns [EObject current=null]
             grammarAccess.getMoCCMLRelationAccess().getMoCCMLRelationAction_0(),
             $current);
     }
-)	otherlv_1='Relation' 
+)(
+(
+		lv_isAnAssertion_1_0=	'assert' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getMoCCMLRelationAccess().getRelationKeyword_1());
+        newLeafNode(lv_isAnAssertion_1_0, grammarAccess.getMoCCMLRelationAccess().getIsAnAssertionAssertKeyword_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMoCCMLRelationRule());
+	        }
+       		setWithLastConsumed($current, "isAnAssertion", true, "assert");
+	    }
+
+)
+)?	otherlv_2='Relation' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getMoCCMLRelationAccess().getRelationKeyword_2());
     }
 (
 (
@@ -1454,60 +1469,60 @@ ruleMoCCMLRelation returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getMoCCMLRelationAccess().getTypeRelationDeclarationCrossReference_2_0()); 
+	        newCompositeNode(grammarAccess.getMoCCMLRelationAccess().getTypeRelationDeclarationCrossReference_3_0()); 
 	    }
 		ruleID		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_3='(' 
+)	otherlv_4='(' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getMoCCMLRelationAccess().getLeftParenthesisKeyword_3());
+    	newLeafNode(otherlv_4, grammarAccess.getMoCCMLRelationAccess().getLeftParenthesisKeyword_4());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMoCCMLRelationAccess().getParametersExpCSParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getMoCCMLRelationAccess().getParametersExpCSParserRuleCall_5_0()); 
 	    }
-		lv_parameters_4_0=ruleExpCS		{
+		lv_parameters_5_0=ruleExpCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMoCCMLRelationRule());
 	        }
        		add(
        			$current, 
        			"parameters",
-        		lv_parameters_4_0, 
+        		lv_parameters_5_0, 
         		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_5=',' 
+)(	otherlv_6=',' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getMoCCMLRelationAccess().getCommaKeyword_5_0());
+    	newLeafNode(otherlv_6, grammarAccess.getMoCCMLRelationAccess().getCommaKeyword_6_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMoCCMLRelationAccess().getParametersExpCSParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getMoCCMLRelationAccess().getParametersExpCSParserRuleCall_6_1_0()); 
 	    }
-		lv_parameters_6_0=ruleExpCS		{
+		lv_parameters_7_0=ruleExpCS		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMoCCMLRelationRule());
 	        }
        		add(
        			$current, 
        			"parameters",
-        		lv_parameters_6_0, 
+        		lv_parameters_7_0, 
         		"org.eclipse.gemoc.moccml.mapping.xtext.Ecl.ExpCS");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*	otherlv_7=')' 
+))*	otherlv_8=')' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getMoCCMLRelationAccess().getRightParenthesisKeyword_6());
+    	newLeafNode(otherlv_8, grammarAccess.getMoCCMLRelationAccess().getRightParenthesisKeyword_7());
     }
 )
 ;

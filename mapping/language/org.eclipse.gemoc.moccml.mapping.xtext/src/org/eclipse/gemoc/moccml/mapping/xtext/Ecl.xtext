@@ -14,7 +14,7 @@ import "platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/Time
 import "platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//BasicType" as CCSLBasicTypes
 //import "http://fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation" as CCSL
 import "platform:/resource/org.eclipse.gemoc.moccml.mapping/model/moccml_mapping.ecore"
-//import  "http://org.eclipse.gemoc.moccml.mapping"  
+//import  "http://org.eclipse.gemoc.moccml.mapping" 
  
 //import "http://fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation"  as CCSL
  
@@ -53,9 +53,9 @@ BlockType returns BlockType:
 //;
 
 enum EventKind:
-	start= 'StartEvent' |// start= 'start Event' | start= 'startEvent' |start= 'Start Event' |
-	finish='StopEvent' | //finish= 'stop Event' | finish= 'stopEvent' |finish= 'Stop Event' |
-	finish='FinishEvent'| //| finish= 'finish Event' | finish= 'finishEvent' | finish= 'Finish Event' |
+	start= 'StartEvent' |
+	finish='StopEvent' | 
+	finish='FinishEvent'| 
 	consume="ConsumeEvent"|
 	produce="produceEvent"|
 	receive="receiveEvent"|
@@ -131,7 +131,7 @@ CasesRule returns Case:
 ;
 
 enum FeedBackKind:
-	force= 'force' |// start= 'start Event' | start= 'startEvent' |start= 'Start Event' |
+	force= 'force' |
 	forbid='forbid' 
 ;
 
@@ -145,6 +145,6 @@ MoCCMLExpression returns MoCCMLExpression:
 MoCCMLRelation returns MoCCMLRelation: 
 	{MoCCMLRelation}
   //we need to add a keyWord to make the EclScopeProvider working :-/
-  "Relation" type=[CCSL::RelationDeclaration | ID] '(' parameters+=ExpCS  ( ',' parameters+=ExpCS )* ')' 
+  (isAnAssertion ?= "assert")? "Relation" type=[CCSL::RelationDeclaration | ID] '(' parameters+=ExpCS  ( ',' parameters+=ExpCS )* ')' 
 ;
  

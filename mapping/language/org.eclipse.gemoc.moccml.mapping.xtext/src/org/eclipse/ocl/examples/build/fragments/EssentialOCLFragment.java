@@ -12,6 +12,7 @@ package org.eclipse.ocl.examples.build.fragments;
 
 import java.util.Set;
 
+import org.eclipse.gemoc.moccml.mapping.xtext.validation.EclPivotResourceValidator;
 import org.eclipse.ocl.xtext.base.cs2as.BaseFragmentProvider;
 import org.eclipse.ocl.xtext.base.serializer.BaseCrossReferenceSerializer;
 import org.eclipse.ocl.xtext.base.serializer.BaseHiddenTokenSequencer;
@@ -99,7 +100,7 @@ public class EssentialOCLFragment extends DefaultGeneratorFragment implements Na
 		bindFactory.addTypeToType(IResourceServiceProvider.class.getName(), PivotResourceServiceProvider.class.getName());
 		// pivot AST validation support
 //		bindFactory.addTypeToType(Diagnostician.class.getName(), PivotCancelableDiagnostician.class.getName());
-		bindFactory.addTypeToType(IResourceValidator.class.getName(), PivotResourceValidator.class.getName());
+		bindFactory.addTypeToType(IResourceValidator.class.getName(), EclPivotResourceValidator.class.getName());
 		// DataType text to value parsing.
 		bindFactory.addTypeToType(IValueConverterService.class.getName(), BaseValueConverterService.class.getName());
 		bindFactory.addTypeToType(XtextResource.class.getName(), EssentialOCLCSResource.class.getName());

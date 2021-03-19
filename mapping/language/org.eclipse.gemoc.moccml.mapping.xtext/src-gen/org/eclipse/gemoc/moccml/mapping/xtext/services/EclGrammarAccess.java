@@ -34,15 +34,15 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOwnedContextsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
 		private final RuleCall cOwnedContextsContextDeclCSParserRuleCall_3_1_0 = (RuleCall)cOwnedContextsAssignment_3_1.eContents().get(0);
 		
-		////import  "http://org.eclipse.gemoc.moccml.mapping"  
+		////import  "http://org.eclipse.gemoc.moccml.mapping" 
 		////import "http://fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation"  as CCSL
 		//MoCCMLMappingDocument:
 		//	{MoCCMLMappingDocument} ownedImports+=ImportCS*
 		//	imports+=Import* (ownedPackages+=PackageDeclarationCS | ownedContexts+=ContextDeclCS)*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{MoCCMLMappingDocument} ownedImports+=ImportCS* imports+=Import* (ownedPackages+=PackageDeclarationCS |
-		//ownedContexts+=ContextDeclCS)*
+		//{MoCCMLMappingDocument} ownedImports+=ImportCS*
+		//imports+=Import* (ownedPackages+=PackageDeclarationCS | ownedContexts+=ContextDeclCS)*
 		public Group getGroup() { return cGroup; }
 
 		//{MoCCMLMappingDocument}
@@ -119,8 +119,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//	ownedMultiplicity=MultiplicityCS?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase)
-		//ownedMultiplicity=MultiplicityCS?
+		//(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase) ownedMultiplicity=MultiplicityCS
+		//?
 		public Group getGroup() { return cGroup; }
 
 		//(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase)
@@ -167,7 +167,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//	'Event' ('(' referedElement=EventKind ')')?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{EventType} 'Event' ('(' referedElement=EventKind ')')?
+		//{EventType}
+		//'Event' ('(' referedElement=EventKind ')')?
 		public Group getGroup() { return cGroup; }
 
 		//{EventType}
@@ -209,7 +210,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//	'TimeBase' ('[' timeBase=[CCSLBasicTypes::DenseClockType] ']')?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{MoCCMLMappingTimeBase} 'TimeBase' ('[' timeBase=[CCSLBasicTypes::DenseClockType] ']')?
+		//{MoCCMLMappingTimeBase}
+		//'TimeBase' ('[' timeBase=[CCSLBasicTypes::DenseClockType] ']')?
 		public Group getGroup() { return cGroup; }
 
 		//{MoCCMLMappingTimeBase}
@@ -248,7 +250,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//	'Block';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{BlockType} 'Block'
+		//{BlockType}
+		//'Block'
 		public Group getGroup() { return cGroup; }
 
 		//{BlockType}
@@ -277,15 +280,15 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//@Override
 		//ExpCS essentialOCLCST::ExpCS:
-		//	MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority | (PrefixedPrimaryExpCS
-		//	({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? | PrefixedLetExpCS);
+		//	MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority | (PrefixedPrimaryExpCS (
+		//	{essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? | PrefixedLetExpCS);
 		@Override public ParserRule getRule() { return rule; }
 
 		////	({InfixExpCS} ownedSource=PrefixedExpCS name=BinaryOperatorName ownedArgument=ExpCS)
 		////| 	PrefixedExpCS
 		//// the above takes exponential or worse time for backtracking, below is fast
-		//MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority | (PrefixedPrimaryExpCS
-		//({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? | PrefixedLetExpCS)
+		//MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority | (PrefixedPrimaryExpCS (
+		//{essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? | PrefixedLetExpCS)
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		////	({InfixExpCS} ownedSource=PrefixedExpCS name=BinaryOperatorName ownedArgument=ExpCS)
@@ -350,7 +353,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//	'Prior' ':' higher=ExpCS 'prevails' 'on' lower=ExpCS;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{MoCCMLMappingPriority} 'Prior' ':' higher=ExpCS 'prevails' 'on' lower=ExpCS
+		//{MoCCMLMappingPriority}
+		//'Prior' ':' higher=ExpCS 'prevails' 'on' lower=ExpCS
 		public Group getGroup() { return cGroup; }
 
 		//{MoCCMLMappingPriority}
@@ -445,8 +449,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//	'=' ownedSpecification=SpecificationCS ("enter" "when" enterWhen=ExpCS)? ("leave" "when" leaveWhen=ExpCS)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//visibility=Visibility? 'blockDef' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS '='
-		//ownedSpecification=SpecificationCS ("enter" "when" enterWhen=ExpCS)? ("leave" "when" leaveWhen=ExpCS)?
+		//visibility=Visibility? 'blockDef' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS
+		//'=' ownedSpecification=SpecificationCS ("enter" "when" enterWhen=ExpCS)? ("leave" "when" leaveWhen=ExpCS)?
 		public Group getGroup() { return cGroup; }
 
 		//visibility=Visibility?
@@ -566,13 +570,13 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//MoCCMLMappingEventDefCS:
 		//	visibility=Visibility? 'def' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS
-		//	'=' ownedSpecification=SpecificationCS (('[' dsaResultName=UnrestrictedName ']')? ("future" "(" future=ExpCS ")")?
-		//	("switch" feedback=DSAFeedBackRule)?);
+		//	'=' ownedSpecification=SpecificationCS (('[' dsaResultName=UnrestrictedName ']')? ("future" "(" future=ExpCS ")")? (
+		//	"switch" feedback=DSAFeedBackRule)?);
 		@Override public ParserRule getRule() { return rule; }
 
-		//visibility=Visibility? 'def' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS '='
-		//ownedSpecification=SpecificationCS (('[' dsaResultName=UnrestrictedName ']')? ("future" "(" future=ExpCS ")")?
-		//("switch" feedback=DSAFeedBackRule)?)
+		//visibility=Visibility? 'def' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS
+		//'=' ownedSpecification=SpecificationCS (('[' dsaResultName=UnrestrictedName ']')? ("future" "(" future=ExpCS ")")? (
+		//"switch" feedback=DSAFeedBackRule)?)
 		public Group getGroup() { return cGroup; }
 
 		//visibility=Visibility?
@@ -779,18 +783,19 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//MoCCMLExpression:
 		//	{MoCCMLExpression}
-		//	//we need to add a keyWord to make the EclScopeProvider working :-/
+		//	// we need to add a keyWord to make the EclScopeProvider working :-/
 		//	"Expression" type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{MoCCMLExpression} //we need to add a keyWord to make the EclScopeProvider working :-/
+		//{MoCCMLExpression}
+		//// we need to add a keyWord to make the EclScopeProvider working :-/
 		//"Expression" type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')'
 		public Group getGroup() { return cGroup; }
 
 		//{MoCCMLExpression}
 		public Action getMoCCMLExpressionAction_0() { return cMoCCMLExpressionAction_0; }
 
-		////we need to add a keyWord to make the EclScopeProvider working :-/
+		//// we need to add a keyWord to make the EclScopeProvider working :-/
 		//"Expression"
 		public Keyword getExpressionKeyword_1() { return cExpressionKeyword_1; }
 
@@ -832,68 +837,75 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.eclipse.gemoc.moccml.mapping.xtext.Ecl.MoCCMLRelation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cMoCCMLRelationAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cRelationKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cTypeRelationDeclarationCrossReference_2_0 = (CrossReference)cTypeAssignment_2.eContents().get(0);
-		private final RuleCall cTypeRelationDeclarationIDParserRuleCall_2_0_1 = (RuleCall)cTypeRelationDeclarationCrossReference_2_0.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cParametersAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cParametersExpCSParserRuleCall_4_0 = (RuleCall)cParametersAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cParametersAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cParametersExpCSParserRuleCall_5_1_0 = (RuleCall)cParametersAssignment_5_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cIsAnAssertionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cIsAnAssertionAssertKeyword_1_0 = (Keyword)cIsAnAssertionAssignment_1.eContents().get(0);
+		private final Keyword cRelationKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cTypeRelationDeclarationCrossReference_3_0 = (CrossReference)cTypeAssignment_3.eContents().get(0);
+		private final RuleCall cTypeRelationDeclarationIDParserRuleCall_3_0_1 = (RuleCall)cTypeRelationDeclarationCrossReference_3_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cParametersAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cParametersExpCSParserRuleCall_5_0 = (RuleCall)cParametersAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cParametersAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cParametersExpCSParserRuleCall_6_1_0 = (RuleCall)cParametersAssignment_6_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//MoCCMLRelation:
-		//	{MoCCMLRelation}
-		//	//we need to add a keyWord to make the EclScopeProvider working :-/
-		//	"Relation" type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
+		//	{MoCCMLRelation} isAnAssertion?="assert"? "Relation" type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (','
+		//	parameters+=ExpCS)* ')';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{MoCCMLRelation} //we need to add a keyWord to make the EclScopeProvider working :-/
-		//"Relation" type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')'
+		//{MoCCMLRelation} isAnAssertion?="assert"? "Relation" type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (','
+		//parameters+=ExpCS)* ')'
 		public Group getGroup() { return cGroup; }
 
 		//{MoCCMLRelation}
 		public Action getMoCCMLRelationAction_0() { return cMoCCMLRelationAction_0; }
 
-		////we need to add a keyWord to make the EclScopeProvider working :-/
+		//// we need to add a keyWord to make the EclScopeProvider working :-/
+		//isAnAssertion?="assert"?
+		public Assignment getIsAnAssertionAssignment_1() { return cIsAnAssertionAssignment_1; }
+
+		//"assert"
+		public Keyword getIsAnAssertionAssertKeyword_1_0() { return cIsAnAssertionAssertKeyword_1_0; }
+
 		//"Relation"
-		public Keyword getRelationKeyword_1() { return cRelationKeyword_1; }
+		public Keyword getRelationKeyword_2() { return cRelationKeyword_2; }
 
 		//type=[CCSL::RelationDeclaration]
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 
 		//[CCSL::RelationDeclaration]
-		public CrossReference getTypeRelationDeclarationCrossReference_2_0() { return cTypeRelationDeclarationCrossReference_2_0; }
+		public CrossReference getTypeRelationDeclarationCrossReference_3_0() { return cTypeRelationDeclarationCrossReference_3_0; }
 
 		//ID
-		public RuleCall getTypeRelationDeclarationIDParserRuleCall_2_0_1() { return cTypeRelationDeclarationIDParserRuleCall_2_0_1; }
+		public RuleCall getTypeRelationDeclarationIDParserRuleCall_3_0_1() { return cTypeRelationDeclarationIDParserRuleCall_3_0_1; }
 
 		//'('
-		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
 
 		//parameters+=ExpCS
-		public Assignment getParametersAssignment_4() { return cParametersAssignment_4; }
+		public Assignment getParametersAssignment_5() { return cParametersAssignment_5; }
 
 		//ExpCS
-		public RuleCall getParametersExpCSParserRuleCall_4_0() { return cParametersExpCSParserRuleCall_4_0; }
+		public RuleCall getParametersExpCSParserRuleCall_5_0() { return cParametersExpCSParserRuleCall_5_0; }
 
 		//(',' parameters+=ExpCS)*
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 
 		//','
-		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
 
 		//parameters+=ExpCS
-		public Assignment getParametersAssignment_5_1() { return cParametersAssignment_5_1; }
+		public Assignment getParametersAssignment_6_1() { return cParametersAssignment_6_1; }
 
 		//ExpCS
-		public RuleCall getParametersExpCSParserRuleCall_5_1_0() { return cParametersExpCSParserRuleCall_5_1_0; }
+		public RuleCall getParametersExpCSParserRuleCall_6_1_0() { return cParametersExpCSParserRuleCall_6_1_0; }
 
 		//')'
-		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	
 	
@@ -936,29 +948,16 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCallCallEventKeyword_16_0 = (Keyword)cCallEnumLiteralDeclaration_16.eContents().get(0);
 		
 		//enum EventKind:
-		//	start='StartEvent' | // start= 'start Event' | start= 'startEvent' |start= 'Start Event' |
-		//	finish='StopEvent' | //finish= 'stop Event' | finish= 'stopEvent' |finish= 'Stop Event' |
-		//	finish='FinishEvent' | //| finish= 'finish Event' | finish= 'finishEvent' | finish= 'Finish Event' |
-		//	consume="ConsumeEvent" |
-		//	produce="produceEvent" |
-		//	receive="receiveEvent" |
-		//	send="sendEvent" |
-		//	create="CreateEvent" |
-		//	destroy="DestroyEvent" |
-		//	suspend="SuspendEvent" |
-		//	resume="ResumeEvent" |
-		//	undefined="DSE" | undefined="internalMoCCEvent" | undefined="any" | undefined="GenericEvent" |
-		//	undefined="ExecuteEvent" |
-		//	call="CallEvent";
+		//	start='StartEvent' | finish='StopEvent' | finish='FinishEvent' | consume="ConsumeEvent" | produce="produceEvent" |
+		//	receive="receiveEvent" | send="sendEvent" | create="CreateEvent" | destroy="DestroyEvent" | suspend="SuspendEvent" |
+		//	resume="ResumeEvent" | undefined="DSE" | undefined="internalMoCCEvent" | undefined="any" | undefined="GenericEvent"
+		//	| undefined="ExecuteEvent" | call="CallEvent";
 		public EnumRule getRule() { return rule; }
 
-		//start='StartEvent' | // start= 'start Event' | start= 'startEvent' |start= 'Start Event' |
-		//finish='StopEvent' | //finish= 'stop Event' | finish= 'stopEvent' |finish= 'Stop Event' |
-		//finish='FinishEvent' | //| finish= 'finish Event' | finish= 'finishEvent' | finish= 'Finish Event' |
-		//consume="ConsumeEvent" | produce="produceEvent" | receive="receiveEvent" | send="sendEvent" | create="CreateEvent" |
-		//destroy="DestroyEvent" | suspend="SuspendEvent" | resume="ResumeEvent" | undefined="DSE" |
-		//undefined="internalMoCCEvent" | undefined="any" | undefined="GenericEvent" | undefined="ExecuteEvent" |
-		//call="CallEvent"
+		//start='StartEvent' | finish='StopEvent' | finish='FinishEvent' | consume="ConsumeEvent" | produce="produceEvent" |
+		//receive="receiveEvent" | send="sendEvent" | create="CreateEvent" | destroy="DestroyEvent" | suspend="SuspendEvent" |
+		//resume="ResumeEvent" | undefined="DSE" | undefined="internalMoCCEvent" | undefined="any" | undefined="GenericEvent" |
+		//undefined="ExecuteEvent" | call="CallEvent"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//start='StartEvent'
@@ -967,21 +966,18 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//'StartEvent'
 		public Keyword getStartStartEventKeyword_0_0() { return cStartStartEventKeyword_0_0; }
 
-		//// start= 'start Event' | start= 'startEvent' |start= 'Start Event' |
 		//finish='StopEvent'
 		public EnumLiteralDeclaration getFinishEnumLiteralDeclaration_1() { return cFinishEnumLiteralDeclaration_1; }
 
 		//'StopEvent'
 		public Keyword getFinishStopEventKeyword_1_0() { return cFinishStopEventKeyword_1_0; }
 
-		////finish= 'stop Event' | finish= 'stopEvent' |finish= 'Stop Event' |
 		//finish='FinishEvent'
 		public EnumLiteralDeclaration getFinishEnumLiteralDeclaration_2() { return cFinishEnumLiteralDeclaration_2; }
 
 		//'FinishEvent'
 		public Keyword getFinishFinishEventKeyword_2_0() { return cFinishFinishEventKeyword_2_0; }
 
-		////| finish= 'finish Event' | finish= 'finishEvent' | finish= 'Finish Event' |
 		//consume="ConsumeEvent"
 		public EnumLiteralDeclaration getConsumeEnumLiteralDeclaration_3() { return cConsumeEnumLiteralDeclaration_3; }
 
@@ -1076,8 +1072,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPrivatePrivateKeyword_1_0 = (Keyword)cPrivateEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum Visibility:
-		//	public |
-		//	private;
+		//	public | private;
 		public EnumRule getRule() { return rule; }
 
 		//public | private
@@ -1105,12 +1100,10 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cForbidForbidKeyword_1_0 = (Keyword)cForbidEnumLiteralDeclaration_1.eContents().get(0);
 		
 		//enum FeedBackKind:
-		//	force | // start= 'start Event' | start= 'startEvent' |start= 'Start Event' |
-		//	forbid;
+		//	force | forbid;
 		public EnumRule getRule() { return rule; }
 
-		//force | // start= 'start Event' | start= 'startEvent' |start= 'Start Event' |
-		//forbid
+		//force | forbid
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//force
@@ -1119,7 +1112,6 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//'force'
 		public Keyword getForceForceKeyword_0_0() { return cForceForceKeyword_0_0; }
 
-		//// start= 'start Event' | start= 'startEvent' |start= 'Start Event' |
 		//forbid
 		public EnumLiteralDeclaration getForbidEnumLiteralDeclaration_1() { return cForbidEnumLiteralDeclaration_1; }
 
@@ -1218,7 +1210,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	////import  "http://org.eclipse.gemoc.moccml.mapping"  
+	////import  "http://org.eclipse.gemoc.moccml.mapping" 
 	////import "http://fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation"  as CCSL
 	//MoCCMLMappingDocument:
 	//	{MoCCMLMappingDocument} ownedImports+=ImportCS*
@@ -1287,20 +1279,10 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum EventKind:
-	//	start='StartEvent' | // start= 'start Event' | start= 'startEvent' |start= 'Start Event' |
-	//	finish='StopEvent' | //finish= 'stop Event' | finish= 'stopEvent' |finish= 'Stop Event' |
-	//	finish='FinishEvent' | //| finish= 'finish Event' | finish= 'finishEvent' | finish= 'Finish Event' |
-	//	consume="ConsumeEvent" |
-	//	produce="produceEvent" |
-	//	receive="receiveEvent" |
-	//	send="sendEvent" |
-	//	create="CreateEvent" |
-	//	destroy="DestroyEvent" |
-	//	suspend="SuspendEvent" |
-	//	resume="ResumeEvent" |
-	//	undefined="DSE" | undefined="internalMoCCEvent" | undefined="any" | undefined="GenericEvent" |
-	//	undefined="ExecuteEvent" |
-	//	call="CallEvent";
+	//	start='StartEvent' | finish='StopEvent' | finish='FinishEvent' | consume="ConsumeEvent" | produce="produceEvent" |
+	//	receive="receiveEvent" | send="sendEvent" | create="CreateEvent" | destroy="DestroyEvent" | suspend="SuspendEvent" |
+	//	resume="ResumeEvent" | undefined="DSE" | undefined="internalMoCCEvent" | undefined="any" | undefined="GenericEvent"
+	//	| undefined="ExecuteEvent" | call="CallEvent";
 	public EventKindElements getEventKindAccess() {
 		return eEventKind;
 	}
@@ -1311,8 +1293,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 	//@Override
 	//ExpCS essentialOCLCST::ExpCS:
-	//	MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority | (PrefixedPrimaryExpCS
-	//	({essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? | PrefixedLetExpCS);
+	//	MoCCMLRelation | MoCCMLExpression | MoCCMLMappingPriority | (PrefixedPrimaryExpCS (
+	//	{essentialOCLCST::InfixExpCS.ownedLeft=current} name=BinaryOperatorName ownedRight=ExpCS)? | PrefixedLetExpCS);
 	public ExpCSElements getExpCSAccess() {
 		return pExpCS;
 	}
@@ -1344,8 +1326,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum Visibility:
-	//	public |
-	//	private;
+	//	public | private;
 	public VisibilityElements getVisibilityAccess() {
 		return eVisibility;
 	}
@@ -1367,8 +1348,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 	//MoCCMLMappingEventDefCS:
 	//	visibility=Visibility? 'def' ('if' condition=ExpCS)? ':' name=UnrestrictedName ':' ownedType=TypeExpCS
-	//	'=' ownedSpecification=SpecificationCS (('[' dsaResultName=UnrestrictedName ']')? ("future" "(" future=ExpCS ")")?
-	//	("switch" feedback=DSAFeedBackRule)?);
+	//	'=' ownedSpecification=SpecificationCS (('[' dsaResultName=UnrestrictedName ']')? ("future" "(" future=ExpCS ")")? (
+	//	"switch" feedback=DSAFeedBackRule)?);
 	public MoCCMLMappingEventDefCSElements getMoCCMLMappingEventDefCSAccess() {
 		return pMoCCMLMappingEventDefCS;
 	}
@@ -1398,8 +1379,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum FeedBackKind:
-	//	force | // start= 'start Event' | start= 'startEvent' |start= 'Start Event' |
-	//	forbid;
+	//	force | forbid;
 	public FeedBackKindElements getFeedBackKindAccess() {
 		return eFeedBackKind;
 	}
@@ -1410,7 +1390,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 	//MoCCMLExpression:
 	//	{MoCCMLExpression}
-	//	//we need to add a keyWord to make the EclScopeProvider working :-/
+	//	// we need to add a keyWord to make the EclScopeProvider working :-/
 	//	"Expression" type=[CCSL::ExpressionDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
 	public MoCCMLExpressionElements getMoCCMLExpressionAccess() {
 		return pMoCCMLExpression;
@@ -1421,9 +1401,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MoCCMLRelation:
-	//	{MoCCMLRelation}
-	//	//we need to add a keyWord to make the EclScopeProvider working :-/
-	//	"Relation" type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (',' parameters+=ExpCS)* ')';
+	//	{MoCCMLRelation} isAnAssertion?="assert"? "Relation" type=[CCSL::RelationDeclaration] '(' parameters+=ExpCS (','
+	//	parameters+=ExpCS)* ')';
 	public MoCCMLRelationElements getMoCCMLRelationAccess() {
 		return pMoCCMLRelation;
 	}
@@ -1439,7 +1418,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * bullet[libraries to augment or override the OCL Standard Library]
 	// * bullet[package declarations for package-grouped declarations]
 	// * bullet[context declarations for independent declarations]
-	// */ CompleteOCLDocumentCS:
+	// */
+	//CompleteOCLDocumentCS:
 	//	ownedImports+=ImportCS* (ownedPackages+=PackageDeclarationCS | ownedContexts+=ContextDeclCS)*;
 	public CompleteOCLGrammarAccess.CompleteOCLDocumentCSElements getCompleteOCLDocumentCSAccess() {
 		return gaCompleteOCL.getCompleteOCLDocumentCSAccess();
@@ -1450,7 +1430,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal UNQUOTED_STRING: // Never forward parsed; just provides a placeholder
-	//	'£$%^£$%^' //  for reverse serialisation of embedded OCL 
+	//	'£$%^£$%^' // for reverse serialisation of embedded OCL
 	//;
 	public TerminalRule getUNQUOTED_STRINGRule() {
 		return gaCompleteOCL.getUNQUOTED_STRINGRule();
@@ -1478,14 +1458,15 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	///*
-	// * A Constraint such as 
+	// * A Constraint such as
 	// * 
 	// * oclText[IsNull('should be null') : self = null]
 	// * 
 	// * comprises at least the OCL specification of the constraint. The constraint may
 	// * additionally have a name which may be followed by a parenthesized expression defining an OCL
 	// * expression to be evaluated to provide an error message.
-	// */ ConstraintCS base::ConstraintCS:
+	// */
+	//ConstraintCS base::ConstraintCS:
 	//	(name=UnrestrictedName ('(' ownedMessageSpecification=SpecificationCS ')')?)? ':' ownedSpecification=SpecificationCS;
 	public CompleteOCLGrammarAccess.ConstraintCSElements getConstraintCSAccess() {
 		return gaCompleteOCL.getConstraintCSAccess();
@@ -1497,7 +1478,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 	///*
 	// * A Context declaration can be a Classifier, Operation of Property Context declaration.
-	// */ ContextDeclCS:
+	// */
+	//ContextDeclCS:
 	//	PropertyContextDeclCS
 	//	| ClassifierContextDeclCS
 	//	| OperationContextDeclCS;
@@ -1518,7 +1500,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * The operation may have parameters and may be declared static in which case there is no oclText[self].
 	// * 
 	// * For compatibility with invariants the definition may have a name that is never used.
-	// */ DefOperationCS:
+	// */
+	//DefOperationCS:
 	//	isStatic?='static'? 'def' UnrestrictedName? ':' ownedSignature=TemplateSignatureCS?
 	//	name=UnrestrictedName '(' (ownedParameters+=DefParameterCS (',' ownedParameters+=DefParameterCS)*)? ')' ':'
 	//	ownedType=super::TypeExpCS?
@@ -1550,7 +1533,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * The property may be declared static in which case there is no oclText[self].
 	// * 
 	// * For compatibility with invariants the definition may have a name that is never used.
-	// */ DefPropertyCS:
+	// */
+	//DefPropertyCS:
 	//	isStatic?='static'? 'def' UnrestrictedName? ':' name=UnrestrictedName ':' ownedType=super::TypeExpCS
 	//	'=' ownedSpecification=SpecificationCS;
 	public CompleteOCLGrammarAccess.DefPropertyCSElements getDefPropertyCSAccess() {
@@ -1579,14 +1563,15 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * oclText[post: size()@pre = size() + 1]
 	// * 
 	// * The operation declaration comprises at least an operation name, which must be qualified with at least a
-	// * class name. If used outside a package declaration, package name qualification is also needed. 
+	// * class name. If used outside a package declaration, package name qualification is also needed.
 	// * If the return type is omitted OclVoid is used.
 	// * The operation may also have operation parameters and template parameters.
 	// * The declaration may be followed by any number of preconditions,
-	// * and/or postconditions. It may also be followed by a body expression that defines the evaluation. 
+	// * and/or postconditions. It may also be followed by a body expression that defines the evaluation.
 	// * 
 	// * For compatibility with invariants the body expression may have a name that is never used.
-	// */ OperationContextDeclCS:
+	// */
+	//OperationContextDeclCS:
 	//	'context' ownedSignature=TemplateSignatureCS? ownedPathName=PathNameCS
 	//	'(' (ownedParameters+=ParameterCS (',' ownedParameters+=ParameterCS)*)? ')' ':' ownedType=super::TypeExpCS? ('pre'
 	//	ownedPreconditions+=ConstraintCS | 'post' ownedPostconditions+=ConstraintCS | 'body' UnrestrictedName? ':'
@@ -1600,7 +1585,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PackageDeclarationCS:
-	//	'package' ownedPathName=PathNameCS ('inv' ownedInvariants+=ConstraintCS)* ownedContexts+=ContextDeclCS* 'endpackage';
+	//	'package' ownedPathName=PathNameCS ('inv' ownedInvariants+=ConstraintCS)* ownedContexts+=ContextDeclCS* 'endpackage'
+	//;
 	public CompleteOCLGrammarAccess.PackageDeclarationCSElements getPackageDeclarationCSAccess() {
 		return gaCompleteOCL.getPackageDeclarationCSAccess();
 	}
@@ -1627,7 +1613,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * 
 	// * The property declaration comprises at least a property name and type.
 	// * The type must be qualified with at least a class name.
-	// * If used outside a package declaration, package name qualification is also needed. 
+	// * If used outside a package declaration, package name qualification is also needed.
 	// * The declaration may be followed by a derive constraint and/or an init expression.
 	// * 
 	// * A derive constraint provides an alternate mechanism for defining a class invariant;
@@ -1635,13 +1621,14 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * invariant the constraint provides an OCL expression that should always be true.
 	// * 
 	// * For a non-derived property, an init expression defines the value to be assigned to the property
-	// * when its containing object is first created. 
+	// * when its containing object is first created.
 	// * 
 	// * For a derived property, an init expression defines the evaluation of the property, which
 	// * may vary from access to access even for read-only properties.
 	// * 
 	// * NB. RoyalAndLoyal gratuitously names its derived values.
-	// */ PropertyContextDeclCS:
+	// */
+	//PropertyContextDeclCS:
 	//	'context' ownedPathName=PathNameCS ':' ownedType=super::TypeExpCS ('derive' UnrestrictedName? ':'
 	//	ownedDefaultExpressions+=SpecificationCS | 'init' UnrestrictedName? ':' ownedDefaultExpressions+=SpecificationCS)*;
 	public CompleteOCLGrammarAccess.PropertyContextDeclCSElements getPropertyContextDeclCSAccess() {
@@ -1662,9 +1649,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getSpecificationCSAccess().getRule();
 	}
 
-	////---------------------------------------------------------------------------------
-	////	Base overrides
-	////---------------------------------------------------------------------------------
+	//@Override
 	//TemplateSignatureCS base::TemplateSignatureCS:
 	//	'(' ownedParameters+=TypeParameterCS (',' ownedParameters+=TypeParameterCS)* ')' | '<'
 	//	ownedParameters+=TypeParameterCS (',' ownedParameters+=TypeParameterCS)* '>';
@@ -1676,6 +1661,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getTemplateSignatureCSAccess().getRule();
 	}
 
+	//@Override
 	//TypedRefCS base::TypedRefCS:
 	//	TypeLiteralCS | TypedTypeRefCS;
 	public CompleteOCLGrammarAccess.TypedRefCSElements getTypedRefCSAccess() {
@@ -1686,22 +1672,22 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypedRefCSAccess().getRule();
 	}
 
+	//@Override
 	//UnrestrictedName:
 	//	EssentialOCLUnrestrictedName
-	//	//| 'body'
-	//	//| 'context'
-	//	//| 'def'
-	//	//| 'derive'
-	//	//|	'endpackage'
+	//	// | 'body'
+	//	// | 'context'
+	//	// | 'def'
+	//	// | 'derive'
+	//	// |	'endpackage'
 	//	| 'import'
 	//	| 'include'
-	//	//| 'init'
-	//	//| 'inv'
-	//	| 'library'
-	//	//|	'package'
-	//	//|	'post'
-	//	//|	'pre'
-	//	//|	'static'
+	//	// | 'init'
+	//	// | 'inv'
+	//	| 'library'// |	'package'
+	//// |	'post'
+	//// |	'pre'
+	//// |	'static'
 	//;
 	public CompleteOCLGrammarAccess.UnrestrictedNameElements getUnrestrictedNameAccess() {
 		return gaCompleteOCL.getUnrestrictedNameAccess();
@@ -1711,9 +1697,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getUnrestrictedNameAccess().getRule();
 	}
 
-	////---------------------------------------------------------------------------------
-	////	EssentialOCL overrides
-	////---------------------------------------------------------------------------------
+	//@Override
 	//NavigatingArgExpCS essentialocl::ExpCS:
 	//	{OCLMessageArgCS} '?' | super::ExpCS;
 	public CompleteOCLGrammarAccess.NavigatingArgExpCSElements getNavigatingArgExpCSAccess() {
@@ -1724,6 +1708,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getNavigatingArgExpCSAccess().getRule();
 	}
 
+	//@Override
 	//NavigationOperatorName:
 	//	EssentialOCLNavigationOperatorName | CompleteOCLNavigationOperatorName;
 	public CompleteOCLGrammarAccess.NavigationOperatorNameElements getNavigationOperatorNameAccess() {
@@ -1734,6 +1719,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getNavigationOperatorNameAccess().getRule();
 	}
 
+	//@Override
 	//PrimitiveTypeIdentifier:
 	//	'Boolean'
 	//	| 'Integer'
@@ -1803,8 +1789,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 	///** <<<This is a join point for derived grammars - replace with a more disciplined grammar extensibility>>> */
 	//EssentialOCLInfixOperatorName:
-	//	'*' | '/' | '+' | '-' | '>' | '<' | '>=' | '<=' | '=' | '<>' | 'and' | 'and2' | 'implies' | 'implies2' | 'or' | 'or2'
-	//	| 'xor' | 'xor2';
+	//	'*' | '/' | '+' | '-' | '>' | '<' | '>=' | '<=' | '=' | '<>' | 'and' | 'and2' | 'implies' | 'implies2' | 'or' |
+	//	'or2' | 'xor' | 'xor2';
 	public EssentialOCLGrammarAccess.EssentialOCLInfixOperatorNameElements getEssentialOCLInfixOperatorNameAccess() {
 		return gaEssentialOCL.getEssentialOCLInfixOperatorNameAccess();
 	}
@@ -1883,6 +1869,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getEssentialOCLUnreservedNameAccess().getRule();
 	}
 
+	//@Override
 	//UnreservedName:
 	//	EssentialOCLUnreservedName;
 	public EssentialOCLGrammarAccess.UnreservedNameElements getUnreservedNameAccess() {
@@ -2207,8 +2194,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TypeNameExpCS:
-	//	ownedPathName=PathNameCS (ownedCurlyBracketedClause=CurlyBracketedClauseCS ('{' ownedPatternGuard=super::ExpCS
-	//	'}')?)?;
+	//	ownedPathName=PathNameCS (ownedCurlyBracketedClause=CurlyBracketedClauseCS ('{' ownedPatternGuard=super::ExpCS '}')?)?
+	//;
 	public EssentialOCLGrammarAccess.TypeNameExpCSElements getTypeNameExpCSAccess() {
 		return gaEssentialOCL.getTypeNameExpCSAccess();
 	}
@@ -2227,8 +2214,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getTypeExpWithoutMultiplicityCSAccess().getRule();
 	}
 
-	///* A prefixed let expression elaborates a let expression with zero or more unary prefix operators. */ PrefixedLetExpCS
-	//ExpCS:
+	///* A prefixed let expression elaborates a let expression with zero or more unary prefix operators. */
+	//PrefixedLetExpCS ExpCS:
 	//	{PrefixExpCS} name=UnaryOperatorName ownedRight=PrefixedLetExpCS | LetExpCS;
 	public EssentialOCLGrammarAccess.PrefixedLetExpCSElements getPrefixedLetExpCSAccess() {
 		return gaEssentialOCL.getPrefixedLetExpCSAccess();
@@ -2270,7 +2257,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	///* A name expression is a generalised rule for expressions that start with a name and which may be followed by square, round or
-	// * curly bracket clauses and optionally an @pre as well.*/ NameExpCS:
+	// * curly bracket clauses and optionally an @pre as well.*/
+	//NameExpCS:
 	//	ownedPathName=PathNameCS ownedSquareBracketedClauses+=SquareBracketedClauseCS*
 	//	ownedRoundBracketedClause=RoundBracketedClauseCS? ownedCurlyBracketedClause=CurlyBracketedClauseCS? (isPre?='@'
 	//	'pre')?;
@@ -2305,7 +2293,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getRoundBracketedClauseCSAccess().getRule();
 	}
 
-	///* A square bracket clause is a generalized rule for association class qualifiers and roles.*/ SquareBracketedClauseCS:
+	///* A square bracket clause is a generalized rule for association class qualifiers and roles.*/
+	//SquareBracketedClauseCS:
 	//	'[' ownedTerms+=super::ExpCS (',' ownedTerms+=super::ExpCS)* ']';
 	public EssentialOCLGrammarAccess.SquareBracketedClauseCSElements getSquareBracketedClauseCSAccess() {
 		return gaEssentialOCL.getSquareBracketedClauseCSAccess();
@@ -2316,7 +2305,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	///* A navigating argument is a generalized rule for the first argument in a round bracket clause. This is typically the first operation
-	// * parameter or an iterator. */ NavigatingArgCS:
+	// * parameter or an iterator. */
+	//NavigatingArgCS:
 	//	ownedNameExpression=super::NavigatingArgExpCS ('<-' ownedCoIterator=CoIteratorVariableCS ('='
 	//	ownedInitExpression=super::ExpCS)? | ':' ownedType=super::TypeExpCS ('<-' ownedCoIterator=CoIteratorVariableCS)? ('='
 	//	ownedInitExpression=super::ExpCS)? | (':' ownedType=super::TypeExpCS)? ('<-' ownedCoIterator=CoIteratorVariableCS)?
@@ -2331,6 +2321,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// Type-less init is an illegal infix expression
+	//
 	///* A navigating bar argument is a generalized rule for a bar-prefixed argument in a round bracket clause. This is typically the body of an iteration. */
 	//NavigatingBarArgCS NavigatingArgCS:
 	//	prefix='|' ownedNameExpression=super::NavigatingArgExpCS (':' ownedType=super::TypeExpCS ('='
@@ -2344,8 +2335,10 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// Type-less init is an illegal infix expression
+	//
 	///* A navigating comma argument is a generalized rule for non-first argument in a round bracket clause. These are typically non-first operation
-	// * parameters or a second iterator. */ NavigatingCommaArgCS NavigatingArgCS:
+	// * parameters or a second iterator. */
+	//NavigatingCommaArgCS NavigatingArgCS:
 	//	prefix=',' ownedNameExpression=super::NavigatingArgExpCS ('<-' ownedCoIterator=CoIteratorVariableCS ('='
 	//	ownedInitExpression=super::ExpCS)? | ':' ownedType=super::TypeExpCS ('<-' ownedCoIterator=CoIteratorVariableCS)? ('='
 	//	ownedInitExpression=super::ExpCS)? | (':' ownedType=super::TypeExpCS)? ('<-' ownedCoIterator=CoIteratorVariableCS)?
@@ -2359,6 +2352,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// Type-less init is an illegal infix expression
+	//
 	///* A navigating semi argument is a generalized rule for a semicolon prefixed argument in a round bracket clause. This is typically an iterate accumulator. */
 	//NavigatingSemiArgCS NavigatingArgCS:
 	//	prefix=';' ownedNameExpression=super::NavigatingArgExpCS (':' ownedType=super::TypeExpCS ('='
@@ -2384,7 +2378,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	//IfExpCS:
 	//	'if' ownedCondition=(super::ExpCS | PatternExpCS)
 	//	'then' ownedThenExpression=super::ExpCS
-	//	//	ifThenExpressions+=IfThenExpCS
+	////	ifThenExpressions+=IfThenExpCS
 	//	ownedIfThenExpressions+=ElseIfThenExpCS*
 	//	'else' ownedElseExpression=super::ExpCS
 	//	'endif';
@@ -2609,7 +2603,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * lookahead conflicts in simple lexers between a dot within a floating point number and the dot-dot in a CollectionLiteralPartCS. A
 	// * practical implementation should give high priority to a successful parse of INT ('.' INT)? (('e' | 'E') ('+' | '-')? INT)? than
 	// * to the unsuccessful partial parse of INT '..'. The type of the INT terminal is String to allow the floating point syntax to be used.
-	// */ NUMBER_LITERAL BigNumber:
+	// */
+	//NUMBER_LITERAL BigNumber:
 	//	INT;
 	public BaseGrammarAccess.NUMBER_LITERALElements getNUMBER_LITERALAccess() {
 		return gaBase.getNUMBER_LITERALAccess();
@@ -2620,6 +2615,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// EssentialOCLTokenSource pieces this together ('.' INT)? (('e' | 'E') ('+' | '-')? INT)?;
+	//
 	//StringLiteral:
 	//	SINGLE_QUOTED_STRING;
 	public BaseGrammarAccess.StringLiteralElements getStringLiteralAccess() {

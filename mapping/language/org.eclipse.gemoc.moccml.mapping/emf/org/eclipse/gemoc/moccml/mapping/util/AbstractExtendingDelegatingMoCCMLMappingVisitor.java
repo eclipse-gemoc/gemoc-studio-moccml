@@ -58,7 +58,7 @@ public abstract class AbstractExtendingDelegatingMoCCMLMappingVisitor<R, C, D ex
 	@Override
 	public R visitMoCCMLMappingDocument(MoCCMLMappingDocument object) {
 		// TODO Auto-generated method stub
-		return null;
+		return visitCompleteOCLDocumentCS(object);
 	}
 
 	
@@ -89,12 +89,12 @@ public abstract class AbstractExtendingDelegatingMoCCMLMappingVisitor<R, C, D ex
 	@Override
 	public R visitMoCCMLMappingDefCS(MoCCMLMappingDefCS eclDefCS) {
 		// TODO Auto-generated method stub
-		return null;
+		return visitDefCS(eclDefCS);
 	}
 	@Override
 	public R visitMoCCMLMappingEventDefCS(MoCCMLMappingEventDefCS eclDefCS) {
 		// TODO Auto-generated method stub
-		return null;
+		return visitDefCS(eclDefCS);
 	}
 	@Override
 	public R visitMoCCMLMappingBlockDefCS(MoCCMLMappingBlockDefCS eclDefCS) {

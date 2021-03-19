@@ -115,7 +115,7 @@ public class EclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMoCCMLExpressionAccess().getGroup(), "rule__MoCCMLExpression__Group__0");
 					put(grammarAccess.getMoCCMLExpressionAccess().getGroup_5(), "rule__MoCCMLExpression__Group_5__0");
 					put(grammarAccess.getMoCCMLRelationAccess().getGroup(), "rule__MoCCMLRelation__Group__0");
-					put(grammarAccess.getMoCCMLRelationAccess().getGroup_5(), "rule__MoCCMLRelation__Group_5__0");
+					put(grammarAccess.getMoCCMLRelationAccess().getGroup_6(), "rule__MoCCMLRelation__Group_6__0");
 					put(grammarAccess.getCompleteOCLDocumentCSAccess().getGroup(), "rule__CompleteOCLDocumentCS__Group__0");
 					put(grammarAccess.getClassifierContextDeclCSAccess().getGroup(), "rule__ClassifierContextDeclCS__Group__0");
 					put(grammarAccess.getClassifierContextDeclCSAccess().getGroup_4_0(), "rule__ClassifierContextDeclCS__Group_4_0__0");
@@ -281,9 +281,10 @@ public class EclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMoCCMLExpressionAccess().getTypeAssignment_2(), "rule__MoCCMLExpression__TypeAssignment_2");
 					put(grammarAccess.getMoCCMLExpressionAccess().getParametersAssignment_4(), "rule__MoCCMLExpression__ParametersAssignment_4");
 					put(grammarAccess.getMoCCMLExpressionAccess().getParametersAssignment_5_1(), "rule__MoCCMLExpression__ParametersAssignment_5_1");
-					put(grammarAccess.getMoCCMLRelationAccess().getTypeAssignment_2(), "rule__MoCCMLRelation__TypeAssignment_2");
-					put(grammarAccess.getMoCCMLRelationAccess().getParametersAssignment_4(), "rule__MoCCMLRelation__ParametersAssignment_4");
-					put(grammarAccess.getMoCCMLRelationAccess().getParametersAssignment_5_1(), "rule__MoCCMLRelation__ParametersAssignment_5_1");
+					put(grammarAccess.getMoCCMLRelationAccess().getIsAnAssertionAssignment_1(), "rule__MoCCMLRelation__IsAnAssertionAssignment_1");
+					put(grammarAccess.getMoCCMLRelationAccess().getTypeAssignment_3(), "rule__MoCCMLRelation__TypeAssignment_3");
+					put(grammarAccess.getMoCCMLRelationAccess().getParametersAssignment_5(), "rule__MoCCMLRelation__ParametersAssignment_5");
+					put(grammarAccess.getMoCCMLRelationAccess().getParametersAssignment_6_1(), "rule__MoCCMLRelation__ParametersAssignment_6_1");
 					put(grammarAccess.getCompleteOCLDocumentCSAccess().getOwnedImportsAssignment_0(), "rule__CompleteOCLDocumentCS__OwnedImportsAssignment_0");
 					put(grammarAccess.getCompleteOCLDocumentCSAccess().getOwnedPackagesAssignment_1_0(), "rule__CompleteOCLDocumentCS__OwnedPackagesAssignment_1_0");
 					put(grammarAccess.getCompleteOCLDocumentCSAccess().getOwnedContextsAssignment_1_1(), "rule__CompleteOCLDocumentCS__OwnedContextsAssignment_1_1");

@@ -14,6 +14,12 @@
  */
 package org.eclipse.gemoc.moccml.mapping.xtext.cs2pivot;
 
+import java.util.ArrayList;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EContentsEList;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.Case;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.DSAFeedback;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingBlockDefCS;
@@ -22,15 +28,23 @@ import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingEventDefCS;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 import org.eclipse.jdt.annotation.NonNull;
+import org.eclipse.jdt.annotation.Nullable;
+import org.eclipse.ocl.pivot.BooleanLiteralExp;
 import org.eclipse.ocl.pivot.ExpressionInOCL;
 import org.eclipse.ocl.pivot.PivotPackage;
+import org.eclipse.ocl.pivot.PrimitiveType;
 import org.eclipse.ocl.pivot.Property;
 import org.eclipse.ocl.pivot.utilities.PivotUtil;
 import org.eclipse.ocl.xtext.base.cs2as.CS2ASConversion;
 import org.eclipse.ocl.xtext.base.cs2as.Continuation;
+import org.eclipse.ocl.xtext.base.cs2as.ValidationDiagnostic;
 import org.eclipse.ocl.xtext.basecs.TypedRefCS;
+import org.eclipse.ocl.xtext.completeoclcs.ClassifierContextDeclCS;
 import org.eclipse.ocl.xtext.completeoclcs.CompleteOCLDocumentCS;
+import org.eclipse.ocl.xtext.essentialoclcs.ContextCS;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpSpecificationCS;
+import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 public class ECLContainmentVisitor extends AbstractECLContainmentVisitor
 {
@@ -62,6 +76,10 @@ public class ECLContainmentVisitor extends AbstractECLContainmentVisitor
 	}	
 	@Override
 	public Continuation<?> visitMoCCMLMappingEventDefCS(MoCCMLMappingEventDefCS object) {
+	//	super.visitDefCS(object);
+		
+		
+		
 		@NonNull Property contextProperty = refreshNamedElement(Property.class, PivotPackage.Literals.PROPERTY, object);
 		contextProperty.setIsDerived(true);
 		contextProperty.setIsReadOnly(true);
@@ -70,6 +88,27 @@ public class ECLContainmentVisitor extends AbstractECLContainmentVisitor
 		contextProperty.setIsResolveProxies(false);
 		ExpressionInOCL pivotSpecification = PivotUtil.getPivot(ExpressionInOCL.class, object.getOwnedSpecification());
 		contextProperty.setOwnedExpression(pivotSpecification);
+
+		contextProperty.setType(context.getStandardLibrary().getOclAnyType());
+		
+//		@Nullable
+//		ExpressionInOCL pivotCond = context.refreshModelElement(ExpressionInOCL.class, PivotPackage.Literals.EXPRESSION_IN_OCL, object.getCondition());
+//		pivotCond.setOwningConstraint(pivotSpecification.getOwningConstraint());
+//		
+//		//PivotUtil.getPivot(ExpressionInOCL.class, object.getCondition());
+////		object.getCondition().setPivot(pivotCond);
+//		context.installPivotUsage(object.getCondition(),pivotCond);
+////		@NonNull
+////		ExpressionInOCL conditionElement = context.refreshModelElement(ExpressionInOCL.class, PivotPackage.Literals.EXPRESSION_IN_OCL, object.getCondition());
+////		context.refreshContextVariable(object.getCondition(), pivotCond);
+//		//		visitExpCS(object.getCondition());
+		
+		
+		@NonNull
+		BooleanLiteralExp pivotCond = context.refreshModelElement(BooleanLiteralExp.class, PivotPackage.Literals.BOOLEAN_LITERAL_EXP, object.getCondition());
+		context.installPivotUsage(object.getCondition(),pivotCond);
+		//visitContextCS((ContextCS) object.getCondition());
+
 		
 		if (object instanceof MoCCMLMappingEventDefCS){
 				visitMoCCMLMappingEventContainment((MoCCMLMappingEventDefCS) object);

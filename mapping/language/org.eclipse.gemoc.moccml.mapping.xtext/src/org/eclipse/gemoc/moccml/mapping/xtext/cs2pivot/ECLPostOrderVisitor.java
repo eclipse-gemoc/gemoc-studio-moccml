@@ -17,13 +17,22 @@
 
 package org.eclipse.gemoc.moccml.mapping.xtext.cs2pivot;
 
+import java.util.ArrayList;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingTimeBase;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.pivot.AnyType;
+import org.eclipse.ocl.pivot.BooleanLiteralExp;
 import org.eclipse.ocl.pivot.Comment;
+import org.eclipse.ocl.pivot.ExpressionInOCL;
+import org.eclipse.ocl.pivot.NamedElement;
+import org.eclipse.ocl.pivot.OCLExpression;
+import org.eclipse.ocl.pivot.PivotPackage;
 import org.eclipse.ocl.pivot.Type;
 import org.eclipse.ocl.pivot.internal.PivotFactoryImpl;
 import org.eclipse.ocl.pivot.utilities.PivotUtil;
@@ -31,9 +40,12 @@ import org.eclipse.ocl.xtext.base.cs2as.BasicContinuation;
 import org.eclipse.ocl.xtext.base.cs2as.CS2ASConversion;
 import org.eclipse.ocl.xtext.base.cs2as.Continuation;
 import org.eclipse.ocl.xtext.base.cs2as.SingleContinuation;
+import org.eclipse.ocl.xtext.base.cs2as.ValidationDiagnostic;
 import org.eclipse.ocl.xtext.completeoclcs.ClassifierContextDeclCS;
 import org.eclipse.ocl.xtext.completeoclcs.DefPropertyCS;
 import org.eclipse.ocl.xtext.essentialoclcs.ExpCS;
+import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 public class ECLPostOrderVisitor
 	extends AbstractECLPostOrderVisitor
@@ -76,6 +88,8 @@ public class ECLPostOrderVisitor
 //			eventType.getExtenders().addAll(anyType.getExtenders());
 			csElement.setPivot(anyType);
 	
+
+			
 			return null;
 		}
 	}
@@ -106,40 +120,35 @@ public class ECLPostOrderVisitor
 	}
 	
 	
-//	@Override
-//	public Continuation<?> visitMoCCMLMappingDefCS(MoCCMLMappingDefCS object)
-//	{
-//		return new MoCCMLMappingDefCSContinuation(context, object);
-//	}
-//
-//	protected static class MoCCMLMappingDefCSContinuation extends SingleContinuation<MoCCMLMappingDefCS>
-//	{
-//		public MoCCMLMappingDefCSContinuation(CS2ASConversion context, MoCCMLMappingDefCS csElement) {
-//			super(context, null, null, csElement, context.getTypesHaveSignaturesInterDependency());
-//		}
-//		
-//		@Override
-//		public BasicContinuation<?> execute() {
-//			
-//			if (csElement.getCondition() != null){
-//				ExpCS exp= csElement.getCondition();
-//		
-//				ClassifierContextDeclCS csContext = ((DefPropertyCS)csElement).getOwningClassifierContextDecl();
-//				/*ExpressionInOCL pivotExp = PivotUtil.getExpressionInOCL((NamedElement)csContext.getPivot(), csElement.getCondition().toString());
-//				if(pivotExp != null){
-//					OCLExpression ocle = pivotExp.getBodyExpression();
-//					pivotExp.setBodyExpression(ocle);
-//					context.installPivotUsage(exp, ocle);
-//					context.setContextVariable(pivotExp, pivotExp.getContextVariable().getName(), pivotExp.getType());
-//					pivotExp.getContextVariable().setInitExpression(ocle);
+	@Override
+	public Continuation<?> visitMoCCMLMappingDefCS(MoCCMLMappingDefCS object)
+	{
+		return new MoCCMLMappingDefCSContinuation(context, object);
+	}
+
+	protected static class MoCCMLMappingDefCSContinuation extends SingleContinuation<MoCCMLMappingDefCS>
+	{
+		public MoCCMLMappingDefCSContinuation(CS2ASConversion context, MoCCMLMappingDefCS csElement) {
+			super(context, null, null, csElement, context.getTypesHaveSignaturesInterDependency());
+		}
+		
+		@Override
+		public BasicContinuation<?> execute() {
+			
+			if (csElement.getCondition() != null){
+				ExpCS exp= csElement.getCondition();
+		
+				ClassifierContextDeclCS csContext = ((DefPropertyCS)csElement).getOwningClassifierContextDecl();
+				BooleanLiteralExp pivotExp = PivotUtil.getPivot(BooleanLiteralExp.class, csElement.getCondition());
+				if(pivotExp != null){
 //					context.refreshModelElement(ExpressionInOCL.class, PivotPackage.Literals.EXPRESSION_IN_OCL,exp);
-//					context.installPivotUsage(exp, pivotExp);
-//					exp.setPivot(pivotExp);
-//				}*/
-//			}
-//			return null;
-//		}
-//	}
+					context.installPivotUsage(exp, pivotExp);
+					exp.setPivot(pivotExp);
+				}
+			}
+			return null;
+		}
+	}
 
 	
 	@Override

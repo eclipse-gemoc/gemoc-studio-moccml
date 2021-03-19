@@ -18,6 +18,8 @@ package org.eclipse.gemoc.moccml.mapping.xtext.cs2pivot;
 
 import java.util.ArrayList;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.BlockType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.EventType;
 import org.eclipse.gemoc.moccml.mapping.moccml_mapping.MoCCMLMappingDefCS;
@@ -34,7 +36,10 @@ import org.eclipse.ocl.xtext.base.cs2as.BasicContinuation;
 import org.eclipse.ocl.xtext.base.cs2as.CS2ASConversion;
 import org.eclipse.ocl.xtext.base.cs2as.Continuation;
 import org.eclipse.ocl.xtext.base.cs2as.SingleContinuation;
+import org.eclipse.ocl.xtext.base.cs2as.ValidationDiagnostic;
 import org.eclipse.ocl.xtext.basecs.BaseCSPackage;
+import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 
 public class ECLPreOrderVisitor
 	extends AbstractECLPreOrderVisitor
@@ -72,6 +77,8 @@ public class ECLPreOrderVisitor
 				c.setBody("OCL_Any is extended here as event !");
 				anyType.getAnnotatingComments().add(c);				
 				csElement.setPivot(anyType);
+				
+
 			
 			return null;
 		}

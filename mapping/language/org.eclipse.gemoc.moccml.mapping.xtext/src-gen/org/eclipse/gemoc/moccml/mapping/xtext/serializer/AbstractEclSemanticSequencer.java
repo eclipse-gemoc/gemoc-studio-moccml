@@ -762,7 +762,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	 *     NavigatingArgExpCS returns MoCCMLRelation
 	 *
 	 * Constraint:
-	 *     (type=[RelationDeclaration|ID] parameters+=ExpCS parameters+=ExpCS*)
+	 *     (isAnAssertion?='assert'? type=[RelationDeclaration|ID] parameters+=ExpCS parameters+=ExpCS*)
 	 */
 	protected void sequence_MoCCMLRelation(ISerializationContext context, MoCCMLRelation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
