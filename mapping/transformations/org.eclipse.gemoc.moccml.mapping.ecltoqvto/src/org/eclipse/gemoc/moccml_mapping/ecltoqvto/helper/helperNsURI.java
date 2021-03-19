@@ -62,7 +62,7 @@ public class helperNsURI {
 	      }
 	   
 	    }
-		System.error.println("resource path not found: "+res+"\n"+uri.toPlatformString(true));
+		System.out.println("resource path not found: "+res+"\n"+uri.toPlatformString(true));
 	    return null; 
 	}
 	
