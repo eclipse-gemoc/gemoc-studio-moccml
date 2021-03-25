@@ -35,7 +35,7 @@ which accompanies this distribution, and is available at http://www.eclipse.org/
    </license>
 
    <url>
-      <discovery label="2020-03" url="http://download.eclipse.org/releases/2020-03"/>
+      <discovery label="2020-03" url="http://download.eclipse.org/releases/2020-12"/>
       <discovery label="The Eclipse Project Updates" url="http://download.eclipse.org/eclipse/updates/4.15"/>
       <discovery label="Acceleo" url="http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.2"/>
       <discovery label="Xtext All In One - Releases" url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
