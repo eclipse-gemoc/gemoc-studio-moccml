@@ -23,6 +23,8 @@
 		<timesquare.p2.url>http://timesquare.inria.fr/update_site/2020</timesquare.p2.url>
 		<diverse-commons.p2.url>http://www.kermeta.org/diverse-commons/updates/latest</diverse-commons.p2.url>
 		<efxclipse.p2.url>https://download.eclipse.org/efxclipse/updates-released/3.7.0/site</efxclipse.p2.url>
+		<!-- for advanced sirius features such as Sirius ELK support , version needs to be aligned with the one  in ${eclipse.release.p2.url}-->
+		<sirius.p2.url>https://download.eclipse.org/sirius/updates/releases/6.4.1/2020-09/</sirius.p2.url>
 		
 	</properties>
 	<modules>
@@ -65,6 +67,11 @@
             <layout>p2</layout>
             <url>${elk.p2.url}</url>
         </repository>
+		<repository>
+			<id>Sirius</id>
+			<layout>p2</layout>
+			<url>${sirius.p2.url}</url>
+		</repository>
 		<repository> <!-- used in some tests -->
             <id>Groovy4Eclipse</id>
             <layout>p2</layout>
