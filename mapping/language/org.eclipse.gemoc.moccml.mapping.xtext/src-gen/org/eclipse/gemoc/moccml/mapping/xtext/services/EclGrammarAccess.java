@@ -119,8 +119,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		//	ownedMultiplicity=MultiplicityCS?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase) ownedMultiplicity=MultiplicityCS
-		//?
+		//(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase)
+		//ownedMultiplicity=MultiplicityCS?
 		public Group getGroup() { return cGroup; }
 
 		//(TypeNameExpCS | TypeLiteralCS | CollectionPatternCS | EventType | BlockType | Timebase)
@@ -1467,7 +1467,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * expression to be evaluated to provide an error message.
 	// */
 	//ConstraintCS base::ConstraintCS:
-	//	(name=UnrestrictedName ('(' ownedMessageSpecification=SpecificationCS ')')?)? ':' ownedSpecification=SpecificationCS;
+	//	(name=UnrestrictedName ('(' ownedMessageSpecification=SpecificationCS ')')?)? ':' ownedSpecification=SpecificationCS
+	//;
 	public CompleteOCLGrammarAccess.ConstraintCSElements getConstraintCSAccess() {
 		return gaCompleteOCL.getConstraintCSAccess();
 	}
@@ -1936,8 +1937,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//CollectionTypeCS:
-	//	name=CollectionTypeIdentifier ('(' ownedType=TypeExpWithoutMultiplicityCS ownedCollectionMultiplicity=MultiplicityCS?
-	//	')')?;
+	//	name=CollectionTypeIdentifier ('(' ownedType=TypeExpWithoutMultiplicityCS ownedCollectionMultiplicity=MultiplicityCS
+	//	? ')')?;
 	public EssentialOCLGrammarAccess.CollectionTypeCSElements getCollectionTypeCSAccess() {
 		return gaEssentialOCL.getCollectionTypeCSAccess();
 	}
@@ -2194,8 +2195,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TypeNameExpCS:
-	//	ownedPathName=PathNameCS (ownedCurlyBracketedClause=CurlyBracketedClauseCS ('{' ownedPatternGuard=super::ExpCS '}')?)?
-	//;
+	//	ownedPathName=PathNameCS (ownedCurlyBracketedClause=CurlyBracketedClauseCS ('{' ownedPatternGuard=super::ExpCS '}')?
+	//	)?;
 	public EssentialOCLGrammarAccess.TypeNameExpCSElements getTypeNameExpCSAccess() {
 		return gaEssentialOCL.getTypeNameExpCSAccess();
 	}

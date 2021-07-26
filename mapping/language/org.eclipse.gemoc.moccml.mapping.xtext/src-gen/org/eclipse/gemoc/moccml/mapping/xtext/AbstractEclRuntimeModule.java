@@ -5,7 +5,6 @@ package org.eclipse.gemoc.moccml.mapping.xtext;
 
 import java.util.Properties;
 
-import org.eclipse.gemoc.moccml.mapping.xtext.validation.EclPivotResourceValidator;
 import org.eclipse.xtext.Constants;
 
 import com.google.inject.Binder;
@@ -33,71 +32,6 @@ public abstract class AbstractEclRuntimeModule extends org.eclipse.xtext.service
 		if (properties == null || properties.getProperty(Constants.FILE_EXTENSIONS) == null)
 			binder.bind(String.class).annotatedWith(Names.named(Constants.FILE_EXTENSIONS)).toInstance("ecl,moccmlmapping");
 	}
-	
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer> bindICrossReferenceSerializer() {
-			return org.eclipse.ocl.xtext.base.serializer.BaseCrossReferenceSerializer.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.validation.IDiagnosticConverter> bindIDiagnosticConverter() {
-			return org.eclipse.ocl.xtext.base.utilities.PivotDiagnosticConverter.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.resource.IFragmentProvider> bindIFragmentProvider() {
-			return org.eclipse.ocl.xtext.base.cs2as.BaseFragmentProvider.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.serializer.sequencer.IHiddenTokenSequencer> bindIHiddenTokenSequencer() {
-			return org.eclipse.ocl.xtext.base.serializer.BaseHiddenTokenSequencer.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.linking.ILinker> bindILinker() {
-			return org.eclipse.ocl.xtext.base.utilities.CS2ASLinker.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.linking.ILinkingDiagnosticMessageProvider> bindILinkingDiagnosticMessageProvider() {
-			return org.eclipse.ocl.xtext.base.services.BaseLinkingDiagnosticMessageProvider.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.linking.ILinkingService> bindILinkingService() {
-			return org.eclipse.ocl.xtext.base.services.BaseLinkingService.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.naming.IQualifiedNameConverter> bindIQualifiedNameConverter() {
-			return org.eclipse.ocl.xtext.base.services.BaseQualifiedNameConverter.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
-			return org.eclipse.ocl.xtext.base.services.BaseQualifiedNameProvider.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.resource.IResourceServiceProvider> bindIResourceServiceProvider() {
-			return org.eclipse.ocl.xtext.base.services.PivotResourceServiceProvider.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.validation.IResourceValidator> bindIResourceValidator() {
-			return EclPivotResourceValidator.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.conversion.IValueConverterService> bindIValueConverterService() {
-			return org.eclipse.ocl.xtext.base.services.BaseValueConverterService.class;
-		}
-
-		// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
-		public Class<? extends org.eclipse.xtext.resource.XtextResource> bindXtextResource() {
-			return org.eclipse.ocl.xtext.essentialocl.utilities.EssentialOCLCSResource.class;
-		}
 	
 	// contributed by org.eclipse.xtext.generator.grammarAccess.GrammarAccessFragment
 	public java.lang.ClassLoader bindClassLoaderToInstance() {
@@ -209,6 +143,69 @@ public abstract class AbstractEclRuntimeModule extends org.eclipse.xtext.service
 		binder.bind(org.eclipse.xtext.resource.IResourceDescriptions.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider.PERSISTED_DESCRIPTIONS)).to(org.eclipse.xtext.resource.impl.ResourceSetBasedResourceDescriptions.class);
 	}
 
-	
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.serializer.tokens.ICrossReferenceSerializer> bindICrossReferenceSerializer() {
+		return org.eclipse.ocl.xtext.base.serializer.BaseCrossReferenceSerializer.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.validation.IDiagnosticConverter> bindIDiagnosticConverter() {
+		return org.eclipse.ocl.xtext.base.utilities.PivotDiagnosticConverter.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.resource.IFragmentProvider> bindIFragmentProvider() {
+		return org.eclipse.ocl.xtext.base.cs2as.BaseFragmentProvider.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.serializer.sequencer.IHiddenTokenSequencer> bindIHiddenTokenSequencer() {
+		return org.eclipse.ocl.xtext.base.serializer.BaseHiddenTokenSequencer.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.linking.ILinker> bindILinker() {
+		return org.eclipse.ocl.xtext.base.utilities.CS2ASLinker.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.linking.ILinkingDiagnosticMessageProvider> bindILinkingDiagnosticMessageProvider() {
+		return org.eclipse.ocl.xtext.base.services.BaseLinkingDiagnosticMessageProvider.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.linking.ILinkingService> bindILinkingService() {
+		return org.eclipse.ocl.xtext.base.services.BaseLinkingService.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameConverter> bindIQualifiedNameConverter() {
+		return org.eclipse.ocl.xtext.base.services.BaseQualifiedNameConverter.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return org.eclipse.ocl.xtext.base.services.BaseQualifiedNameProvider.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.resource.IResourceServiceProvider> bindIResourceServiceProvider() {
+		return org.eclipse.ocl.xtext.base.services.PivotResourceServiceProvider.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.validation.IResourceValidator> bindIResourceValidator() {
+		return org.eclipse.gemoc.moccml.mapping.xtext.validation.EclPivotResourceValidator.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.conversion.IValueConverterService> bindIValueConverterService() {
+		return org.eclipse.ocl.xtext.base.services.BaseValueConverterService.class;
+	}
+
+	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
+	public Class<? extends org.eclipse.xtext.resource.XtextResource> bindXtextResource() {
+		return org.eclipse.ocl.xtext.essentialocl.utilities.EssentialOCLCSResource.class;
+	}
 
 }
