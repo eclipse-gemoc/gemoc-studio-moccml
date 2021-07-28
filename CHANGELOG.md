@@ -1,5 +1,25 @@
 # Changelog
 
+## v3.3.0 (28/07/2021)
+
+#### Enhancements:
+
+- [**enhancement**] major improve in readability of ECL files. defs can now be used to avoid redundant let..in clauses [#14](https://github.com/eclipse/gemoc-studio-moccml/pull/14)
+- [**enhancement**] Major performance improvement [#16](https://github.com/eclipse/gemoc-studio-moccml/pull/16)
+- [**enhancement**] Add Sirius ELK support [#18](https://github.com/eclipse/gemoc-studio-moccml/pull/18)
+
+#### Bug Fixes:
+
+- [**bug**] Ocl 6.11 bump fix [#15](https://github.com/eclipse/gemoc-studio-moccml/pull/15)
+
+#### Version upgrades
+
+- [**bump**] Bump eclipse 2020 12 [#17](https://github.com/eclipse/gemoc-studio-moccml/pull/17)
+- [**bump**] Bump to Eclipse 2021-06 [#19](https://github.com/eclipse/gemoc-studio-moccml/pull/19)
+- [**bump**] Bump to Eclipse 2020-03 [#13](https://github.com/eclipse/gemoc-studio-moccml/pull/13)
+
+---
+
 ## v3.2.0 (16/06/2020)
 
 #### Enhancements:
