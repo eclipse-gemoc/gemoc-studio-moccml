@@ -4,7 +4,7 @@ Bundle-Name: StateMachineSolverExtension
 Bundle-SymbolicName: org.eclipse.gemoc.moccml.constraint.ccslkernel.solver.extension.statemachine;singleton:=true
 Bundle-Version: 0.1.1.qualifier
 Bundle-Activator: org.eclipse.gemoc.moccml.constraint.ccslkernel.solver.extension.statemachine.Activator
-Bundle-Vendor: Aoste INRIA/I3S
+Bundle-Vendor: Eclipse GEMOC Project
 Require-Bundle: org.eclipse.core.runtime,
  fr.inria.aoste.timesquare.ccslkernel.model;bundle-version="1.0.0",
  fr.inria.aoste.timesquare.ccslkernel.modelunfolding;bundle-version="1.0.0",

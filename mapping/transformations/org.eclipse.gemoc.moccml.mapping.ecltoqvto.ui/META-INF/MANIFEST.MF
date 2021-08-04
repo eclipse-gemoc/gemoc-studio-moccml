@@ -7,7 +7,7 @@ Require-Bundle: org.eclipse.ui,
  fr.inria.aoste.timesquare.ccslkernel.parser.xtext,
  org.eclipse.xtext,
  org.eclipse.gemoc.moccml.mapping.xtext
-Bundle-Vendor: Aoste Inria/I3S
+Bundle-Vendor: Eclipse GEMOC Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
 Bundle-Name: ecl to qvto ui

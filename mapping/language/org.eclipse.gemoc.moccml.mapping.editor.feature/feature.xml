@@ -13,7 +13,7 @@
       id="org.eclipse.gemoc.moccml.mapping.editor.feature"
       label="ECL model and editor"
       version="1.0.0.qualifier"
-      provider-name="Aoste INRIA / I3S">
+      provider-name="Eclipse GEMOC Project">
 
    <description url="http://timesquare.inria.fr/ecl">
       the ECL language and transformation to specify the concurrent
@@ -42,7 +42,6 @@ and timing aspect of your language ! (Ie. moccml.mapings)
       <discovery label="Acceleo" url="http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.2"/>
       <discovery label="Xtext All In One - Releases" url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
       <discovery label="TimeSquare" url="http://timesquare.inria.fr/update_site/photon"/>
-      
    </url>
 
    <requires>

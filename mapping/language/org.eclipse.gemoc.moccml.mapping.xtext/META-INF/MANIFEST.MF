@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.gemoc.moccml.mapping.xtext
-Bundle-Vendor: Aoste INRIA/I3S
+Bundle-Vendor: Eclipse GEMOC Project
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.eclipse.gemoc.moccml.mapping.xtext;singleton:=true
 Bundle-ActivationPolicy: lazy
