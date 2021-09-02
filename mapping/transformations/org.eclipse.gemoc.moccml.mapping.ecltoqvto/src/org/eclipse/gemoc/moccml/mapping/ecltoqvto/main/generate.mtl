@@ -527,7 +527,7 @@ main() {
 			type := seqOfRelationDeclaration->select(rd | rd.name = "[expr.oclAsType(MoCCMLRelation).type.name/]")->first();
 			[expr.createVarFromDefs()/]
 			[expr.createVarFromLets()/]
-			[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)->select(l  | true)]
+			[let allLetExpr : Sequence(LetExpCS) = expr.ancestors(ConstraintCS)->first().oclAsType(EObject).eAllContents(LetExpCS)]
 			[for (p : ExpCS | expr.oclAsType(MoCCMLRelation).parameters)]
 				[let paramNumber : EInt = i]
 				bindings += object TimeModel::CCSLModel::ClockExpressionAndRelation::Binding{
