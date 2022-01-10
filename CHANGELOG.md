@@ -1,5 +1,17 @@
 # Changelog
 
+## v3.4.0 (10/01/2022)
+
+#### Version upgrades
+
+- [**releng**][**bump**] Bump Studio to 3.4.0 [#20](https://github.com/eclipse/gemoc-studio-moccml/pull/20)
+
+#### Release Engineering
+
+- [**releng**] Fixes usage of GEMOC updatesite with recent Eclipse package [#21](https://github.com/eclipse/gemoc-studio-moccml/pull/21)
+
+---
+
 ## v3.3.0 (28/07/2021)
 
 #### Enhancements:
@@ -14,8 +26,8 @@
 
 #### Version upgrades
 
-- [**bump**] Bump eclipse 2020 12 [#17](https://github.com/eclipse/gemoc-studio-moccml/pull/17)
 - [**bump**] Bump to Eclipse 2021-06 [#19](https://github.com/eclipse/gemoc-studio-moccml/pull/19)
+- [**bump**] Bump eclipse 2020 12 [#17](https://github.com/eclipse/gemoc-studio-moccml/pull/17)
 - [**bump**] Bump to Eclipse 2020-03 [#13](https://github.com/eclipse/gemoc-studio-moccml/pull/13)
 
 ---
