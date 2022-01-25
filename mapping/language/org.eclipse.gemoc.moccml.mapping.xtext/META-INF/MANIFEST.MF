@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.eclipse.gemoc.moccml.mapping.xtext;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.gemoc.moccml.mapping,
- org.eclipse.xtext;bundle-version="[2.21.0,3.0.0)";visibility:=reexport,
+ org.eclipse.xtext;bundle-version="[2.25.0,3.0.0)";visibility:=reexport,
  org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
  org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional;visibility:=reexport,
  org.eclipse.xtext.generator,

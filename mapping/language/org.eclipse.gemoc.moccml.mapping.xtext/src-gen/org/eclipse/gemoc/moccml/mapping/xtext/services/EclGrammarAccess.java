@@ -1448,7 +1448,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ClassifierContextDeclCS:
 	//	'context' ownedSignature=TemplateSignatureCS? selfName=UnrestrictedName?
-	//	ownedPathName=PathNameCS ('inv' ownedInvariants+=ConstraintCS | ownedDefinitions+=super::DefCS)+;
+	//	ownedPathName=UnreservedPathNameCS ('inv' ownedInvariants+=ConstraintCS | ownedDefinitions+=super::DefCS)+;
 	public CompleteOCLGrammarAccess.ClassifierContextDeclCSElements getClassifierContextDeclCSAccess() {
 		return gaCompleteOCL.getClassifierContextDeclCSAccess();
 	}
@@ -1573,7 +1573,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * For compatibility with invariants the body expression may have a name that is never used.
 	// */
 	//OperationContextDeclCS:
-	//	'context' ownedSignature=TemplateSignatureCS? ownedPathName=PathNameCS
+	//	'context' ownedSignature=TemplateSignatureCS? ownedPathName=UnreservedPathNameCS
 	//	'(' (ownedParameters+=ParameterCS (',' ownedParameters+=ParameterCS)*)? ')' ':' ownedType=super::TypeExpCS? ('pre'
 	//	ownedPreconditions+=ConstraintCS | 'post' ownedPostconditions+=ConstraintCS | 'body' UnrestrictedName? ':'
 	//	ownedBodies+=SpecificationCS)*;
@@ -1586,8 +1586,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PackageDeclarationCS:
-	//	'package' ownedPathName=PathNameCS ('inv' ownedInvariants+=ConstraintCS)* ownedContexts+=ContextDeclCS* 'endpackage'
-	//;
+	//	'package' ownedPathName=UnreservedPathNameCS ('inv' ownedInvariants+=ConstraintCS)* ownedContexts+=ContextDeclCS*
+	//	'endpackage';
 	public CompleteOCLGrammarAccess.PackageDeclarationCSElements getPackageDeclarationCSAccess() {
 		return gaCompleteOCL.getPackageDeclarationCSAccess();
 	}
@@ -1630,7 +1630,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	// * NB. RoyalAndLoyal gratuitously names its derived values.
 	// */
 	//PropertyContextDeclCS:
-	//	'context' ownedPathName=PathNameCS ':' ownedType=super::TypeExpCS ('derive' UnrestrictedName? ':'
+	//	'context' ownedPathName=UnreservedPathNameCS ':' ownedType=super::TypeExpCS ('derive' UnrestrictedName? ':'
 	//	ownedDefaultExpressions+=SpecificationCS | 'init' UnrestrictedName? ':' ownedDefaultExpressions+=SpecificationCS)*;
 	public CompleteOCLGrammarAccess.PropertyContextDeclCSElements getPropertyContextDeclCSAccess() {
 		return gaCompleteOCL.getPropertyContextDeclCSAccess();
@@ -2486,6 +2486,16 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getPathNameCSRule() {
 		return getPathNameCSAccess().getRule();
+	}
+
+	//UnreservedPathNameCS PathNameCS:
+	//	ownedPathElements+=NextPathElementCS ('::' ownedPathElements+=NextPathElementCS)*;
+	public BaseGrammarAccess.UnreservedPathNameCSElements getUnreservedPathNameCSAccess() {
+		return gaBase.getUnreservedPathNameCSAccess();
+	}
+	
+	public ParserRule getUnreservedPathNameCSRule() {
+		return getUnreservedPathNameCSAccess().getRule();
 	}
 
 	//FirstPathElementCS PathElementCS:
