@@ -57,7 +57,6 @@ and timing aspect of your language ! (Ie. moccml.mapings)
       <import feature="org.eclipse.xtext.xtext.ui" version="2.6.0" match="compatible"/>
       
       <import plugin="fr.inria.aoste.timesquare.ccslkernel.model"/>
-      <import plugin="fr.inria.aoste.timesquare.ccslkernel.model" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="fr.inria.aoste.timesquare.ccslkernel.library.xtext" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="fr.inria.aoste.timesquare.ccslkernel.parser.xtext"/>
       <import plugin="org.apache.commons.logging"/>
