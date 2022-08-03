@@ -45,49 +45,44 @@ and timing aspect of your language ! (Ie. moccml.mapings)
    </url>
 
    <requires>
-      <import feature="org.eclipse.xtext.ui" version="2.6.0" match="compatible"/>
       <import feature="fr.inria.aoste.timesquare.feature" version="1.0.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.xtext.runtime" version="2.6.0" match="compatible"/>
-      <import feature="org.eclipse.xtext.ui" version="2.6.0" match="compatible"/>
-      <import feature="org.eclipse.xtext.xtext.ui" version="2.6.0" match="compatible"/>
       <import feature="org.eclipse.m2m.qvt.oml" version="3.2.0.v20120918-0827" match="compatible"/>
       <import feature="org.eclipse.m2m.qvt.oml.editor" version="3.2.0.v20120918-0827" match="compatible"/>
       <import feature="org.eclipse.m2m.qvt.oml.runtime" version="3.2.0.v20120918-0827" match="compatible"/>
       <import feature="org.eclipse.m2m.qvt.oml.sdk" version="3.2.1.v20120918-0827" match="compatible"/>
       <import feature="org.eclipse.ocl.all"/>
       <import feature="org.eclipse.ocl.uml"/>
+      <import feature="org.eclipse.xtext.ui" version="2.6.0" match="compatible"/>
+      <import feature="org.eclipse.xtext.runtime" version="2.6.0" match="compatible"/>
+      <import feature="org.eclipse.xtext.xtext.ui" version="2.6.0" match="compatible"/>
+      <import plugin="fr.inria.aoste.timesquare.ccslkernel.model"/>
+      <import plugin="fr.inria.aoste.timesquare.ccslkernel.library.xtext" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="fr.inria.aoste.timesquare.ccslkernel.parser.xtext"/>
+      <import plugin="org.apache.commons.logging"/>
+      <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.eclipse.core.resources" version="3.5.0" match="compatible"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.gemoc.moccml.mapping.xtext" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.annotation"/>
       <import plugin="org.eclipse.ocl.xtext.base"/>
       <import plugin="org.eclipse.ocl.xtext.completeocl"/>
       <import plugin="org.eclipse.ocl.xtext.essentialocl"/>
-      <import plugin="fr.inria.aoste.timesquare.ccslkernel.model"/>
       <import plugin="org.eclipse.ocl.pivot"/>
+      <import plugin="org.eclipse.ocl.xtext.essentialocl.ui"/>
+      <import plugin="org.eclipse.ocl.xtext.base.ui"/>
+      <import plugin="org.eclipse.ocl.xtext.completeocl.ui"/>
+      <import plugin="org.eclipse.ocl.xtext.markup.ui"/>
+      <import plugin="org.eclipse.ocl.examples.codegen"/>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.eclipse.uml2.codegen.ecore" version="1.8.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.uml2.uml" version="5.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.xtext"/>
-      <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.xtext.generator"/>
+      <import plugin="org.eclipse.xtext.builder"/>
       <import plugin="org.eclipse.xtext.xtext.generator"/>
       <import plugin="org.eclipse.xtext.util"/>
-      <import plugin="org.antlr.runtime"/>
-      <import plugin="org.eclipse.osgi"/>
-      <import plugin="org.eclipse.core.runtime" version="3.8.0" match="greaterOrEqual"/>
-      <import plugin="fr.inria.aoste.timesquare.ccslkernel.model" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="fr.inria.aoste.timesquare.ccslkernel.library.xtext" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ocl.xtext.markup.ui"/>
-      <import plugin="org.eclipse.uml2.codegen.ecore" version="1.8.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ocl.xtext.essentialocl.ui"/>
-      <import plugin="fr.inria.aoste.timesquare.ccslkernel.parser.xtext"/>
-      <import plugin="org.eclipse.jdt.annotation"/>
-      <import plugin="org.eclipse.uml2.uml" version="5.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ocl.examples.codegen"/>
-      <import plugin="org.apache.commons.logging"/>
-      <import plugin="org.eclipse.core.resources" version="3.5.0" match="compatible"/>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.ocl.xtext.base.ui"/>
-      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="compatible"/>
-      <import plugin="org.eclipse.gemoc.moccml.mapping.xtext" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ocl.xtext.completeocl.ui"/>
-      <import plugin="org.eclipse.xtext.builder"/>
    </requires>
 
    <plugin
