@@ -1,19 +1,84 @@
 # Changelog
 
+## v3.6.0 (06/04/2023)
+
+#### Enhancements:
+
+- [**enhancement**] Initial version of a Webprotocol based EngineAddon server [#25](https://github.com/eclipse/gemoc-studio-moccml/pull/25)
+- [**enhancement**] major improve in readability of ECL files. defs can now be used to avoid redundant let..in clauses [#14](https://github.com/eclipse/gemoc-studio-moccml/pull/14)
+- [**enhancement**] Major performance improvement [#16](https://github.com/eclipse/gemoc-studio-moccml/pull/16)
+- [**enhancement**] Add Sirius ELK support [#18](https://github.com/eclipse/gemoc-studio-moccml/pull/18)
+- [**enhancement**] Prettier Moccml diagrams [#7](https://github.com/eclipse/gemoc-studio-moccml/pull/7)
+- [**enhancement**] Add possibility to use def to simplify the writing of constraint [#6](https://github.com/eclipse/gemoc-studio-moccml/pull/6)
+- [**enhancement**] Start adding priority and TimeBase to moccml mapping [#2](https://github.com/eclipse/gemoc-studio-moccml/pull/2)
+- [**enhancement**][**releng**] Add gexpressions to studio/updatesite and restructure update site [#4](https://github.com/eclipse/gemoc-studio-moccml/pull/4)
+- [**enhancement**] Add concurrent engine to studio [#1](https://github.com/eclipse/gemoc-studio-moccml/pull/1)
+
+#### Bug Fixes:
+
+- [**bug**] Ocl 6.11 bump fix [#15](https://github.com/eclipse/gemoc-studio-moccml/pull/15)
+- [**bug**] correct a bug due to unordered collection [#10](https://github.com/eclipse/gemoc-studio-moccml/pull/10)
+
+#### Version upgrades
+
+- [**bump**] Bump to Eclipse 2022-06 [#26](https://github.com/eclipse/gemoc-studio-moccml/pull/26)
+- [**bump**] Bump to 3.5.0 [#22](https://github.com/eclipse/gemoc-studio-moccml/pull/22)
+- [**bump**] Bump eclipse 2021 12 [#23](https://github.com/eclipse/gemoc-studio-moccml/pull/23)
+- [**releng**][**bump**] Bump Studio to 3.4.0 [#20](https://github.com/eclipse/gemoc-studio-moccml/pull/20)
+- [**bump**] Bump to Eclipse 2021-06 [#19](https://github.com/eclipse/gemoc-studio-moccml/pull/19)
+- [**bump**] Bump eclipse 2020 12 [#17](https://github.com/eclipse/gemoc-studio-moccml/pull/17)
+- [**bump**] Ocl 6.11 bump fix [#12](https://github.com/eclipse/gemoc-studio-moccml/pull/12)
+- [**bump**] Bump to Eclipse 2020-03 [#13](https://github.com/eclipse/gemoc-studio-moccml/pull/13)
+
+#### Release Engineering
+
+- [**releng**]  Use tpd for defining target platform [#24](https://github.com/eclipse/gemoc-studio-moccml/pull/24)
+- [**releng**] Fixes usage of GEMOC updatesite with recent Eclipse package [#21](https://github.com/eclipse/gemoc-studio-moccml/pull/21)
+- [**releng**] Deploy GEMOC artefacts to maven repository (repo.eclipse.org) [#11](https://github.com/eclipse/gemoc-studio-moccml/pull/11)
+- [**releng**] Change Timesquare updatesite [#9](https://github.com/eclipse/gemoc-studio-moccml/pull/9)
+- [**releng**] Tycho 1.5 and p2 dependencies optimisation [#8](https://github.com/eclipse/gemoc-studio-moccml/pull/8)
+- [**releng**] Remove deprecated update site [#5](https://github.com/eclipse/gemoc-studio-moccml/pull/5)
+
+---
+
 ## v3.5.0 (30/06/2022)
 
 #### Enhancements:
 
 - [**enhancement**] Initial version of a Webprotocol based EngineAddon server [#25](https://github.com/eclipse/gemoc-studio-moccml/pull/25)
+- [**enhancement**] major improve in readability of ECL files. defs can now be used to avoid redundant let..in clauses [#14](https://github.com/eclipse/gemoc-studio-moccml/pull/14)
+- [**enhancement**] Major performance improvement [#16](https://github.com/eclipse/gemoc-studio-moccml/pull/16)
+- [**enhancement**] Add Sirius ELK support [#18](https://github.com/eclipse/gemoc-studio-moccml/pull/18)
+- [**enhancement**] Prettier Moccml diagrams [#7](https://github.com/eclipse/gemoc-studio-moccml/pull/7)
+- [**enhancement**] Add possibility to use def to simplify the writing of constraint [#6](https://github.com/eclipse/gemoc-studio-moccml/pull/6)
+- [**enhancement**] Start adding priority and TimeBase to moccml mapping [#2](https://github.com/eclipse/gemoc-studio-moccml/pull/2)
+- [**enhancement**][**releng**] Add gexpressions to studio/updatesite and restructure update site [#4](https://github.com/eclipse/gemoc-studio-moccml/pull/4)
+- [**enhancement**] Add concurrent engine to studio [#1](https://github.com/eclipse/gemoc-studio-moccml/pull/1)
+
+#### Bug Fixes:
+
+- [**bug**] Ocl 6.11 bump fix [#15](https://github.com/eclipse/gemoc-studio-moccml/pull/15)
+- [**bug**] correct a bug due to unordered collection [#10](https://github.com/eclipse/gemoc-studio-moccml/pull/10)
 
 #### Version upgrades
 
+- [**bump**] Bump to Eclipse 2022-06 [#26](https://github.com/eclipse/gemoc-studio-moccml/pull/26)
 - [**bump**] Bump to 3.5.0 [#22](https://github.com/eclipse/gemoc-studio-moccml/pull/22)
 - [**bump**] Bump eclipse 2021 12 [#23](https://github.com/eclipse/gemoc-studio-moccml/pull/23)
+- [**releng**][**bump**] Bump Studio to 3.4.0 [#20](https://github.com/eclipse/gemoc-studio-moccml/pull/20)
+- [**bump**] Bump to Eclipse 2021-06 [#19](https://github.com/eclipse/gemoc-studio-moccml/pull/19)
+- [**bump**] Bump eclipse 2020 12 [#17](https://github.com/eclipse/gemoc-studio-moccml/pull/17)
+- [**bump**] Ocl 6.11 bump fix [#12](https://github.com/eclipse/gemoc-studio-moccml/pull/12)
+- [**bump**] Bump to Eclipse 2020-03 [#13](https://github.com/eclipse/gemoc-studio-moccml/pull/13)
 
 #### Release Engineering
 
 - [**releng**]  Use tpd for defining target platform [#24](https://github.com/eclipse/gemoc-studio-moccml/pull/24)
+- [**releng**] Fixes usage of GEMOC updatesite with recent Eclipse package [#21](https://github.com/eclipse/gemoc-studio-moccml/pull/21)
+- [**releng**] Deploy GEMOC artefacts to maven repository (repo.eclipse.org) [#11](https://github.com/eclipse/gemoc-studio-moccml/pull/11)
+- [**releng**] Change Timesquare updatesite [#9](https://github.com/eclipse/gemoc-studio-moccml/pull/9)
+- [**releng**] Tycho 1.5 and p2 dependencies optimisation [#8](https://github.com/eclipse/gemoc-studio-moccml/pull/8)
+- [**releng**] Remove deprecated update site [#5](https://github.com/eclipse/gemoc-studio-moccml/pull/5)
 
 ---
 
