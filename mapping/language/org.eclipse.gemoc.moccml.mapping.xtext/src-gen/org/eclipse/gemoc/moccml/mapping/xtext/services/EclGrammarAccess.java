@@ -1767,6 +1767,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	//	| 'or'
 	//	| 'or2'
 	//	| 'then'
+	//	| 'with'
 	//	| 'xor'
 	//	| 'xor2';
 	public EssentialOCLGrammarAccess.EssentialOCLReservedKeywordElements getEssentialOCLReservedKeywordAccess() {
@@ -2056,7 +2057,7 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MapLiteralPartCS:
-	//	ownedKey=super::ExpCS '<-' ownedValue=super::ExpCS;
+	//	ownedKey=super::ExpCS ('with' | '<-') ownedValue=super::ExpCS;
 	public EssentialOCLGrammarAccess.MapLiteralPartCSElements getMapLiteralPartCSAccess() {
 		return gaEssentialOCL.getMapLiteralPartCSAccess();
 	}
@@ -2065,6 +2066,8 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 		return getMapLiteralPartCSAccess().getRule();
 	}
 
+	//// <- is deprecated see Bug 577614
+	//
 	//PrimitiveLiteralExpCS:
 	//	NumberLiteralExpCS
 	//	| StringLiteralExpCS
@@ -2308,10 +2311,10 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	///* A navigating argument is a generalized rule for the first argument in a round bracket clause. This is typically the first operation
 	// * parameter or an iterator. */
 	//NavigatingArgCS:
-	//	ownedNameExpression=super::NavigatingArgExpCS ('<-' ownedCoIterator=CoIteratorVariableCS ('='
-	//	ownedInitExpression=super::ExpCS)? | ':' ownedType=super::TypeExpCS ('<-' ownedCoIterator=CoIteratorVariableCS)? ('='
-	//	ownedInitExpression=super::ExpCS)? | (':' ownedType=super::TypeExpCS)? ('<-' ownedCoIterator=CoIteratorVariableCS)?
-	//	'in' ownedInitExpression=super::ExpCS)?
+	//	ownedNameExpression=super::NavigatingArgExpCS (('with' | '<-') ownedCoIterator=CoIteratorVariableCS ('='
+	//	ownedInitExpression=super::ExpCS)? | ':' ownedType=super::TypeExpCS (('with' | '<-')
+	//	ownedCoIterator=CoIteratorVariableCS)? ('=' ownedInitExpression=super::ExpCS)? | (':' ownedType=super::TypeExpCS)? ((
+	//	'with' | '<-') ownedCoIterator=CoIteratorVariableCS)? 'in' ownedInitExpression=super::ExpCS)?
 	//	| ':' ownedType=super::TypeExpCS;
 	public EssentialOCLGrammarAccess.NavigatingArgCSElements getNavigatingArgCSAccess() {
 		return gaEssentialOCL.getNavigatingArgCSAccess();
@@ -2340,10 +2343,10 @@ public class EclGrammarAccess extends AbstractGrammarElementFinder {
 	///* A navigating comma argument is a generalized rule for non-first argument in a round bracket clause. These are typically non-first operation
 	// * parameters or a second iterator. */
 	//NavigatingCommaArgCS NavigatingArgCS:
-	//	prefix=',' ownedNameExpression=super::NavigatingArgExpCS ('<-' ownedCoIterator=CoIteratorVariableCS ('='
-	//	ownedInitExpression=super::ExpCS)? | ':' ownedType=super::TypeExpCS ('<-' ownedCoIterator=CoIteratorVariableCS)? ('='
-	//	ownedInitExpression=super::ExpCS)? | (':' ownedType=super::TypeExpCS)? ('<-' ownedCoIterator=CoIteratorVariableCS)?
-	//	'in' ownedInitExpression=super::ExpCS)?;
+	//	prefix=',' ownedNameExpression=super::NavigatingArgExpCS (('with' | '<-') ownedCoIterator=CoIteratorVariableCS ('='
+	//	ownedInitExpression=super::ExpCS)? | ':' ownedType=super::TypeExpCS (('with' | '<-')
+	//	ownedCoIterator=CoIteratorVariableCS)? ('=' ownedInitExpression=super::ExpCS)? | (':' ownedType=super::TypeExpCS)? ((
+	//	'with' | '<-') ownedCoIterator=CoIteratorVariableCS)? 'in' ownedInitExpression=super::ExpCS)?;
 	public EssentialOCLGrammarAccess.NavigatingCommaArgCSElements getNavigatingCommaArgCSAccess() {
 		return gaEssentialOCL.getNavigatingCommaArgCSAccess();
 	}
