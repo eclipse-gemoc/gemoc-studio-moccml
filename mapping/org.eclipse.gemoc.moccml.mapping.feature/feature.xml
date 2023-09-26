@@ -13,7 +13,7 @@
       id="org.eclipse.gemoc.moccml.mapping.feature"
       label="Moccml Mapping SDK"
       version="1.0.0.qualifier"
-      provider-name="Aoste INRIA / I3S">
+      provider-name="Eclipse GEMOC Project">
 
    <description url="http://www.example.com/description">
       Editors and transformations for developping Moccml mappings using ECL
@@ -35,11 +35,11 @@ which accompanies this distribution, and is available at http://www.eclipse.org/
    </license>
 
    <url>
-      <discovery label="2020-03" url="http://download.eclipse.org/releases/2020-03"/>
+      <discovery label="2020-03" url="http://download.eclipse.org/releases/2020-12"/>
       <discovery label="The Eclipse Project Updates" url="http://download.eclipse.org/eclipse/updates/4.15"/>
       <discovery label="Acceleo" url="http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.2"/>
       <discovery label="Xtext All In One - Releases" url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
-      <discovery label="TimeSquare" url="ttp://timesquare.inria.fr/update_site/photon"/>
+      <discovery label="TimeSquare"/>
    </url>
 
    <includes

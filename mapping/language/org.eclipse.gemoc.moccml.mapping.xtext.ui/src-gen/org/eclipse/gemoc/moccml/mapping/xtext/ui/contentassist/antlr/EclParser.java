@@ -68,6 +68,7 @@ public class EclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCollectionLiteralPartCSAccess().getAlternatives(), "rule__CollectionLiteralPartCS__Alternatives");
 					put(grammarAccess.getShadowPartCSAccess().getAlternatives(), "rule__ShadowPartCS__Alternatives");
 					put(grammarAccess.getShadowPartCSAccess().getOwnedInitExpressionAlternatives_0_2_0(), "rule__ShadowPartCS__OwnedInitExpressionAlternatives_0_2_0");
+					put(grammarAccess.getMapLiteralPartCSAccess().getAlternatives_1(), "rule__MapLiteralPartCS__Alternatives_1");
 					put(grammarAccess.getPrimitiveLiteralExpCSAccess().getAlternatives(), "rule__PrimitiveLiteralExpCS__Alternatives");
 					put(grammarAccess.getBooleanLiteralExpCSAccess().getAlternatives(), "rule__BooleanLiteralExpCS__Alternatives");
 					put(grammarAccess.getTypeLiteralCSAccess().getAlternatives(), "rule__TypeLiteralCS__Alternatives");
@@ -78,7 +79,13 @@ public class EclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRoundBracketedClauseCSAccess().getOwnedArgumentsAlternatives_2_1_0(), "rule__RoundBracketedClauseCS__OwnedArgumentsAlternatives_2_1_0");
 					put(grammarAccess.getNavigatingArgCSAccess().getAlternatives(), "rule__NavigatingArgCS__Alternatives");
 					put(grammarAccess.getNavigatingArgCSAccess().getAlternatives_0_1(), "rule__NavigatingArgCS__Alternatives_0_1");
+					put(grammarAccess.getNavigatingArgCSAccess().getAlternatives_0_1_0_0(), "rule__NavigatingArgCS__Alternatives_0_1_0_0");
+					put(grammarAccess.getNavigatingArgCSAccess().getAlternatives_0_1_1_2_0(), "rule__NavigatingArgCS__Alternatives_0_1_1_2_0");
+					put(grammarAccess.getNavigatingArgCSAccess().getAlternatives_0_1_2_1_0(), "rule__NavigatingArgCS__Alternatives_0_1_2_1_0");
 					put(grammarAccess.getNavigatingCommaArgCSAccess().getAlternatives_2(), "rule__NavigatingCommaArgCS__Alternatives_2");
+					put(grammarAccess.getNavigatingCommaArgCSAccess().getAlternatives_2_0_0(), "rule__NavigatingCommaArgCS__Alternatives_2_0_0");
+					put(grammarAccess.getNavigatingCommaArgCSAccess().getAlternatives_2_1_2_0(), "rule__NavigatingCommaArgCS__Alternatives_2_1_2_0");
+					put(grammarAccess.getNavigatingCommaArgCSAccess().getAlternatives_2_2_1_0(), "rule__NavigatingCommaArgCS__Alternatives_2_2_1_0");
 					put(grammarAccess.getIfExpCSAccess().getOwnedConditionAlternatives_1_0(), "rule__IfExpCS__OwnedConditionAlternatives_1_0");
 					put(grammarAccess.getMultiplicityCSAccess().getAlternatives_1(), "rule__MultiplicityCS__Alternatives_1");
 					put(grammarAccess.getMultiplicityCSAccess().getAlternatives_2(), "rule__MultiplicityCS__Alternatives_2");
@@ -115,7 +122,7 @@ public class EclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMoCCMLExpressionAccess().getGroup(), "rule__MoCCMLExpression__Group__0");
 					put(grammarAccess.getMoCCMLExpressionAccess().getGroup_5(), "rule__MoCCMLExpression__Group_5__0");
 					put(grammarAccess.getMoCCMLRelationAccess().getGroup(), "rule__MoCCMLRelation__Group__0");
-					put(grammarAccess.getMoCCMLRelationAccess().getGroup_5(), "rule__MoCCMLRelation__Group_5__0");
+					put(grammarAccess.getMoCCMLRelationAccess().getGroup_6(), "rule__MoCCMLRelation__Group_6__0");
 					put(grammarAccess.getCompleteOCLDocumentCSAccess().getGroup(), "rule__CompleteOCLDocumentCS__Group__0");
 					put(grammarAccess.getClassifierContextDeclCSAccess().getGroup(), "rule__ClassifierContextDeclCS__Group__0");
 					put(grammarAccess.getClassifierContextDeclCSAccess().getGroup_4_0(), "rule__ClassifierContextDeclCS__Group_4_0__0");
@@ -237,6 +244,8 @@ public class EclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicityCSAccess().getGroup(), "rule__MultiplicityCS__Group__0");
 					put(grammarAccess.getPathNameCSAccess().getGroup(), "rule__PathNameCS__Group__0");
 					put(grammarAccess.getPathNameCSAccess().getGroup_1(), "rule__PathNameCS__Group_1__0");
+					put(grammarAccess.getUnreservedPathNameCSAccess().getGroup(), "rule__UnreservedPathNameCS__Group__0");
+					put(grammarAccess.getUnreservedPathNameCSAccess().getGroup_1(), "rule__UnreservedPathNameCS__Group_1__0");
 					put(grammarAccess.getTemplateBindingCSAccess().getGroup(), "rule__TemplateBindingCS__Group__0");
 					put(grammarAccess.getTemplateBindingCSAccess().getGroup_1(), "rule__TemplateBindingCS__Group_1__0");
 					put(grammarAccess.getTypeParameterCSAccess().getGroup(), "rule__TypeParameterCS__Group__0");
@@ -281,9 +290,10 @@ public class EclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMoCCMLExpressionAccess().getTypeAssignment_2(), "rule__MoCCMLExpression__TypeAssignment_2");
 					put(grammarAccess.getMoCCMLExpressionAccess().getParametersAssignment_4(), "rule__MoCCMLExpression__ParametersAssignment_4");
 					put(grammarAccess.getMoCCMLExpressionAccess().getParametersAssignment_5_1(), "rule__MoCCMLExpression__ParametersAssignment_5_1");
-					put(grammarAccess.getMoCCMLRelationAccess().getTypeAssignment_2(), "rule__MoCCMLRelation__TypeAssignment_2");
-					put(grammarAccess.getMoCCMLRelationAccess().getParametersAssignment_4(), "rule__MoCCMLRelation__ParametersAssignment_4");
-					put(grammarAccess.getMoCCMLRelationAccess().getParametersAssignment_5_1(), "rule__MoCCMLRelation__ParametersAssignment_5_1");
+					put(grammarAccess.getMoCCMLRelationAccess().getIsAnAssertionAssignment_1(), "rule__MoCCMLRelation__IsAnAssertionAssignment_1");
+					put(grammarAccess.getMoCCMLRelationAccess().getTypeAssignment_3(), "rule__MoCCMLRelation__TypeAssignment_3");
+					put(grammarAccess.getMoCCMLRelationAccess().getParametersAssignment_5(), "rule__MoCCMLRelation__ParametersAssignment_5");
+					put(grammarAccess.getMoCCMLRelationAccess().getParametersAssignment_6_1(), "rule__MoCCMLRelation__ParametersAssignment_6_1");
 					put(grammarAccess.getCompleteOCLDocumentCSAccess().getOwnedImportsAssignment_0(), "rule__CompleteOCLDocumentCS__OwnedImportsAssignment_0");
 					put(grammarAccess.getCompleteOCLDocumentCSAccess().getOwnedPackagesAssignment_1_0(), "rule__CompleteOCLDocumentCS__OwnedPackagesAssignment_1_0");
 					put(grammarAccess.getCompleteOCLDocumentCSAccess().getOwnedContextsAssignment_1_1(), "rule__CompleteOCLDocumentCS__OwnedContextsAssignment_1_1");
@@ -452,6 +462,8 @@ public class EclParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiplicityStringCSAccess().getStringBoundsAssignment(), "rule__MultiplicityStringCS__StringBoundsAssignment");
 					put(grammarAccess.getPathNameCSAccess().getOwnedPathElementsAssignment_0(), "rule__PathNameCS__OwnedPathElementsAssignment_0");
 					put(grammarAccess.getPathNameCSAccess().getOwnedPathElementsAssignment_1_1(), "rule__PathNameCS__OwnedPathElementsAssignment_1_1");
+					put(grammarAccess.getUnreservedPathNameCSAccess().getOwnedPathElementsAssignment_0(), "rule__UnreservedPathNameCS__OwnedPathElementsAssignment_0");
+					put(grammarAccess.getUnreservedPathNameCSAccess().getOwnedPathElementsAssignment_1_1(), "rule__UnreservedPathNameCS__OwnedPathElementsAssignment_1_1");
 					put(grammarAccess.getFirstPathElementCSAccess().getReferredElementAssignment(), "rule__FirstPathElementCS__ReferredElementAssignment");
 					put(grammarAccess.getNextPathElementCSAccess().getReferredElementAssignment(), "rule__NextPathElementCS__ReferredElementAssignment");
 					put(grammarAccess.getTemplateBindingCSAccess().getOwnedSubstitutionsAssignment_0(), "rule__TemplateBindingCS__OwnedSubstitutionsAssignment_0");

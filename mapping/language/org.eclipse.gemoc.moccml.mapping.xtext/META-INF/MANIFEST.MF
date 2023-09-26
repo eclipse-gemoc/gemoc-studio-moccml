@@ -1,12 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.gemoc.moccml.mapping.xtext
-Bundle-Vendor: Aoste INRIA/I3S
+Bundle-Vendor: Eclipse GEMOC Project
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.eclipse.gemoc.moccml.mapping.xtext;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.gemoc.moccml.mapping,
- org.eclipse.xtext;bundle-version="2.21.0";visibility:=reexport,
+ org.eclipse.xtext;bundle-version="[2.25.0,3.0.0)";visibility:=reexport,
  org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
  org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional;visibility:=reexport,
  org.eclipse.xtext.generator,
@@ -22,14 +22,14 @@ Require-Bundle: org.eclipse.gemoc.moccml.mapping,
  fr.inria.aoste.timesquare.ccslkernel.library.xtext;bundle-version="1.0.0",
  org.eclipse.ocl.xtext.markup.ui,
  org.eclipse.uml2.codegen.ecore;bundle-version="1.8.0",
- org.eclipse.ocl.xtext.essentialocl.ui;bundle-version="[1.10.0,1.13.0)",
+ org.eclipse.ocl.xtext.essentialocl.ui;bundle-version="[1.10.0,2.0.0)",
  fr.inria.aoste.timesquare.ccslkernel.parser.xtext,
  org.eclipse.jdt.annotation,
  org.eclipse.uml2.uml;bundle-version="5.0.0",
- org.eclipse.ocl.xtext.base;bundle-version="[1.10.0,1.13.0)";visibility:=reexport,
- org.eclipse.ocl.xtext.essentialocl;bundle-version="[1.10.0,1.13.0)";visibility:=reexport,
- org.eclipse.ocl.pivot;bundle-version="[1.10.0,1.13.0)";visibility:=reexport,
- org.eclipse.ocl.xtext.completeocl;bundle-version="[1.10.0,1.13.0)";visibility:=reexport,
+ org.eclipse.ocl.xtext.base;bundle-version="1.10.0";visibility:=reexport,
+ org.eclipse.ocl.xtext.essentialocl;bundle-version="[1.10.0,2.0.0)";visibility:=reexport,
+ org.eclipse.ocl.pivot;bundle-version="[1.10.0,2.0.0)";visibility:=reexport,
+ org.eclipse.ocl.xtext.completeocl;bundle-version="[1.10.0,2.0.0)";visibility:=reexport,
  org.eclipse.ocl.examples.codegen
 Import-Package: org.apache.log4j,
  org.apache.commons.logging

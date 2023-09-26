@@ -5,7 +5,7 @@ Require-Bundle: org.eclipse.ui,
  fr.inria.aoste.timesquare.ccslkernel.parser.xtext;bundle-version="1.0.0",
  org.eclipse.m2m.qvt.oml,
  org.eclipse.xtext
-Bundle-Vendor: Aoste INRIA/I3S
+Bundle-Vendor: Eclipse GEMOC Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
 Bundle-Name: qvto to ccsl Ui

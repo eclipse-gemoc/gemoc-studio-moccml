@@ -7,7 +7,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.xtext,
  fr.inria.aoste.timesquare.ccslkernel.library.xtext;bundle-version="1.0.0",
  fr.inria.aoste.timesquare.ccslkernel.parser.xtext
-Bundle-Vendor: Aoste INRIA/I3S
+Bundle-Vendor: Eclipse GEMOC Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 1.0.0.qualifier
 Bundle-Name: QVTo Helper

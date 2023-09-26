@@ -16,7 +16,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.design;bundle-version="0.0.1",
  org.eclipse.sirius.common;bundle-version="1.0.0",
  org.eclipse.xtext,
- org.eclipse.sirius.common.acceleo.aql;bundle-version="4.0.1"
+ org.eclipse.sirius.common.acceleo.aql;bundle-version="4.0.1",
+ org.eclipse.elk.core;bundle-version="0.7.0",
+ org.eclipse.elk.core.service;bundle-version="0.7.0",
+ org.eclipse.sirius.diagram.elk;bundle-version="6.4.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-Vendor: %Bundle-Vendor

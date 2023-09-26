@@ -173,6 +173,10 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 					sequence_URIPathNameCS(context, (PathNameCS) semanticObject); 
 					return; 
 				}
+				else if (rule == grammarAccess.getUnreservedPathNameCSRule()) {
+					sequence_UnreservedPathNameCS(context, (PathNameCS) semanticObject); 
+					return; 
+				}
 				else break;
 			case BaseCSPackage.PRIMITIVE_TYPE_REF_CS:
 				if (rule == grammarAccess.getTypedRefCSRule()
@@ -509,11 +513,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	}
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     BlockType returns BlockType
 	 *
 	 * Constraint:
 	 *     {BlockType}
+	 * </pre>
 	 */
 	protected void sequence_BlockType(ISerializationContext context, BlockType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -521,11 +527,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     TypeExpCS returns BlockType
 	 *
 	 * Constraint:
 	 *     ownedMultiplicity=MultiplicityCS?
+	 * </pre>
 	 */
 	protected void sequence_BlockType_TypeExpCS(ISerializationContext context, BlockType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -533,11 +541,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     CasesRule returns Case
 	 *
 	 * Constraint:
 	 *     (condition=ExpCS kindOfFeedback=FeedBackKind eventToForce=ExpCS on=ExpCS?)
+	 * </pre>
 	 */
 	protected void sequence_CasesRule(ISerializationContext context, Case semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -545,11 +555,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     TypeExpCS returns CollectionPatternCS
 	 *
 	 * Constraint:
 	 *     (ownedType=CollectionTypeCS (ownedParts+=PatternExpCS ownedParts+=PatternExpCS* restVariableName=Identifier)? ownedMultiplicity=MultiplicityCS?)
+	 * </pre>
 	 */
 	protected void sequence_CollectionPatternCS_TypeExpCS(ISerializationContext context, CollectionPatternCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -557,6 +569,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     TypeExpCS returns CollectionTypeCS
 	 *
@@ -566,6 +579,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	 *         (ownedType=TypeExpWithoutMultiplicityCS ownedCollectionMultiplicity=MultiplicityCS?)? 
 	 *         ownedMultiplicity=MultiplicityCS?
 	 *     )
+	 * </pre>
 	 */
 	protected void sequence_CollectionTypeCS_TypeExpCS(ISerializationContext context, CollectionTypeCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -573,11 +587,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     DSAFeedBackRule returns DSAFeedback
 	 *
 	 * Constraint:
 	 *     cases+=CasesRule+
+	 * </pre>
 	 */
 	protected void sequence_DSAFeedBackRule(ISerializationContext context, DSAFeedback semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -585,11 +601,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     EventType returns EventType
 	 *
 	 * Constraint:
 	 *     referedElement=EventKind?
+	 * </pre>
 	 */
 	protected void sequence_EventType(ISerializationContext context, EventType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -597,11 +615,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     TypeExpCS returns EventType
 	 *
 	 * Constraint:
 	 *     (referedElement=EventKind? ownedMultiplicity=MultiplicityCS?)
+	 * </pre>
 	 */
 	protected void sequence_EventType_TypeExpCS(ISerializationContext context, EventType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -609,12 +629,14 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ExpCS returns InfixExpCS
 	 *     NavigatingArgExpCS returns InfixExpCS
 	 *
 	 * Constraint:
 	 *     (ownedLeft=ExpCS_InfixExpCS_3_0_1_0 name=BinaryOperatorName ownedRight=ExpCS)
+	 * </pre>
 	 */
 	protected void sequence_ExpCS(ISerializationContext context, InfixExpCS semanticObject) {
 		if (errorAcceptor != null) {
@@ -634,11 +656,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Import returns ImportStatement
 	 *
 	 * Constraint:
 	 *     importURI=DOUBLE_QUOTED_STRING
+	 * </pre>
 	 */
 	protected void sequence_Import(ISerializationContext context, ImportStatement semanticObject) {
 		if (errorAcceptor != null) {
@@ -652,11 +676,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     TypeExpCS returns MapTypeCS
 	 *
 	 * Constraint:
 	 *     (name='Map' (ownedKeyType=TypeExpCS ownedValueType=TypeExpCS)? ownedMultiplicity=MultiplicityCS?)
+	 * </pre>
 	 */
 	protected void sequence_MapTypeCS_TypeExpCS(ISerializationContext context, MapTypeCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -664,6 +690,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ExpCS returns MoCCMLExpression
 	 *     MoCCMLExpression returns MoCCMLExpression
@@ -671,6 +698,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	 *
 	 * Constraint:
 	 *     (type=[ExpressionDeclaration|ID] parameters+=ExpCS parameters+=ExpCS*)
+	 * </pre>
 	 */
 	protected void sequence_MoCCMLExpression(ISerializationContext context, MoCCMLExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -678,6 +706,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     DefCS returns MoCCMLMappingBlockDefCS
 	 *     MoCCMLMappingBlockDefCS returns MoCCMLMappingBlockDefCS
@@ -692,6 +721,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	 *         enterWhen=ExpCS? 
 	 *         leaveWhen=ExpCS?
 	 *     )
+	 * </pre>
 	 */
 	protected void sequence_MoCCMLMappingBlockDefCS(ISerializationContext context, MoCCMLMappingBlockDefCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -699,11 +729,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     MoCCMLMappingDocument returns MoCCMLMappingDocument
 	 *
 	 * Constraint:
 	 *     (ownedImports+=ImportCS* imports+=Import* (ownedPackages+=PackageDeclarationCS | ownedContexts+=ContextDeclCS)*)
+	 * </pre>
 	 */
 	protected void sequence_MoCCMLMappingDocument(ISerializationContext context, MoCCMLMappingDocument semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -711,6 +743,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     DefCS returns MoCCMLMappingEventDefCS
 	 *     MoCCMLMappingEventDefCS returns MoCCMLMappingEventDefCS
@@ -726,6 +759,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	 *         future=ExpCS? 
 	 *         feedback=DSAFeedBackRule?
 	 *     )
+	 * </pre>
 	 */
 	protected void sequence_MoCCMLMappingEventDefCS(ISerializationContext context, MoCCMLMappingEventDefCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -733,6 +767,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ExpCS returns MoCCMLMappingPriority
 	 *     MoCCMLMappingPriority returns MoCCMLMappingPriority
@@ -740,6 +775,7 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	 *
 	 * Constraint:
 	 *     (higher=ExpCS lower=ExpCS)
+	 * </pre>
 	 */
 	protected void sequence_MoCCMLMappingPriority(ISerializationContext context, MoCCMLMappingPriority semanticObject) {
 		if (errorAcceptor != null) {
@@ -756,13 +792,15 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     ExpCS returns MoCCMLRelation
 	 *     MoCCMLRelation returns MoCCMLRelation
 	 *     NavigatingArgExpCS returns MoCCMLRelation
 	 *
 	 * Constraint:
-	 *     (type=[RelationDeclaration|ID] parameters+=ExpCS parameters+=ExpCS*)
+	 *     (isAnAssertion?='assert'? type=[RelationDeclaration|ID] parameters+=ExpCS parameters+=ExpCS*)
+	 * </pre>
 	 */
 	protected void sequence_MoCCMLRelation(ISerializationContext context, MoCCMLRelation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -770,11 +808,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     TypeExpCS returns PrimitiveTypeRefCS
 	 *
 	 * Constraint:
 	 *     (name=PrimitiveTypeIdentifier ownedMultiplicity=MultiplicityCS?)
+	 * </pre>
 	 */
 	protected void sequence_PrimitiveTypeCS_TypeExpCS(ISerializationContext context, PrimitiveTypeRefCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -782,11 +822,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     Timebase returns MoCCMLMappingTimeBase
 	 *
 	 * Constraint:
 	 *     timeBase=[DenseClockType|ID]?
+	 * </pre>
 	 */
 	protected void sequence_Timebase(ISerializationContext context, MoCCMLMappingTimeBase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -794,11 +836,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     TypeExpCS returns MoCCMLMappingTimeBase
 	 *
 	 * Constraint:
 	 *     (timeBase=[DenseClockType|ID]? ownedMultiplicity=MultiplicityCS?)
+	 * </pre>
 	 */
 	protected void sequence_Timebase_TypeExpCS(ISerializationContext context, MoCCMLMappingTimeBase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -806,11 +850,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     TypeExpCS returns TupleTypeCS
 	 *
 	 * Constraint:
 	 *     (name='Tuple' (ownedParts+=TuplePartCS ownedParts+=TuplePartCS*)? ownedMultiplicity=MultiplicityCS?)
+	 * </pre>
 	 */
 	protected void sequence_TupleTypeCS_TypeExpCS(ISerializationContext context, TupleTypeCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -818,11 +864,13 @@ public abstract class AbstractEclSemanticSequencer extends CompleteOCLSemanticSe
 	
 	
 	/**
+	 * <pre>
 	 * Contexts:
 	 *     TypeExpCS returns TypeNameExpCS
 	 *
 	 * Constraint:
 	 *     (ownedPathName=PathNameCS (ownedCurlyBracketedClause=CurlyBracketedClauseCS ownedPatternGuard=ExpCS?)? ownedMultiplicity=MultiplicityCS?)
+	 * </pre>
 	 */
 	protected void sequence_TypeExpCS_TypeNameExpCS(ISerializationContext context, TypeNameExpCS semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

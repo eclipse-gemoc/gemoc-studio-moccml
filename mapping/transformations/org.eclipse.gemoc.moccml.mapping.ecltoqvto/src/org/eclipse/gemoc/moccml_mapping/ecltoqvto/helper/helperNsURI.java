@@ -62,7 +62,7 @@ public class helperNsURI {
 	      }
 	   
 	    }
-		System.out.println("noooooooooooooooooooooooooooooooooooooooooooo");
+		System.out.println("resource path not found: "+res);
 	    return null; 
 	}
 	
@@ -82,7 +82,7 @@ public class helperNsURI {
 					}
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 				if ((eoName != null) && (eoName.compareTo(objectName)==0)){
 					return (new Integer(i+1)).toString();

@@ -195,7 +195,7 @@ public abstract class AbstractEclRuntimeModule extends org.eclipse.xtext.service
 
 	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment
 	public Class<? extends org.eclipse.xtext.validation.IResourceValidator> bindIResourceValidator() {
-		return org.eclipse.ocl.xtext.base.utilities.PivotResourceValidator.class;
+		return org.eclipse.gemoc.moccml.mapping.xtext.validation.EclPivotResourceValidator.class;
 	}
 
 	// contributed by org.eclipse.ocl.examples.build.fragments.EssentialOCLFragment

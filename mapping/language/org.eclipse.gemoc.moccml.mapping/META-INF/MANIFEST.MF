@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.eclipse.gemoc.moccml.mapping;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: bin/,
  .
-Bundle-Vendor: %Aoste INRIA / I3S
+Bundle-Vendor: Eclipse GEMOC Project
 Bundle-Localization: plugin
 Export-Package: org.eclipse.gemoc.moccml.mapping.moccml_mapping,
  org.eclipse.gemoc.moccml.mapping.moccml_mapping.impl,
@@ -14,11 +14,11 @@ Export-Package: org.eclipse.gemoc.moccml.mapping.moccml_mapping,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.jdt.annotation;visibility:=reexport,
- org.eclipse.ocl.xtext.base;bundle-version="[1.10.0,1.13.0)";visibility:=reexport,
- org.eclipse.ocl.xtext.completeocl;bundle-version="[1.10.0,1.13.0)";visibility:=reexport,
- org.eclipse.ocl.xtext.essentialocl;bundle-version="[1.10.0,1.13.0)";visibility:=reexport,
+ org.eclipse.ocl.xtext.base;bundle-version="[1.10.0,2.0.0)";visibility:=reexport,
+ org.eclipse.ocl.xtext.completeocl;bundle-version="[1.10.0,2.0.0)";visibility:=reexport,
+ org.eclipse.ocl.xtext.essentialocl;bundle-version="[1.10.0,2.0.0)";visibility:=reexport,
  fr.inria.aoste.timesquare.ccslkernel.model;visibility:=reexport,
- org.eclipse.ocl.pivot;bundle-version="[1.10.0,1.13.0)";visibility:=reexport
+ org.eclipse.ocl.pivot;bundle-version="[1.10.0,2.0.0)";visibility:=reexport
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11

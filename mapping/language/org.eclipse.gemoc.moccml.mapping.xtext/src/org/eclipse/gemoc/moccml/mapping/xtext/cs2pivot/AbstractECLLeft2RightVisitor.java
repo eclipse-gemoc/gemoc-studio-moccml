@@ -75,7 +75,7 @@ public class AbstractECLLeft2RightVisitor
 	}
 
 	public Element visitMoCCMLMappingDefCS(MoCCMLMappingDefCS eclDefCS) {
-		return visitMoCCMLMappingDefCS(eclDefCS);
+		return null;
 	}
 
 	

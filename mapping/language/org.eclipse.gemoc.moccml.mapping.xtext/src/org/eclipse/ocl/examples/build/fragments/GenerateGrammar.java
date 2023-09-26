@@ -38,6 +38,7 @@ import org.eclipse.emf.mwe.core.monitor.ProgressMonitor;
 import org.eclipse.emf.mwe.utils.StandaloneSetup;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.ocl.examples.codegen.generator.AbstractGenModelHelper;
+import org.eclipse.ocl.examples.codegen.generator.EcoreGenModelHelper;
 import org.eclipse.ocl.pivot.internal.manager.PivotMetamodelManager;
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.pivot.utilities.OCL;
@@ -88,7 +89,7 @@ public abstract class GenerateGrammar extends AbstractWorkflowComponent
 		if (genPackage == null) {
 			return "<<" + ePackage.getNsURI() + ">>";
 		}
-		return genPackage.getQualifiedPackageInterfaceName() + ".Literals" + "." + genModelHelper.getLiteralName(eClassifier);
+		return genPackage.getQualifiedPackageInterfaceName() + ".Literals" + "." + genModelHelper.getEcoreLiteralName(eClassifier);
 	}	
 	
 	protected @NonNull String emitEPackageLiteral(@NonNull EPackage ePackage) {
@@ -106,7 +107,7 @@ public abstract class GenerateGrammar extends AbstractWorkflowComponent
 		if (genPackage == null) {
 			return "<<" + ePackage.getNsURI() + ">>";
 		}
-		return genPackage.getQualifiedPackageInterfaceName() + ".Literals" + "." + genModelHelper.getLiteralName(eClassifier)+".getEEnumLiteral(\""+ enumLiteral.getName() + "\")";
+		return genPackage.getQualifiedPackageInterfaceName() + ".Literals" + "." + genModelHelper.getEcoreLiteralName(eClassifier)+".getEEnumLiteral(\""+ enumLiteral.getName() + "\")";
 	}
 	
 	protected @NonNull String emitParserRuleLiteral(@NonNull Grammar grammar, @NonNull ParserRule parserRule) {
@@ -253,7 +254,7 @@ public abstract class GenerateGrammar extends AbstractWorkflowComponent
 	protected void invokeInternal(WorkflowContext ctx, ProgressMonitor monitor, Issues issues) {
 		OCL ocl = OCL.newInstance();
 		PivotMetamodelManager metamodelManager = (PivotMetamodelManager) ocl.getMetamodelManager();
-		genModelHelper = new AbstractGenModelHelper(metamodelManager);
+		genModelHelper = new EcoreGenModelHelper(metamodelManager);
 		String rootPath = StandaloneSetup.getPlatformRootPath();
 		File folder = new File(rootPath + javaFolder + "/" + javaPackageName.replace(".", "/"));
 		try {

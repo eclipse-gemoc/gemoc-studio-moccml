@@ -42,12 +42,12 @@ public class ECLScoping
 		registry.put(MoCCMLmappingPackage.Literals.IMPORT_STATEMENT, ImportStatementAttribution.INSTANCE);	
 		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_DOCUMENT, ECLAttribution.INSTANCE);
 		registry.put(MoCCMLmappingPackage.Literals.EVENT_TYPE, EventTypeAttribution.INSTANCE);
-//		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_TIME_BASE, TimeBaseAttribution.INSTANCE);
+		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_TIME_BASE, TimeBaseAttribution.INSTANCE);
 		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_EXPRESSION, ECLExpressionAttribution.INSTANCE);
 		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_RELATION, ECLExpressionAttribution.INSTANCE);
 		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_EVENT_DEF_CS, ECLDefCSAttribution.INSTANCE);
 		registry.put(MoCCMLmappingPackage.Literals.MO_CCML_MAPPING_DEF_CS, ECLDefCSAttribution.INSTANCE);
-//		registry.put(MoCCMLmappingPackage.Literals.EVENT_TYPE, ECLDefCSAttribution.INSTANCE);
+		registry.put(MoCCMLmappingPackage.Literals.EVENT_TYPE, ECLDefCSAttribution.INSTANCE);
 		registry.put(MoCCMLmappingPackage.Literals.CASE, ECLCaseAttribution.INSTANCE);
 		registry.put(MoCCMLmappingPackage.Literals.DSA_FEEDBACK, ECLFeedBackAttribution.INSTANCE);
 		registry.put(CompleteOCLCSPackage.Literals.CLASSIFIER_CONTEXT_DECL_CS, ClassifierContextCSAttribution.INSTANCE);

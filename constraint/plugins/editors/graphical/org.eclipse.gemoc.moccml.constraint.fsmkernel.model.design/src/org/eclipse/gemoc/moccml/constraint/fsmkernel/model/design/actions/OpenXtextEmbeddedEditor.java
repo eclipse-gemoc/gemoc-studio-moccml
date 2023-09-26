@@ -20,7 +20,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
-import org.eclipse.sirius.diagram.business.internal.metamodel.spec.DEdgeSpec;
+import org.eclipse.sirius.diagram.DEdge;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.ui.IEditorPart;
@@ -31,7 +31,6 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.design.editor.PopupXT
 
 import com.google.inject.Injector;
 
-@SuppressWarnings("restriction")
 public abstract class OpenXtextEmbeddedEditor implements IExternalJavaAction {
 
 	/* (non-Javadoc)
@@ -50,9 +49,9 @@ public abstract class OpenXtextEmbeddedEditor implements IExternalJavaAction {
 				.getDiagramEditPart();
 		for (EObject o : context) {
 			EditPart editPart;
-			if (o instanceof DEdgeSpec) { //edge cannot directly be linked to edit part, opening on target node
+			if (o instanceof DEdge) { //edge cannot directly be linked to edit part, opening on target node
 				editPart = diagramEditPart
-						.findEditPart(diagramEditPart, ((DEdgeSpec)o).getTargetNode());
+						.findEditPart(diagramEditPart, ((DEdge)o).getTargetNode());
 			}else {
 				editPart = diagramEditPart
 						.findEditPart(diagramEditPart, o);
