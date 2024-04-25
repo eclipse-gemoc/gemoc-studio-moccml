@@ -134,6 +134,7 @@ public class StateMachineRelationDefinitionImpl extends ExternalRelationDefiniti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeclarationBlock getDeclarationBlock() {
 		return declarationBlock;
 	}
@@ -158,6 +159,7 @@ public class StateMachineRelationDefinitionImpl extends ExternalRelationDefiniti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeclarationBlock(DeclarationBlock newDeclarationBlock) {
 		if (newDeclarationBlock != declarationBlock) {
 			NotificationChain msgs = null;
@@ -177,6 +179,7 @@ public class StateMachineRelationDefinitionImpl extends ExternalRelationDefiniti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Transition> getTransitions() {
 		if (transitions == null) {
 			transitions = new EObjectContainmentEList<Transition>(Transition.class, this, CcslmoccPackage.STATE_MACHINE_RELATION_DEFINITION__TRANSITIONS);
@@ -189,6 +192,7 @@ public class StateMachineRelationDefinitionImpl extends ExternalRelationDefiniti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<State> getStates() {
 		if (states == null) {
 			states = new EObjectContainmentEList<State>(State.class, this, CcslmoccPackage.STATE_MACHINE_RELATION_DEFINITION__STATES);
@@ -201,6 +205,7 @@ public class StateMachineRelationDefinitionImpl extends ExternalRelationDefiniti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<State> getInitialStates() {
 		if (initialStates == null) {
 			initialStates = new EObjectResolvingEList<State>(State.class, this, CcslmoccPackage.STATE_MACHINE_RELATION_DEFINITION__INITIAL_STATES);
@@ -213,6 +218,7 @@ public class StateMachineRelationDefinitionImpl extends ExternalRelationDefiniti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<State> getFinalStates() {
 		if (finalStates == null) {
 			finalStates = new EObjectResolvingEList<State>(State.class, this, CcslmoccPackage.STATE_MACHINE_RELATION_DEFINITION__FINAL_STATES);

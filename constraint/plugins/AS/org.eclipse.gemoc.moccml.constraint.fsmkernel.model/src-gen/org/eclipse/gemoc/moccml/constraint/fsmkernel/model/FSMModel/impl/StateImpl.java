@@ -39,11 +39,11 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Transition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.StateImpl#getInputTransitions <em>Input Transitions</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.StateImpl#getOutputTransitions <em>Output Transitions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -92,6 +92,7 @@ public class StateImpl extends NamedElementImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Transition> getInputTransitions() {
 		if (inputTransitions == null) {
 			inputTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, FSMModelPackage.STATE__INPUT_TRANSITIONS, FSMModelPackage.TRANSITION__TARGET);
@@ -104,6 +105,7 @@ public class StateImpl extends NamedElementImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Transition> getOutputTransitions() {
 		if (outputTransitions == null) {
 			outputTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, FSMModelPackage.STATE__OUTPUT_TRANSITIONS, FSMModelPackage.TRANSITION__SOURCE);

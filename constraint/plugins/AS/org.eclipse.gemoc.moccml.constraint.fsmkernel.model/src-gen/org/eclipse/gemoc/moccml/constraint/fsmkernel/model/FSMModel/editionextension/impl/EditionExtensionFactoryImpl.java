@@ -91,6 +91,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntegerAssignementBlock createIntegerAssignementBlock() {
 		IntegerAssignementBlockImpl integerAssignementBlock = new IntegerAssignementBlockImpl();
 		return integerAssignementBlock;
@@ -101,6 +102,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntInfEqual createIntInfEqual() {
 		IntInfEqualImpl intInfEqual = new IntInfEqualImpl();
 		return intInfEqual;
@@ -111,6 +113,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntSupEqual createIntSupEqual() {
 		IntSupEqualImpl intSupEqual = new IntSupEqualImpl();
 		return intSupEqual;
@@ -121,6 +124,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RealInfEqual createRealInfEqual() {
 		RealInfEqualImpl realInfEqual = new RealInfEqualImpl();
 		return realInfEqual;
@@ -131,6 +135,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RealSupEqual createRealSupEqual() {
 		RealSupEqualImpl realSupEqual = new RealSupEqualImpl();
 		return realSupEqual;
@@ -141,6 +146,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntSelfPlusAssignement createIntSelfPlusAssignement() {
 		IntSelfPlusAssignementImpl intSelfPlusAssignement = new IntSelfPlusAssignementImpl();
 		return intSelfPlusAssignement;
@@ -151,6 +157,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntSelfMinusAssignement createIntSelfMinusAssignement() {
 		IntSelfMinusAssignementImpl intSelfMinusAssignement = new IntSelfMinusAssignementImpl();
 		return intSelfMinusAssignement;
@@ -161,6 +168,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntSelfMultiplyAssignement createIntSelfMultiplyAssignement() {
 		IntSelfMultiplyAssignementImpl intSelfMultiplyAssignement = new IntSelfMultiplyAssignementImpl();
 		return intSelfMultiplyAssignement;
@@ -171,6 +179,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntSelfDivideAssignement createIntSelfDivideAssignement() {
 		IntSelfDivideAssignementImpl intSelfDivideAssignement = new IntSelfDivideAssignementImpl();
 		return intSelfDivideAssignement;
@@ -181,6 +190,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RealSelfPlusAssignement createRealSelfPlusAssignement() {
 		RealSelfPlusAssignementImpl realSelfPlusAssignement = new RealSelfPlusAssignementImpl();
 		return realSelfPlusAssignement;
@@ -191,6 +201,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RealSelfMinusAssignement createRealSelfMinusAssignement() {
 		RealSelfMinusAssignementImpl realSelfMinusAssignement = new RealSelfMinusAssignementImpl();
 		return realSelfMinusAssignement;
@@ -201,6 +212,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RealSelfMultiplyAssignement createRealSelfMultiplyAssignement() {
 		RealSelfMultiplyAssignementImpl realSelfMultiplyAssignement = new RealSelfMultiplyAssignementImpl();
 		return realSelfMultiplyAssignement;
@@ -211,6 +223,7 @@ public class EditionExtensionFactoryImpl extends EFactoryImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EditionExtensionPackage getEditionExtensionPackage() {
 		return (EditionExtensionPackage)getEPackage();
 	}

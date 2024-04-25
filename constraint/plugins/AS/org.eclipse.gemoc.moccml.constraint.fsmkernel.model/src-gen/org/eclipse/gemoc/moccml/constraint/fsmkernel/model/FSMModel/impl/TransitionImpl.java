@@ -45,6 +45,7 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Transition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.TransitionImpl#getSource <em>Source</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.TransitionImpl#getTarget <em>Target</em>}</li>
@@ -52,7 +53,6 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Transition;
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.TransitionImpl#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.TransitionImpl#getActions <em>Actions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -131,6 +131,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public State getSource() {
 		if (source != null && source.eIsProxy()) {
 			InternalEObject oldSource = (InternalEObject)source;
@@ -172,6 +173,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSource(State newSource) {
 		if (newSource != source) {
 			NotificationChain msgs = null;
@@ -191,6 +193,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public State getTarget() {
 		if (target != null && target.eIsProxy()) {
 			InternalEObject oldTarget = (InternalEObject)target;
@@ -232,6 +235,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTarget(State newTarget) {
 		if (newTarget != target) {
 			NotificationChain msgs = null;
@@ -251,6 +255,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractGuard getGuard() {
 		return guard;
 	}
@@ -275,6 +280,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGuard(AbstractGuard newGuard) {
 		if (newGuard != guard) {
 			NotificationChain msgs = null;
@@ -294,6 +300,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractTrigger getTrigger() {
 		return trigger;
 	}
@@ -318,6 +325,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTrigger(AbstractTrigger newTrigger) {
 		if (newTrigger != trigger) {
 			NotificationChain msgs = null;
@@ -337,6 +345,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractAction> getActions() {
 		if (actions == null) {
 			actions = new EObjectContainmentEList<AbstractAction>(AbstractAction.class, this, FSMModelPackage.TRANSITION__ACTIONS);

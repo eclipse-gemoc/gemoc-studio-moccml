@@ -34,11 +34,11 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Trigger;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.TriggerImpl#getTrueTriggers <em>True Triggers</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.TriggerImpl#getFalseTriggers <em>False Triggers</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -87,6 +87,7 @@ public class TriggerImpl extends AbstractTriggerImpl implements Trigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<BindableEntity> getTrueTriggers() {
 		if (trueTriggers == null) {
 			trueTriggers = new EObjectResolvingEList<BindableEntity>(BindableEntity.class, this, FSMModelPackage.TRIGGER__TRUE_TRIGGERS);
@@ -99,6 +100,7 @@ public class TriggerImpl extends AbstractTriggerImpl implements Trigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<BindableEntity> getFalseTriggers() {
 		if (falseTriggers == null) {
 			falseTriggers = new EObjectResolvingEList<BindableEntity>(BindableEntity.class, this, FSMModelPackage.TRIGGER__FALSE_TRIGGERS);

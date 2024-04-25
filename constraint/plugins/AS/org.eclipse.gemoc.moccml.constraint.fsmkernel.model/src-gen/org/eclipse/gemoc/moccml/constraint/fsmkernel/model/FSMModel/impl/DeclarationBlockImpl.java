@@ -42,11 +42,11 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.FSMModelPack
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.DeclarationBlockImpl#getConcreteEntities <em>Concrete Entities</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.DeclarationBlockImpl#getClassicalExpressions <em>Classical Expressions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -95,6 +95,7 @@ public class DeclarationBlockImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ConcreteEntity> getConcreteEntities() {
 		if (concreteEntities == null) {
 			concreteEntities = new EObjectContainmentEList<ConcreteEntity>(ConcreteEntity.class, this, FSMModelPackage.DECLARATION_BLOCK__CONCRETE_ENTITIES);
@@ -107,6 +108,7 @@ public class DeclarationBlockImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ClassicalExpression> getClassicalExpressions() {
 		if (classicalExpressions == null) {
 			classicalExpressions = new EObjectContainmentEList<ClassicalExpression>(ClassicalExpression.class, this, FSMModelPackage.DECLARATION_BLOCK__CLASSICAL_EXPRESSIONS);

@@ -97,7 +97,7 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link CcslmoccPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -111,12 +111,14 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 		if (isInited) return (CcslmoccPackage)EPackage.Registry.INSTANCE.getEPackage(CcslmoccPackage.eNS_URI);
 
 		// Obtain or create and register package
-		CcslmoccPackageImpl theCcslmoccPackage = (CcslmoccPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CcslmoccPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CcslmoccPackageImpl());
+		Object registeredCcslmoccPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		CcslmoccPackageImpl theCcslmoccPackage = registeredCcslmoccPackage instanceof CcslmoccPackageImpl ? (CcslmoccPackageImpl)registeredCcslmoccPackage : new CcslmoccPackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
 		FSMModelPackage.eINSTANCE.eClass();
+		TimeModelPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theCcslmoccPackage.createPackageContents();
@@ -127,7 +129,6 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 		// Mark meta-data to indicate it can't be changed
 		theCcslmoccPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CcslmoccPackage.eNS_URI, theCcslmoccPackage);
 		return theCcslmoccPackage;
@@ -138,6 +139,7 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStateRelationBasedLibrary() {
 		return stateRelationBasedLibraryEClass;
 	}
@@ -147,6 +149,7 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStateMachineRelationDefinition() {
 		return stateMachineRelationDefinitionEClass;
 	}
@@ -156,6 +159,7 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFinishClock() {
 		return finishClockEClass;
 	}
@@ -165,6 +169,7 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFinishClock_Clock() {
 		return (EReference)finishClockEClass.getEStructuralFeatures().get(0);
 	}
@@ -174,6 +179,7 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStartClock() {
 		return startClockEClass;
 	}
@@ -183,6 +189,7 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStartClock_Clock() {
 		return (EReference)startClockEClass.getEStructuralFeatures().get(0);
 	}
@@ -192,6 +199,7 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CcslmoccFactory getCcslmoccFactory() {
 		return (CcslmoccFactory)getEFactoryInstance();
 	}
@@ -280,28 +288,6 @@ public class CcslmoccPackageImpl extends EPackageImpl implements CcslmoccPackage
 
 		// Create resource
 		createResource(eNS_URI);
-
-		// Create annotations
-		// http://www.eclipse.org/emf/2002/Ecore
-		createEcoreAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
-		addAnnotation
-		  (this, 
-		   source, 
-		   new String[] {
-			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
-		   });
 	}
 
 } //CcslmoccPackageImpl

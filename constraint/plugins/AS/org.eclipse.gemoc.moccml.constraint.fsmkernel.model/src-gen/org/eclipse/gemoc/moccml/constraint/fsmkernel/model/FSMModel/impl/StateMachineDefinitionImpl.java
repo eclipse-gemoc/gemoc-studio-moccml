@@ -45,6 +45,7 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Transition;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.StateMachineDefinitionImpl#getDeclarationBlock <em>Declaration Block</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.StateMachineDefinitionImpl#getTransitions <em>Transitions</em>}</li>
@@ -52,7 +53,6 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Transition;
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.StateMachineDefinitionImpl#getInitialStates <em>Initial States</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.StateMachineDefinitionImpl#getFinalStates <em>Final States</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -131,6 +131,7 @@ public class StateMachineDefinitionImpl extends NamedElementImpl implements Stat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeclarationBlock getDeclarationBlock() {
 		return declarationBlock;
 	}
@@ -155,6 +156,7 @@ public class StateMachineDefinitionImpl extends NamedElementImpl implements Stat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDeclarationBlock(DeclarationBlock newDeclarationBlock) {
 		if (newDeclarationBlock != declarationBlock) {
 			NotificationChain msgs = null;
@@ -174,6 +176,7 @@ public class StateMachineDefinitionImpl extends NamedElementImpl implements Stat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Transition> getTransitions() {
 		if (transitions == null) {
 			transitions = new EObjectContainmentEList<Transition>(Transition.class, this, FSMModelPackage.STATE_MACHINE_DEFINITION__TRANSITIONS);
@@ -186,6 +189,7 @@ public class StateMachineDefinitionImpl extends NamedElementImpl implements Stat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<State> getStates() {
 		if (states == null) {
 			states = new EObjectContainmentEList<State>(State.class, this, FSMModelPackage.STATE_MACHINE_DEFINITION__STATES);
@@ -198,6 +202,7 @@ public class StateMachineDefinitionImpl extends NamedElementImpl implements Stat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<State> getInitialStates() {
 		if (initialStates == null) {
 			initialStates = new EObjectResolvingEList<State>(State.class, this, FSMModelPackage.STATE_MACHINE_DEFINITION__INITIAL_STATES);
@@ -210,6 +215,7 @@ public class StateMachineDefinitionImpl extends NamedElementImpl implements Stat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<State> getFinalStates() {
 		if (finalStates == null) {
 			finalStates = new EObjectResolvingEList<State>(State.class, this, FSMModelPackage.STATE_MACHINE_DEFINITION__FINAL_STATES);

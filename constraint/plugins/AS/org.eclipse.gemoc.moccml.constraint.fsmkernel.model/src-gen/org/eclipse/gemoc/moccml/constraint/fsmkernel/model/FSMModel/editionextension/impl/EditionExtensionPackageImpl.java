@@ -217,6 +217,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIntegerAssignementBlock() {
 		return integerAssignementBlockEClass;
 	}
@@ -226,6 +227,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIntegerAssignementBlock_Actions() {
 		return (EReference)integerAssignementBlockEClass.getEStructuralFeatures().get(0);
 	}
@@ -235,6 +237,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIntInfEqual() {
 		return intInfEqualEClass;
 	}
@@ -244,6 +247,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIntInfEqual_LeftValue() {
 		return (EReference)intInfEqualEClass.getEStructuralFeatures().get(0);
 	}
@@ -253,6 +257,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIntInfEqual_RightValue() {
 		return (EReference)intInfEqualEClass.getEStructuralFeatures().get(1);
 	}
@@ -262,6 +267,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIntSupEqual() {
 		return intSupEqualEClass;
 	}
@@ -271,6 +277,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIntSupEqual_LeftValue() {
 		return (EReference)intSupEqualEClass.getEStructuralFeatures().get(0);
 	}
@@ -280,6 +287,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIntSupEqual_RightValue() {
 		return (EReference)intSupEqualEClass.getEStructuralFeatures().get(1);
 	}
@@ -289,6 +297,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRealInfEqual() {
 		return realInfEqualEClass;
 	}
@@ -298,6 +307,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRealInfEqual_LeftValue() {
 		return (EReference)realInfEqualEClass.getEStructuralFeatures().get(0);
 	}
@@ -307,6 +317,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRealInfEqual_RightValue() {
 		return (EReference)realInfEqualEClass.getEStructuralFeatures().get(1);
 	}
@@ -316,6 +327,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRealSupEqual() {
 		return realSupEqualEClass;
 	}
@@ -325,6 +337,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRealSupEqual_LeftValue() {
 		return (EReference)realSupEqualEClass.getEStructuralFeatures().get(0);
 	}
@@ -334,6 +347,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getRealSupEqual_RightValue() {
 		return (EReference)realSupEqualEClass.getEStructuralFeatures().get(1);
 	}
@@ -343,6 +357,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIntSelfPlusAssignement() {
 		return intSelfPlusAssignementEClass;
 	}
@@ -352,6 +367,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIntSelfMinusAssignement() {
 		return intSelfMinusAssignementEClass;
 	}
@@ -361,6 +377,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIntSelfMultiplyAssignement() {
 		return intSelfMultiplyAssignementEClass;
 	}
@@ -370,6 +387,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIntSelfDivideAssignement() {
 		return intSelfDivideAssignementEClass;
 	}
@@ -379,6 +397,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRealSelfPlusAssignement() {
 		return realSelfPlusAssignementEClass;
 	}
@@ -388,6 +407,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRealSelfMinusAssignement() {
 		return realSelfMinusAssignementEClass;
 	}
@@ -397,6 +417,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRealSelfMultiplyAssignement() {
 		return realSelfMultiplyAssignementEClass;
 	}
@@ -406,6 +427,7 @@ public class EditionExtensionPackageImpl extends EPackageImpl implements Edition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EditionExtensionFactory getEditionExtensionFactory() {
 		return (EditionExtensionFactory)getEFactoryInstance();
 	}

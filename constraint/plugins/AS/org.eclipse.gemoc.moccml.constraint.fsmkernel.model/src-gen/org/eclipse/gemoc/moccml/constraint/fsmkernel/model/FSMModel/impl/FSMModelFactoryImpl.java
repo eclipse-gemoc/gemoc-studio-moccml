@@ -86,6 +86,7 @@ public class FSMModelFactoryImpl extends EFactoryImpl implements FSMModelFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public State createState() {
 		StateImpl state = new StateImpl();
 		return state;
@@ -96,6 +97,7 @@ public class FSMModelFactoryImpl extends EFactoryImpl implements FSMModelFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Transition createTransition() {
 		TransitionImpl transition = new TransitionImpl();
 		return transition;
@@ -106,6 +108,7 @@ public class FSMModelFactoryImpl extends EFactoryImpl implements FSMModelFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StateMachineDefinition createStateMachineDefinition() {
 		StateMachineDefinitionImpl stateMachineDefinition = new StateMachineDefinitionImpl();
 		return stateMachineDefinition;
@@ -116,6 +119,7 @@ public class FSMModelFactoryImpl extends EFactoryImpl implements FSMModelFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Guard createGuard() {
 		GuardImpl guard = new GuardImpl();
 		return guard;
@@ -126,6 +130,7 @@ public class FSMModelFactoryImpl extends EFactoryImpl implements FSMModelFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Trigger createTrigger() {
 		TriggerImpl trigger = new TriggerImpl();
 		return trigger;
@@ -136,6 +141,7 @@ public class FSMModelFactoryImpl extends EFactoryImpl implements FSMModelFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IntegerAssignement createIntegerAssignement() {
 		IntegerAssignementImpl integerAssignement = new IntegerAssignementImpl();
 		return integerAssignement;
@@ -146,6 +152,7 @@ public class FSMModelFactoryImpl extends EFactoryImpl implements FSMModelFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DeclarationBlock createDeclarationBlock() {
 		DeclarationBlockImpl declarationBlock = new DeclarationBlockImpl();
 		return declarationBlock;
@@ -156,6 +163,7 @@ public class FSMModelFactoryImpl extends EFactoryImpl implements FSMModelFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FSMModelPackage getFSMModelPackage() {
 		return (FSMModelPackage)getEPackage();
 	}

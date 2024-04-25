@@ -30,6 +30,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Transition#getSource <em>Source</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Transition#getTarget <em>Target</em>}</li>
@@ -37,7 +38,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Transition#getTrigger <em>Trigger</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Transition#getActions <em>Actions</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.FSMModelPackage#getTransition()
  * @model

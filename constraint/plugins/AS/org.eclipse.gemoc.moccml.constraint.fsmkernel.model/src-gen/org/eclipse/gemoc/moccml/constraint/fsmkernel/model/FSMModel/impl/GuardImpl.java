@@ -34,10 +34,10 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Guard;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.GuardImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -76,6 +76,7 @@ public class GuardImpl extends AbstractGuardImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BooleanExpression getValue() {
 		return value;
 	}
@@ -100,6 +101,7 @@ public class GuardImpl extends AbstractGuardImpl implements Guard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(BooleanExpression newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;

@@ -26,6 +26,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.StateMachineDefinition#getDeclarationBlock <em>Declaration Block</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.StateMachineDefinition#getTransitions <em>Transitions</em>}</li>
@@ -33,7 +34,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.StateMachineDefinition#getInitialStates <em>Initial States</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.StateMachineDefinition#getFinalStates <em>Final States</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.FSMModelPackage#getStateMachineDefinition()
  * @model
