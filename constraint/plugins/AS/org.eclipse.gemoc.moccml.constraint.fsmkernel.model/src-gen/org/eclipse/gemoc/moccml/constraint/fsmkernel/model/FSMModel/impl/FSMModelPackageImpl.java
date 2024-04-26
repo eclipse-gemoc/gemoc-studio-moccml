@@ -643,9 +643,9 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 		  (this,
 		   source,
 		   new String[] {
-			   "fr.inria.aoste.timemodel", "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#/",
-			   "fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation", "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation",
-			   "fr.inria.aoste.timemodel.classicalexpression", "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClassicalExpression"
+			   "fr.inria.aoste.timemodel", "platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#/",
+			   "fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation", "platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation",
+			   "fr.inria.aoste.timemodel.classicalexpression", "platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClassicalExpression"
 		   });
 	}
 

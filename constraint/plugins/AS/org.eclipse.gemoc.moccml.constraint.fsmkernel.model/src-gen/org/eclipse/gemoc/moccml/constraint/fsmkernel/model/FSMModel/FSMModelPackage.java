@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.FSMModelFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/OCL/Import fr.inria.aoste.timemodel='../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#/' fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation='../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation' fr.inria.aoste.timemodel.classicalexpression='../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClassicalExpression'"
+ *        annotation="http://www.eclipse.org/OCL/Import fr.inria.aoste.timemodel='platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#/' fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation='platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation' fr.inria.aoste.timemodel.classicalexpression='platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClassicalExpression'"
  * @generated
  */
 public interface FSMModelPackage extends EPackage {
