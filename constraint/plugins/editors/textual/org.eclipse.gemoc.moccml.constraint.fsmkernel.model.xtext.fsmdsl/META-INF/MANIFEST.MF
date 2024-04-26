@@ -6,12 +6,6 @@ Bundle-Version: 0.1.1.qualifier
 Bundle-SymbolicName: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
- org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
- org.eclipse.xtext.xtext.generator;resolution:=optional,
- org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
- org.eclipse.emf.codegen.ecore;resolution:=optional,
- org.eclipse.emf.mwe.utils;resolution:=optional,
- org.eclipse.emf.mwe2.launch;resolution:=optional,
  fr.inria.aoste.timesquare.ccslkernel.model;visibility:=reexport,
  fr.inria.aoste.timesquare.ccslkernel.library.xtext;visibility:=reexport,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model;visibility:=reexport,
@@ -20,17 +14,19 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  fr.inria.aoste.timesquare.ccslkernel.parser.xtext;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.xtext.util,
  org.eclipse.xtext.common.types,
- org.antlr.runtime
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Activator: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.Activator
 Export-Package: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.services,
- org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.parseTreeConstruction,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.parser.antlr,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.parser.antlr.internal,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.validation,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.scoping,
- org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.formatting
+ org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.formatting,
+ org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.generator,
+ org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.serializer
 Automatic-Module-Name: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl

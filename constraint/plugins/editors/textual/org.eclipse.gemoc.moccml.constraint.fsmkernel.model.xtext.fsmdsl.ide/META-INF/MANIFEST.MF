@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl.ide
+Bundle-SymbolicName: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl.ide;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ide.contentassist.antlr,
+ org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ide.contentassist.antlr.internal
+Require-Bundle: org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.eclipse.xtext.ide,
+ org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl
+Automatic-Module-Name: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl.ide

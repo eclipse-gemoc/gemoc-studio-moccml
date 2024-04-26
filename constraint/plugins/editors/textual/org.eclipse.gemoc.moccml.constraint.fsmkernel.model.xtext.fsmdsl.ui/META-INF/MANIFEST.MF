@@ -21,18 +21,17 @@ Require-Bundle: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.xtend,
- org.eclipse.xpand
+ org.eclipse.xpand,
+ org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl.ide;bundle-version="0.0.1"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Activator: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.internal.FSMDslActivator
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.contentassist,
- org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.contentassist.antlr,
- org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.contentassist.antlr.internal,
- org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.internal,
- org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.labeling,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.outline,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.quickfix,
- org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.wizard
+ org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.wizard,
+ org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl.ui.internal,
+ org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.contentassist
 Automatic-Module-Name: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl.ui
+Bundle-Activator: org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl.ui.internal.FsmdslActivator
