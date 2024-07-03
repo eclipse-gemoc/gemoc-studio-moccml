@@ -12,7 +12,7 @@ var runtimeProject = "../${projectName}"
 var rootPath = ".."
 
 // adapt to the location of Timesquare sources
-var timesquareGitPath = "../../../../../../../gitlab_jdeantoni/TimeSquare"
+var timesquareGitPath = "../../../../../../../../gitlab_inria/jdeanton/TimeSquare"
 
 
 Workflow {
