@@ -15,7 +15,7 @@
  */
 package org.eclipse.gemoc.moccml.constraint.ccslmocc.model.design.actions;
 
-import org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.internal.MoCDslActivator;
+import org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl.ui.internal.MocdslActivator;
 import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.design.actions.OpenXtextEmbeddedEditor;
 
 
@@ -27,7 +27,7 @@ public class OpenEmbeddedEditor extends OpenXtextEmbeddedEditor {
 	
     @Override
     protected Injector getInjector() {
-        return  MoCDslActivator.getInstance().getInjector(MoCDslActivator.ORG_ECLIPSE_GEMOC_MOCCML_CONSTRAINT_CCSLMOCC_MODEL_XTEXT_MOCDSL);
+        return  MocdslActivator.getInstance().getInjector(MocdslActivator.ORG_ECLIPSE_GEMOC_MOCCML_CONSTRAINT_CCSLMOCC_MODEL_XTEXT_MOCDSL);
     }
 }
 
