@@ -77,6 +77,7 @@ public class StartClockImpl extends AbstractActionImpl implements StartClock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BindableEntity getClock() {
 		if (clock != null && clock.eIsProxy()) {
 			InternalEObject oldClock = (InternalEObject)clock;
@@ -103,6 +104,7 @@ public class StartClockImpl extends AbstractActionImpl implements StartClock {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setClock(BindableEntity newClock) {
 		BindableEntity oldClock = clock;
 		clock = newClock;

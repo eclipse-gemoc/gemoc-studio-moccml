@@ -15,7 +15,7 @@
  */
 package org.eclipse.gemoc.moccml.constraint.fsmkernel.model.design.actions;
 
-import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.ui.internal.FSMDslActivator;
+import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl.ui.internal.FsmdslActivator;
 
 import com.google.inject.Injector;
 
@@ -23,7 +23,7 @@ public class OpenEmbeddedEditor extends OpenXtextEmbeddedEditor {
 	
     @Override
     protected Injector getInjector() {
-        return  FSMDslActivator.getInstance().getInjector(FSMDslActivator.ORG_ECLIPSE_GEMOC_MOCCML_CONSTRAINT_FSMKERNEL_MODEL_XTEXT_FSMDSL);
+        return  FsmdslActivator.getInstance().getInjector(FsmdslActivator.ORG_ECLIPSE_GEMOC_MOCCML_CONSTRAINT_FSMKERNEL_MODEL_XTEXT_FSMDSL);
     }
 }
 

@@ -25,11 +25,11 @@ import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClassicalE
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionextension.RealSupEqual#getLeftValue <em>Left Value</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionextension.RealSupEqual#getRightValue <em>Right Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionextension.EditionExtensionPackage#getRealSupEqual()
  * @model

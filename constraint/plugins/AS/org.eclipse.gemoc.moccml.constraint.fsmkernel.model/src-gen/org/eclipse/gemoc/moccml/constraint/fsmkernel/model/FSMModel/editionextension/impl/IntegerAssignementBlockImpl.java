@@ -46,11 +46,11 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.impl.Abstrac
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionextension.impl.IntegerAssignementBlockImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionextension.impl.IntegerAssignementBlockImpl#getActions <em>Actions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -109,6 +109,7 @@ public class IntegerAssignementBlockImpl extends AbstractActionImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -118,6 +119,7 @@ public class IntegerAssignementBlockImpl extends AbstractActionImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -130,6 +132,7 @@ public class IntegerAssignementBlockImpl extends AbstractActionImpl implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<IntegerAssignement> getActions() {
 		if (actions == null) {
 			actions = new EObjectContainmentEList<IntegerAssignement>(IntegerAssignement.class, this, EditionExtensionPackage.INTEGER_ASSIGNEMENT_BLOCK__ACTIONS);
@@ -262,7 +265,7 @@ public class IntegerAssignementBlockImpl extends AbstractActionImpl implements I
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(')');

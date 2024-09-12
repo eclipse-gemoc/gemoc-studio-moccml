@@ -26,8 +26,6 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionexten
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Int Self Divide Assignement</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

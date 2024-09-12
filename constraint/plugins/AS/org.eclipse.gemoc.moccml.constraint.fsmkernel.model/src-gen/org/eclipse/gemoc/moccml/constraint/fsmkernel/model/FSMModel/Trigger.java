@@ -26,11 +26,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Trigger#getTrueTriggers <em>True Triggers</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Trigger#getFalseTriggers <em>False Triggers</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.FSMModelPackage#getTrigger()
  * @model

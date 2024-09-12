@@ -36,11 +36,11 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionexten
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionextension.impl.RealInfEqualImpl#getLeftValue <em>Left Value</em>}</li>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionextension.impl.RealInfEqualImpl#getRightValue <em>Right Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -89,6 +89,7 @@ public class RealInfEqualImpl extends BooleanExpressionImpl implements RealInfEq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RealExpression getLeftValue() {
 		return leftValue;
 	}
@@ -113,6 +114,7 @@ public class RealInfEqualImpl extends BooleanExpressionImpl implements RealInfEq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeftValue(RealExpression newLeftValue) {
 		if (newLeftValue != leftValue) {
 			NotificationChain msgs = null;
@@ -132,6 +134,7 @@ public class RealInfEqualImpl extends BooleanExpressionImpl implements RealInfEq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public RealExpression getRightValue() {
 		return rightValue;
 	}
@@ -156,6 +159,7 @@ public class RealInfEqualImpl extends BooleanExpressionImpl implements RealInfEq
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRightValue(RealExpression newRightValue) {
 		if (newRightValue != rightValue) {
 			NotificationChain msgs = null;

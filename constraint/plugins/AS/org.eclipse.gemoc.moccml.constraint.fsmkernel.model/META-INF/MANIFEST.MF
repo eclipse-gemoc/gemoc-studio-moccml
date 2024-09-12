@@ -10,7 +10,7 @@ Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  fr.inria.aoste.timesquare.ccslkernel.model;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.eclipse.gemoc.moccml.constraint.fsmkernel.model,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionextension,

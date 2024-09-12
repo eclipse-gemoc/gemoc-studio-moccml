@@ -29,10 +29,10 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.IntegerAssig
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionextension.IntegerAssignementBlock#getActions <em>Actions</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.editionextension.EditionExtensionPackage#getIntegerAssignementBlock()
  * @model

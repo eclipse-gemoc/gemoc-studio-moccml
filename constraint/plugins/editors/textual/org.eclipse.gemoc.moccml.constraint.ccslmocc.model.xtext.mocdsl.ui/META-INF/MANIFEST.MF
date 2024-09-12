@@ -6,6 +6,7 @@ Bundle-Version: 0.1.1.qualifier
 Bundle-SymbolicName: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl;visibility:=reexport,
+ org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl.ide;visibility:=reexport,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl.ui,
  org.eclipse.xtext.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
@@ -23,12 +24,10 @@ Require-Bundle: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl;
  org.eclipse.xpand
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Activator: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.internal.MoCDslActivator
 Export-Package: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.contentassist,
- org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.contentassist.antlr,
- org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.internal,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.quickfix,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.wizard,
- org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.ui.contentassist.antlr.internal
+ org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl.ui.internal
 Automatic-Module-Name: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl.ui

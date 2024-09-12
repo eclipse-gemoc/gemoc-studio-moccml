@@ -24,10 +24,10 @@ import fr.inria.aoste.timesquare.ccslkernel.model.TimeModel.CCSLModel.ClassicalE
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.Guard#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.FSMModelPackage#getGuard()
  * @model

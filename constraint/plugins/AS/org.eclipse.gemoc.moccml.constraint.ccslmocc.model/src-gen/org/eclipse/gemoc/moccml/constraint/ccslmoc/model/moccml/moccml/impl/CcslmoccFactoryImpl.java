@@ -83,6 +83,7 @@ public class CcslmoccFactoryImpl extends EFactoryImpl implements CcslmoccFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StateRelationBasedLibrary createStateRelationBasedLibrary() {
 		StateRelationBasedLibraryImpl stateRelationBasedLibrary = new StateRelationBasedLibraryImpl();
 		return stateRelationBasedLibrary;
@@ -93,6 +94,7 @@ public class CcslmoccFactoryImpl extends EFactoryImpl implements CcslmoccFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StateMachineRelationDefinition createStateMachineRelationDefinition() {
 		StateMachineRelationDefinitionImpl stateMachineRelationDefinition = new StateMachineRelationDefinitionImpl();
 		return stateMachineRelationDefinition;
@@ -103,6 +105,7 @@ public class CcslmoccFactoryImpl extends EFactoryImpl implements CcslmoccFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FinishClock createFinishClock() {
 		FinishClockImpl finishClock = new FinishClockImpl();
 		return finishClock;
@@ -113,6 +116,7 @@ public class CcslmoccFactoryImpl extends EFactoryImpl implements CcslmoccFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public StartClock createStartClock() {
 		StartClockImpl startClock = new StartClockImpl();
 		return startClock;
@@ -123,6 +127,7 @@ public class CcslmoccFactoryImpl extends EFactoryImpl implements CcslmoccFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CcslmoccPackage getCcslmoccPackage() {
 		return (CcslmoccPackage)getEPackage();
 	}

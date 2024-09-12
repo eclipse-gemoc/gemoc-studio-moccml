@@ -201,6 +201,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getState() {
 		return stateEClass;
 	}
@@ -210,6 +211,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getState_InputTransitions() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(0);
 	}
@@ -219,6 +221,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getState_OutputTransitions() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(1);
 	}
@@ -228,6 +231,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTransition() {
 		return transitionEClass;
 	}
@@ -237,6 +241,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTransition_Source() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -246,6 +251,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTransition_Target() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -255,6 +261,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTransition_Guard() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(2);
 	}
@@ -264,6 +271,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTransition_Trigger() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(3);
 	}
@@ -273,6 +281,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTransition_Actions() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(4);
 	}
@@ -282,6 +291,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getStateMachineDefinition() {
 		return stateMachineDefinitionEClass;
 	}
@@ -291,6 +301,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStateMachineDefinition_DeclarationBlock() {
 		return (EReference)stateMachineDefinitionEClass.getEStructuralFeatures().get(0);
 	}
@@ -300,6 +311,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStateMachineDefinition_Transitions() {
 		return (EReference)stateMachineDefinitionEClass.getEStructuralFeatures().get(1);
 	}
@@ -309,6 +321,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStateMachineDefinition_States() {
 		return (EReference)stateMachineDefinitionEClass.getEStructuralFeatures().get(2);
 	}
@@ -318,6 +331,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStateMachineDefinition_InitialStates() {
 		return (EReference)stateMachineDefinitionEClass.getEStructuralFeatures().get(3);
 	}
@@ -327,6 +341,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getStateMachineDefinition_FinalStates() {
 		return (EReference)stateMachineDefinitionEClass.getEStructuralFeatures().get(4);
 	}
@@ -336,6 +351,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractTrigger() {
 		return abstractTriggerEClass;
 	}
@@ -345,6 +361,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractAction() {
 		return abstractActionEClass;
 	}
@@ -354,6 +371,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractGuard() {
 		return abstractGuardEClass;
 	}
@@ -363,6 +381,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGuard() {
 		return guardEClass;
 	}
@@ -372,6 +391,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGuard_Value() {
 		return (EReference)guardEClass.getEStructuralFeatures().get(0);
 	}
@@ -381,6 +401,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTrigger() {
 		return triggerEClass;
 	}
@@ -390,6 +411,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTrigger_TrueTriggers() {
 		return (EReference)triggerEClass.getEStructuralFeatures().get(0);
 	}
@@ -399,6 +421,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getTrigger_FalseTriggers() {
 		return (EReference)triggerEClass.getEStructuralFeatures().get(1);
 	}
@@ -408,6 +431,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIntegerAssignement() {
 		return integerAssignementEClass;
 	}
@@ -417,6 +441,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDeclarationBlock() {
 		return declarationBlockEClass;
 	}
@@ -426,6 +451,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeclarationBlock_ConcreteEntities() {
 		return (EReference)declarationBlockEClass.getEStructuralFeatures().get(0);
 	}
@@ -435,6 +461,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDeclarationBlock_ClassicalExpressions() {
 		return (EReference)declarationBlockEClass.getEStructuralFeatures().get(1);
 	}
@@ -444,6 +471,7 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FSMModelFactory getFSMModelFactory() {
 		return (FSMModelFactory)getEFactoryInstance();
 	}
@@ -610,14 +638,14 @@ public class FSMModelPackageImpl extends EPackageImpl implements FSMModelPackage
 	 * @generated
 	 */
 	protected void createImportAnnotations() {
-		String source = "http://www.eclipse.org/OCL/Import";	
+		String source = "http://www.eclipse.org/OCL/Import";
 		addAnnotation
-		  (this, 
-		   source, 
+		  (this,
+		   source,
 		   new String[] {
-			 "fr.inria.aoste.timemodel", "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#/",
-			 "fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation", "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation",
-			 "fr.inria.aoste.timemodel.classicalexpression", "../../fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClassicalExpression"
+			   "fr.inria.aoste.timemodel", "platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#/",
+			   "fr.inria.aoste.timemodel.ccslmodel.clockexpressionandrelation", "platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClockExpressionAndRelation",
+			   "fr.inria.aoste.timemodel.classicalexpression", "platform:/resource/fr.inria.aoste.timesquare.ccslkernel.model/model/TimeModel.ecore#//CCSLModel/ClassicalExpression"
 		   });
 	}
 

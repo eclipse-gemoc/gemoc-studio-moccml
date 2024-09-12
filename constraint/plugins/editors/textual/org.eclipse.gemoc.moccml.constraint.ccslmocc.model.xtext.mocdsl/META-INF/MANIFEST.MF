@@ -15,23 +15,25 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model;visibility:=reexport,
  org.eclipse.gemoc.moccml.constraint.fsmkernel.model.xtext.fsmdsl;bundle-version="0.0.1";visibility:=reexport,
  org.eclipse.xtext.util,
- org.antlr.runtime,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.eclipse.xtext.common.types,
  org.eclipse.core.runtime;bundle-version="3.8.0",
  org.eclipse.emf.ecore,
  org.eclipse.emf.common,
  fr.inria.aoste.timesquare.ccslkernel.parser.xtext;bundle-version="1.0.0";visibility:=reexport,
- fr.inria.aoste.timesquare.utils.umlhelpers;bundle-version="1.0.0";visibility:=reexport
+ fr.inria.aoste.timesquare.utils.umlhelpers;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Activator: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.Activator
 Export-Package: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.services,
- org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.parseTreeConstruction,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.parser.antlr,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.parser.antlr.internal,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.validation,
  org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.scoping,
- org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.formatting
+ org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.formatting,
+ org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.generator,
+ org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.serializer
 Automatic-Module-Name: org.eclipse.gemoc.moccml.constraint.ccslmocc.model.xtext.mocdsl

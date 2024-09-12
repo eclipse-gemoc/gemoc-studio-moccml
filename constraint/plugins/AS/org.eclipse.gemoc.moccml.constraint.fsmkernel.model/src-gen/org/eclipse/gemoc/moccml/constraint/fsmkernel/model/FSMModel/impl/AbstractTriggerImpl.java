@@ -26,8 +26,6 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.FSMModelPack
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Abstract Trigger</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

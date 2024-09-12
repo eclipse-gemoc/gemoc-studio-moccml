@@ -26,8 +26,6 @@ import org.eclipse.gemoc.moccml.constraint.fsmkernel.model.FSMModel.IntegerAssig
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Integer Assignement</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
