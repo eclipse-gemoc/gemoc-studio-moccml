@@ -20,5 +20,5 @@ specify clock constraints based on automata and the second one is used to define
 language, the clocks and their constraints and the associated execution functions. 
 
 # Development
-- Continuous integration on [Eclipse CI](https://ci.eclipse.org/gemoc/job/gemoc-studio/)
+- Continuous integration on [Eclipse CI](https://ci.eclipse.org/gemoc/job/gemoc-studio-integration/)
 - [Instructions for building](https://github.com/eclipse/gemoc-studio/tree/master/dev_support/full_compilation)
